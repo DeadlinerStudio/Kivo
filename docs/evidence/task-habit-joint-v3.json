@@ -1,0 +1,3727 @@
+{
+  "scope": "Synthetic offline prototype and already exposed legacy replay; no release or human accuracy claim",
+  "formalGatePassed": false,
+  "generalizationTargetMet": false,
+  "championSelection": {
+    "scope": "Pilot seed42 development-only champion frozen before calibration; seeds43/44 remain independent stability diagnostics, not weights/threshold selection",
+    "selected": "type42-base",
+    "candidates": [
+      {
+        "name": "shared42",
+        "eligible": true,
+        "metrics": {
+          "TASK": {
+            "eligible": 800,
+            "accepted": 693,
+            "correct": 693,
+            "wrongAccepted": 0,
+            "correctCoverage": 0.86625,
+            "wrongAcceptanceRate": 0.0,
+            "wrongAcceptanceUpper": 0.005308916004792996,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 0,
+            "ready": 694,
+            "readyCorrect": 694,
+            "readyWrong": 0,
+            "readyCorrectCoverage": 0.8675,
+            "readyWithAI": 1
+          },
+          "HABIT": {
+            "eligible": 800,
+            "accepted": 717,
+            "correct": 716,
+            "wrongAccepted": 1,
+            "correctCoverage": 0.895,
+            "wrongAcceptanceRate": 0.001394700139470014,
+            "wrongAcceptanceUpper": 0.007746043529336321,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 0,
+            "ready": 717,
+            "readyCorrect": 716,
+            "readyWrong": 1,
+            "readyCorrectCoverage": 0.895,
+            "readyWithAI": 0
+          }
+        },
+        "knownRegression": {
+          "scope": "Known development examples, replayed in v3 training; not independent accuracy",
+          "positiveRows": 11,
+          "validCorrect": 11,
+          "negativeRows": 3,
+          "negativeValid": 0,
+          "diagnostics": {
+            "scope": "All positive top proposals, including invalid and low confidence drafts; not accepted precision",
+            "kinds": {
+              "TASK": {
+                "positiveRows": 3,
+                "fieldCorrectCounts": {
+                  "kind": 3,
+                  "title": 3,
+                  "note": 3,
+                  "dueAt": 3,
+                  "period": 3,
+                  "targetCount": 3,
+                  "weekdaysMask": 3,
+                  "reminderTime": 3
+                },
+                "fieldAccuracy": {
+                  "kind": 1.0,
+                  "title": 1.0,
+                  "note": 1.0,
+                  "dueAt": 1.0,
+                  "period": 1.0,
+                  "targetCount": 1.0,
+                  "weekdaysMask": 1.0,
+                  "reminderTime": 1.0
+                },
+                "proposalKindCounts": {
+                  "TASK": 3
+                },
+                "hardReasons": {}
+              },
+              "HABIT": {
+                "positiveRows": 8,
+                "fieldCorrectCounts": {
+                  "kind": 8,
+                  "title": 8,
+                  "note": 8,
+                  "dueAt": 8,
+                  "period": 8,
+                  "targetCount": 8,
+                  "weekdaysMask": 8,
+                  "reminderTime": 8
+                },
+                "fieldAccuracy": {
+                  "kind": 1.0,
+                  "title": 1.0,
+                  "note": 1.0,
+                  "dueAt": 1.0,
+                  "period": 1.0,
+                  "targetCount": 1.0,
+                  "weekdaysMask": 1.0,
+                  "reminderTime": 1.0
+                },
+                "proposalKindCounts": {
+                  "HABIT": 8
+                },
+                "hardReasons": {}
+              }
+            }
+          }
+        },
+        "headsReportSha256": "27291eb1c2b0ccb0002e28691425dc155f8beed47cffb329713dc70f3b0ae7c7",
+        "modelSha256": "b35eabdda6ed6859654a6a3cfd1f18b82b7138aa9fdbebfad93a0251c1cf574b",
+        "key": [
+          0.86625,
+          0.880625
+        ]
+      },
+      {
+        "name": "type42",
+        "eligible": true,
+        "metrics": {
+          "TASK": {
+            "eligible": 800,
+            "accepted": 706,
+            "correct": 706,
+            "wrongAccepted": 0,
+            "correctCoverage": 0.8825,
+            "wrongAcceptanceRate": 0.0,
+            "wrongAcceptanceUpper": 0.005211414933061764,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 0,
+            "ready": 706,
+            "readyCorrect": 706,
+            "readyWrong": 0,
+            "readyCorrectCoverage": 0.8825,
+            "readyWithAI": 0
+          },
+          "HABIT": {
+            "eligible": 800,
+            "accepted": 717,
+            "correct": 717,
+            "wrongAccepted": 0,
+            "correctCoverage": 0.89625,
+            "wrongAcceptanceRate": 0.0,
+            "wrongAcceptanceUpper": 0.005131668458649097,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 0,
+            "ready": 717,
+            "readyCorrect": 717,
+            "readyWrong": 0,
+            "readyCorrectCoverage": 0.89625,
+            "readyWithAI": 0
+          }
+        },
+        "knownRegression": {
+          "scope": "Known development examples, replayed in v3 training; not independent accuracy",
+          "positiveRows": 11,
+          "validCorrect": 11,
+          "negativeRows": 3,
+          "negativeValid": 0,
+          "diagnostics": {
+            "scope": "All positive top proposals, including invalid and low confidence drafts; not accepted precision",
+            "kinds": {
+              "TASK": {
+                "positiveRows": 3,
+                "fieldCorrectCounts": {
+                  "kind": 3,
+                  "title": 3,
+                  "note": 3,
+                  "dueAt": 3,
+                  "period": 3,
+                  "targetCount": 3,
+                  "weekdaysMask": 3,
+                  "reminderTime": 3
+                },
+                "fieldAccuracy": {
+                  "kind": 1.0,
+                  "title": 1.0,
+                  "note": 1.0,
+                  "dueAt": 1.0,
+                  "period": 1.0,
+                  "targetCount": 1.0,
+                  "weekdaysMask": 1.0,
+                  "reminderTime": 1.0
+                },
+                "proposalKindCounts": {
+                  "TASK": 3
+                },
+                "hardReasons": {}
+              },
+              "HABIT": {
+                "positiveRows": 8,
+                "fieldCorrectCounts": {
+                  "kind": 8,
+                  "title": 8,
+                  "note": 8,
+                  "dueAt": 8,
+                  "period": 8,
+                  "targetCount": 8,
+                  "weekdaysMask": 8,
+                  "reminderTime": 8
+                },
+                "fieldAccuracy": {
+                  "kind": 1.0,
+                  "title": 1.0,
+                  "note": 1.0,
+                  "dueAt": 1.0,
+                  "period": 1.0,
+                  "targetCount": 1.0,
+                  "weekdaysMask": 1.0,
+                  "reminderTime": 1.0
+                },
+                "proposalKindCounts": {
+                  "HABIT": 8
+                },
+                "hardReasons": {}
+              }
+            }
+          }
+        },
+        "headsReportSha256": "641d79f93cf53a04c5b98d59a77679fcf0fb4908e120b3a59c0e2e52a2566ab5",
+        "modelSha256": "6d11b75f065b20d72c6ec38887d9e8a265e076e18966592895b5187e25571ab4",
+        "key": [
+          0.8825,
+          0.889375
+        ]
+      },
+      {
+        "name": "shared42-base",
+        "eligible": true,
+        "metrics": {
+          "TASK": {
+            "eligible": 800,
+            "accepted": 684,
+            "correct": 684,
+            "wrongAccepted": 0,
+            "correctCoverage": 0.855,
+            "wrongAcceptanceRate": 0.0,
+            "wrongAcceptanceUpper": 0.00537858196907437,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 0,
+            "ready": 684,
+            "readyCorrect": 684,
+            "readyWrong": 0,
+            "readyCorrectCoverage": 0.855,
+            "readyWithAI": 0
+          },
+          "HABIT": {
+            "eligible": 800,
+            "accepted": 727,
+            "correct": 727,
+            "wrongAccepted": 0,
+            "correctCoverage": 0.90875,
+            "wrongAcceptanceRate": 0.0,
+            "wrongAcceptanceUpper": 0.0050612604808586426,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 0,
+            "ready": 744,
+            "readyCorrect": 744,
+            "readyWrong": 0,
+            "readyCorrectCoverage": 0.93,
+            "readyWithAI": 17
+          }
+        },
+        "knownRegression": {
+          "scope": "Known development examples, replayed in v3 training; not independent accuracy",
+          "positiveRows": 11,
+          "validCorrect": 11,
+          "negativeRows": 3,
+          "negativeValid": 0,
+          "diagnostics": {
+            "scope": "All positive top proposals, including invalid and low confidence drafts; not accepted precision",
+            "kinds": {
+              "TASK": {
+                "positiveRows": 3,
+                "fieldCorrectCounts": {
+                  "kind": 3,
+                  "title": 3,
+                  "note": 3,
+                  "dueAt": 3,
+                  "period": 3,
+                  "targetCount": 3,
+                  "weekdaysMask": 3,
+                  "reminderTime": 3
+                },
+                "fieldAccuracy": {
+                  "kind": 1.0,
+                  "title": 1.0,
+                  "note": 1.0,
+                  "dueAt": 1.0,
+                  "period": 1.0,
+                  "targetCount": 1.0,
+                  "weekdaysMask": 1.0,
+                  "reminderTime": 1.0
+                },
+                "proposalKindCounts": {
+                  "TASK": 3
+                },
+                "hardReasons": {}
+              },
+              "HABIT": {
+                "positiveRows": 8,
+                "fieldCorrectCounts": {
+                  "kind": 8,
+                  "title": 8,
+                  "note": 8,
+                  "dueAt": 8,
+                  "period": 8,
+                  "targetCount": 8,
+                  "weekdaysMask": 8,
+                  "reminderTime": 8
+                },
+                "fieldAccuracy": {
+                  "kind": 1.0,
+                  "title": 1.0,
+                  "note": 1.0,
+                  "dueAt": 1.0,
+                  "period": 1.0,
+                  "targetCount": 1.0,
+                  "weekdaysMask": 1.0,
+                  "reminderTime": 1.0
+                },
+                "proposalKindCounts": {
+                  "HABIT": 8
+                },
+                "hardReasons": {}
+              }
+            }
+          }
+        },
+        "headsReportSha256": "7c2f159d2c6ea93505c8af0bdada24e18130a6a9d3ffba35bcb75d92d63a5c13",
+        "modelSha256": "b35eabdda6ed6859654a6a3cfd1f18b82b7138aa9fdbebfad93a0251c1cf574b",
+        "key": [
+          0.855,
+          0.881875
+        ]
+      },
+      {
+        "name": "type42-base",
+        "eligible": true,
+        "metrics": {
+          "TASK": {
+            "eligible": 800,
+            "accepted": 744,
+            "correct": 744,
+            "wrongAccepted": 0,
+            "correctCoverage": 0.93,
+            "wrongAcceptanceRate": 0.0,
+            "wrongAcceptanceUpper": 0.004945899867607184,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 0,
+            "ready": 744,
+            "readyCorrect": 744,
+            "readyWrong": 0,
+            "readyCorrectCoverage": 0.93,
+            "readyWithAI": 0
+          },
+          "HABIT": {
+            "eligible": 800,
+            "accepted": 758,
+            "correct": 758,
+            "wrongAccepted": 0,
+            "correctCoverage": 0.9475,
+            "wrongAcceptanceRate": 0.0,
+            "wrongAcceptanceUpper": 0.004854772896129345,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 0,
+            "ready": 758,
+            "readyCorrect": 758,
+            "readyWrong": 0,
+            "readyCorrectCoverage": 0.9475,
+            "readyWithAI": 0
+          }
+        },
+        "knownRegression": {
+          "scope": "Known development examples, replayed in v3 training; not independent accuracy",
+          "positiveRows": 11,
+          "validCorrect": 11,
+          "negativeRows": 3,
+          "negativeValid": 0,
+          "diagnostics": {
+            "scope": "All positive top proposals, including invalid and low confidence drafts; not accepted precision",
+            "kinds": {
+              "TASK": {
+                "positiveRows": 3,
+                "fieldCorrectCounts": {
+                  "kind": 3,
+                  "title": 3,
+                  "note": 3,
+                  "dueAt": 3,
+                  "period": 3,
+                  "targetCount": 3,
+                  "weekdaysMask": 3,
+                  "reminderTime": 3
+                },
+                "fieldAccuracy": {
+                  "kind": 1.0,
+                  "title": 1.0,
+                  "note": 1.0,
+                  "dueAt": 1.0,
+                  "period": 1.0,
+                  "targetCount": 1.0,
+                  "weekdaysMask": 1.0,
+                  "reminderTime": 1.0
+                },
+                "proposalKindCounts": {
+                  "TASK": 3
+                },
+                "hardReasons": {}
+              },
+              "HABIT": {
+                "positiveRows": 8,
+                "fieldCorrectCounts": {
+                  "kind": 8,
+                  "title": 8,
+                  "note": 8,
+                  "dueAt": 8,
+                  "period": 8,
+                  "targetCount": 8,
+                  "weekdaysMask": 8,
+                  "reminderTime": 8
+                },
+                "fieldAccuracy": {
+                  "kind": 1.0,
+                  "title": 1.0,
+                  "note": 1.0,
+                  "dueAt": 1.0,
+                  "period": 1.0,
+                  "targetCount": 1.0,
+                  "weekdaysMask": 1.0,
+                  "reminderTime": 1.0
+                },
+                "proposalKindCounts": {
+                  "HABIT": 8
+                },
+                "hardReasons": {}
+              }
+            }
+          }
+        },
+        "headsReportSha256": "39eeebcdc7b08827a1b3dd473636e5f27d00a4b454707461ee4b2feb96540bf8",
+        "modelSha256": "6d11b75f065b20d72c6ec38887d9e8a265e076e18966592895b5187e25571ab4",
+        "key": [
+          0.93,
+          0.93875
+        ]
+      }
+    ],
+    "policySha256": "29726056f7c8031f9dadfa9c67ef9b8b5486ac3da02014a83fcf77facf742ed8",
+    "dataSha256": "6bbbcf5f15b8a9193e911e7729a66f13f987522b066bb19181d61d2256550c9a",
+    "finalHoldoutsOpened": false,
+    "formalGatePassed": false
+  },
+  "data": {
+    "humanReviewed": false,
+    "realUserData": false,
+    "scope": "synthetic engineering screening only",
+    "revision": 3,
+    "knownRegressionReplayed": true,
+    "sourceGroupsAndExactEntitiesDisjoint": true,
+    "syntax": "shared synthetic layouts, not syntax-family blind test",
+    "formalGateEligible": false,
+    "sourceSha256": "6faf4898d9e08550e5375b1612f070b02c1fa0df425065909c50dcb7e9460f2e",
+    "partitions": {
+      "train": {
+        "rows": 20000,
+        "uniqueTexts": 20000,
+        "classes": {
+          "TASK": 8000,
+          "HABIT": 8000,
+          "CONFIRM": 4000
+        },
+        "sha256": "d5adf507dc5b45f102bada2cfa62f25185e4c880164c971c50dd31e5c7e5dd9b"
+      },
+      "rank": {
+        "rows": 4000,
+        "uniqueTexts": 4000,
+        "classes": {
+          "TASK": 1600,
+          "HABIT": 1600,
+          "CONFIRM": 800
+        },
+        "sha256": "a883913a7672f78c7db4e17654a26a5c8c495ddff64b0ca3bb13232770ff22b5"
+      },
+      "quality": {
+        "rows": 6000,
+        "uniqueTexts": 6000,
+        "classes": {
+          "TASK": 2400,
+          "HABIT": 2400,
+          "CONFIRM": 1200
+        },
+        "sha256": "fa9239ba79579cd24d7b7f07cf3f080806c39077e6f17572fa7b10b444f8365f"
+      },
+      "dev": {
+        "rows": 2000,
+        "uniqueTexts": 2000,
+        "classes": {
+          "TASK": 800,
+          "HABIT": 800,
+          "CONFIRM": 400
+        },
+        "sha256": "6bbbcf5f15b8a9193e911e7729a66f13f987522b066bb19181d61d2256550c9a"
+      },
+      "cal_fit": {
+        "rows": 2000,
+        "uniqueTexts": 2000,
+        "classes": {
+          "TASK": 800,
+          "HABIT": 800,
+          "CONFIRM": 400
+        },
+        "sha256": "af31dd3127456c79acc343b6a3a5a992e30a5779de2e2d481a6bed36920b16e6"
+      },
+      "cal_gate": {
+        "rows": 4000,
+        "uniqueTexts": 4000,
+        "classes": {
+          "TASK": 1600,
+          "HABIT": 1600,
+          "CONFIRM": 800
+        },
+        "sha256": "ef618ceea9066790cd15d4e50366bb5c8dc5e76cc5479eeea6206d8a6f9ffa4c"
+      },
+      "test": {
+        "rows": 4000,
+        "uniqueTexts": 4000,
+        "classes": {
+          "TASK": 1600,
+          "HABIT": 1600,
+          "CONFIRM": 800
+        },
+        "sha256": "8f43a825f908909e986766484ab87ee15b81e8c539fd885dae7bfe974e1e4b6b"
+      },
+      "protection": {
+        "rows": 2000,
+        "uniqueTexts": 2000,
+        "classes": {
+          "CONFIRM": 2000
+        },
+        "sha256": "6fde282191fd75fd5c1b7b500c31bc4570ff3ce2b1cabc8b72dfa504643d1c7d"
+      }
+    }
+  },
+  "prototype": {
+    "schema": "experimental-task-habit-confidence-v2",
+    "modelDirectory": "/Users/aritxonly/Codes/ProjectDeadliner/DeadlinerQuickAddTraining/artifacts/zh-joint-v3-type-seed42",
+    "dataDirectory": "/Users/aritxonly/Codes/ProjectDeadliner/DeadlinerQuickAddTraining/data/zh-joint-v3",
+    "modelSha256": "6d11b75f065b20d72c6ec38887d9e8a265e076e18966592895b5187e25571ab4",
+    "nativeSha256": "f986a4dc7f3360f2e6fde66da551a9dc0d9f5c6ca32bc6f56ecfe367485613bb",
+    "headSha256": {
+      "rank.pt": "b4d40001254a38c91edf69daca25c9c22d3218a5926c938795d15dfd7550893d",
+      "quality.pt": "fda1b94721aea06534c8e4334bc761e5e462e5c6048383133555665cec65cce5"
+    },
+    "calibration": {
+      "TASK": {
+        "available": true,
+        "slope": 3.263697887388092,
+        "bias": 0.6172447516128824,
+        "samples": 1112,
+        "positives": 800,
+        "NLL": 1.572442243411964e-08
+      },
+      "HABIT": {
+        "available": true,
+        "slope": 0.7281705819058968,
+        "bias": 1.0648836515945792,
+        "samples": 888,
+        "positives": 796,
+        "NLL": 0.026759176964967456
+      }
+    },
+    "modelAssetSha256": {
+      "tokenizer/tokenizer_config.json": "fe1143bfafb347b2376c2b5d67300b74ab09cb0fa0864c1155c5867b644172eb",
+      "tokenizer/special_tokens_map.json": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a",
+      "tokenizer/tokenizer.json": "602a351dd743718e16df61f4e9b9bb89327a9dc2e80268e8c5b561de6333c851",
+      "tokenizer/vocab.txt": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c",
+      "encoder-config/config.json": "91a1225b04313586263da419e7d629c5766054dc22b545993ff8d3c9d053162b"
+    },
+    "thresholds": {
+      "TASK": {
+        "threshold": 0.999,
+        "screeningTargetMet": true
+      },
+      "HABIT": {
+        "threshold": 0.9,
+        "screeningTargetMet": true
+      }
+    },
+    "humanReviewed": false,
+    "formalGatePassed": false,
+    "policySources": {
+      "joint_native.py": "ba1c0d28b1747f1d7b11aba464eee131c70f8de38d8ee78384175ee8d5942374",
+      "joint_heads.py": "08bb07178d0d493fb53bc02f5348d5d072e973350868b3f5549b92f8455ad170",
+      "joint_compare.py": "7c65afb96d61482f801fd612c5ccb63dedbc5276732edd885b5d8ba969eedd03",
+      "joint_export.py": "f73a7c2b39de279f657a06b1bbb249c7ee231496d76dc8fbdca6928aeb0342ce",
+      "joint_train.py": "44284ddc2d30df27203c4d2a4b7e9d04166cc9eb8d11df410998fe41c669e79c",
+      "joint_calibration.py": "2daa60db4ad2be4ee30dbff288c1c075a45ca1f621da96f0c1aec2a2bab96f96",
+      "joint_model.py": "dc7038946c85f213c9b79cbc20b2127455578e29258e2d21fbc57c781923dbc1",
+      "joint_rules.py": "54bb76747cfd6daae373c345d9f080a1f2c5ead8ae1e5fe1ee48bfce701b5aa1",
+      "joint_predict.py": "ca305b867b060fdc2c8542cd2a1d080d662a52786add2f292ae0f0daec2cc672",
+      "joint_data.py": "6faf4898d9e08550e5375b1612f070b02c1fa0df425065909c50dcb7e9460f2e",
+      "joint_evaluate.py": "93ed5f0e8b5e38a7d6bd938930b53fcfa9bc17e1e79e2e1bd71d75275f2888a3",
+      "joint_gold_check.py": "bd4b31dd830618e2b8734769a48f050d69a4586c07e1413da62a70ff694870ba",
+      "joint_decode.py": "73fa38f0b15c537ef9cabf6fd9cf9c4a14c6c1ab1ed09e5bfd21d04af8747db6",
+      "joint_adapter.py": "4f2d40ebc8a3a269403a9fc8aa81db03ea29566c0622d1a8c031bba15b32f1ce",
+      "joint_diagnostics.py": "4d3440644c5fed5095973862f7c64bd48fed69b1fbfe74352605806baa294e78",
+      "span_model.py": "e47387a4f8cf350751839e2931ff90db166f622c586d9bf9dbf9af6ffa33a4ea",
+      "normalizer_fidelity.py": "4280b4a61fe2d8cbcdef4391aca333f06d96c2f8d778a76169b53805cb002f42",
+      "corpus.py": "7e5d777bffde8a7ab9056e7f12c56a006845daab2ce535a5b51bbecdbfbf457c",
+      "data.py": "f68c0d8d708a23928c5756506f5df60967887a79ea6a40191fa7e6b6d08cb6c3",
+      "native_adapter.py": "30336eec49c0991980d15a4a06b041b192cdb8809c67b4733b8feccdf0166d2b"
+    }
+  },
+  "prototypeSha256": "459865a706a1e1473c142d3c2bafe549d3b6b975d0848b80758dffdd523aaf0e",
+  "thresholdSelection": {
+    "choices": {
+      "TASK": {
+        "threshold": 0.999,
+        "screeningTargetMet": true
+      },
+      "HABIT": {
+        "threshold": 0.9,
+        "screeningTargetMet": true
+      }
+    },
+    "grid": [
+      {
+        "kind": "TASK",
+        "threshold": 0.9,
+        "eligible": 1600,
+        "accepted": 1537,
+        "correct": 1537,
+        "wrongAccepted": 0,
+        "correctCoverage": 0.960625,
+        "wrongAcceptanceRate": 0.0,
+        "wrongAcceptanceUpper": 0.0035594528877636034,
+        "alpha": 0.004166666666666667,
+        "negativeWrongAccepted": 0,
+        "ready": 1537,
+        "readyCorrect": 1537,
+        "readyWrong": 0,
+        "readyCorrectCoverage": 0.960625,
+        "readyWithAI": 0
+      },
+      {
+        "kind": "HABIT",
+        "threshold": 0.9,
+        "eligible": 1600,
+        "accepted": 1518,
+        "correct": 1518,
+        "wrongAccepted": 0,
+        "correctCoverage": 0.94875,
+        "wrongAcceptanceRate": 0.0,
+        "wrongAcceptanceUpper": 0.003603924292982952,
+        "alpha": 0.004166666666666667,
+        "negativeWrongAccepted": 0,
+        "ready": 1522,
+        "readyCorrect": 1522,
+        "readyWrong": 0,
+        "readyCorrectCoverage": 0.95125,
+        "readyWithAI": 4
+      },
+      {
+        "kind": "TASK",
+        "threshold": 0.95,
+        "eligible": 1600,
+        "accepted": 1537,
+        "correct": 1537,
+        "wrongAccepted": 0,
+        "correctCoverage": 0.960625,
+        "wrongAcceptanceRate": 0.0,
+        "wrongAcceptanceUpper": 0.0035594528877636034,
+        "alpha": 0.004166666666666667,
+        "negativeWrongAccepted": 0,
+        "ready": 1537,
+        "readyCorrect": 1537,
+        "readyWrong": 0,
+        "readyCorrectCoverage": 0.960625,
+        "readyWithAI": 0
+      },
+      {
+        "kind": "HABIT",
+        "threshold": 0.95,
+        "eligible": 1600,
+        "accepted": 1509,
+        "correct": 1509,
+        "wrongAccepted": 0,
+        "correctCoverage": 0.943125,
+        "wrongAcceptanceRate": 0.0,
+        "wrongAcceptanceUpper": 0.003625379861234568,
+        "alpha": 0.004166666666666667,
+        "negativeWrongAccepted": 0,
+        "ready": 1522,
+        "readyCorrect": 1522,
+        "readyWrong": 0,
+        "readyCorrectCoverage": 0.95125,
+        "readyWithAI": 13
+      },
+      {
+        "kind": "TASK",
+        "threshold": 0.98,
+        "eligible": 1600,
+        "accepted": 1537,
+        "correct": 1537,
+        "wrongAccepted": 0,
+        "correctCoverage": 0.960625,
+        "wrongAcceptanceRate": 0.0,
+        "wrongAcceptanceUpper": 0.0035594528877636034,
+        "alpha": 0.004166666666666667,
+        "negativeWrongAccepted": 0,
+        "ready": 1537,
+        "readyCorrect": 1537,
+        "readyWrong": 0,
+        "readyCorrectCoverage": 0.960625,
+        "readyWithAI": 0
+      },
+      {
+        "kind": "HABIT",
+        "threshold": 0.98,
+        "eligible": 1600,
+        "accepted": 1445,
+        "correct": 1445,
+        "wrongAccepted": 0,
+        "correctCoverage": 0.903125,
+        "wrongAcceptanceRate": 0.0,
+        "wrongAcceptanceUpper": 0.003785646011195687,
+        "alpha": 0.004166666666666667,
+        "negativeWrongAccepted": 0,
+        "ready": 1522,
+        "readyCorrect": 1522,
+        "readyWrong": 0,
+        "readyCorrectCoverage": 0.95125,
+        "readyWithAI": 77
+      },
+      {
+        "kind": "TASK",
+        "threshold": 0.99,
+        "eligible": 1600,
+        "accepted": 1537,
+        "correct": 1537,
+        "wrongAccepted": 0,
+        "correctCoverage": 0.960625,
+        "wrongAcceptanceRate": 0.0,
+        "wrongAcceptanceUpper": 0.0035594528877636034,
+        "alpha": 0.004166666666666667,
+        "negativeWrongAccepted": 0,
+        "ready": 1537,
+        "readyCorrect": 1537,
+        "readyWrong": 0,
+        "readyCorrectCoverage": 0.960625,
+        "readyWithAI": 0
+      },
+      {
+        "kind": "HABIT",
+        "threshold": 0.99,
+        "eligible": 1600,
+        "accepted": 1252,
+        "correct": 1252,
+        "wrongAccepted": 0,
+        "correctCoverage": 0.7825,
+        "wrongAcceptanceRate": 0.0,
+        "wrongAcceptanceUpper": 0.004367939808372023,
+        "alpha": 0.004166666666666667,
+        "negativeWrongAccepted": 0,
+        "ready": 1522,
+        "readyCorrect": 1522,
+        "readyWrong": 0,
+        "readyCorrectCoverage": 0.95125,
+        "readyWithAI": 270
+      },
+      {
+        "kind": "TASK",
+        "threshold": 0.995,
+        "eligible": 1600,
+        "accepted": 1537,
+        "correct": 1537,
+        "wrongAccepted": 0,
+        "correctCoverage": 0.960625,
+        "wrongAcceptanceRate": 0.0,
+        "wrongAcceptanceUpper": 0.0035594528877636034,
+        "alpha": 0.004166666666666667,
+        "negativeWrongAccepted": 0,
+        "ready": 1537,
+        "readyCorrect": 1537,
+        "readyWrong": 0,
+        "readyCorrectCoverage": 0.960625,
+        "readyWithAI": 0
+      },
+      {
+        "kind": "HABIT",
+        "threshold": 0.995,
+        "eligible": 1600,
+        "accepted": 882,
+        "correct": 882,
+        "wrongAccepted": 0,
+        "correctCoverage": 0.55125,
+        "wrongAcceptanceRate": 0.0,
+        "wrongAcceptanceUpper": 0.006194610127385203,
+        "alpha": 0.004166666666666667,
+        "negativeWrongAccepted": 0,
+        "ready": 1522,
+        "readyCorrect": 1522,
+        "readyWrong": 0,
+        "readyCorrectCoverage": 0.95125,
+        "readyWithAI": 640
+      },
+      {
+        "kind": "TASK",
+        "threshold": 0.999,
+        "eligible": 1600,
+        "accepted": 1537,
+        "correct": 1537,
+        "wrongAccepted": 0,
+        "correctCoverage": 0.960625,
+        "wrongAcceptanceRate": 0.0,
+        "wrongAcceptanceUpper": 0.0035594528877636034,
+        "alpha": 0.004166666666666667,
+        "negativeWrongAccepted": 0,
+        "ready": 1537,
+        "readyCorrect": 1537,
+        "readyWrong": 0,
+        "readyCorrectCoverage": 0.960625,
+        "readyWithAI": 0
+      },
+      {
+        "kind": "HABIT",
+        "threshold": 0.999,
+        "eligible": 1600,
+        "accepted": 216,
+        "correct": 216,
+        "wrongAccepted": 0,
+        "correctCoverage": 0.135,
+        "wrongAcceptanceRate": 0.0,
+        "wrongAcceptanceUpper": 0.02505413085270647,
+        "alpha": 0.004166666666666667,
+        "negativeWrongAccepted": 0,
+        "ready": 1522,
+        "readyCorrect": 1522,
+        "readyWrong": 0,
+        "readyCorrectCoverage": 0.95125,
+        "readyWithAI": 1306
+      }
+    ],
+    "formalGatePassed": false,
+    "reason": "Synthetic screening only; no independent human gold. No feasible cutoff means keep AI visible, never lower threshold on test."
+  },
+  "sets": {
+    "cal_fit": {
+      "sha256": "af31dd3127456c79acc343b6a3a5a992e30a5779de2e2d481a6bed36920b16e6",
+      "selectedPolicy": {
+        "TASK": {
+          "eligible": 800,
+          "accepted": 0,
+          "correct": 0,
+          "wrongAccepted": 0,
+          "correctCoverage": 0.0,
+          "wrongAcceptanceRate": null,
+          "wrongAcceptanceUpper": 1.0,
+          "alpha": 0.025,
+          "negativeWrongAccepted": 0,
+          "ready": 800,
+          "readyCorrect": 800,
+          "readyWrong": 0,
+          "readyCorrectCoverage": 1.0,
+          "readyWithAI": 800
+        },
+        "HABIT": {
+          "eligible": 800,
+          "accepted": 0,
+          "correct": 0,
+          "wrongAccepted": 0,
+          "correctCoverage": 0.0,
+          "wrongAcceptanceRate": null,
+          "wrongAcceptanceUpper": 1.0,
+          "alpha": 0.025,
+          "negativeWrongAccepted": 0,
+          "ready": 796,
+          "readyCorrect": 796,
+          "readyWrong": 0,
+          "readyCorrectCoverage": 0.995,
+          "readyWithAI": 796
+        }
+      },
+      "fixed90Diagnostic": {
+        "TASK": {
+          "eligible": 800,
+          "accepted": 800,
+          "correct": 800,
+          "wrongAccepted": 0,
+          "correctCoverage": 1.0,
+          "wrongAcceptanceRate": 0.0,
+          "wrongAcceptanceUpper": 0.0046004845207454625,
+          "alpha": 0.025,
+          "negativeWrongAccepted": 0,
+          "ready": 800,
+          "readyCorrect": 800,
+          "readyWrong": 0,
+          "readyCorrectCoverage": 1.0,
+          "readyWithAI": 0
+        },
+        "HABIT": {
+          "eligible": 800,
+          "accepted": 796,
+          "correct": 796,
+          "wrongAccepted": 0,
+          "correctCoverage": 0.995,
+          "wrongAcceptanceRate": 0.0,
+          "wrongAcceptanceUpper": 0.0046235490074292285,
+          "alpha": 0.025,
+          "negativeWrongAccepted": 0,
+          "ready": 796,
+          "readyCorrect": 796,
+          "readyWrong": 0,
+          "readyCorrectCoverage": 0.995,
+          "readyWithAI": 0
+        }
+      },
+      "rulesBaseline": {
+        "metrics": {
+          "TASK": {
+            "eligible": 800,
+            "accepted": 926,
+            "correct": 158,
+            "wrongAccepted": 768,
+            "correctCoverage": 0.1975,
+            "wrongAcceptanceRate": 0.8293736501079914,
+            "wrongAcceptanceUpper": 0.8530646651534219,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 89,
+            "ready": 926,
+            "readyCorrect": 158,
+            "readyWrong": 768,
+            "readyCorrectCoverage": 0.1975,
+            "readyWithAI": 0
+          },
+          "HABIT": {
+            "eligible": 800,
+            "accepted": 541,
+            "correct": 156,
+            "wrongAccepted": 385,
+            "correctCoverage": 0.195,
+            "wrongAcceptanceRate": 0.711645101663586,
+            "wrongAcceptanceUpper": 0.7494960215015136,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 83,
+            "ready": 541,
+            "readyCorrect": 156,
+            "readyWrong": 385,
+            "readyCorrectCoverage": 0.195,
+            "readyWithAI": 0
+          }
+        },
+        "diagnostics": {
+          "scope": "All positive top proposals, including invalid and low confidence drafts; not accepted precision",
+          "kinds": {
+            "TASK": {
+              "positiveRows": 800,
+              "fieldCorrectCounts": {
+                "kind": 800,
+                "title": 158,
+                "note": 190,
+                "dueAt": 800,
+                "period": 800,
+                "targetCount": 800,
+                "weekdaysMask": 800,
+                "reminderTime": 800
+              },
+              "fieldAccuracy": {
+                "kind": 1.0,
+                "title": 0.1975,
+                "note": 0.2375,
+                "dueAt": 1.0,
+                "period": 1.0,
+                "targetCount": 1.0,
+                "weekdaysMask": 1.0,
+                "reminderTime": 1.0
+              },
+              "proposalKindCounts": {
+                "TASK": 800
+              },
+              "hardReasons": {}
+            },
+            "HABIT": {
+              "positiveRows": 800,
+              "fieldCorrectCounts": {
+                "kind": 757,
+                "title": 173,
+                "note": 456,
+                "dueAt": 775,
+                "period": 592,
+                "targetCount": 712,
+                "weekdaysMask": 565,
+                "reminderTime": 713
+              },
+              "fieldAccuracy": {
+                "kind": 0.94625,
+                "title": 0.21625,
+                "note": 0.57,
+                "dueAt": 0.96875,
+                "period": 0.74,
+                "targetCount": 0.89,
+                "weekdaysMask": 0.70625,
+                "reminderTime": 0.89125
+              },
+              "proposalKindCounts": {
+                "HABIT": 757,
+                "TASK": 43
+              },
+              "hardReasons": {}
+            }
+          }
+        },
+        "hostRuleP95Milliseconds": 2.9264976,
+        "scope": "Unchanged rule acceptance policy on raw text, with current Core numeral/clock fixes"
+      },
+      "proposalDiagnostics": {
+        "scope": "All positive top proposals, including invalid and low confidence drafts; not accepted precision",
+        "kinds": {
+          "TASK": {
+            "positiveRows": 800,
+            "fieldCorrectCounts": {
+              "kind": 800,
+              "title": 800,
+              "note": 800,
+              "dueAt": 800,
+              "period": 800,
+              "targetCount": 800,
+              "weekdaysMask": 800,
+              "reminderTime": 800
+            },
+            "fieldAccuracy": {
+              "kind": 1.0,
+              "title": 1.0,
+              "note": 1.0,
+              "dueAt": 1.0,
+              "period": 1.0,
+              "targetCount": 1.0,
+              "weekdaysMask": 1.0,
+              "reminderTime": 1.0
+            },
+            "proposalKindCounts": {
+              "TASK": 800
+            },
+            "hardReasons": {}
+          },
+          "HABIT": {
+            "positiveRows": 800,
+            "fieldCorrectCounts": {
+              "kind": 800,
+              "title": 800,
+              "note": 796,
+              "dueAt": 800,
+              "period": 800,
+              "targetCount": 800,
+              "weekdaysMask": 800,
+              "reminderTime": 800
+            },
+            "fieldAccuracy": {
+              "kind": 1.0,
+              "title": 1.0,
+              "note": 0.995,
+              "dueAt": 1.0,
+              "period": 1.0,
+              "targetCount": 1.0,
+              "weekdaysMask": 1.0,
+              "reminderTime": 1.0
+            },
+            "proposalKindCounts": {
+              "HABIT": 800
+            },
+            "hardReasons": {
+              "source-content-deleted": 4
+            }
+          }
+        }
+      },
+      "reliability": {
+        "TASK": {
+          "samples": 1112,
+          "bins": [
+            {
+              "lower": 0.0,
+              "count": 312,
+              "meanConfidence": 1.3827948673944967e-19,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.1,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.2,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.3,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.4,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.5,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.6,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.7,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.8,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.9,
+              "count": 800,
+              "meanConfidence": 0.9999999781430705,
+              "accuracy": 1.0
+            }
+          ],
+          "Brier": 2.553819207036619e-14
+        },
+        "HABIT": {
+          "samples": 888,
+          "bins": [
+            {
+              "lower": 0.0,
+              "count": 88,
+              "meanConfidence": 0.0007668691833244666,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.1,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.2,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.3,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.4,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.5,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.6,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.7,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.8,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.9,
+              "count": 800,
+              "meanConfidence": 0.9949155762910757,
+              "accuracy": 0.995
+            }
+          ],
+          "Brier": 0.004467198980089888
+        }
+      },
+      "hardReasons": {
+        "source-content-deleted": 404,
+        "request-needs-confirmation": 399,
+        "event-not-established": 400,
+        "task-time-missing": 312
+      }
+    },
+    "cal_gate": {
+      "sha256": "ef618ceea9066790cd15d4e50366bb5c8dc5e76cc5479eeea6206d8a6f9ffa4c",
+      "selectedPolicy": {
+        "TASK": {
+          "eligible": 1600,
+          "accepted": 1537,
+          "correct": 1537,
+          "wrongAccepted": 0,
+          "correctCoverage": 0.960625,
+          "wrongAcceptanceRate": 0.0,
+          "wrongAcceptanceUpper": 0.002397173872982994,
+          "alpha": 0.025,
+          "negativeWrongAccepted": 0,
+          "ready": 1537,
+          "readyCorrect": 1537,
+          "readyWrong": 0,
+          "readyCorrectCoverage": 0.960625,
+          "readyWithAI": 0
+        },
+        "HABIT": {
+          "eligible": 1600,
+          "accepted": 1518,
+          "correct": 1518,
+          "wrongAccepted": 0,
+          "correctCoverage": 0.94875,
+          "wrongAcceptanceRate": 0.0,
+          "wrongAcceptanceUpper": 0.002427141584067538,
+          "alpha": 0.025,
+          "negativeWrongAccepted": 0,
+          "ready": 1522,
+          "readyCorrect": 1522,
+          "readyWrong": 0,
+          "readyCorrectCoverage": 0.95125,
+          "readyWithAI": 4
+        }
+      },
+      "fixed90Diagnostic": {
+        "TASK": {
+          "eligible": 1600,
+          "accepted": 1537,
+          "correct": 1537,
+          "wrongAccepted": 0,
+          "correctCoverage": 0.960625,
+          "wrongAcceptanceRate": 0.0,
+          "wrongAcceptanceUpper": 0.002397173872982994,
+          "alpha": 0.025,
+          "negativeWrongAccepted": 0,
+          "ready": 1537,
+          "readyCorrect": 1537,
+          "readyWrong": 0,
+          "readyCorrectCoverage": 0.960625,
+          "readyWithAI": 0
+        },
+        "HABIT": {
+          "eligible": 1600,
+          "accepted": 1518,
+          "correct": 1518,
+          "wrongAccepted": 0,
+          "correctCoverage": 0.94875,
+          "wrongAcceptanceRate": 0.0,
+          "wrongAcceptanceUpper": 0.002427141584067538,
+          "alpha": 0.025,
+          "negativeWrongAccepted": 0,
+          "ready": 1522,
+          "readyCorrect": 1522,
+          "readyWrong": 0,
+          "readyCorrectCoverage": 0.95125,
+          "readyWithAI": 4
+        }
+      },
+      "rulesBaseline": {
+        "metrics": {
+          "TASK": {
+            "eligible": 1600,
+            "accepted": 1883,
+            "correct": 306,
+            "wrongAccepted": 1577,
+            "correctCoverage": 0.19125,
+            "wrongAcceptanceRate": 0.8374933616569304,
+            "wrongAcceptanceUpper": 0.8538862090694475,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 203,
+            "ready": 1883,
+            "readyCorrect": 306,
+            "readyWrong": 1577,
+            "readyCorrectCoverage": 0.19125,
+            "readyWithAI": 0
+          },
+          "HABIT": {
+            "eligible": 1600,
+            "accepted": 1082,
+            "correct": 393,
+            "wrongAccepted": 689,
+            "correctCoverage": 0.245625,
+            "wrongAcceptanceRate": 0.6367837338262476,
+            "wrongAcceptanceUpper": 0.6654966452318114,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 144,
+            "ready": 1082,
+            "readyCorrect": 393,
+            "readyWrong": 689,
+            "readyCorrectCoverage": 0.245625,
+            "readyWithAI": 0
+          }
+        },
+        "diagnostics": {
+          "scope": "All positive top proposals, including invalid and low confidence drafts; not accepted precision",
+          "kinds": {
+            "TASK": {
+              "positiveRows": 1600,
+              "fieldCorrectCounts": {
+                "kind": 1600,
+                "title": 306,
+                "note": 387,
+                "dueAt": 1600,
+                "period": 1600,
+                "targetCount": 1600,
+                "weekdaysMask": 1600,
+                "reminderTime": 1600
+              },
+              "fieldAccuracy": {
+                "kind": 1.0,
+                "title": 0.19125,
+                "note": 0.241875,
+                "dueAt": 1.0,
+                "period": 1.0,
+                "targetCount": 1.0,
+                "weekdaysMask": 1.0,
+                "reminderTime": 1.0
+              },
+              "proposalKindCounts": {
+                "TASK": 1600
+              },
+              "hardReasons": {}
+            },
+            "HABIT": {
+              "positiveRows": 1600,
+              "fieldCorrectCounts": {
+                "kind": 1505,
+                "title": 423,
+                "note": 979,
+                "dueAt": 1540,
+                "period": 1226,
+                "targetCount": 1483,
+                "weekdaysMask": 1115,
+                "reminderTime": 1388
+              },
+              "fieldAccuracy": {
+                "kind": 0.940625,
+                "title": 0.264375,
+                "note": 0.611875,
+                "dueAt": 0.9625,
+                "period": 0.76625,
+                "targetCount": 0.926875,
+                "weekdaysMask": 0.696875,
+                "reminderTime": 0.8675
+              },
+              "proposalKindCounts": {
+                "HABIT": 1505,
+                "TASK": 95
+              },
+              "hardReasons": {}
+            }
+          }
+        },
+        "hostRuleP95Milliseconds": 2.843245549999998,
+        "scope": "Unchanged rule acceptance policy on raw text, with current Core numeral/clock fixes"
+      },
+      "proposalDiagnostics": {
+        "scope": "All positive top proposals, including invalid and low confidence drafts; not accepted precision",
+        "kinds": {
+          "TASK": {
+            "positiveRows": 1600,
+            "fieldCorrectCounts": {
+              "kind": 1600,
+              "title": 1537,
+              "note": 1553,
+              "dueAt": 1537,
+              "period": 1600,
+              "targetCount": 1600,
+              "weekdaysMask": 1600,
+              "reminderTime": 1600
+            },
+            "fieldAccuracy": {
+              "kind": 1.0,
+              "title": 0.960625,
+              "note": 0.970625,
+              "dueAt": 0.960625,
+              "period": 1.0,
+              "targetCount": 1.0,
+              "weekdaysMask": 1.0,
+              "reminderTime": 1.0
+            },
+            "proposalKindCounts": {
+              "TASK": 1600
+            },
+            "hardReasons": {
+              "source-content-deleted": 63,
+              "event-not-established": 63,
+              "task-time-missing": 63
+            }
+          },
+          "HABIT": {
+            "positiveRows": 1600,
+            "fieldCorrectCounts": {
+              "kind": 1600,
+              "title": 1522,
+              "note": 1589,
+              "dueAt": 1600,
+              "period": 1596,
+              "targetCount": 1593,
+              "weekdaysMask": 1590,
+              "reminderTime": 1587
+            },
+            "fieldAccuracy": {
+              "kind": 1.0,
+              "title": 0.95125,
+              "note": 0.993125,
+              "dueAt": 1.0,
+              "period": 0.9975,
+              "targetCount": 0.995625,
+              "weekdaysMask": 0.99375,
+              "reminderTime": 0.991875
+            },
+            "proposalKindCounts": {
+              "HABIT": 1600
+            },
+            "hardReasons": {
+              "source-content-deleted": 78,
+              "event-not-established": 13,
+              "habit-schedule-not-established": 9
+            }
+          }
+        }
+      },
+      "reliability": {
+        "TASK": {
+          "samples": 2186,
+          "bins": [
+            {
+              "lower": 0.0,
+              "count": 649,
+              "meanConfidence": 2.117257245865251e-16,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.1,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.2,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.3,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.4,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.5,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.6,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.7,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.8,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.9,
+              "count": 1537,
+              "meanConfidence": 0.9999998332531174,
+              "accuracy": 1.0
+            }
+          ],
+          "Brier": 2.713621114205632e-12
+        },
+        "HABIT": {
+          "samples": 1814,
+          "bins": [
+            {
+              "lower": 0.0,
+              "count": 227,
+              "meanConfidence": 0.001095446510157792,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.1,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.2,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.3,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.4,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.5,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.6,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.7,
+              "count": 1,
+              "meanConfidence": 0.7309873365809499,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.8,
+              "count": 5,
+              "meanConfidence": 0.8451260489184245,
+              "accuracy": 0.8
+            },
+            {
+              "lower": 0.9,
+              "count": 1581,
+              "meanConfidence": 0.993247610685703,
+              "accuracy": 0.9601518026565465
+            }
+          ],
+          "Brier": 0.0343395851281165
+        }
+      },
+      "hardReasons": {
+        "source-content-deleted": 941,
+        "event-not-established": 876,
+        "task-time-missing": 649,
+        "request-needs-confirmation": 800,
+        "habit-schedule-not-established": 9
+      }
+    },
+    "test": {
+      "sha256": "8f43a825f908909e986766484ab87ee15b81e8c539fd885dae7bfe974e1e4b6b",
+      "selectedPolicy": {
+        "TASK": {
+          "eligible": 1600,
+          "accepted": 1561,
+          "correct": 1561,
+          "wrongAccepted": 0,
+          "correctCoverage": 0.975625,
+          "wrongAcceptanceRate": 0.0,
+          "wrongAcceptanceUpper": 0.002360361431798963,
+          "alpha": 0.025,
+          "negativeWrongAccepted": 0,
+          "ready": 1561,
+          "readyCorrect": 1561,
+          "readyWrong": 0,
+          "readyCorrectCoverage": 0.975625,
+          "readyWithAI": 0
+        },
+        "HABIT": {
+          "eligible": 1600,
+          "accepted": 1479,
+          "correct": 1479,
+          "wrongAccepted": 0,
+          "correctCoverage": 0.924375,
+          "wrongAcceptanceRate": 0.0,
+          "wrongAcceptanceUpper": 0.0024910635075443555,
+          "alpha": 0.025,
+          "negativeWrongAccepted": 0,
+          "ready": 1480,
+          "readyCorrect": 1480,
+          "readyWrong": 0,
+          "readyCorrectCoverage": 0.925,
+          "readyWithAI": 1
+        }
+      },
+      "fixed90Diagnostic": {
+        "TASK": {
+          "eligible": 1600,
+          "accepted": 1561,
+          "correct": 1561,
+          "wrongAccepted": 0,
+          "correctCoverage": 0.975625,
+          "wrongAcceptanceRate": 0.0,
+          "wrongAcceptanceUpper": 0.002360361431798963,
+          "alpha": 0.025,
+          "negativeWrongAccepted": 0,
+          "ready": 1561,
+          "readyCorrect": 1561,
+          "readyWrong": 0,
+          "readyCorrectCoverage": 0.975625,
+          "readyWithAI": 0
+        },
+        "HABIT": {
+          "eligible": 1600,
+          "accepted": 1479,
+          "correct": 1479,
+          "wrongAccepted": 0,
+          "correctCoverage": 0.924375,
+          "wrongAcceptanceRate": 0.0,
+          "wrongAcceptanceUpper": 0.0024910635075443555,
+          "alpha": 0.025,
+          "negativeWrongAccepted": 0,
+          "ready": 1480,
+          "readyCorrect": 1480,
+          "readyWrong": 0,
+          "readyCorrectCoverage": 0.925,
+          "readyWithAI": 1
+        }
+      },
+      "rulesBaseline": {
+        "metrics": {
+          "TASK": {
+            "eligible": 1600,
+            "accepted": 1930,
+            "correct": 312,
+            "wrongAccepted": 1618,
+            "correctCoverage": 0.195,
+            "wrongAcceptanceRate": 0.8383419689119171,
+            "wrongAcceptanceUpper": 0.8545014704072207,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 226,
+            "ready": 1930,
+            "readyCorrect": 312,
+            "readyWrong": 1618,
+            "readyCorrectCoverage": 0.195,
+            "readyWithAI": 0
+          },
+          "HABIT": {
+            "eligible": 1600,
+            "accepted": 1104,
+            "correct": 394,
+            "wrongAccepted": 710,
+            "correctCoverage": 0.24625,
+            "wrongAcceptanceRate": 0.6431159420289855,
+            "wrongAcceptanceUpper": 0.6714155396375298,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 131,
+            "ready": 1104,
+            "readyCorrect": 394,
+            "readyWrong": 710,
+            "readyCorrectCoverage": 0.24625,
+            "readyWithAI": 0
+          }
+        },
+        "diagnostics": {
+          "scope": "All positive top proposals, including invalid and low confidence drafts; not accepted precision",
+          "kinds": {
+            "TASK": {
+              "positiveRows": 1600,
+              "fieldCorrectCounts": {
+                "kind": 1600,
+                "title": 312,
+                "note": 378,
+                "dueAt": 1600,
+                "period": 1600,
+                "targetCount": 1600,
+                "weekdaysMask": 1600,
+                "reminderTime": 1600
+              },
+              "fieldAccuracy": {
+                "kind": 1.0,
+                "title": 0.195,
+                "note": 0.23625,
+                "dueAt": 1.0,
+                "period": 1.0,
+                "targetCount": 1.0,
+                "weekdaysMask": 1.0,
+                "reminderTime": 1.0
+              },
+              "proposalKindCounts": {
+                "TASK": 1600
+              },
+              "hardReasons": {}
+            },
+            "HABIT": {
+              "positiveRows": 1600,
+              "fieldCorrectCounts": {
+                "kind": 1480,
+                "title": 416,
+                "note": 982,
+                "dueAt": 1524,
+                "period": 1273,
+                "targetCount": 1483,
+                "weekdaysMask": 1109,
+                "reminderTime": 1405
+              },
+              "fieldAccuracy": {
+                "kind": 0.925,
+                "title": 0.26,
+                "note": 0.61375,
+                "dueAt": 0.9525,
+                "period": 0.795625,
+                "targetCount": 0.926875,
+                "weekdaysMask": 0.693125,
+                "reminderTime": 0.878125
+              },
+              "proposalKindCounts": {
+                "HABIT": 1480,
+                "TASK": 120
+              },
+              "hardReasons": {}
+            }
+          }
+        },
+        "hostRuleP95Milliseconds": 2.5856395999999973,
+        "scope": "Unchanged rule acceptance policy on raw text, with current Core numeral/clock fixes"
+      },
+      "proposalDiagnostics": {
+        "scope": "All positive top proposals, including invalid and low confidence drafts; not accepted precision",
+        "kinds": {
+          "TASK": {
+            "positiveRows": 1600,
+            "fieldCorrectCounts": {
+              "kind": 1600,
+              "title": 1568,
+              "note": 1590,
+              "dueAt": 1598,
+              "period": 1600,
+              "targetCount": 1600,
+              "weekdaysMask": 1600,
+              "reminderTime": 1600
+            },
+            "fieldAccuracy": {
+              "kind": 1.0,
+              "title": 0.98,
+              "note": 0.99375,
+              "dueAt": 0.99875,
+              "period": 1.0,
+              "targetCount": 1.0,
+              "weekdaysMask": 1.0,
+              "reminderTime": 1.0
+            },
+            "proposalKindCounts": {
+              "TASK": 1600
+            },
+            "hardReasons": {
+              "source-content-deleted": 39,
+              "event-not-established": 2,
+              "task-time-missing": 2
+            }
+          },
+          "HABIT": {
+            "positiveRows": 1600,
+            "fieldCorrectCounts": {
+              "kind": 1600,
+              "title": 1556,
+              "note": 1522,
+              "dueAt": 1600,
+              "period": 1600,
+              "targetCount": 1600,
+              "weekdaysMask": 1600,
+              "reminderTime": 1600
+            },
+            "fieldAccuracy": {
+              "kind": 1.0,
+              "title": 0.9725,
+              "note": 0.95125,
+              "dueAt": 1.0,
+              "period": 1.0,
+              "targetCount": 1.0,
+              "weekdaysMask": 1.0,
+              "reminderTime": 1.0
+            },
+            "proposalKindCounts": {
+              "HABIT": 1600
+            },
+            "hardReasons": {
+              "source-content-deleted": 120
+            }
+          }
+        }
+      },
+      "reliability": {
+        "TASK": {
+          "samples": 2212,
+          "bins": [
+            {
+              "lower": 0.0,
+              "count": 614,
+              "meanConfidence": 1.7630389487604813e-17,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.1,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.2,
+              "count": 2,
+              "meanConfidence": 0.2256073880794232,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.3,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.4,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.5,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.6,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.7,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.8,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.9,
+              "count": 1596,
+              "meanConfidence": 0.9999359225510985,
+              "accuracy": 0.9780701754385965
+            }
+          ],
+          "Brier": 0.015781443312780467
+        },
+        "HABIT": {
+          "samples": 1788,
+          "bins": [
+            {
+              "lower": 0.0,
+              "count": 191,
+              "meanConfidence": 0.0017572212606576357,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.1,
+              "count": 5,
+              "meanConfidence": 0.1375273578438016,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.2,
+              "count": 6,
+              "meanConfidence": 0.2535739231060532,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.3,
+              "count": 2,
+              "meanConfidence": 0.3589335631028157,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.4,
+              "count": 3,
+              "meanConfidence": 0.4506601842247672,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.5,
+              "count": 3,
+              "meanConfidence": 0.5457448899701755,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.6,
+              "count": 1,
+              "meanConfidence": 0.6698123738772842,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.7,
+              "count": 2,
+              "meanConfidence": 0.742751488606685,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.8,
+              "count": 10,
+              "meanConfidence": 0.8621645494921655,
+              "accuracy": 0.1
+            },
+            {
+              "lower": 0.9,
+              "count": 1565,
+              "meanConfidence": 0.9932795994310786,
+              "accuracy": 0.9450479233226837
+            }
+          ],
+          "Brier": 0.052683261584735436
+        }
+      },
+      "hardReasons": {
+        "source-content-deleted": 959,
+        "request-needs-confirmation": 800,
+        "event-not-established": 802,
+        "task-time-missing": 614
+      }
+    },
+    "protection": {
+      "sha256": "6fde282191fd75fd5c1b7b500c31bc4570ff3ce2b1cabc8b72dfa504643d1c7d",
+      "selectedPolicy": {
+        "TASK": {
+          "eligible": 0,
+          "accepted": 0,
+          "correct": 0,
+          "wrongAccepted": 0,
+          "correctCoverage": null,
+          "wrongAcceptanceRate": null,
+          "wrongAcceptanceUpper": 1.0,
+          "alpha": 0.025,
+          "negativeWrongAccepted": 0,
+          "ready": 0,
+          "readyCorrect": 0,
+          "readyWrong": 0,
+          "readyCorrectCoverage": null,
+          "readyWithAI": 0
+        },
+        "HABIT": {
+          "eligible": 0,
+          "accepted": 0,
+          "correct": 0,
+          "wrongAccepted": 0,
+          "correctCoverage": null,
+          "wrongAcceptanceRate": null,
+          "wrongAcceptanceUpper": 1.0,
+          "alpha": 0.025,
+          "negativeWrongAccepted": 0,
+          "ready": 0,
+          "readyCorrect": 0,
+          "readyWrong": 0,
+          "readyCorrectCoverage": null,
+          "readyWithAI": 0
+        }
+      },
+      "fixed90Diagnostic": {
+        "TASK": {
+          "eligible": 0,
+          "accepted": 0,
+          "correct": 0,
+          "wrongAccepted": 0,
+          "correctCoverage": null,
+          "wrongAcceptanceRate": null,
+          "wrongAcceptanceUpper": 1.0,
+          "alpha": 0.025,
+          "negativeWrongAccepted": 0,
+          "ready": 0,
+          "readyCorrect": 0,
+          "readyWrong": 0,
+          "readyCorrectCoverage": null,
+          "readyWithAI": 0
+        },
+        "HABIT": {
+          "eligible": 0,
+          "accepted": 0,
+          "correct": 0,
+          "wrongAccepted": 0,
+          "correctCoverage": null,
+          "wrongAcceptanceRate": null,
+          "wrongAcceptanceUpper": 1.0,
+          "alpha": 0.025,
+          "negativeWrongAccepted": 0,
+          "ready": 0,
+          "readyCorrect": 0,
+          "readyWrong": 0,
+          "readyCorrectCoverage": null,
+          "readyWithAI": 0
+        }
+      },
+      "rulesBaseline": {
+        "metrics": {
+          "TASK": {
+            "eligible": 0,
+            "accepted": 554,
+            "correct": 0,
+            "wrongAccepted": 554,
+            "correctCoverage": null,
+            "wrongAcceptanceRate": 1.0,
+            "wrongAcceptanceUpper": 1.0,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 554,
+            "ready": 554,
+            "readyCorrect": 0,
+            "readyWrong": 554,
+            "readyCorrectCoverage": null,
+            "readyWithAI": 0
+          },
+          "HABIT": {
+            "eligible": 0,
+            "accepted": 273,
+            "correct": 0,
+            "wrongAccepted": 273,
+            "correctCoverage": null,
+            "wrongAcceptanceRate": 1.0,
+            "wrongAcceptanceUpper": 1.0,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 273,
+            "ready": 273,
+            "readyCorrect": 0,
+            "readyWrong": 273,
+            "readyCorrectCoverage": null,
+            "readyWithAI": 0
+          }
+        },
+        "diagnostics": {
+          "scope": "All positive top proposals, including invalid and low confidence drafts; not accepted precision",
+          "kinds": {
+            "TASK": {
+              "positiveRows": 0,
+              "fieldCorrectCounts": {
+                "kind": 0,
+                "title": 0,
+                "note": 0,
+                "dueAt": 0,
+                "period": 0,
+                "targetCount": 0,
+                "weekdaysMask": 0,
+                "reminderTime": 0
+              },
+              "fieldAccuracy": {
+                "kind": null,
+                "title": null,
+                "note": null,
+                "dueAt": null,
+                "period": null,
+                "targetCount": null,
+                "weekdaysMask": null,
+                "reminderTime": null
+              },
+              "proposalKindCounts": {},
+              "hardReasons": {}
+            },
+            "HABIT": {
+              "positiveRows": 0,
+              "fieldCorrectCounts": {
+                "kind": 0,
+                "title": 0,
+                "note": 0,
+                "dueAt": 0,
+                "period": 0,
+                "targetCount": 0,
+                "weekdaysMask": 0,
+                "reminderTime": 0
+              },
+              "fieldAccuracy": {
+                "kind": null,
+                "title": null,
+                "note": null,
+                "dueAt": null,
+                "period": null,
+                "targetCount": null,
+                "weekdaysMask": null,
+                "reminderTime": null
+              },
+              "proposalKindCounts": {},
+              "hardReasons": {}
+            }
+          }
+        },
+        "hostRuleP95Milliseconds": 3.768512199999998,
+        "scope": "Unchanged rule acceptance policy on raw text, with current Core numeral/clock fixes"
+      },
+      "proposalDiagnostics": {
+        "scope": "All positive top proposals, including invalid and low confidence drafts; not accepted precision",
+        "kinds": {
+          "TASK": {
+            "positiveRows": 0,
+            "fieldCorrectCounts": {
+              "kind": 0,
+              "title": 0,
+              "note": 0,
+              "dueAt": 0,
+              "period": 0,
+              "targetCount": 0,
+              "weekdaysMask": 0,
+              "reminderTime": 0
+            },
+            "fieldAccuracy": {
+              "kind": null,
+              "title": null,
+              "note": null,
+              "dueAt": null,
+              "period": null,
+              "targetCount": null,
+              "weekdaysMask": null,
+              "reminderTime": null
+            },
+            "proposalKindCounts": {},
+            "hardReasons": {}
+          },
+          "HABIT": {
+            "positiveRows": 0,
+            "fieldCorrectCounts": {
+              "kind": 0,
+              "title": 0,
+              "note": 0,
+              "dueAt": 0,
+              "period": 0,
+              "targetCount": 0,
+              "weekdaysMask": 0,
+              "reminderTime": 0
+            },
+            "fieldAccuracy": {
+              "kind": null,
+              "title": null,
+              "note": null,
+              "dueAt": null,
+              "period": null,
+              "targetCount": null,
+              "weekdaysMask": null,
+              "reminderTime": null
+            },
+            "proposalKindCounts": {},
+            "hardReasons": {}
+          }
+        }
+      },
+      "reliability": {
+        "TASK": {
+          "samples": 1512,
+          "bins": [
+            {
+              "lower": 0.0,
+              "count": 1512,
+              "meanConfidence": 9.013599562777265e-20,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.1,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.2,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.3,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.4,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.5,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.6,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.7,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.8,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.9,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            }
+          ],
+          "Brier": 1.4869491709267277e-37
+        },
+        "HABIT": {
+          "samples": 488,
+          "bins": [
+            {
+              "lower": 0.0,
+              "count": 488,
+              "meanConfidence": 0.000650026375727832,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.1,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.2,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.3,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.4,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.5,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.6,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.7,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.8,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.9,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            }
+          ],
+          "Brier": 4.6064639893631254e-07
+        }
+      },
+      "hardReasons": {
+        "source-content-deleted": 2000,
+        "request-needs-confirmation": 2000,
+        "event-not-established": 2000,
+        "task-time-missing": 1512
+      }
+    },
+    "regression": {
+      "sha256": "66d20c30e474538f6374f735609a4ea3c7ca177761a0be40fa4bc2bf0bea0117",
+      "selectedPolicy": {
+        "TASK": {
+          "eligible": 3,
+          "accepted": 3,
+          "correct": 3,
+          "wrongAccepted": 0,
+          "correctCoverage": 1.0,
+          "wrongAcceptanceRate": 0.0,
+          "wrongAcceptanceUpper": 0.7075982261787134,
+          "alpha": 0.025,
+          "negativeWrongAccepted": 0,
+          "ready": 3,
+          "readyCorrect": 3,
+          "readyWrong": 0,
+          "readyCorrectCoverage": 1.0,
+          "readyWithAI": 0
+        },
+        "HABIT": {
+          "eligible": 8,
+          "accepted": 7,
+          "correct": 7,
+          "wrongAccepted": 0,
+          "correctCoverage": 0.875,
+          "wrongAcceptanceRate": 0.0,
+          "wrongAcceptanceUpper": 0.4096163972250034,
+          "alpha": 0.025,
+          "negativeWrongAccepted": 0,
+          "ready": 8,
+          "readyCorrect": 8,
+          "readyWrong": 0,
+          "readyCorrectCoverage": 1.0,
+          "readyWithAI": 1
+        }
+      },
+      "fixed90Diagnostic": {
+        "TASK": {
+          "eligible": 3,
+          "accepted": 3,
+          "correct": 3,
+          "wrongAccepted": 0,
+          "correctCoverage": 1.0,
+          "wrongAcceptanceRate": 0.0,
+          "wrongAcceptanceUpper": 0.7075982261787134,
+          "alpha": 0.025,
+          "negativeWrongAccepted": 0,
+          "ready": 3,
+          "readyCorrect": 3,
+          "readyWrong": 0,
+          "readyCorrectCoverage": 1.0,
+          "readyWithAI": 0
+        },
+        "HABIT": {
+          "eligible": 8,
+          "accepted": 7,
+          "correct": 7,
+          "wrongAccepted": 0,
+          "correctCoverage": 0.875,
+          "wrongAcceptanceRate": 0.0,
+          "wrongAcceptanceUpper": 0.4096163972250034,
+          "alpha": 0.025,
+          "negativeWrongAccepted": 0,
+          "ready": 8,
+          "readyCorrect": 8,
+          "readyWrong": 0,
+          "readyCorrectCoverage": 1.0,
+          "readyWithAI": 1
+        }
+      },
+      "rulesBaseline": {
+        "metrics": {
+          "TASK": {
+            "eligible": 3,
+            "accepted": 2,
+            "correct": 1,
+            "wrongAccepted": 1,
+            "correctCoverage": 0.3333333333333333,
+            "wrongAcceptanceRate": 0.5,
+            "wrongAcceptanceUpper": 0.987420882906575,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 0,
+            "ready": 2,
+            "readyCorrect": 1,
+            "readyWrong": 1,
+            "readyCorrectCoverage": 0.3333333333333333,
+            "readyWithAI": 0
+          },
+          "HABIT": {
+            "eligible": 8,
+            "accepted": 10,
+            "correct": 5,
+            "wrongAccepted": 5,
+            "correctCoverage": 0.625,
+            "wrongAcceptanceRate": 0.5,
+            "wrongAcceptanceUpper": 0.8129139715526014,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 2,
+            "ready": 10,
+            "readyCorrect": 5,
+            "readyWrong": 5,
+            "readyCorrectCoverage": 0.625,
+            "readyWithAI": 0
+          }
+        },
+        "diagnostics": {
+          "scope": "All positive top proposals, including invalid and low confidence drafts; not accepted precision",
+          "kinds": {
+            "TASK": {
+              "positiveRows": 3,
+              "fieldCorrectCounts": {
+                "kind": 2,
+                "title": 1,
+                "note": 2,
+                "dueAt": 2,
+                "period": 2,
+                "targetCount": 3,
+                "weekdaysMask": 3,
+                "reminderTime": 2
+              },
+              "fieldAccuracy": {
+                "kind": 0.6666666666666666,
+                "title": 0.3333333333333333,
+                "note": 0.6666666666666666,
+                "dueAt": 0.6666666666666666,
+                "period": 0.6666666666666666,
+                "targetCount": 1.0,
+                "weekdaysMask": 1.0,
+                "reminderTime": 0.6666666666666666
+              },
+              "proposalKindCounts": {
+                "TASK": 2,
+                "HABIT": 1
+              },
+              "hardReasons": {}
+            },
+            "HABIT": {
+              "positiveRows": 8,
+              "fieldCorrectCounts": {
+                "kind": 8,
+                "title": 5,
+                "note": 8,
+                "dueAt": 8,
+                "period": 8,
+                "targetCount": 7,
+                "weekdaysMask": 6,
+                "reminderTime": 8
+              },
+              "fieldAccuracy": {
+                "kind": 1.0,
+                "title": 0.625,
+                "note": 1.0,
+                "dueAt": 1.0,
+                "period": 1.0,
+                "targetCount": 0.875,
+                "weekdaysMask": 0.75,
+                "reminderTime": 1.0
+              },
+              "proposalKindCounts": {
+                "HABIT": 8
+              },
+              "hardReasons": {}
+            }
+          }
+        },
+        "hostRuleP95Milliseconds": 2.6085998999999997,
+        "scope": "Unchanged rule acceptance policy on raw text, with current Core numeral/clock fixes"
+      },
+      "proposalDiagnostics": {
+        "scope": "All positive top proposals, including invalid and low confidence drafts; not accepted precision",
+        "kinds": {
+          "TASK": {
+            "positiveRows": 3,
+            "fieldCorrectCounts": {
+              "kind": 3,
+              "title": 3,
+              "note": 3,
+              "dueAt": 3,
+              "period": 3,
+              "targetCount": 3,
+              "weekdaysMask": 3,
+              "reminderTime": 3
+            },
+            "fieldAccuracy": {
+              "kind": 1.0,
+              "title": 1.0,
+              "note": 1.0,
+              "dueAt": 1.0,
+              "period": 1.0,
+              "targetCount": 1.0,
+              "weekdaysMask": 1.0,
+              "reminderTime": 1.0
+            },
+            "proposalKindCounts": {
+              "TASK": 3
+            },
+            "hardReasons": {}
+          },
+          "HABIT": {
+            "positiveRows": 8,
+            "fieldCorrectCounts": {
+              "kind": 8,
+              "title": 8,
+              "note": 8,
+              "dueAt": 8,
+              "period": 8,
+              "targetCount": 8,
+              "weekdaysMask": 8,
+              "reminderTime": 8
+            },
+            "fieldAccuracy": {
+              "kind": 1.0,
+              "title": 1.0,
+              "note": 1.0,
+              "dueAt": 1.0,
+              "period": 1.0,
+              "targetCount": 1.0,
+              "weekdaysMask": 1.0,
+              "reminderTime": 1.0
+            },
+            "proposalKindCounts": {
+              "HABIT": 8
+            },
+            "hardReasons": {}
+          }
+        }
+      },
+      "reliability": {
+        "TASK": {
+          "samples": 6,
+          "bins": [
+            {
+              "lower": 0.0,
+              "count": 3,
+              "meanConfidence": 7.46432763258397e-21,
+              "accuracy": 0.0
+            },
+            {
+              "lower": 0.1,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.2,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.3,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.4,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.5,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.6,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.7,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.8,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.9,
+              "count": 3,
+              "meanConfidence": 0.999998288062485,
+              "accuracy": 1.0
+            }
+          ],
+          "Brier": 4.375758179438831e-12
+        },
+        "HABIT": {
+          "samples": 8,
+          "bins": [
+            {
+              "lower": 0.0,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.1,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.2,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.3,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.4,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.5,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.6,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.7,
+              "count": 0,
+              "meanConfidence": null,
+              "accuracy": null
+            },
+            {
+              "lower": 0.8,
+              "count": 1,
+              "meanConfidence": 0.8938213475560194,
+              "accuracy": 1.0
+            },
+            {
+              "lower": 0.9,
+              "count": 7,
+              "meanConfidence": 0.9895536928970962,
+              "accuracy": 1.0
+            }
+          ],
+          "Brier": 0.0015634221262890938
+        }
+      },
+      "hardReasons": {
+        "source-content-deleted": 3,
+        "request-needs-confirmation": 3,
+        "event-not-established": 3,
+        "task-time-missing": 3
+      }
+    }
+  },
+  "alreadyExposedLegacyTaskReplay": {
+    "scope": "Already exposed legacy TASK-positive development replay after final freeze; no retuning or new independent accuracy claim",
+    "dataSha256": "8056dca8061419dbd7ae9a14504637e2ff2f5276d271a441e7d452f4e365799e",
+    "prototypeSha256": "459865a706a1e1473c142d3c2bafe549d3b6b975d0848b80758dffdd523aaf0e",
+    "positives": 384,
+    "toolSha256": "1ebeffd29288df48603b82dce94f2108efd031e6b96d369917999606cd40f07d",
+    "correctCandidateAvailable": 263,
+    "excludedRows": 96,
+    "excludedReason": "Old confirm labels included then-unsupported HABIT; not reinterpreted",
+    "metrics": {
+      "TASK": {
+        "eligible": 384,
+        "accepted": 244,
+        "correct": 244,
+        "wrongAccepted": 0,
+        "correctCoverage": 0.6354166666666666,
+        "wrongAcceptanceRate": 0.0,
+        "wrongAcceptanceUpper": 0.015004649788349922,
+        "alpha": 0.025,
+        "negativeWrongAccepted": 0,
+        "ready": 244,
+        "readyCorrect": 244,
+        "readyWrong": 0,
+        "readyCorrectCoverage": 0.6354166666666666,
+        "readyWithAI": 0
+      },
+      "HABIT": {
+        "eligible": 0,
+        "accepted": 0,
+        "correct": 0,
+        "wrongAccepted": 0,
+        "correctCoverage": null,
+        "wrongAcceptanceRate": null,
+        "wrongAcceptanceUpper": 1.0,
+        "alpha": 0.025,
+        "negativeWrongAccepted": 0,
+        "ready": 0,
+        "readyCorrect": 0,
+        "readyWrong": 0,
+        "readyCorrectCoverage": null,
+        "readyWithAI": 0
+      }
+    },
+    "diagnostics": {
+      "scope": "All positive top proposals, including invalid and low confidence drafts; not accepted precision",
+      "kinds": {
+        "TASK": {
+          "positiveRows": 384,
+          "fieldCorrectCounts": {
+            "kind": 346,
+            "title": 304,
+            "note": 312,
+            "dueAt": 349,
+            "period": 384,
+            "targetCount": 384,
+            "weekdaysMask": 384,
+            "reminderTime": 384
+          },
+          "fieldAccuracy": {
+            "kind": 0.9010416666666666,
+            "title": 0.7916666666666666,
+            "note": 0.8125,
+            "dueAt": 0.9088541666666666,
+            "period": 1.0,
+            "targetCount": 1.0,
+            "weekdaysMask": 1.0,
+            "reminderTime": 1.0
+          },
+          "proposalKindCounts": {
+            "TASK": 346,
+            "HABIT": 38
+          },
+          "hardReasons": {
+            "source-content-deleted": 110,
+            "habit-schedule-not-established": 38,
+            "request-needs-confirmation": 12,
+            "event-not-established": 49,
+            "task-time-missing": 45
+          }
+        },
+        "HABIT": {
+          "positiveRows": 0,
+          "fieldCorrectCounts": {
+            "kind": 0,
+            "title": 0,
+            "note": 0,
+            "dueAt": 0,
+            "period": 0,
+            "targetCount": 0,
+            "weekdaysMask": 0,
+            "reminderTime": 0
+          },
+          "fieldAccuracy": {
+            "kind": null,
+            "title": null,
+            "note": null,
+            "dueAt": null,
+            "period": null,
+            "targetCount": null,
+            "weekdaysMask": null,
+            "reminderTime": null
+          },
+          "proposalKindCounts": {},
+          "hardReasons": {}
+        }
+      }
+    },
+    "wrongAcceptanceExamples": [],
+    "formalGatePassed": false
+  },
+  "wrongHighConfidenceHardBlocks": [
+    {
+      "kind": "TASK",
+      "wrongHighConfidenceDrafts": 33,
+      "hardBlocked": 33,
+      "examples": [
+        {
+          "text": "后天上午 9 点一刻检查标点",
+          "confidence": 0.9999997625592554,
+          "hardReasons": [
+            "source-content-deleted"
+          ]
+        },
+        {
+          "text": "今天下午2点检查标点",
+          "confidence": 0.9999999115972233,
+          "hardReasons": [
+            "source-content-deleted"
+          ]
+        },
+        {
+          "text": "明天上午八点检查标点",
+          "confidence": 0.9999999647876917,
+          "hardReasons": [
+            "source-content-deleted"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "HABIT",
+      "wrongHighConfidenceDrafts": 86,
+      "hardBlocked": 86,
+      "examples": [
+        {
+          "text": "创建习惯每周三晚上8点在银竹活动中心检查标点5次",
+          "confidence": 0.998425640968198,
+          "hardReasons": [
+            "source-content-deleted"
+          ]
+        },
+        {
+          "text": "每周六日晚上  9  点四十五分检查零部件，每个执行日5次，地点雨荷报告厅二楼",
+          "confidence": 0.9673973432447158,
+          "hardReasons": [
+            "source-content-deleted"
+          ]
+        },
+        {
+          "text": "检查印章，每周5次，提醒时间晚上 九 点，地点雨荷社区接待处",
+          "confidence": 0.984756853798634,
+          "hardReasons": [
+            "source-content-deleted"
+          ]
+        }
+      ]
+    }
+  ],
+  "parity": {
+    "examples": 8014,
+    "numericalExamples": 100,
+    "maxAbsoluteOutputErrors": [
+      8.285045623779297e-06,
+      0.000133514404296875,
+      2.1457672119140625e-05
+    ],
+    "completeProposalDifferences": [],
+    "maxConfidenceError": 1.0543210884339516e-06,
+    "graphs": {
+      "quality-TASK.onnx": {
+        "sha256": "2e5d5225b923919c3bf8ee6935719b50aa00e19742ff1d940eaeeb9f299410b7",
+        "bytes": 406246
+      },
+      "quality-HABIT.onnx": {
+        "sha256": "f3b8f4b42efad9370ada8e38488058eeec8bc70b25b946f9b4b5a88585376970",
+        "bytes": 406246
+      },
+      "encoder-spans.onnx": {
+        "sha256": "385d82cc1417cedc3beffb055936f5d1c1c6787c6717d908b4ba801bbccf4899",
+        "bytes": 13256235
+      }
+    },
+    "prototypeSha256": "459865a706a1e1473c142d3c2bafe549d3b6b975d0848b80758dffdd523aaf0e",
+    "nativeSha256": "f986a4dc7f3360f2e6fde66da551a9dc0d9f5c6ca32bc6f56ecfe367485613bb",
+    "encoderHostMilliseconds": {
+      "torch": {
+        "samples": 95,
+        "p50": 11.006124987034127,
+        "p95": 64.24908359185793
+      },
+      "onnx": {
+        "samples": 95,
+        "p50": 5.031041015172377,
+        "p95": 33.97158749576192
+      }
+    },
+    "runtime": "host ONNX Runtime CPU; not client codec, CoreML/MindSpore or phone verification"
+  },
+  "versionRejection": [
+    {
+      "mismatch": "native",
+      "blocked": true,
+      "message": "ValueError: Model/native version differs from calibrated prototype"
+    },
+    {
+      "mismatch": "tokenizer",
+      "blocked": true,
+      "message": "ValueError: Calibrated tokenizer/config differs: tokenizer/tokenizer_config.json"
+    }
+  ],
+  "trainedModels": {
+    "zh-joint-v3-seed42": {
+      "domain": "joint",
+      "seed": 42,
+      "trainRows": 20000,
+      "devRows": 2000,
+      "bestEpoch": 7,
+      "parameters": 3251993,
+      "modelSha256": "b35eabdda6ed6859654a6a3cfd1f18b82b7138aa9fdbebfad93a0251c1cf574b",
+      "dataSha256": {
+        "train": "d5adf507dc5b45f102bada2cfa62f25185e4c880164c971c50dd31e5c7e5dd9b",
+        "dev": "6bbbcf5f15b8a9193e911e7729a66f13f987522b066bb19181d61d2256550c9a"
+      },
+      "elapsedSeconds": 693.4916143750015,
+      "batchSize": 24,
+      "learningRate": {
+        "encoder": 3e-05,
+        "heads": 0.0005
+      },
+      "weightBytes": 13023906
+    },
+    "zh-joint-v3-type-seed42": {
+      "domain": "joint",
+      "seed": 42,
+      "trainRows": 20000,
+      "devRows": 2000,
+      "bestEpoch": 7,
+      "parameters": 3320105,
+      "modelSha256": "6d11b75f065b20d72c6ec38887d9e8a265e076e18966592895b5187e25571ab4",
+      "dataSha256": {
+        "train": "d5adf507dc5b45f102bada2cfa62f25185e4c880164c971c50dd31e5c7e5dd9b",
+        "dev": "6bbbcf5f15b8a9193e911e7729a66f13f987522b066bb19181d61d2256550c9a"
+      },
+      "elapsedSeconds": 783.9160838749958,
+      "batchSize": 24,
+      "learningRate": {
+        "encoder": 3e-05,
+        "heads": 0.0005
+      },
+      "weightBytes": 13298298
+    },
+    "zh-joint-v3-task-seed42": {
+      "domain": "TASK",
+      "seed": 42,
+      "trainRows": 10000,
+      "devRows": 1000,
+      "bestEpoch": 6,
+      "parameters": 3251993,
+      "modelSha256": "35ef2975acf5e04781c0f7900a85531dc81c964fbe128c74dcc154956b150e1b",
+      "dataSha256": {
+        "train": "d5adf507dc5b45f102bada2cfa62f25185e4c880164c971c50dd31e5c7e5dd9b",
+        "dev": "6bbbcf5f15b8a9193e911e7729a66f13f987522b066bb19181d61d2256550c9a"
+      },
+      "elapsedSeconds": 329.5180422080157,
+      "batchSize": 24,
+      "learningRate": {
+        "encoder": 3e-05,
+        "heads": 0.0005
+      },
+      "weightBytes": 13023906
+    },
+    "zh-joint-v3-habit-seed42": {
+      "domain": "HABIT",
+      "seed": 42,
+      "trainRows": 10000,
+      "devRows": 1000,
+      "bestEpoch": 8,
+      "parameters": 3251993,
+      "modelSha256": "70c4738c516dc51c4382b7ae99aa0b0e600380a81ccc0206ba8d3ccd21409837",
+      "dataSha256": {
+        "train": "d5adf507dc5b45f102bada2cfa62f25185e4c880164c971c50dd31e5c7e5dd9b",
+        "dev": "6bbbcf5f15b8a9193e911e7729a66f13f987522b066bb19181d61d2256550c9a"
+      },
+      "elapsedSeconds": 338.23053199998685,
+      "batchSize": 24,
+      "learningRate": {
+        "encoder": 3e-05,
+        "heads": 0.0005
+      },
+      "weightBytes": 13023906
+    },
+    "zh-joint-v3-seed43": {
+      "domain": "joint",
+      "seed": 43,
+      "trainRows": 20000,
+      "devRows": 2000,
+      "bestEpoch": 5,
+      "parameters": 3251993,
+      "modelSha256": "2ce612ab09a813dbadd28cc25b8b44d9967bb6b8986277dd49030dedf13cce21",
+      "dataSha256": {
+        "train": "d5adf507dc5b45f102bada2cfa62f25185e4c880164c971c50dd31e5c7e5dd9b",
+        "dev": "6bbbcf5f15b8a9193e911e7729a66f13f987522b066bb19181d61d2256550c9a"
+      },
+      "elapsedSeconds": 1270.1225118750008,
+      "batchSize": 24,
+      "learningRate": {
+        "encoder": 3e-05,
+        "heads": 0.0005
+      },
+      "weightBytes": 13023906
+    },
+    "zh-joint-v3-type-seed43": {
+      "domain": "joint",
+      "seed": 43,
+      "trainRows": 20000,
+      "devRows": 2000,
+      "bestEpoch": 5,
+      "parameters": 3320105,
+      "modelSha256": "7b6dfae72990fc9e4f3d0aebdd2235da14e914c10adc27d3dbf2605ab1f626f8",
+      "dataSha256": {
+        "train": "d5adf507dc5b45f102bada2cfa62f25185e4c880164c971c50dd31e5c7e5dd9b",
+        "dev": "6bbbcf5f15b8a9193e911e7729a66f13f987522b066bb19181d61d2256550c9a"
+      },
+      "elapsedSeconds": 1386.6145945000171,
+      "batchSize": 24,
+      "learningRate": {
+        "encoder": 3e-05,
+        "heads": 0.0005
+      },
+      "weightBytes": 13298298
+    },
+    "zh-joint-v3-task-seed43": {
+      "domain": "TASK",
+      "seed": 43,
+      "trainRows": 10000,
+      "devRows": 1000,
+      "bestEpoch": 7,
+      "parameters": 3251993,
+      "modelSha256": "e8477e8410004870932e1422d003931b13a3060672696dcc1eb66add2d8116c3",
+      "dataSha256": {
+        "train": "d5adf507dc5b45f102bada2cfa62f25185e4c880164c971c50dd31e5c7e5dd9b",
+        "dev": "6bbbcf5f15b8a9193e911e7729a66f13f987522b066bb19181d61d2256550c9a"
+      },
+      "elapsedSeconds": 352.6310874580231,
+      "batchSize": 24,
+      "learningRate": {
+        "encoder": 3e-05,
+        "heads": 0.0005
+      },
+      "weightBytes": 13023906
+    },
+    "zh-joint-v3-habit-seed43": {
+      "domain": "HABIT",
+      "seed": 43,
+      "trainRows": 10000,
+      "devRows": 1000,
+      "bestEpoch": 7,
+      "parameters": 3251993,
+      "modelSha256": "214bb9d73210b41ca16fbb8fc33aa3402ee2e87bde423219a164d6bc9747adcd",
+      "dataSha256": {
+        "train": "d5adf507dc5b45f102bada2cfa62f25185e4c880164c971c50dd31e5c7e5dd9b",
+        "dev": "6bbbcf5f15b8a9193e911e7729a66f13f987522b066bb19181d61d2256550c9a"
+      },
+      "elapsedSeconds": 379.0120912079874,
+      "batchSize": 24,
+      "learningRate": {
+        "encoder": 3e-05,
+        "heads": 0.0005
+      },
+      "weightBytes": 13023906
+    },
+    "zh-joint-v3-seed44": {
+      "domain": "joint",
+      "seed": 44,
+      "trainRows": 20000,
+      "devRows": 2000,
+      "bestEpoch": 8,
+      "parameters": 3251993,
+      "modelSha256": "34d2aab8497e9d9c5078a3b8a4f4c9046693a48bede5b66621ac04e10b30235c",
+      "dataSha256": {
+        "train": "d5adf507dc5b45f102bada2cfa62f25185e4c880164c971c50dd31e5c7e5dd9b",
+        "dev": "6bbbcf5f15b8a9193e911e7729a66f13f987522b066bb19181d61d2256550c9a"
+      },
+      "elapsedSeconds": 1158.0470308749937,
+      "batchSize": 24,
+      "learningRate": {
+        "encoder": 3e-05,
+        "heads": 0.0005
+      },
+      "weightBytes": 13023906
+    },
+    "zh-joint-v3-type-seed44": {
+      "domain": "joint",
+      "seed": 44,
+      "trainRows": 20000,
+      "devRows": 2000,
+      "bestEpoch": 8,
+      "parameters": 3320105,
+      "modelSha256": "d5af3ea5b1f6715babc592c8ae31373019781433ee8b06d8ac8b9445585a0b6a",
+      "dataSha256": {
+        "train": "d5adf507dc5b45f102bada2cfa62f25185e4c880164c971c50dd31e5c7e5dd9b",
+        "dev": "6bbbcf5f15b8a9193e911e7729a66f13f987522b066bb19181d61d2256550c9a"
+      },
+      "elapsedSeconds": 1393.7744312920258,
+      "batchSize": 24,
+      "learningRate": {
+        "encoder": 3e-05,
+        "heads": 0.0005
+      },
+      "weightBytes": 13298298
+    },
+    "zh-joint-v3-task-seed44": {
+      "domain": "TASK",
+      "seed": 44,
+      "trainRows": 10000,
+      "devRows": 1000,
+      "bestEpoch": 6,
+      "parameters": 3251993,
+      "modelSha256": "495b8f82ea259462760faff8d05ece9c292d8f6c62e30b9b4eaf9bb369fa59c9",
+      "dataSha256": {
+        "train": "d5adf507dc5b45f102bada2cfa62f25185e4c880164c971c50dd31e5c7e5dd9b",
+        "dev": "6bbbcf5f15b8a9193e911e7729a66f13f987522b066bb19181d61d2256550c9a"
+      },
+      "elapsedSeconds": 684.4617699579976,
+      "batchSize": 24,
+      "learningRate": {
+        "encoder": 3e-05,
+        "heads": 0.0005
+      },
+      "weightBytes": 13023906
+    },
+    "zh-joint-v3-habit-seed44": {
+      "domain": "HABIT",
+      "seed": 44,
+      "trainRows": 10000,
+      "devRows": 1000,
+      "bestEpoch": 7,
+      "parameters": 3251993,
+      "modelSha256": "9f2a8e9b001bf2119570aa95c9ed0167ecc5409871c693ddf7388353d74dc570",
+      "dataSha256": {
+        "train": "d5adf507dc5b45f102bada2cfa62f25185e4c880164c971c50dd31e5c7e5dd9b",
+        "dev": "6bbbcf5f15b8a9193e911e7729a66f13f987522b066bb19181d61d2256550c9a"
+      },
+      "elapsedSeconds": 805.6840274159913,
+      "batchSize": 24,
+      "learningRate": {
+        "encoder": 3e-05,
+        "heads": 0.0005
+      },
+      "weightBytes": 13023906
+    }
+  },
+  "matchedRawDev": {
+    "42": {
+      "zh-joint-v3-seed42": {
+        "TASK": {
+          "eligible": 800,
+          "rawTopCorrect": 684,
+          "correctCandidateAvailable": 738
+        },
+        "HABIT": {
+          "eligible": 800,
+          "rawTopCorrect": 744,
+          "correctCandidateAvailable": 763
+        }
+      },
+      "zh-joint-v3-type-seed42": {
+        "TASK": {
+          "eligible": 800,
+          "rawTopCorrect": 744,
+          "correctCandidateAvailable": 757
+        },
+        "HABIT": {
+          "eligible": 800,
+          "rawTopCorrect": 758,
+          "correctCandidateAvailable": 767
+        }
+      },
+      "zh-joint-v3-task-seed42": {
+        "TASK": {
+          "eligible": 800,
+          "rawTopCorrect": 757,
+          "correctCandidateAvailable": 763
+        },
+        "HABIT": {
+          "eligible": 800,
+          "rawTopCorrect": 0,
+          "correctCandidateAvailable": 0
+        }
+      },
+      "zh-joint-v3-habit-seed42": {
+        "TASK": {
+          "eligible": 800,
+          "rawTopCorrect": 0,
+          "correctCandidateAvailable": 0
+        },
+        "HABIT": {
+          "eligible": 800,
+          "rawTopCorrect": 780,
+          "correctCandidateAvailable": 789
+        }
+      }
+    },
+    "43": {
+      "zh-joint-v3-seed43": {
+        "TASK": {
+          "eligible": 800,
+          "rawTopCorrect": 753,
+          "correctCandidateAvailable": 761
+        },
+        "HABIT": {
+          "eligible": 800,
+          "rawTopCorrect": 757,
+          "correctCandidateAvailable": 770
+        }
+      },
+      "zh-joint-v3-type-seed43": {
+        "TASK": {
+          "eligible": 800,
+          "rawTopCorrect": 734,
+          "correctCandidateAvailable": 761
+        },
+        "HABIT": {
+          "eligible": 800,
+          "rawTopCorrect": 724,
+          "correctCandidateAvailable": 746
+        }
+      },
+      "zh-joint-v3-task-seed43": {
+        "TASK": {
+          "eligible": 800,
+          "rawTopCorrect": 751,
+          "correctCandidateAvailable": 762
+        },
+        "HABIT": {
+          "eligible": 800,
+          "rawTopCorrect": 0,
+          "correctCandidateAvailable": 0
+        }
+      },
+      "zh-joint-v3-habit-seed43": {
+        "TASK": {
+          "eligible": 800,
+          "rawTopCorrect": 0,
+          "correctCandidateAvailable": 0
+        },
+        "HABIT": {
+          "eligible": 800,
+          "rawTopCorrect": 793,
+          "correctCandidateAvailable": 797
+        }
+      }
+    },
+    "44": {
+      "zh-joint-v3-seed44": {
+        "TASK": {
+          "eligible": 800,
+          "rawTopCorrect": 736,
+          "correctCandidateAvailable": 752
+        },
+        "HABIT": {
+          "eligible": 800,
+          "rawTopCorrect": 741,
+          "correctCandidateAvailable": 758
+        }
+      },
+      "zh-joint-v3-type-seed44": {
+        "TASK": {
+          "eligible": 800,
+          "rawTopCorrect": 742,
+          "correctCandidateAvailable": 760
+        },
+        "HABIT": {
+          "eligible": 800,
+          "rawTopCorrect": 722,
+          "correctCandidateAvailable": 741
+        }
+      },
+      "zh-joint-v3-task-seed44": {
+        "TASK": {
+          "eligible": 800,
+          "rawTopCorrect": 760,
+          "correctCandidateAvailable": 767
+        },
+        "HABIT": {
+          "eligible": 800,
+          "rawTopCorrect": 0,
+          "correctCandidateAvailable": 0
+        }
+      },
+      "zh-joint-v3-habit-seed44": {
+        "TASK": {
+          "eligible": 800,
+          "rawTopCorrect": 0,
+          "correctCandidateAvailable": 0
+        },
+        "HABIT": {
+          "eligible": 800,
+          "rawTopCorrect": 761,
+          "correctCandidateAvailable": 780
+        }
+      }
+    }
+  },
+  "typeHeadReplicas": {
+    "42": {
+      "devUncalibratedSelection": {
+        "rawScoreCutoff": 0.5,
+        "modes": {
+          "TASK": {
+            "eligible": 800,
+            "accepted": 744,
+            "correct": 744,
+            "wrongAccepted": 0,
+            "correctCoverage": 0.93,
+            "wrongAcceptanceRate": 0.0,
+            "wrongAcceptanceUpper": 0.004945899867607184,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 0,
+            "ready": 744,
+            "readyCorrect": 744,
+            "readyWrong": 0,
+            "readyCorrectCoverage": 0.93,
+            "readyWithAI": 0
+          },
+          "HABIT": {
+            "eligible": 800,
+            "accepted": 758,
+            "correct": 758,
+            "wrongAccepted": 0,
+            "correctCoverage": 0.9475,
+            "wrongAcceptanceRate": 0.0,
+            "wrongAcceptanceUpper": 0.004854772896129345,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 0,
+            "ready": 758,
+            "readyCorrect": 758,
+            "readyWrong": 0,
+            "readyCorrectCoverage": 0.9475,
+            "readyWithAI": 0
+          }
+        }
+      },
+      "knownRegression": {
+        "scope": "Known development examples, replayed in v3 training; not independent accuracy",
+        "positiveRows": 11,
+        "validCorrect": 11,
+        "negativeRows": 3,
+        "negativeValid": 0,
+        "diagnostics": {
+          "scope": "All positive top proposals, including invalid and low confidence drafts; not accepted precision",
+          "kinds": {
+            "TASK": {
+              "positiveRows": 3,
+              "fieldCorrectCounts": {
+                "kind": 3,
+                "title": 3,
+                "note": 3,
+                "dueAt": 3,
+                "period": 3,
+                "targetCount": 3,
+                "weekdaysMask": 3,
+                "reminderTime": 3
+              },
+              "fieldAccuracy": {
+                "kind": 1.0,
+                "title": 1.0,
+                "note": 1.0,
+                "dueAt": 1.0,
+                "period": 1.0,
+                "targetCount": 1.0,
+                "weekdaysMask": 1.0,
+                "reminderTime": 1.0
+              },
+              "proposalKindCounts": {
+                "TASK": 3
+              },
+              "hardReasons": {}
+            },
+            "HABIT": {
+              "positiveRows": 8,
+              "fieldCorrectCounts": {
+                "kind": 8,
+                "title": 8,
+                "note": 8,
+                "dueAt": 8,
+                "period": 8,
+                "targetCount": 8,
+                "weekdaysMask": 8,
+                "reminderTime": 8
+              },
+              "fieldAccuracy": {
+                "kind": 1.0,
+                "title": 1.0,
+                "note": 1.0,
+                "dueAt": 1.0,
+                "period": 1.0,
+                "targetCount": 1.0,
+                "weekdaysMask": 1.0,
+                "reminderTime": 1.0
+              },
+              "proposalKindCounts": {
+                "HABIT": 8
+              },
+              "hardReasons": {}
+            }
+          }
+        }
+      }
+    },
+    "43": {
+      "devUncalibratedSelection": {
+        "rawScoreCutoff": 0.5,
+        "modes": {
+          "TASK": {
+            "eligible": 800,
+            "accepted": 730,
+            "correct": 730,
+            "wrongAccepted": 0,
+            "correctCoverage": 0.9125,
+            "wrongAcceptanceRate": 0.0,
+            "wrongAcceptanceUpper": 0.005040513289316317,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 0,
+            "ready": 734,
+            "readyCorrect": 734,
+            "readyWrong": 0,
+            "readyCorrectCoverage": 0.9175,
+            "readyWithAI": 4
+          },
+          "HABIT": {
+            "eligible": 800,
+            "accepted": 724,
+            "correct": 724,
+            "wrongAccepted": 0,
+            "correctCoverage": 0.905,
+            "wrongAcceptanceRate": 0.0,
+            "wrongAcceptanceUpper": 0.005082179172432921,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 0,
+            "ready": 724,
+            "readyCorrect": 724,
+            "readyWrong": 0,
+            "readyCorrectCoverage": 0.905,
+            "readyWithAI": 0
+          }
+        }
+      },
+      "knownRegression": {
+        "scope": "Known development examples, replayed in v3 training; not independent accuracy",
+        "positiveRows": 11,
+        "validCorrect": 11,
+        "negativeRows": 3,
+        "negativeValid": 0,
+        "diagnostics": {
+          "scope": "All positive top proposals, including invalid and low confidence drafts; not accepted precision",
+          "kinds": {
+            "TASK": {
+              "positiveRows": 3,
+              "fieldCorrectCounts": {
+                "kind": 3,
+                "title": 3,
+                "note": 3,
+                "dueAt": 3,
+                "period": 3,
+                "targetCount": 3,
+                "weekdaysMask": 3,
+                "reminderTime": 3
+              },
+              "fieldAccuracy": {
+                "kind": 1.0,
+                "title": 1.0,
+                "note": 1.0,
+                "dueAt": 1.0,
+                "period": 1.0,
+                "targetCount": 1.0,
+                "weekdaysMask": 1.0,
+                "reminderTime": 1.0
+              },
+              "proposalKindCounts": {
+                "TASK": 3
+              },
+              "hardReasons": {}
+            },
+            "HABIT": {
+              "positiveRows": 8,
+              "fieldCorrectCounts": {
+                "kind": 8,
+                "title": 8,
+                "note": 8,
+                "dueAt": 8,
+                "period": 8,
+                "targetCount": 8,
+                "weekdaysMask": 8,
+                "reminderTime": 8
+              },
+              "fieldAccuracy": {
+                "kind": 1.0,
+                "title": 1.0,
+                "note": 1.0,
+                "dueAt": 1.0,
+                "period": 1.0,
+                "targetCount": 1.0,
+                "weekdaysMask": 1.0,
+                "reminderTime": 1.0
+              },
+              "proposalKindCounts": {
+                "HABIT": 8
+              },
+              "hardReasons": {}
+            }
+          }
+        }
+      }
+    },
+    "44": {
+      "devUncalibratedSelection": {
+        "rawScoreCutoff": 0.5,
+        "modes": {
+          "TASK": {
+            "eligible": 800,
+            "accepted": 742,
+            "correct": 742,
+            "wrongAccepted": 0,
+            "correctCoverage": 0.9275,
+            "wrongAcceptanceRate": 0.0,
+            "wrongAcceptanceUpper": 0.0049591980231952215,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 0,
+            "ready": 742,
+            "readyCorrect": 742,
+            "readyWrong": 0,
+            "readyCorrectCoverage": 0.9275,
+            "readyWithAI": 0
+          },
+          "HABIT": {
+            "eligible": 800,
+            "accepted": 722,
+            "correct": 722,
+            "wrongAccepted": 0,
+            "correctCoverage": 0.9025,
+            "wrongAcceptanceRate": 0.0,
+            "wrongAcceptanceUpper": 0.0050962212976217725,
+            "alpha": 0.025,
+            "negativeWrongAccepted": 0,
+            "ready": 722,
+            "readyCorrect": 722,
+            "readyWrong": 0,
+            "readyCorrectCoverage": 0.9025,
+            "readyWithAI": 0
+          }
+        }
+      },
+      "knownRegression": {
+        "scope": "Known development examples, replayed in v3 training; not independent accuracy",
+        "positiveRows": 11,
+        "validCorrect": 11,
+        "negativeRows": 3,
+        "negativeValid": 0,
+        "diagnostics": {
+          "scope": "All positive top proposals, including invalid and low confidence drafts; not accepted precision",
+          "kinds": {
+            "TASK": {
+              "positiveRows": 3,
+              "fieldCorrectCounts": {
+                "kind": 3,
+                "title": 3,
+                "note": 3,
+                "dueAt": 3,
+                "period": 3,
+                "targetCount": 3,
+                "weekdaysMask": 3,
+                "reminderTime": 3
+              },
+              "fieldAccuracy": {
+                "kind": 1.0,
+                "title": 1.0,
+                "note": 1.0,
+                "dueAt": 1.0,
+                "period": 1.0,
+                "targetCount": 1.0,
+                "weekdaysMask": 1.0,
+                "reminderTime": 1.0
+              },
+              "proposalKindCounts": {
+                "TASK": 3
+              },
+              "hardReasons": {}
+            },
+            "HABIT": {
+              "positiveRows": 8,
+              "fieldCorrectCounts": {
+                "kind": 8,
+                "title": 8,
+                "note": 8,
+                "dueAt": 8,
+                "period": 8,
+                "targetCount": 8,
+                "weekdaysMask": 8,
+                "reminderTime": 8
+              },
+              "fieldAccuracy": {
+                "kind": 1.0,
+                "title": 1.0,
+                "note": 1.0,
+                "dueAt": 1.0,
+                "period": 1.0,
+                "targetCount": 1.0,
+                "weekdaysMask": 1.0,
+                "reminderTime": 1.0
+              },
+              "proposalKindCounts": {
+                "HABIT": 8
+              },
+              "hardReasons": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "checks": {
+    "python": {
+      "passed": 62,
+      "command": "unittest discover -s tests -q"
+    },
+    "core": {
+      "platform": "macOS native",
+      "passed": 64
+    },
+    "goldContract": {
+      "scope": "gold development diagnostic, not model predictions; no final data opened",
+      "nativeSha256": "f986a4dc7f3360f2e6fde66da551a9dc0d9f5c6ca32bc6f56ecfe367485613bb",
+      "sets": {
+        "train": {
+          "positiveRows": 16000,
+          "failures": []
+        },
+        "dev": {
+          "positiveRows": 1600,
+          "failures": []
+        },
+        "regression": {
+          "positiveRows": 11,
+          "failures": []
+        }
+      }
+    }
+  },
+  "missing": [
+    "Independent human gold/calibration",
+    "Broader expression coverage >=70%",
+    "Same-total-step and shared-correctness-head causal controls",
+    "New protocol client integration, CoreML/MindSpore and phone gates"
+  ],
+  "frozenRuntime": {
+    "directory": "artifacts/zh-joint-v3-runtime",
+    "nativeSha256": "f986a4dc7f3360f2e6fde66da551a9dc0d9f5c6ca32bc6f56ecfe367485613bb",
+    "sourceSha256": {
+      "quickadd_training/joint_native.py": "ba1c0d28b1747f1d7b11aba464eee131c70f8de38d8ee78384175ee8d5942374",
+      "quickadd_training/bio_control.py": "31018cfecd340b1f994d1273cbeda34a78d41e9d4e860a9c79dd90238d9d8391",
+      "quickadd_training/normalizer_rules.py": "38a8b9a9b263188305ffd9f3cbea3c1ab2df598472ab4fe220913de2a5190eea",
+      "quickadd_training/character_model.py": "3f8e6f3f0067f887f45cf7539237f5023d584e9ca520850b6ec2ea9342c75963",
+      "quickadd_training/metrics.py": "8436d178fa6bd24010e8fc89cba9ec4b0d4ebabbc97d37fd8f5800725ba64041",
+      "quickadd_training/joint_heads.py": "08bb07178d0d493fb53bc02f5348d5d072e973350868b3f5549b92f8455ad170",
+      "quickadd_training/span_decode.py": "bd6c03d9fed300e37e0593540623b79dceccaa544b457f88206b9aeea7cdfdfe",
+      "quickadd_training/joint_compare.py": "7c65afb96d61482f801fd612c5ccb63dedbc5276732edd885b5d8ba969eedd03",
+      "quickadd_training/joint_export.py": "f73a7c2b39de279f657a06b1bbb249c7ee231496d76dc8fbdca6928aeb0342ce",
+      "quickadd_training/native_adapter.py": "30336eec49c0991980d15a4a06b041b192cdb8809c67b4733b8feccdf0166d2b",
+      "quickadd_training/span_predict.py": "b0847e23bb08e15bea7b97cb5924bba172ca3750d93a3fdf4b245af892467f4b",
+      "quickadd_training/benchmark.py": "8305cb48d75b92e1ccc3faac13811d9a4a841d0ce6130d659cd44c6bbca49f99",
+      "quickadd_training/pretrained_teacher.py": "e95d24de0b11ebd8c7da4c179ed4b5e66d7b3c1f14db01f64a16ac6fe25edd41",
+      "quickadd_training/manifest.py": "ed61e43516bf255b9bdd9503d0a6ae3aac0037e34ed4ba08ea41d798a401865c",
+      "quickadd_training/parity.py": "cedb4afdc219c929bd4c9b103a8065ec7d65fdc58c6ccd2e5e2bb65e5fc4ffc7",
+      "quickadd_training/generalization_data.py": "6d3b96b4610e6a34b04bc35a3c73acb64d261139cd25707c6fa35a3407eb489b",
+      "quickadd_training/span_data.py": "81aa9e3ca7cdf57ebf8c51a9ec44d18dc80678f1388e4cc9773b44ff947eb6c2",
+      "quickadd_training/pretrained_export.py": "91e4197f28e780d1a28dd4a1a21b9e5762e43b6240ba7e655b5cd57fd26625ef",
+      "quickadd_training/joint_train.py": "44284ddc2d30df27203c4d2a4b7e9d04166cc9eb8d11df410998fe41c669e79c",
+      "quickadd_training/joint_calibration.py": "2daa60db4ad2be4ee30dbff288c1c075a45ca1f621da96f0c1aec2a2bab96f96",
+      "quickadd_training/public_pretrain.py": "b466c8b5339ff4c38060bc91186424110113e09808ab346fb6d7eeca7ccc6cee",
+      "quickadd_training/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "quickadd_training/joint_model.py": "dc7038946c85f213c9b79cbc20b2127455578e29258e2d21fbc57c781923dbc1",
+      "quickadd_training/span_train.py": "531d73a93ed44d49ea186e4f16761c85e85a5ed767a27d9a31139aaacf85f8f8",
+      "quickadd_training/joint_rules.py": "54bb76747cfd6daae373c345d9f080a1f2c5ead8ae1e5fe1ee48bfce701b5aa1",
+      "quickadd_training/validate.py": "e2604954457c340d5578545ab9d1000f2b5744702839ec676052c9bb9caabd91",
+      "quickadd_training/fidelity_evaluate.py": "efcfaec2e44404aab72c3631f4eb84f91ea590921f1b81ae0ce7c511fb89d306",
+      "quickadd_training/fidelity_data.py": "cf5165d38b303b485bfd6e074c4d603e429087d360c18c8fe23fcdf02c3837bc",
+      "quickadd_training/gate.py": "52f2cb92765601307a241ce003f5c70a047c7225c006a5f2c6550819ef009d50",
+      "quickadd_training/joint_predict.py": "ca305b867b060fdc2c8542cd2a1d080d662a52786add2f292ae0f0daec2cc672",
+      "quickadd_training/normalizer_predict.py": "ea5247d9289b9b2c33dcfd200b3eb4bc95fff36cf9c52e7130341240cc13943b",
+      "quickadd_training/train.py": "53a19f4691afd38b1f4a95d71762650f17f4d5f626750996d177504905ed64f6",
+      "quickadd_training/joint_data.py": "6faf4898d9e08550e5375b1612f070b02c1fa0df425065909c50dcb7e9460f2e",
+      "quickadd_training/joint_evaluate.py": "93ed5f0e8b5e38a7d6bd938930b53fcfa9bc17e1e79e2e1bd71d75275f2888a3",
+      "quickadd_training/joint_gold_check.py": "bd4b31dd830618e2b8734769a48f050d69a4586c07e1413da62a70ff694870ba",
+      "quickadd_training/joint_decode.py": "73fa38f0b15c537ef9cabf6fd9cf9c4a14c6c1ab1ed09e5bfd21d04af8747db6",
+      "quickadd_training/span_model.py": "e47387a4f8cf350751839e2931ff90db166f622c586d9bf9dbf9af6ffa33a4ea",
+      "quickadd_training/joint_adapter.py": "4f2d40ebc8a3a269403a9fc8aa81db03ea29566c0622d1a8c031bba15b32f1ce",
+      "quickadd_training/normalizer_fidelity.py": "4280b4a61fe2d8cbcdef4391aca333f06d96c2f8d778a76169b53805cb002f42",
+      "quickadd_training/normalizer_evaluate.py": "6bee13e213c2ad90a267d4cd0be3400174c1b74953632df44997701346ac9a5a",
+      "quickadd_training/span_evaluate.py": "2e5afca3b601f1b0f39a1fee53cfd48bb65771328bf2511d0c17f3de666a026d",
+      "quickadd_training/normalizer_train.py": "fe47f6894d943dc15fa6351403d75c16451bb4ae87aa4912d22298a18f1cf3a8",
+      "quickadd_training/joint_diagnostics.py": "4d3440644c5fed5095973862f7c64bd48fed69b1fbfe74352605806baa294e78",
+      "quickadd_training/normalizer_model.py": "7173a428a260949b26d89d377e3bc90ad7da8bebd84d73d746219defb1eb16c3",
+      "quickadd_training/data.py": "f68c0d8d708a23928c5756506f5df60967887a79ea6a40191fa7e6b6d08cb6c3",
+      "quickadd_training/import_massive.py": "290d75e3e8449a8b84e4d1db2899b288df4922dfb8e91cfb1d21c11b342ec49b",
+      "quickadd_training/corpus.py": "7e5d777bffde8a7ab9056e7f12c56a006845daab2ce535a5b51bbecdbfbf457c",
+      "quickadd_training/prepare_adapter.py": "2395e07d6e0f87087f3ddc1471fb41cac042be3cf6661af4976f925e5f860160",
+      "quickadd_training/normalizer_data.py": "0d93b9822f1d6a355fa7c8bae957dee1972308300d7b7d802cf090e77df58dd2"
+    },
+    "python": "3.12.8 (main, Dec  3 2024, 18:42:41) [Clang 16.0.0 (clang-1600.0.26.4)]",
+    "dependencies": {
+      "torch": "2.7.0",
+      "numpy": "1.26.4",
+      "transformers": "4.57.1",
+      "onnx": "1.18.0",
+      "onnxruntime": "1.22.0"
+    }
+  }
+}

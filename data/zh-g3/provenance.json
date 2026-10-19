@@ -1,0 +1,16 @@
+{
+  "counts": {
+    "train": 13351,
+    "dev": 900,
+    "test": 1200
+  },
+  "sha256": {
+    "train": "d2be42f42b1b76a84f6a4e69deca3b91b5d21e01728b6e15fc8e77f232635a38",
+    "dev": "815dc8a3e795abf2f5bc27f878260a8c038f5348e6bddf247afbae2238e7263f",
+    "test": "3d8211d5a66ec8e8876d5996fa27063229d38f754359f42001aaee3ee5703db1"
+  },
+  "independentTitleFamilies": true,
+  "humanReviewed": false,
+  "realUserData": false,
+  "thresholdSelection": "dev only; test never used for tuning"
+}

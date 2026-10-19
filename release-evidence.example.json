@@ -1,0 +1,13 @@
+{
+  "independentlyReviewed": false,
+  "frozenTestSha256": "",
+  "modelSha256": "",
+  "manifestSha256": "",
+  "exportParityPassed": false,
+  "streamingReviewed": false,
+  "devices": {
+    "android": {"device": "", "samples": 0, "p95Ms": null, "endToEndPassed": false},
+    "ios": {"device": "", "samples": 0, "p95Ms": null, "endToEndPassed": false},
+    "ohos": {"device": "", "samples": 0, "p95Ms": null, "endToEndPassed": false}
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "android": {
+    "path": "/Users/aritxonly/Codes/Android/Deadliner/app/release/app-arm64-v8a-v3-preview-small-unsigned.apk",
+    "source": "/Users/aritxonly/Codes/Android/Deadliner/app/build/outputs/apk/release/app-arm64-v8a-release-unsigned.apk",
+    "bytes": 37352123,
+    "sha256": "41b914447ad951a0aaf45554d0363feb53d26fac1875e6d7333adce71ed9453f",
+    "signed": false,
+    "abi": "arm64-v8a",
+    "onnxRuntimeIncluded": true,
+    "modelWeightsBundled": false
+  },
+  "ios": {
+    "path": "/Users/aritxonly/Codes/iOS/Deadliner/build/Build/Products/Release-iphoneos/Deadliner.app",
+    "signed": false,
+    "modelWeightsBundled": false
+  },
+  "harmony": {
+    "path": "/Users/aritxonly/Codes/HarmonyOS/Deadliner/entry/build/default/outputs/default/entry-default-signed.hap",
+    "bytes": 37059354,
+    "sha256": "6fba1d05f88f4d7f1a1f01ac7736e568926af1d0b800aa01843785d83ca222c7",
+    "signed": true,
+    "buildMode": "debug",
+    "modelWeightsBundled": false
+  },
+  "httpsDownloads": [
+    {
+      "locale": "zh",
+      "platform": "android",
+      "sha256": "ffe18c365ae3436694a08b71775c24196f24478834bbd884c330652d3c43d84e",
+      "bytes": 12710586,
+      "passed": true
+    },
+    {
+      "locale": "zh",
+      "platform": "ios",
+      "sha256": "6b775c340401067ea5af04c0beee5fef55101e2e4eeff2c0f01f18b53da21973",
+      "bytes": 12546965,
+      "passed": true
+    },
+    {
+      "locale": "zh",
+      "platform": "ohos",
+      "sha256": "1141e685175eb58eeb74bbb9d84f2057f7edbf1c8feaacabd5acfc3f49b28a08",
+      "bytes": 12561408,
+      "passed": true
+    },
+    {
+      "locale": "en",
+      "platform": "android",
+      "sha256": "7697566c2f2aac3a760b0174b2fc8cf1bc786af62b8d66b6043ca6cfd0dee310",
+      "bytes": 17520314,
+      "passed": true
+    },
+    {
+      "locale": "en",
+      "platform": "ios",
+      "sha256": "8092e42d719a1270ccbdbf18194cc8d56b4457d2afa4f22586b58a691e390813",
+      "bytes": 17356693,
+      "passed": true
+    },
+    {
+      "locale": "en",
+      "platform": "ohos",
+      "sha256": "d1d3de0ae825bcf3f319138d911cd28263fd19e5e2ec561c01d2b1762c3f7b45",
+      "bytes": 17371136,
+      "passed": true
+    }
+  ]
+}

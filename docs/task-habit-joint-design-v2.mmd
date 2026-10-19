@@ -1,0 +1,25 @@
+flowchart TD
+    I["原文、入口类型、当前时间、时区"] --> B["同一个轻量 BERT：一次编码"]
+    B --> H["上下文特征向量 H；内部复用"]
+    H --> K["意图/请求：TASK、HABIT、CONFIRM"]
+    H --> S["共享片段头：名称、时间、地点、备注、执行日、目标窗口、次数"]
+    K --> R["按预测类型组合候选并整组评分"]
+    S --> R
+    R --> ROUTE{"选定提案类型"}
+    ROUTE -->|"TASK"| T["KMP：标题、截止时间、备注"]
+    ROUTE -->|"HABIT"| A["KMP：名称、执行日、目标窗口、次数、提醒"]
+    ROUTE -->|"CONFIRM"| U["保留草案；需要补充或确认类型"]
+    T --> QT["TASK 正确性头与校准器：c_task"]
+    A --> QH["HABIT 正确性头与校准器：c_habit"]
+    H -.-> QT
+    H -.-> QH
+    T --> V["按类型硬校验：完整性、原文保真、可表示性"]
+    A --> V
+    V --> D["ready 由草案有效性决定"]
+    QT --> G["按预测类型比较 T_task 或 T_habit"]
+    QH --> G
+    D --> G
+    U --> X["ready=false；needsAI=true"]
+    G -->|"有效且达到阈值"| Y["ready=true；needsAI=false"]
+    G -->|"有效但低置信度或无评分"| L["ready=true；needsAI=true"]
+    G -->|"无效或硬失败"| X

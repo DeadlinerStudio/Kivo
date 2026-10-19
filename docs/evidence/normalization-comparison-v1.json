@@ -1,0 +1,2824 @@
+{
+  "scope": "same-data Chinese normalization-vs-extraction experiment",
+  "humanReviewed": false,
+  "modelSha256": "5d8832c4487712d352fcdef977e86a6b0c9eaf69d80d36cd5f706548828ca67f",
+  "dataProvenance": {
+    "counts": {
+      "train": 5000,
+      "dev": 360,
+      "test": 480
+    },
+    "sha256": {
+      "train": "097fb69d70917c01b02e35a267d430acde70dc7d1fab7a0802264b36d9f154e9",
+      "dev": "d3ff2a37ba4762428e5176b4b66ae48ea956258917bb292f91f3ee3c54e36ebc",
+      "test": "6e3bbfef8ccef888475688b8915374bc39e91423742a093207e104fa8c4c52a7"
+    },
+    "trainDevIdenticalTo": "zh-core-spans-v1",
+    "frozenBeforeNormalizerTraining": true,
+    "humanReviewed": false,
+    "realUserData": false,
+    "newTitlesAndLocations": true,
+    "syntax": "previously exposed templates; not new syntax or real-user blind test"
+  },
+  "kmpDateAdapterSha256": "f8efb32846618b8355dbe89d6e5f27da25c5d73b2647a70500dda5bb946b15cd",
+  "calibration": {
+    "minimumProbability": 0.9,
+    "grid": [
+      {
+        "minimumProbability": 0.0,
+        "correct": 234,
+        "accepted": 282,
+        "wrongAccepted": 48,
+        "wrongAcceptanceRate": 0.1702127659574468,
+        "correctCoverage": 0.8125
+      },
+      {
+        "minimumProbability": 0.2,
+        "correct": 234,
+        "accepted": 282,
+        "wrongAccepted": 48,
+        "wrongAcceptanceRate": 0.1702127659574468,
+        "correctCoverage": 0.8125
+      },
+      {
+        "minimumProbability": 0.4,
+        "correct": 234,
+        "accepted": 282,
+        "wrongAccepted": 48,
+        "wrongAcceptanceRate": 0.1702127659574468,
+        "correctCoverage": 0.8125
+      },
+      {
+        "minimumProbability": 0.6,
+        "correct": 232,
+        "accepted": 274,
+        "wrongAccepted": 42,
+        "wrongAcceptanceRate": 0.15328467153284672,
+        "correctCoverage": 0.8055555555555556
+      },
+      {
+        "minimumProbability": 0.8,
+        "correct": 221,
+        "accepted": 254,
+        "wrongAccepted": 33,
+        "wrongAcceptanceRate": 0.12992125984251968,
+        "correctCoverage": 0.7673611111111112
+      },
+      {
+        "minimumProbability": 0.9,
+        "correct": 211,
+        "accepted": 235,
+        "wrongAccepted": 24,
+        "wrongAcceptanceRate": 0.10212765957446808,
+        "correctCoverage": 0.7326388888888888
+      }
+    ],
+    "selection": "dev only: same <=1% observed wrong-acceptance objective as span/BIO calibration",
+    "qualityTargetMet": false
+  },
+  "spanCalibration": {
+    "span": 1.0,
+    "request": 0.9,
+    "grid": [
+      {
+        "span": 0.0,
+        "request": 0.8,
+        "correct": 230,
+        "accepted": 235,
+        "wrongAccepted": 5,
+        "wrongAcceptanceRate": 0.02127659574468085,
+        "correctCoverage": 0.7986111111111112
+      },
+      {
+        "span": 0.0,
+        "request": 0.9,
+        "correct": 230,
+        "accepted": 235,
+        "wrongAccepted": 5,
+        "wrongAcceptanceRate": 0.02127659574468085,
+        "correctCoverage": 0.7986111111111112
+      },
+      {
+        "span": 0.0,
+        "request": 0.95,
+        "correct": 229,
+        "accepted": 234,
+        "wrongAccepted": 5,
+        "wrongAcceptanceRate": 0.021367521367521368,
+        "correctCoverage": 0.7951388888888888
+      },
+      {
+        "span": 0.0,
+        "request": 0.98,
+        "correct": 226,
+        "accepted": 231,
+        "wrongAccepted": 5,
+        "wrongAcceptanceRate": 0.021645021645021644,
+        "correctCoverage": 0.7847222222222222
+      },
+      {
+        "span": 1.0,
+        "request": 0.8,
+        "correct": 223,
+        "accepted": 227,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.01762114537444934,
+        "correctCoverage": 0.7743055555555556
+      },
+      {
+        "span": 1.0,
+        "request": 0.9,
+        "correct": 223,
+        "accepted": 227,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.01762114537444934,
+        "correctCoverage": 0.7743055555555556
+      },
+      {
+        "span": 1.0,
+        "request": 0.95,
+        "correct": 222,
+        "accepted": 226,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.017699115044247787,
+        "correctCoverage": 0.7708333333333334
+      },
+      {
+        "span": 1.0,
+        "request": 0.98,
+        "correct": 219,
+        "accepted": 223,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.017937219730941704,
+        "correctCoverage": 0.7604166666666666
+      },
+      {
+        "span": 2.0,
+        "request": 0.8,
+        "correct": 213,
+        "accepted": 217,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.018433179723502304,
+        "correctCoverage": 0.7395833333333334
+      },
+      {
+        "span": 2.0,
+        "request": 0.9,
+        "correct": 213,
+        "accepted": 217,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.018433179723502304,
+        "correctCoverage": 0.7395833333333334
+      },
+      {
+        "span": 2.0,
+        "request": 0.95,
+        "correct": 212,
+        "accepted": 216,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.018518518518518517,
+        "correctCoverage": 0.7361111111111112
+      },
+      {
+        "span": 2.0,
+        "request": 0.98,
+        "correct": 209,
+        "accepted": 213,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.018779342723004695,
+        "correctCoverage": 0.7256944444444444
+      },
+      {
+        "span": 3.0,
+        "request": 0.8,
+        "correct": 195,
+        "accepted": 199,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.020100502512562814,
+        "correctCoverage": 0.6770833333333334
+      },
+      {
+        "span": 3.0,
+        "request": 0.9,
+        "correct": 195,
+        "accepted": 199,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.020100502512562814,
+        "correctCoverage": 0.6770833333333334
+      },
+      {
+        "span": 3.0,
+        "request": 0.95,
+        "correct": 194,
+        "accepted": 198,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.020202020202020204,
+        "correctCoverage": 0.6736111111111112
+      },
+      {
+        "span": 3.0,
+        "request": 0.98,
+        "correct": 192,
+        "accepted": 196,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.02040816326530612,
+        "correctCoverage": 0.6666666666666666
+      }
+    ],
+    "selection": "dev only: maximize correct with <=1% observed wrong acceptance; otherwise correct-10*wrong"
+  },
+  "bioCalibration": {
+    "span": 0.0,
+    "request": 0.98,
+    "grid": [
+      {
+        "span": 0.0,
+        "request": 0.8,
+        "correct": 215,
+        "accepted": 219,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.0182648401826484,
+        "correctCoverage": 0.7465277777777778
+      },
+      {
+        "span": 0.0,
+        "request": 0.9,
+        "correct": 215,
+        "accepted": 219,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.0182648401826484,
+        "correctCoverage": 0.7465277777777778
+      },
+      {
+        "span": 0.0,
+        "request": 0.95,
+        "correct": 215,
+        "accepted": 219,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.0182648401826484,
+        "correctCoverage": 0.7465277777777778
+      },
+      {
+        "span": 0.0,
+        "request": 0.98,
+        "correct": 215,
+        "accepted": 219,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.0182648401826484,
+        "correctCoverage": 0.7465277777777778
+      },
+      {
+        "span": 1.0,
+        "request": 0.8,
+        "correct": 200,
+        "accepted": 204,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.0196078431372549,
+        "correctCoverage": 0.6944444444444444
+      },
+      {
+        "span": 1.0,
+        "request": 0.9,
+        "correct": 200,
+        "accepted": 204,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.0196078431372549,
+        "correctCoverage": 0.6944444444444444
+      },
+      {
+        "span": 1.0,
+        "request": 0.95,
+        "correct": 200,
+        "accepted": 204,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.0196078431372549,
+        "correctCoverage": 0.6944444444444444
+      },
+      {
+        "span": 1.0,
+        "request": 0.98,
+        "correct": 200,
+        "accepted": 204,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.0196078431372549,
+        "correctCoverage": 0.6944444444444444
+      },
+      {
+        "span": 2.0,
+        "request": 0.8,
+        "correct": 174,
+        "accepted": 178,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.02247191011235955,
+        "correctCoverage": 0.6041666666666666
+      },
+      {
+        "span": 2.0,
+        "request": 0.9,
+        "correct": 174,
+        "accepted": 178,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.02247191011235955,
+        "correctCoverage": 0.6041666666666666
+      },
+      {
+        "span": 2.0,
+        "request": 0.95,
+        "correct": 174,
+        "accepted": 178,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.02247191011235955,
+        "correctCoverage": 0.6041666666666666
+      },
+      {
+        "span": 2.0,
+        "request": 0.98,
+        "correct": 174,
+        "accepted": 178,
+        "wrongAccepted": 4,
+        "wrongAcceptanceRate": 0.02247191011235955,
+        "correctCoverage": 0.6041666666666666
+      },
+      {
+        "span": 3.0,
+        "request": 0.8,
+        "correct": 152,
+        "accepted": 155,
+        "wrongAccepted": 3,
+        "wrongAcceptanceRate": 0.01935483870967742,
+        "correctCoverage": 0.5277777777777778
+      },
+      {
+        "span": 3.0,
+        "request": 0.9,
+        "correct": 152,
+        "accepted": 155,
+        "wrongAccepted": 3,
+        "wrongAcceptanceRate": 0.01935483870967742,
+        "correctCoverage": 0.5277777777777778
+      },
+      {
+        "span": 3.0,
+        "request": 0.95,
+        "correct": 152,
+        "accepted": 155,
+        "wrongAccepted": 3,
+        "wrongAcceptanceRate": 0.01935483870967742,
+        "correctCoverage": 0.5277777777777778
+      },
+      {
+        "span": 3.0,
+        "request": 0.98,
+        "correct": 152,
+        "accepted": 155,
+        "wrongAccepted": 3,
+        "wrongAcceptanceRate": 0.01935483870967742,
+        "correctCoverage": 0.5277777777777778
+      }
+    ],
+    "selection": "dev only: maximize correct with <=1% observed wrong acceptance; otherwise correct-10*wrong"
+  },
+  "rules": "fixed canonical format parser, followed by the same production KMP date normalizer",
+  "hostLatency": {
+    "normalizer": {
+      "samples": 30,
+      "medianMs": 24.484583496814594,
+      "p95Ms": 64.6985829807818,
+      "runtime": "host PyTorch CPU, 3 threads, tokenization/decoding included, no KMP/UI, not phone latency"
+    },
+    "span": {
+      "samples": 30,
+      "medianMs": 2.432937500998378,
+      "p95Ms": 3.225957974791527,
+      "runtime": "host PyTorch CPU, 3 threads, tokenization/decoding included, no KMP/UI, not phone latency"
+    }
+  },
+  "parameters": {
+    "normalizer": 3761799,
+    "span": 3226316
+  },
+  "sourceSha256": {
+    "normalizer_evaluate.py": "1bd38d21d7a127314e87e1f4a5f166d3b753ad8c4699845282284db40be922a7",
+    "normalizer_train.py": "fe47f6894d943dc15fa6351403d75c16451bb4ae87aa4912d22298a18f1cf3a8",
+    "normalizer_model.py": "7173a428a260949b26d89d377e3bc90ad7da8bebd84d73d746219defb1eb16c3",
+    "normalizer_data.py": "648eeb81206d3c286a7b0599e874ca5ca6583f553201d2c3e178ca399164a7f1"
+  },
+  "sets": {
+    "dev": {
+      "datasetSha256": "d3ff2a37ba4762428e5176b4b66ae48ea956258917bb292f91f3ee3c54e36ebc",
+      "modes": {
+        "normalize-then-rules": {
+          "total": 360,
+          "eligible": 288,
+          "accepted": 235,
+          "correct": 211,
+          "wrongAccepted": 24,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.7326388888888888,
+          "wrongAcceptanceRate": 0.10212765957446808,
+          "states": {
+            "COMPLETE": 235,
+            "CONFIRM": 72,
+            "PARTIAL": 53
+          },
+          "reasons": {
+            "normalizer-needs-confirmation": 72,
+            "event-not-established": 72,
+            "normalization-low-confidence": 50,
+            "time-not-normalized": 4,
+            "normalization-malformed": 2
+          },
+          "retainedFieldExact": {
+            "title": 0.9791666666666666,
+            "dueAt": 0.9861111111111112,
+            "note": 0.84375
+          },
+          "categories": {
+            "scheduled-location": {
+              "total": 216,
+              "eligible": 216,
+              "accepted": 172,
+              "correct": 148,
+              "wrongAccepted": 24,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.6851851851851852,
+              "wrongAcceptanceRate": 0.13953488372093023,
+              "states": {
+                "COMPLETE": 172,
+                "PARTIAL": 44
+              },
+              "reasons": {
+                "normalization-low-confidence": 41,
+                "time-not-normalized": 3
+              },
+              "retainedFieldExact": {
+                "title": 0.9722222222222222,
+                "dueAt": 0.9861111111111112,
+                "note": 0.7916666666666666
+              }
+            },
+            "plain-title": {
+              "total": 36,
+              "eligible": 36,
+              "accepted": 35,
+              "correct": 35,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.9722222222222222,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 35,
+                "PARTIAL": 1
+              },
+              "reasons": {
+                "normalization-low-confidence": 1
+              },
+              "retainedFieldExact": {
+                "title": 1.0,
+                "dueAt": 1.0,
+                "note": 1.0
+              }
+            },
+            "scheduled-no-location": {
+              "total": 36,
+              "eligible": 36,
+              "accepted": 28,
+              "correct": 28,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.7777777777777778,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 28,
+                "PARTIAL": 8
+              },
+              "reasons": {
+                "normalization-low-confidence": 7,
+                "time-not-normalized": 1,
+                "normalization-malformed": 2
+              },
+              "retainedFieldExact": {
+                "title": 1.0,
+                "dueAt": 0.9722222222222222,
+                "note": 1.0
+              }
+            },
+            "multiple-events": {
+              "total": 16,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 16
+              },
+              "reasons": {
+                "normalizer-needs-confirmation": 16,
+                "event-not-established": 16
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "conditional": {
+              "total": 11,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 11
+              },
+              "reasons": {
+                "normalizer-needs-confirmation": 11,
+                "event-not-established": 11
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "uncertain-time": {
+              "total": 15,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 15
+              },
+              "reasons": {
+                "normalizer-needs-confirmation": 15,
+                "event-not-established": 15
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "negation": {
+              "total": 17,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 17
+              },
+              "reasons": {
+                "normalizer-needs-confirmation": 17,
+                "event-not-established": 17
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "missing-event": {
+              "total": 13,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 13
+              },
+              "reasons": {
+                "normalizer-needs-confirmation": 13,
+                "event-not-established": 13,
+                "normalization-low-confidence": 1
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            }
+          },
+          "exactNormalization": 0.8263888888888888
+        },
+        "span": {
+          "total": 360,
+          "eligible": 288,
+          "accepted": 227,
+          "correct": 227,
+          "wrongAccepted": 0,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.7881944444444444,
+          "wrongAcceptanceRate": 0.0,
+          "states": {
+            "COMPLETE": 227,
+            "PARTIAL": 131,
+            "CONFIRM": 2
+          },
+          "reasons": {
+            "unexplained-content": 85,
+            "request-needs-confirmation": 73,
+            "ambiguous-title": 4,
+            "time-not-normalized": 19,
+            "event-not-established": 33,
+            "ambiguous-location": 5
+          },
+          "retainedFieldExact": {
+            "title": 0.9340277777777778,
+            "dueAt": 0.9861111111111112,
+            "note": 0.8541666666666666
+          },
+          "categories": {
+            "scheduled-location": {
+              "total": 216,
+              "eligible": 216,
+              "accepted": 159,
+              "correct": 159,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.7361111111111112,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 159,
+                "PARTIAL": 57
+              },
+              "reasons": {
+                "unexplained-content": 54,
+                "event-not-established": 18,
+                "request-needs-confirmation": 1,
+                "time-not-normalized": 3,
+                "ambiguous-location": 3
+              },
+              "retainedFieldExact": {
+                "title": 0.9166666666666666,
+                "dueAt": 0.9861111111111112,
+                "note": 0.8055555555555556
+              }
+            },
+            "plain-title": {
+              "total": 36,
+              "eligible": 36,
+              "accepted": 33,
+              "correct": 33,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.9166666666666666,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 33,
+                "CONFIRM": 2,
+                "PARTIAL": 1
+              },
+              "reasons": {
+                "event-not-established": 2,
+                "unexplained-content": 3
+              },
+              "retainedFieldExact": {
+                "title": 0.9722222222222222,
+                "dueAt": 1.0,
+                "note": 1.0
+              }
+            },
+            "scheduled-no-location": {
+              "total": 36,
+              "eligible": 36,
+              "accepted": 35,
+              "correct": 35,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.9722222222222222,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 35,
+                "PARTIAL": 1
+              },
+              "reasons": {
+                "time-not-normalized": 1
+              },
+              "retainedFieldExact": {
+                "title": 1.0,
+                "dueAt": 0.9722222222222222,
+                "note": 1.0
+              }
+            },
+            "multiple-events": {
+              "total": 16,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 16
+              },
+              "reasons": {
+                "request-needs-confirmation": 16,
+                "unexplained-content": 15,
+                "ambiguous-title": 3
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "conditional": {
+              "total": 11,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 11
+              },
+              "reasons": {
+                "request-needs-confirmation": 11,
+                "unexplained-content": 2
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "uncertain-time": {
+              "total": 15,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 15
+              },
+              "reasons": {
+                "request-needs-confirmation": 15,
+                "unexplained-content": 2,
+                "ambiguous-title": 1,
+                "time-not-normalized": 15,
+                "event-not-established": 1
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "negation": {
+              "total": 17,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 17
+              },
+              "reasons": {
+                "request-needs-confirmation": 17,
+                "unexplained-content": 7,
+                "ambiguous-location": 1
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "missing-event": {
+              "total": 13,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 13
+              },
+              "reasons": {
+                "request-needs-confirmation": 13,
+                "event-not-established": 12,
+                "unexplained-content": 2,
+                "ambiguous-location": 1
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            }
+          }
+        },
+        "same-data-BIO": {
+          "total": 360,
+          "eligible": 288,
+          "accepted": 219,
+          "correct": 218,
+          "wrongAccepted": 1,
+          "negativeWrongAccepted": 1,
+          "correctCoverage": 0.7569444444444444,
+          "wrongAcceptanceRate": 0.0045662100456621,
+          "states": {
+            "COMPLETE": 219,
+            "PARTIAL": 140,
+            "CONFIRM": 1
+          },
+          "reasons": {
+            "malformed-BIO": 53,
+            "event-not-established": 16,
+            "unexplained-content": 98,
+            "request-needs-confirmation": 68,
+            "time-not-normalized": 19,
+            "ambiguous-title": 6
+          },
+          "retainedFieldExact": {
+            "title": 0.9409722222222222,
+            "dueAt": 0.9861111111111112,
+            "note": 0.7986111111111112
+          },
+          "categories": {
+            "scheduled-location": {
+              "total": 216,
+              "eligible": 216,
+              "accepted": 148,
+              "correct": 148,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.6851851851851852,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 148,
+                "PARTIAL": 68
+              },
+              "reasons": {
+                "malformed-BIO": 36,
+                "event-not-established": 4,
+                "unexplained-content": 66,
+                "ambiguous-title": 2,
+                "time-not-normalized": 3
+              },
+              "retainedFieldExact": {
+                "title": 0.9212962962962963,
+                "dueAt": 0.9861111111111112,
+                "note": 0.7314814814814815
+              }
+            },
+            "plain-title": {
+              "total": 36,
+              "eligible": 36,
+              "accepted": 35,
+              "correct": 35,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.9722222222222222,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 35,
+                "CONFIRM": 1
+              },
+              "reasons": {
+                "malformed-BIO": 1,
+                "event-not-established": 1,
+                "unexplained-content": 1
+              },
+              "retainedFieldExact": {
+                "title": 1.0,
+                "dueAt": 1.0,
+                "note": 1.0
+              }
+            },
+            "scheduled-no-location": {
+              "total": 36,
+              "eligible": 36,
+              "accepted": 35,
+              "correct": 35,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.9722222222222222,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 35,
+                "PARTIAL": 1
+              },
+              "reasons": {
+                "time-not-normalized": 1
+              },
+              "retainedFieldExact": {
+                "title": 1.0,
+                "dueAt": 0.9722222222222222,
+                "note": 1.0
+              }
+            },
+            "multiple-events": {
+              "total": 16,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 16
+              },
+              "reasons": {
+                "request-needs-confirmation": 16,
+                "unexplained-content": 16,
+                "ambiguous-title": 3,
+                "malformed-BIO": 3
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "conditional": {
+              "total": 11,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 11
+              },
+              "reasons": {
+                "request-needs-confirmation": 11,
+                "malformed-BIO": 1,
+                "unexplained-content": 2
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "uncertain-time": {
+              "total": 15,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 15
+              },
+              "reasons": {
+                "request-needs-confirmation": 15,
+                "time-not-normalized": 15,
+                "malformed-BIO": 4,
+                "unexplained-content": 4,
+                "event-not-established": 1
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "negation": {
+              "total": 17,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 17
+              },
+              "reasons": {
+                "request-needs-confirmation": 17,
+                "malformed-BIO": 5,
+                "unexplained-content": 6,
+                "ambiguous-title": 1
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "missing-event": {
+              "total": 13,
+              "eligible": 0,
+              "accepted": 1,
+              "correct": 0,
+              "wrongAccepted": 1,
+              "negativeWrongAccepted": 1,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": 1.0,
+              "states": {
+                "PARTIAL": 12,
+                "COMPLETE": 1
+              },
+              "reasons": {
+                "request-needs-confirmation": 9,
+                "event-not-established": 10,
+                "malformed-BIO": 3,
+                "unexplained-content": 3
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            }
+          }
+        },
+        "v3": {
+          "total": 360,
+          "eligible": 288,
+          "accepted": 58,
+          "correct": 15,
+          "wrongAccepted": 43,
+          "negativeWrongAccepted": 7,
+          "correctCoverage": 0.052083333333333336,
+          "wrongAcceptanceRate": 0.7413793103448276,
+          "states": {
+            "CONFIRM": 302,
+            "COMPLETE": 58
+          },
+          "reasons": {},
+          "retainedFieldExact": {
+            "title": 0.059027777777777776,
+            "dueAt": 0.2569444444444444,
+            "note": 0.25
+          },
+          "categories": {
+            "scheduled-location": {
+              "total": 216,
+              "eligible": 216,
+              "accepted": 30,
+              "correct": 0,
+              "wrongAccepted": 30,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.0,
+              "wrongAcceptanceRate": 1.0,
+              "states": {
+                "CONFIRM": 186,
+                "COMPLETE": 30
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": 0.0,
+                "dueAt": 0.1388888888888889,
+                "note": 0.0
+              }
+            },
+            "plain-title": {
+              "total": 36,
+              "eligible": 36,
+              "accepted": 13,
+              "correct": 9,
+              "wrongAccepted": 4,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.25,
+              "wrongAcceptanceRate": 0.3076923076923077,
+              "states": {
+                "COMPLETE": 13,
+                "CONFIRM": 23
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": 0.3055555555555556,
+                "dueAt": 1.0,
+                "note": 1.0
+              }
+            },
+            "scheduled-no-location": {
+              "total": 36,
+              "eligible": 36,
+              "accepted": 8,
+              "correct": 6,
+              "wrongAccepted": 2,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.16666666666666666,
+              "wrongAcceptanceRate": 0.25,
+              "states": {
+                "COMPLETE": 8,
+                "CONFIRM": 28
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": 0.16666666666666666,
+                "dueAt": 0.2222222222222222,
+                "note": 1.0
+              }
+            },
+            "multiple-events": {
+              "total": 16,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 16
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "conditional": {
+              "total": 11,
+              "eligible": 0,
+              "accepted": 1,
+              "correct": 0,
+              "wrongAccepted": 1,
+              "negativeWrongAccepted": 1,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": 1.0,
+              "states": {
+                "CONFIRM": 10,
+                "COMPLETE": 1
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "uncertain-time": {
+              "total": 15,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 15
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "negation": {
+              "total": 17,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 17
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "missing-event": {
+              "total": 13,
+              "eligible": 0,
+              "accepted": 6,
+              "correct": 0,
+              "wrongAccepted": 6,
+              "negativeWrongAccepted": 6,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": 1.0,
+              "states": {
+                "COMPLETE": 6,
+                "CONFIRM": 7
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "test": {
+      "datasetSha256": "6e3bbfef8ccef888475688b8915374bc39e91423742a093207e104fa8c4c52a7",
+      "modes": {
+        "normalize-then-rules": {
+          "total": 480,
+          "eligible": 384,
+          "accepted": 222,
+          "correct": 175,
+          "wrongAccepted": 47,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.4557291666666667,
+          "wrongAcceptanceRate": 0.21171171171171171,
+          "states": {
+            "COMPLETE": 222,
+            "PARTIAL": 138,
+            "CONFIRM": 120
+          },
+          "reasons": {
+            "time-not-normalized": 9,
+            "normalization-low-confidence": 137,
+            "normalizer-needs-confirmation": 120,
+            "event-not-established": 120,
+            "normalization-malformed": 4
+          },
+          "retainedFieldExact": {
+            "title": 0.8151041666666666,
+            "dueAt": 0.9140625,
+            "note": 0.7369791666666666
+          },
+          "categories": {
+            "scheduled-location": {
+              "total": 230,
+              "eligible": 230,
+              "accepted": 154,
+              "correct": 113,
+              "wrongAccepted": 41,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.49130434782608695,
+              "wrongAcceptanceRate": 0.2662337662337662,
+              "states": {
+                "COMPLETE": 154,
+                "PARTIAL": 73,
+                "CONFIRM": 3
+              },
+              "reasons": {
+                "time-not-normalized": 5,
+                "normalization-low-confidence": 70,
+                "normalizer-needs-confirmation": 3,
+                "event-not-established": 3
+              },
+              "retainedFieldExact": {
+                "title": 0.8782608695652174,
+                "dueAt": 0.9652173913043478,
+                "note": 0.6956521739130435
+              }
+            },
+            "plain-title": {
+              "total": 48,
+              "eligible": 48,
+              "accepted": 29,
+              "correct": 29,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.6041666666666666,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "PARTIAL": 19,
+                "COMPLETE": 29
+              },
+              "reasons": {
+                "normalization-low-confidence": 19
+              },
+              "retainedFieldExact": {
+                "title": 0.8333333333333334,
+                "dueAt": 1.0,
+                "note": 1.0
+              }
+            },
+            "scheduled-no-location": {
+              "total": 48,
+              "eligible": 48,
+              "accepted": 24,
+              "correct": 21,
+              "wrongAccepted": 3,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.4375,
+              "wrongAcceptanceRate": 0.125,
+              "states": {
+                "COMPLETE": 24,
+                "PARTIAL": 24
+              },
+              "reasons": {
+                "normalization-low-confidence": 22,
+                "normalization-malformed": 4,
+                "time-not-normalized": 2
+              },
+              "retainedFieldExact": {
+                "title": 0.9166666666666666,
+                "dueAt": 0.9583333333333334,
+                "note": 0.9791666666666666
+              }
+            },
+            "negation": {
+              "total": 21,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 21
+              },
+              "reasons": {
+                "normalizer-needs-confirmation": 21,
+                "event-not-established": 21
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "missing-event": {
+              "total": 20,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 20
+              },
+              "reasons": {
+                "normalizer-needs-confirmation": 20,
+                "event-not-established": 20
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "held-syntax": {
+              "total": 58,
+              "eligible": 58,
+              "accepted": 15,
+              "correct": 12,
+              "wrongAccepted": 3,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.20689655172413793,
+              "wrongAcceptanceRate": 0.2,
+              "states": {
+                "CONFIRM": 21,
+                "PARTIAL": 22,
+                "COMPLETE": 15
+              },
+              "reasons": {
+                "normalizer-needs-confirmation": 21,
+                "event-not-established": 21,
+                "normalization-low-confidence": 26,
+                "time-not-normalized": 2
+              },
+              "retainedFieldExact": {
+                "title": 0.46551724137931033,
+                "dueAt": 0.603448275862069,
+                "note": 0.4827586206896552
+              }
+            },
+            "conditional": {
+              "total": 15,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 15
+              },
+              "reasons": {
+                "normalizer-needs-confirmation": 15,
+                "event-not-established": 15
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "multiple-events": {
+              "total": 24,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 24
+              },
+              "reasons": {
+                "normalizer-needs-confirmation": 24,
+                "event-not-established": 24
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "uncertain-time": {
+              "total": 16,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 16
+              },
+              "reasons": {
+                "normalizer-needs-confirmation": 16,
+                "event-not-established": 16
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            }
+          },
+          "exactNormalization": 0.6432291666666666
+        },
+        "span": {
+          "total": 480,
+          "eligible": 384,
+          "accepted": 222,
+          "correct": 221,
+          "wrongAccepted": 1,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.5755208333333334,
+          "wrongAcceptanceRate": 0.0045045045045045045,
+          "states": {
+            "COMPLETE": 222,
+            "PARTIAL": 252,
+            "CONFIRM": 6
+          },
+          "reasons": {
+            "unexplained-content": 194,
+            "time-not-normalized": 40,
+            "ambiguous-title": 12,
+            "request-needs-confirmation": 135,
+            "event-not-established": 115,
+            "ambiguous-time": 3,
+            "ambiguous-location": 5
+          },
+          "retainedFieldExact": {
+            "title": 0.765625,
+            "dueAt": 0.9296875,
+            "note": 0.8125
+          },
+          "categories": {
+            "scheduled-location": {
+              "total": 230,
+              "eligible": 230,
+              "accepted": 143,
+              "correct": 142,
+              "wrongAccepted": 1,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.6173913043478261,
+              "wrongAcceptanceRate": 0.006993006993006993,
+              "states": {
+                "COMPLETE": 143,
+                "PARTIAL": 87
+              },
+              "reasons": {
+                "unexplained-content": 75,
+                "time-not-normalized": 5,
+                "event-not-established": 30,
+                "ambiguous-title": 3,
+                "request-needs-confirmation": 13,
+                "ambiguous-location": 3
+              },
+              "retainedFieldExact": {
+                "title": 0.8434782608695652,
+                "dueAt": 0.9782608695652174,
+                "note": 0.7434782608695653
+              }
+            },
+            "plain-title": {
+              "total": 48,
+              "eligible": 48,
+              "accepted": 35,
+              "correct": 35,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.7291666666666666,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "PARTIAL": 7,
+                "COMPLETE": 35,
+                "CONFIRM": 6
+              },
+              "reasons": {
+                "unexplained-content": 10,
+                "ambiguous-title": 2,
+                "request-needs-confirmation": 5,
+                "event-not-established": 6
+              },
+              "retainedFieldExact": {
+                "title": 0.7916666666666666,
+                "dueAt": 1.0,
+                "note": 1.0
+              }
+            },
+            "scheduled-no-location": {
+              "total": 48,
+              "eligible": 48,
+              "accepted": 38,
+              "correct": 38,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.7916666666666666,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 38,
+                "PARTIAL": 10
+              },
+              "reasons": {
+                "request-needs-confirmation": 2,
+                "event-not-established": 6,
+                "unexplained-content": 6,
+                "time-not-normalized": 2,
+                "ambiguous-title": 1
+              },
+              "retainedFieldExact": {
+                "title": 0.875,
+                "dueAt": 0.9583333333333334,
+                "note": 1.0
+              }
+            },
+            "negation": {
+              "total": 21,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 21
+              },
+              "reasons": {
+                "request-needs-confirmation": 21,
+                "unexplained-content": 7,
+                "event-not-established": 1
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "missing-event": {
+              "total": 20,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 20
+              },
+              "reasons": {
+                "request-needs-confirmation": 18,
+                "event-not-established": 20,
+                "unexplained-content": 3
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "held-syntax": {
+              "total": 58,
+              "eligible": 58,
+              "accepted": 6,
+              "correct": 6,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.10344827586206896,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "PARTIAL": 52,
+                "COMPLETE": 6
+              },
+              "reasons": {
+                "request-needs-confirmation": 21,
+                "event-not-established": 38,
+                "unexplained-content": 51,
+                "ambiguous-time": 3,
+                "time-not-normalized": 16,
+                "ambiguous-title": 3
+              },
+              "retainedFieldExact": {
+                "title": 0.3448275862068966,
+                "dueAt": 0.6551724137931034,
+                "note": 0.7758620689655172
+              }
+            },
+            "conditional": {
+              "total": 15,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 15
+              },
+              "reasons": {
+                "request-needs-confirmation": 15,
+                "unexplained-content": 11,
+                "ambiguous-title": 1,
+                "event-not-established": 9
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "multiple-events": {
+              "total": 24,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 24
+              },
+              "reasons": {
+                "request-needs-confirmation": 24,
+                "unexplained-content": 24,
+                "event-not-established": 1,
+                "ambiguous-location": 2,
+                "ambiguous-title": 2,
+                "time-not-normalized": 1
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "uncertain-time": {
+              "total": 16,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 16
+              },
+              "reasons": {
+                "request-needs-confirmation": 16,
+                "event-not-established": 4,
+                "unexplained-content": 7,
+                "time-not-normalized": 16
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            }
+          }
+        },
+        "same-data-BIO": {
+          "total": 480,
+          "eligible": 384,
+          "accepted": 217,
+          "correct": 215,
+          "wrongAccepted": 2,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.5598958333333334,
+          "wrongAcceptanceRate": 0.009216589861751152,
+          "states": {
+            "COMPLETE": 217,
+            "PARTIAL": 259,
+            "CONFIRM": 4
+          },
+          "reasons": {
+            "malformed-BIO": 148,
+            "unexplained-content": 202,
+            "ambiguous-title": 15,
+            "time-not-normalized": 34,
+            "request-needs-confirmation": 117,
+            "event-not-established": 28,
+            "ambiguous-location": 3
+          },
+          "retainedFieldExact": {
+            "title": 0.7682291666666666,
+            "dueAt": 0.9505208333333334,
+            "note": 0.7734375
+          },
+          "categories": {
+            "scheduled-location": {
+              "total": 230,
+              "eligible": 230,
+              "accepted": 127,
+              "correct": 125,
+              "wrongAccepted": 2,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.5434782608695652,
+              "wrongAcceptanceRate": 0.015748031496062992,
+              "states": {
+                "COMPLETE": 127,
+                "PARTIAL": 103
+              },
+              "reasons": {
+                "malformed-BIO": 70,
+                "unexplained-content": 95,
+                "ambiguous-title": 6,
+                "time-not-normalized": 5,
+                "request-needs-confirmation": 6,
+                "event-not-established": 4,
+                "ambiguous-location": 1
+              },
+              "retainedFieldExact": {
+                "title": 0.7913043478260869,
+                "dueAt": 0.9782608695652174,
+                "note": 0.6869565217391305
+              }
+            },
+            "plain-title": {
+              "total": 48,
+              "eligible": 48,
+              "accepted": 37,
+              "correct": 37,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.7708333333333334,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 37,
+                "PARTIAL": 7,
+                "CONFIRM": 4
+              },
+              "reasons": {
+                "unexplained-content": 11,
+                "ambiguous-title": 2,
+                "malformed-BIO": 5,
+                "event-not-established": 4
+              },
+              "retainedFieldExact": {
+                "title": 0.7708333333333334,
+                "dueAt": 1.0,
+                "note": 1.0
+              }
+            },
+            "scheduled-no-location": {
+              "total": 48,
+              "eligible": 48,
+              "accepted": 39,
+              "correct": 39,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.8125,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 39,
+                "PARTIAL": 9
+              },
+              "reasons": {
+                "malformed-BIO": 3,
+                "unexplained-content": 7,
+                "time-not-normalized": 2
+              },
+              "retainedFieldExact": {
+                "title": 0.8541666666666666,
+                "dueAt": 0.9583333333333334,
+                "note": 1.0
+              }
+            },
+            "negation": {
+              "total": 21,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 21
+              },
+              "reasons": {
+                "request-needs-confirmation": 21,
+                "malformed-BIO": 10,
+                "unexplained-content": 13,
+                "ambiguous-location": 1,
+                "event-not-established": 1
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "missing-event": {
+              "total": 20,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 20
+              },
+              "reasons": {
+                "request-needs-confirmation": 16,
+                "event-not-established": 17,
+                "malformed-BIO": 5,
+                "unexplained-content": 5
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "held-syntax": {
+              "total": 58,
+              "eligible": 58,
+              "accepted": 14,
+              "correct": 14,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.2413793103448276,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "PARTIAL": 44,
+                "COMPLETE": 14
+              },
+              "reasons": {
+                "request-needs-confirmation": 19,
+                "malformed-BIO": 33,
+                "unexplained-content": 33,
+                "time-not-normalized": 9,
+                "ambiguous-title": 5
+              },
+              "retainedFieldExact": {
+                "title": 0.603448275862069,
+                "dueAt": 0.7931034482758621,
+                "note": 0.7413793103448276
+              }
+            },
+            "conditional": {
+              "total": 15,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 15
+              },
+              "reasons": {
+                "request-needs-confirmation": 15,
+                "malformed-BIO": 6,
+                "unexplained-content": 7,
+                "event-not-established": 2
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "multiple-events": {
+              "total": 24,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 24
+              },
+              "reasons": {
+                "request-needs-confirmation": 24,
+                "unexplained-content": 24,
+                "malformed-BIO": 9,
+                "time-not-normalized": 2,
+                "ambiguous-title": 2,
+                "ambiguous-location": 1
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "uncertain-time": {
+              "total": 16,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 16
+              },
+              "reasons": {
+                "request-needs-confirmation": 16,
+                "time-not-normalized": 16,
+                "malformed-BIO": 7,
+                "unexplained-content": 7
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            }
+          }
+        },
+        "v3": {
+          "total": 480,
+          "eligible": 384,
+          "accepted": 67,
+          "correct": 30,
+          "wrongAccepted": 37,
+          "negativeWrongAccepted": 6,
+          "correctCoverage": 0.078125,
+          "wrongAcceptanceRate": 0.5522388059701493,
+          "states": {
+            "CONFIRM": 413,
+            "COMPLETE": 67
+          },
+          "reasons": {},
+          "retainedFieldExact": {
+            "title": 0.08072916666666667,
+            "dueAt": 0.23697916666666666,
+            "note": 0.25
+          },
+          "categories": {
+            "scheduled-location": {
+              "total": 230,
+              "eligible": 230,
+              "accepted": 24,
+              "correct": 0,
+              "wrongAccepted": 24,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.0,
+              "wrongAcceptanceRate": 1.0,
+              "states": {
+                "CONFIRM": 206,
+                "COMPLETE": 24
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": 0.0,
+                "dueAt": 0.10434782608695652,
+                "note": 0.0
+              }
+            },
+            "plain-title": {
+              "total": 48,
+              "eligible": 48,
+              "accepted": 18,
+              "correct": 11,
+              "wrongAccepted": 7,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.22916666666666666,
+              "wrongAcceptanceRate": 0.3888888888888889,
+              "states": {
+                "COMPLETE": 18,
+                "CONFIRM": 30
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": 0.25,
+                "dueAt": 1.0,
+                "note": 1.0
+              }
+            },
+            "scheduled-no-location": {
+              "total": 48,
+              "eligible": 48,
+              "accepted": 19,
+              "correct": 19,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.3958333333333333,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "CONFIRM": 29,
+                "COMPLETE": 19
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": 0.3958333333333333,
+                "dueAt": 0.3958333333333333,
+                "note": 1.0
+              }
+            },
+            "negation": {
+              "total": 21,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 21
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "missing-event": {
+              "total": 20,
+              "eligible": 0,
+              "accepted": 6,
+              "correct": 0,
+              "wrongAccepted": 6,
+              "negativeWrongAccepted": 6,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": 1.0,
+              "states": {
+                "CONFIRM": 14,
+                "COMPLETE": 6
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "held-syntax": {
+              "total": 58,
+              "eligible": 58,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.0,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 58
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": 0.0,
+                "dueAt": 0.0,
+                "note": 0.0
+              }
+            },
+            "conditional": {
+              "total": 15,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 15
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "multiple-events": {
+              "total": 24,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 24
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "uncertain-time": {
+              "total": 16,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 16
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "regression": {
+      "datasetSha256": "8bb143e934dfe99eae7978eee0f6f6d08234b5ccc592548faa9f38bcc2ecb2c5",
+      "modes": {
+        "normalize-then-rules": {
+          "total": 16,
+          "eligible": 12,
+          "accepted": 11,
+          "correct": 11,
+          "wrongAccepted": 0,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.9166666666666666,
+          "wrongAcceptanceRate": 0.0,
+          "states": {
+            "COMPLETE": 11,
+            "PARTIAL": 2,
+            "CONFIRM": 3
+          },
+          "reasons": {
+            "normalization-low-confidence": 2,
+            "normalizer-needs-confirmation": 3,
+            "event-not-established": 3,
+            "normalization-malformed": 1,
+            "time-not-normalized": 1
+          },
+          "retainedFieldExact": {
+            "title": 1.0,
+            "dueAt": 1.0,
+            "note": 0.9166666666666666
+          },
+          "categories": {
+            "known-regression": {
+              "total": 16,
+              "eligible": 12,
+              "accepted": 11,
+              "correct": 11,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.9166666666666666,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 11,
+                "PARTIAL": 2,
+                "CONFIRM": 3
+              },
+              "reasons": {
+                "normalization-low-confidence": 2,
+                "normalizer-needs-confirmation": 3,
+                "event-not-established": 3,
+                "normalization-malformed": 1,
+                "time-not-normalized": 1
+              },
+              "retainedFieldExact": {
+                "title": 1.0,
+                "dueAt": 1.0,
+                "note": 0.9166666666666666
+              }
+            }
+          },
+          "exactNormalization": 0.9166666666666666
+        },
+        "span": {
+          "total": 16,
+          "eligible": 12,
+          "accepted": 9,
+          "correct": 9,
+          "wrongAccepted": 0,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.75,
+          "wrongAcceptanceRate": 0.0,
+          "states": {
+            "COMPLETE": 9,
+            "PARTIAL": 7
+          },
+          "reasons": {
+            "request-needs-confirmation": 5,
+            "unexplained-content": 3,
+            "time-not-normalized": 1
+          },
+          "retainedFieldExact": {
+            "title": 1.0,
+            "dueAt": 1.0,
+            "note": 0.8333333333333334
+          },
+          "categories": {
+            "known-regression": {
+              "total": 16,
+              "eligible": 12,
+              "accepted": 9,
+              "correct": 9,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.75,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 9,
+                "PARTIAL": 7
+              },
+              "reasons": {
+                "request-needs-confirmation": 5,
+                "unexplained-content": 3,
+                "time-not-normalized": 1
+              },
+              "retainedFieldExact": {
+                "title": 1.0,
+                "dueAt": 1.0,
+                "note": 0.8333333333333334
+              }
+            }
+          }
+        },
+        "same-data-BIO": {
+          "total": 16,
+          "eligible": 12,
+          "accepted": 9,
+          "correct": 9,
+          "wrongAccepted": 0,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.75,
+          "wrongAcceptanceRate": 0.0,
+          "states": {
+            "COMPLETE": 9,
+            "PARTIAL": 7
+          },
+          "reasons": {
+            "malformed-BIO": 3,
+            "unexplained-content": 4,
+            "request-needs-confirmation": 3,
+            "time-not-normalized": 1
+          },
+          "retainedFieldExact": {
+            "title": 0.9166666666666666,
+            "dueAt": 1.0,
+            "note": 0.9166666666666666
+          },
+          "categories": {
+            "known-regression": {
+              "total": 16,
+              "eligible": 12,
+              "accepted": 9,
+              "correct": 9,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.75,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 9,
+                "PARTIAL": 7
+              },
+              "reasons": {
+                "malformed-BIO": 3,
+                "unexplained-content": 4,
+                "request-needs-confirmation": 3,
+                "time-not-normalized": 1
+              },
+              "retainedFieldExact": {
+                "title": 0.9166666666666666,
+                "dueAt": 1.0,
+                "note": 0.9166666666666666
+              }
+            }
+          }
+        },
+        "v3": {
+          "total": 16,
+          "eligible": 12,
+          "accepted": 3,
+          "correct": 2,
+          "wrongAccepted": 1,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.16666666666666666,
+          "wrongAcceptanceRate": 0.3333333333333333,
+          "states": {
+            "CONFIRM": 13,
+            "COMPLETE": 3
+          },
+          "reasons": {},
+          "retainedFieldExact": {
+            "title": 0.16666666666666666,
+            "dueAt": 0.25,
+            "note": 0.4166666666666667
+          },
+          "categories": {
+            "known-regression": {
+              "total": 16,
+              "eligible": 12,
+              "accepted": 3,
+              "correct": 2,
+              "wrongAccepted": 1,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.16666666666666666,
+              "wrongAcceptanceRate": 0.3333333333333333,
+              "states": {
+                "CONFIRM": 13,
+                "COMPLETE": 3
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": 0.16666666666666666,
+                "dueAt": 0.25,
+                "note": 0.4166666666666667
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "wrongAcceptedExamples": [
+    {
+      "id": "span-test-00002",
+      "text": "明天在城西阅览室208核对展览报名名单，下午五点",
+      "category": "scheduled-location",
+      "expected": {
+        "decision": "accept",
+        "proposal": {
+          "kind": "TASK",
+          "title": "核对展览报名名单",
+          "dueAt": "2026-10-20T17:00",
+          "note": "地点：城西阅览室208",
+          "period": "DAILY",
+          "targetCount": 1,
+          "weekdaysMask": 127,
+          "reminderTime": null
+        }
+      },
+      "actual": {
+        "proposal": {
+          "kind": "TASK",
+          "title": "核对展览报名名单",
+          "dueAt": "2026-10-20T17:00",
+          "note": "地点：城西阅览室",
+          "period": "DAILY",
+          "targetCount": 1,
+          "weekdaysMask": 127,
+          "reminderTime": null,
+          "ready": true,
+          "needsAI": false,
+          "source": "NORMALIZER_RULES_PROTOTYPE"
+        },
+        "fields": {
+          "TITLE": [
+            "核对展览报名名单"
+          ],
+          "TIME": [
+            "明天 下午五点"
+          ],
+          "LOCATION": [
+            "城西阅览室"
+          ],
+          "NOTE": [],
+          "CONNECTOR": []
+        },
+        "spans": [],
+        "reasons": [],
+        "rawText": "明天在城西阅览室208核对展览报名名单，下午五点",
+        "normalizedText": "时间：明天 下午五点；事项：核对展览报名名单；地点：城西阅览室",
+        "residual": "",
+        "needsConfirmation": false,
+        "state": "COMPLETE"
+      }
+    },
+    {
+      "id": "span-test-00012",
+      "text": "明天13:30签收补寄的毕业证明，地点：城西阅览室208",
+      "category": "scheduled-location",
+      "expected": {
+        "decision": "accept",
+        "proposal": {
+          "kind": "TASK",
+          "title": "签收补寄的毕业证明",
+          "dueAt": "2028-02-29T13:30",
+          "note": "地点：城西阅览室208",
+          "period": "DAILY",
+          "targetCount": 1,
+          "weekdaysMask": 127,
+          "reminderTime": null
+        }
+      },
+      "actual": {
+        "proposal": {
+          "kind": "TASK",
+          "title": "签收补寄的毕业证明",
+          "dueAt": "2028-02-29T13:30",
+          "note": "地点：城西阅览室",
+          "period": "DAILY",
+          "targetCount": 1,
+          "weekdaysMask": 127,
+          "reminderTime": null,
+          "ready": true,
+          "needsAI": false,
+          "source": "NORMALIZER_RULES_PROTOTYPE"
+        },
+        "fields": {
+          "TITLE": [
+            "签收补寄的毕业证明"
+          ],
+          "TIME": [
+            "明天13:30"
+          ],
+          "LOCATION": [
+            "城西阅览室"
+          ],
+          "NOTE": [],
+          "CONNECTOR": []
+        },
+        "spans": [],
+        "reasons": [],
+        "rawText": "明天13:30签收补寄的毕业证明，地点：城西阅览室208",
+        "normalizedText": "时间：明天13:30；事项：签收补寄的毕业证明；地点：城西阅览室",
+        "residual": "",
+        "needsConfirmation": false,
+        "state": "COMPLETE"
+      }
+    },
+    {
+      "id": "span-test-00015",
+      "text": "麻烦提醒我后天上午\t八\t点在青禾社区大厅办理自行车年检",
+      "category": "scheduled-location",
+      "expected": {
+        "decision": "accept",
+        "proposal": {
+          "kind": "TASK",
+          "title": "办理自行车年检",
+          "dueAt": "2028-03-01T08:00",
+          "note": "地点：青禾社区大厅",
+          "period": "DAILY",
+          "targetCount": 1,
+          "weekdaysMask": 127,
+          "reminderTime": null
+        }
+      },
+      "actual": {
+        "proposal": {
+          "kind": "TASK",
+          "title": "办理自行车年",
+          "dueAt": "2028-03-01T08:00",
+          "note": "地点：青禾社区大厅",
+          "period": "DAILY",
+          "targetCount": 1,
+          "weekdaysMask": 127,
+          "reminderTime": null,
+          "ready": true,
+          "needsAI": false,
+          "source": "NORMALIZER_RULES_PROTOTYPE"
+        },
+        "fields": {
+          "TITLE": [
+            "办理自行车年"
+          ],
+          "TIME": [
+            "后天上午 八 点"
+          ],
+          "LOCATION": [
+            "青禾社区大厅"
+          ],
+          "NOTE": [],
+          "CONNECTOR": []
+        },
+        "spans": [],
+        "reasons": [],
+        "rawText": "麻烦提醒我后天上午\t八\t点在青禾社区大厅办理自行车年检",
+        "normalizedText": "时间：后天上午 八 点；事项：办理自行车年；地点：青禾社区大厅",
+        "residual": "",
+        "needsConfirmation": false,
+        "state": "COMPLETE"
+      }
+    },
+    {
+      "id": "span-test-00023",
+      "text": "今天购买不带花生的点心，下午1点半在松林交流中心",
+      "category": "scheduled-location",
+      "expected": {
+        "decision": "accept",
+        "proposal": {
+          "kind": "TASK",
+          "title": "购买不带花生的点心",
+          "dueAt": "2026-12-31T13:30",
+          "note": "地点：松林交流中心",
+          "period": "DAILY",
+          "targetCount": 1,
+          "weekdaysMask": 127,
+          "reminderTime": null
+        }
+      },
+      "actual": {
+        "proposal": {
+          "kind": "TASK",
+          "title": "购买不带花生的点心",
+          "dueAt": "2026-12-31T13:30",
+          "note": "地点：松林",
+          "period": "DAILY",
+          "targetCount": 1,
+          "weekdaysMask": 127,
+          "reminderTime": null,
+          "ready": true,
+          "needsAI": false,
+          "source": "NORMALIZER_RULES_PROTOTYPE"
+        },
+        "fields": {
+          "TITLE": [
+            "购买不带花生的点心"
+          ],
+          "TIME": [
+            "今天 下午1点半"
+          ],
+          "LOCATION": [
+            "松林"
+          ],
+          "NOTE": [],
+          "CONNECTOR": []
+        },
+        "spans": [],
+        "reasons": [],
+        "rawText": "今天购买不带花生的点心，下午1点半在松林交流中心",
+        "normalizedText": "时间：今天 下午1点半；事项：购买不带花生的点心；地点：松林",
+        "residual": "",
+        "needsConfirmation": false,
+        "state": "COMPLETE"
+      }
+    },
+    {
+      "id": "span-test-00025",
+      "text": "在竹园讨论室核对展览报名名单，大后天上午\t11\t点一刻",
+      "category": "scheduled-location",
+      "expected": {
+        "decision": "accept",
+        "proposal": {
+          "kind": "TASK",
+          "title": "核对展览报名名单",
+          "dueAt": "2028-03-02T11:15",
+          "note": "地点：竹园讨论室",
+          "period": "DAILY",
+          "targetCount": 1,
+          "weekdaysMask": 127,
+          "reminderTime": null
+        }
+      },
+      "actual": {
+        "proposal": {
+          "kind": "TASK",
+          "title": "核对展览报名名单",
+          "dueAt": "2028-03-02T11:15",
+          "note": "地点：竹园",
+          "period": "DAILY",
+          "targetCount": 1,
+          "weekdaysMask": 127,
+          "reminderTime": null,
+          "ready": true,
+          "needsAI": false,
+          "source": "NORMALIZER_RULES_PROTOTYPE"
+        },
+        "fields": {
+          "TITLE": [
+            "核对展览报名名单"
+          ],
+          "TIME": [
+            "大后天上午 11 点一刻"
+          ],
+          "LOCATION": [
+            "竹园"
+          ],
+          "NOTE": [],
+          "CONNECTOR": []
+        },
+        "spans": [],
+        "reasons": [],
+        "rawText": "在竹园讨论室核对展览报名名单，大后天上午\t11\t点一刻",
+        "normalizedText": "时间：大后天上午 11 点一刻；事项：核对展览报名名单；地点：竹园",
+        "residual": "",
+        "needsConfirmation": false,
+        "state": "COMPLETE"
+      }
+    },
+    {
+      "id": "span-test-00054",
+      "text": "地点定在松林交流中心，后天上午　10　点购买不带花生的点心",
+      "category": "held-syntax",
+      "expected": {
+        "decision": "accept",
+        "proposal": {
+          "kind": "TASK",
+          "title": "购买不带花生的点心",
+          "dueAt": "2028-03-01T10:00",
+          "note": "地点：松林交流中心",
+          "period": "DAILY",
+          "targetCount": 1,
+          "weekdaysMask": 127,
+          "reminderTime": null
+        }
+      },
+      "actual": {
+        "proposal": {
+          "kind": "TASK",
+          "title": "购买不带花生的点心",
+          "dueAt": "2028-03-01T10:00",
+          "note": "地点：松林",
+          "period": "DAILY",
+          "targetCount": 1,
+          "weekdaysMask": 127,
+          "reminderTime": null,
+          "ready": true,
+          "needsAI": false,
+          "source": "NORMALIZER_RULES_PROTOTYPE"
+        },
+        "fields": {
+          "TITLE": [
+            "购买不带花生的点心"
+          ],
+          "TIME": [
+            "后天上午 10 点"
+          ],
+          "LOCATION": [
+            "松林"
+          ],
+          "NOTE": [],
+          "CONNECTOR": []
+        },
+        "spans": [],
+        "reasons": [],
+        "rawText": "地点定在松林交流中心，后天上午　10　点购买不带花生的点心",
+        "normalizedText": "时间：后天上午 10 点；事项：购买不带花生的点心；地点：松林",
+        "residual": "",
+        "needsConfirmation": false,
+        "state": "COMPLETE"
+      }
+    }
+  ],
+  "userExample": {
+    "normalization": {
+      "normalized": "时间：明天下午 4 点；事项：开会；地点：逸夫楼",
+      "minimumProbability": 0.9970999956130981,
+      "meanLogProbability": -0.0003563693115535562,
+      "actions": [
+        99,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        100,
+        12,
+        13,
+        101,
+        9,
+        10,
+        11,
+        97
+      ],
+      "rawText": "明天下午 4 点要在逸夫楼开会"
+    },
+    "result": {
+      "proposal": {
+        "kind": "TASK",
+        "title": "开会",
+        "dueAt": "2026-10-20T16:00",
+        "note": "地点：逸夫楼",
+        "period": "DAILY",
+        "targetCount": 1,
+        "weekdaysMask": 127,
+        "reminderTime": null,
+        "ready": true,
+        "needsAI": false,
+        "source": "NORMALIZER_RULES_PROTOTYPE"
+      },
+      "fields": {
+        "TITLE": [
+          "开会"
+        ],
+        "TIME": [
+          "明天下午 4 点"
+        ],
+        "LOCATION": [
+          "逸夫楼"
+        ],
+        "NOTE": [],
+        "CONNECTOR": []
+      },
+      "spans": [],
+      "reasons": [],
+      "rawText": "明天下午 4 点要在逸夫楼开会",
+      "normalizedText": "时间：明天下午 4 点；事项：开会；地点：逸夫楼",
+      "residual": "",
+      "needsConfirmation": false,
+      "state": "COMPLETE"
+    }
+  },
+  "training": {
+    "architecture": "tiny-BERT-plus-two-layer-autoregressive-copy-decoder",
+    "seed": 42,
+    "epochs": 8,
+    "bestEpoch": 6,
+    "trainSha256": "097fb69d70917c01b02e35a267d430acde70dc7d1fab7a0802264b36d9f154e9",
+    "devSha256": "d3ff2a37ba4762428e5176b4b66ae48ea956258917bb292f91f3ee3c54e36ebc",
+    "warmStartSha256": "5e2b631d85c4732b332a7562268047902e73ffa191e3a00781752df4a0823f31",
+    "modelSha256": "5d8832c4487712d352fcdef977e86a6b0c9eaf69d80d36cd5f706548828ca67f",
+    "parameters": 3761799,
+    "learningRate": {
+      "encoder": 3e-05,
+      "decoder": 0.0005
+    },
+    "selection": "dev positive exact canonical string 90% + negative confirmation 10%; no test read",
+    "humanReviewed": false,
+    "deployment": "offline normalization comparison, not native client integration",
+    "sourceSha256": {
+      "span_data.py": "81aa9e3ca7cdf57ebf8c51a9ec44d18dc80678f1388e4cc9773b44ff947eb6c2",
+      "span_model.py": "e47387a4f8cf350751839e2931ff90db166f622c586d9bf9dbf9af6ffa33a4ea",
+      "normalizer_train.py": "fe47f6894d943dc15fa6351403d75c16451bb4ae87aa4912d22298a18f1cf3a8",
+      "normalizer_model.py": "7173a428a260949b26d89d377e3bc90ad7da8bebd84d73d746219defb1eb16c3"
+    }
+  },
+  "tests": {
+    "passed": 42,
+    "parserReplayExamples": 856,
+    "parserReplayDifferences": 0,
+    "goldTargetRoundtrip": 360,
+    "goldTargetRoundtripDifferences": 0
+  },
+  "currentRuntimeSourceSha256": {
+    "normalizer_rules.py": "38a8b9a9b263188305ffd9f3cbea3c1ab2df598472ab4fe220913de2a5190eea",
+    "normalizer_predict.py": "847afeecb3862d66ad80397f1516e9f3e427e3dac8ec179d2805729824944204",
+    "normalizer_evaluate.py": "6bee13e213c2ad90a267d4cd0be3400174c1b74953632df44997701346ac9a5a",
+    "normalizer_train.py": "fe47f6894d943dc15fa6351403d75c16451bb4ae87aa4912d22298a18f1cf3a8",
+    "normalizer_model.py": "7173a428a260949b26d89d377e3bc90ad7da8bebd84d73d746219defb1eb16c3",
+    "normalizer_data.py": "0d93b9822f1d6a355fa7c8bae957dee1972308300d7b7d802cf090e77df58dd2"
+  }
+}

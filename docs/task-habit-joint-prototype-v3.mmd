@@ -1,0 +1,20 @@
+flowchart TD
+    I["原文 + 入口类型 + now / timezone"] --> B["共享 Tiny BERT：只编码一次"]
+    B --> H["缓存 token 特征 H"]
+    H --> K["意图：TASK / HABIT / CONFIRM"]
+    H --> ST["TASK 片段头"]
+    H --> SH["HABIT 片段头"]
+    K --> C["按预测类型取片段；有界候选组合"]
+    ST --> C
+    SH --> C
+    C --> R["冻结片段分数选择；当前消融去掉学习式重排"]
+    R --> N["真实 KMP：截止时间 / 星期 / 目标窗口 / 次数 / 提醒"]
+    N --> V["原文覆盖与业务硬校验：draftValid"]
+    N --> Q["按预测类型的完整提案正确性头"]
+    H -. "缓存特征" .-> Q
+    Q --> CAL["独立校准 c_task / c_habit"]
+    CAL --> G["分别比较冻结阈值 T_task / T_habit"]
+    V --> G
+    G -->|"有效且达到合格阈值"| A["ready=true / needsAI=false"]
+    G -->|"有效、低置信度或无合格阈值"| L["ready=true / needsAI=true"]
+    G -->|"硬失败或缺字段"| P["ready=false / needsAI=true；保留原文"]

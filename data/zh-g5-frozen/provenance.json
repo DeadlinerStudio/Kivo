@@ -1,0 +1,17 @@
+{
+  "frozenBeforeCandidateEvaluation": true,
+  "realUserData": false,
+  "humanReviewed": false,
+  "scope": "40 held-out title families; familiar temporal templates",
+  "counts": {
+    "train": 21703,
+    "dev": 900,
+    "test": 1600
+  },
+  "sha256": {
+    "train": "889893ce4dcca68072e9183777d4b9c33b43eecf1db692fe3238fa7171a2abb1",
+    "dev": "815dc8a3e795abf2f5bc27f878260a8c038f5348e6bddf247afbae2238e7263f",
+    "test": "d498942da83b388634f31dcaf78fd06674c1e9a97cec978288cad99615e1a3a3"
+  },
+  "trainingTitleAugmentation": "144 independent combinations; no g4/g5 holdout titles in training"
+}

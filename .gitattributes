@@ -1,0 +1,2 @@
+# Mail patches contain literal context prefixes and a format-patch signature.
+integration/core/*.patch -whitespace

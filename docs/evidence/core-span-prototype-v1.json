@@ -1,0 +1,3406 @@
+{
+  "humanReviewed": false,
+  "realUserData": false,
+  "scope": "Chinese offline core-field prototype, not device integration or production release",
+  "kmpDateAdapterSha256": "f8efb32846618b8355dbe89d6e5f27da25c5d73b2647a70500dda5bb946b15cd",
+  "kmpSourceSha256": "cbd235b0365fee7276d49500ec1dbcd1fa1cd21c2141ced22dba4fb8a3854d58",
+  "modelSha256": "b1a3e63c0d632dcf80afaef099b44cc5757d7bdfc3315d3313068084b5aa0b78",
+  "onnxSha256": "df5141bece67e906adabf984bbc19ab27fb7fb79a331d69e9065bf953bf4f340",
+  "bioSha256": "7359dea3bbf841e75e0d012157ca1db86317141cd268a3d416ca28fbb50ba276",
+  "thresholds": {
+    "span": {
+      "span": 1.0,
+      "request": 0.9,
+      "grid": [
+        {
+          "span": 0.0,
+          "request": 0.8,
+          "correct": 230,
+          "accepted": 235,
+          "wrongAccepted": 5,
+          "wrongAcceptanceRate": 0.02127659574468085,
+          "correctCoverage": 0.7986111111111112
+        },
+        {
+          "span": 0.0,
+          "request": 0.9,
+          "correct": 230,
+          "accepted": 235,
+          "wrongAccepted": 5,
+          "wrongAcceptanceRate": 0.02127659574468085,
+          "correctCoverage": 0.7986111111111112
+        },
+        {
+          "span": 0.0,
+          "request": 0.95,
+          "correct": 229,
+          "accepted": 234,
+          "wrongAccepted": 5,
+          "wrongAcceptanceRate": 0.021367521367521368,
+          "correctCoverage": 0.7951388888888888
+        },
+        {
+          "span": 0.0,
+          "request": 0.98,
+          "correct": 226,
+          "accepted": 231,
+          "wrongAccepted": 5,
+          "wrongAcceptanceRate": 0.021645021645021644,
+          "correctCoverage": 0.7847222222222222
+        },
+        {
+          "span": 1.0,
+          "request": 0.8,
+          "correct": 223,
+          "accepted": 227,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.01762114537444934,
+          "correctCoverage": 0.7743055555555556
+        },
+        {
+          "span": 1.0,
+          "request": 0.9,
+          "correct": 223,
+          "accepted": 227,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.01762114537444934,
+          "correctCoverage": 0.7743055555555556
+        },
+        {
+          "span": 1.0,
+          "request": 0.95,
+          "correct": 222,
+          "accepted": 226,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.017699115044247787,
+          "correctCoverage": 0.7708333333333334
+        },
+        {
+          "span": 1.0,
+          "request": 0.98,
+          "correct": 219,
+          "accepted": 223,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.017937219730941704,
+          "correctCoverage": 0.7604166666666666
+        },
+        {
+          "span": 2.0,
+          "request": 0.8,
+          "correct": 213,
+          "accepted": 217,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.018433179723502304,
+          "correctCoverage": 0.7395833333333334
+        },
+        {
+          "span": 2.0,
+          "request": 0.9,
+          "correct": 213,
+          "accepted": 217,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.018433179723502304,
+          "correctCoverage": 0.7395833333333334
+        },
+        {
+          "span": 2.0,
+          "request": 0.95,
+          "correct": 212,
+          "accepted": 216,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.018518518518518517,
+          "correctCoverage": 0.7361111111111112
+        },
+        {
+          "span": 2.0,
+          "request": 0.98,
+          "correct": 209,
+          "accepted": 213,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.018779342723004695,
+          "correctCoverage": 0.7256944444444444
+        },
+        {
+          "span": 3.0,
+          "request": 0.8,
+          "correct": 195,
+          "accepted": 199,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.020100502512562814,
+          "correctCoverage": 0.6770833333333334
+        },
+        {
+          "span": 3.0,
+          "request": 0.9,
+          "correct": 195,
+          "accepted": 199,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.020100502512562814,
+          "correctCoverage": 0.6770833333333334
+        },
+        {
+          "span": 3.0,
+          "request": 0.95,
+          "correct": 194,
+          "accepted": 198,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.020202020202020204,
+          "correctCoverage": 0.6736111111111112
+        },
+        {
+          "span": 3.0,
+          "request": 0.98,
+          "correct": 192,
+          "accepted": 196,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.02040816326530612,
+          "correctCoverage": 0.6666666666666666
+        }
+      ],
+      "selection": "dev only: maximize correct with <=1% observed wrong acceptance; otherwise correct-10*wrong"
+    },
+    "same-data-BIO": {
+      "span": 0.0,
+      "request": 0.98,
+      "grid": [
+        {
+          "span": 0.0,
+          "request": 0.8,
+          "correct": 215,
+          "accepted": 219,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.0182648401826484,
+          "correctCoverage": 0.7465277777777778
+        },
+        {
+          "span": 0.0,
+          "request": 0.9,
+          "correct": 215,
+          "accepted": 219,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.0182648401826484,
+          "correctCoverage": 0.7465277777777778
+        },
+        {
+          "span": 0.0,
+          "request": 0.95,
+          "correct": 215,
+          "accepted": 219,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.0182648401826484,
+          "correctCoverage": 0.7465277777777778
+        },
+        {
+          "span": 0.0,
+          "request": 0.98,
+          "correct": 215,
+          "accepted": 219,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.0182648401826484,
+          "correctCoverage": 0.7465277777777778
+        },
+        {
+          "span": 1.0,
+          "request": 0.8,
+          "correct": 200,
+          "accepted": 204,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.0196078431372549,
+          "correctCoverage": 0.6944444444444444
+        },
+        {
+          "span": 1.0,
+          "request": 0.9,
+          "correct": 200,
+          "accepted": 204,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.0196078431372549,
+          "correctCoverage": 0.6944444444444444
+        },
+        {
+          "span": 1.0,
+          "request": 0.95,
+          "correct": 200,
+          "accepted": 204,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.0196078431372549,
+          "correctCoverage": 0.6944444444444444
+        },
+        {
+          "span": 1.0,
+          "request": 0.98,
+          "correct": 200,
+          "accepted": 204,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.0196078431372549,
+          "correctCoverage": 0.6944444444444444
+        },
+        {
+          "span": 2.0,
+          "request": 0.8,
+          "correct": 174,
+          "accepted": 178,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.02247191011235955,
+          "correctCoverage": 0.6041666666666666
+        },
+        {
+          "span": 2.0,
+          "request": 0.9,
+          "correct": 174,
+          "accepted": 178,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.02247191011235955,
+          "correctCoverage": 0.6041666666666666
+        },
+        {
+          "span": 2.0,
+          "request": 0.95,
+          "correct": 174,
+          "accepted": 178,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.02247191011235955,
+          "correctCoverage": 0.6041666666666666
+        },
+        {
+          "span": 2.0,
+          "request": 0.98,
+          "correct": 174,
+          "accepted": 178,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.02247191011235955,
+          "correctCoverage": 0.6041666666666666
+        },
+        {
+          "span": 3.0,
+          "request": 0.8,
+          "correct": 152,
+          "accepted": 155,
+          "wrongAccepted": 3,
+          "wrongAcceptanceRate": 0.01935483870967742,
+          "correctCoverage": 0.5277777777777778
+        },
+        {
+          "span": 3.0,
+          "request": 0.9,
+          "correct": 152,
+          "accepted": 155,
+          "wrongAccepted": 3,
+          "wrongAcceptanceRate": 0.01935483870967742,
+          "correctCoverage": 0.5277777777777778
+        },
+        {
+          "span": 3.0,
+          "request": 0.95,
+          "correct": 152,
+          "accepted": 155,
+          "wrongAccepted": 3,
+          "wrongAcceptanceRate": 0.01935483870967742,
+          "correctCoverage": 0.5277777777777778
+        },
+        {
+          "span": 3.0,
+          "request": 0.98,
+          "correct": 152,
+          "accepted": 155,
+          "wrongAccepted": 3,
+          "wrongAcceptanceRate": 0.01935483870967742,
+          "correctCoverage": 0.5277777777777778
+        }
+      ],
+      "selection": "dev only: maximize correct with <=1% observed wrong acceptance; otherwise correct-10*wrong"
+    }
+  },
+  "sourceSha256": {
+    "span_decode.py": "bd6c03d9fed300e37e0593540623b79dceccaa544b457f88206b9aeea7cdfdfe",
+    "span_data.py": "81aa9e3ca7cdf57ebf8c51a9ec44d18dc80678f1388e4cc9773b44ff947eb6c2",
+    "span_train.py": "531d73a93ed44d49ea186e4f16761c85e85a5ed767a27d9a31139aaacf85f8f8",
+    "span_model.py": "9461458e2675092be52ac14145a533cbe7562f0b9f46f971bd33503152c5c944",
+    "span_evaluate.py": "ec66303d6e08d48c49d696494b074a82b0ff891a609b12801cbd0fbffa1d9598"
+  },
+  "onnxParity": {
+    "examples": 856,
+    "maxAbsoluteErrors": [
+      6.9141387939453125e-06,
+      0.00011730194091796875
+    ],
+    "lastAxisArgmaxAgreement": true,
+    "note": "Numerical checks only; new span codec not integrated on devices"
+  },
+  "sets": {
+    "dev": {
+      "datasetSha256": "d3ff2a37ba4762428e5176b4b66ae48ea956258917bb292f91f3ee3c54e36ebc",
+      "modes": {
+        "span": {
+          "total": 360,
+          "eligible": 288,
+          "accepted": 227,
+          "correct": 227,
+          "wrongAccepted": 0,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.7881944444444444,
+          "wrongAcceptanceRate": 0.0,
+          "states": {
+            "COMPLETE": 227,
+            "PARTIAL": 131,
+            "CONFIRM": 2
+          },
+          "reasons": {
+            "unexplained-content": 85,
+            "request-needs-confirmation": 73,
+            "ambiguous-title": 4,
+            "time-not-normalized": 19,
+            "event-not-established": 33,
+            "ambiguous-location": 5
+          },
+          "retainedFieldExact": {
+            "title": 0.9340277777777778,
+            "dueAt": 0.9861111111111112,
+            "note": 0.8541666666666666
+          },
+          "categories": {
+            "scheduled-location": {
+              "total": 216,
+              "eligible": 216,
+              "accepted": 159,
+              "correct": 159,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.7361111111111112,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 159,
+                "PARTIAL": 57
+              },
+              "reasons": {
+                "unexplained-content": 54,
+                "event-not-established": 18,
+                "request-needs-confirmation": 1,
+                "time-not-normalized": 3,
+                "ambiguous-location": 3
+              },
+              "retainedFieldExact": {
+                "title": 0.9166666666666666,
+                "dueAt": 0.9861111111111112,
+                "note": 0.8055555555555556
+              }
+            },
+            "plain-title": {
+              "total": 36,
+              "eligible": 36,
+              "accepted": 33,
+              "correct": 33,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.9166666666666666,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 33,
+                "CONFIRM": 2,
+                "PARTIAL": 1
+              },
+              "reasons": {
+                "event-not-established": 2,
+                "unexplained-content": 3
+              },
+              "retainedFieldExact": {
+                "title": 0.9722222222222222,
+                "dueAt": 1.0,
+                "note": 1.0
+              }
+            },
+            "scheduled-no-location": {
+              "total": 36,
+              "eligible": 36,
+              "accepted": 35,
+              "correct": 35,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.9722222222222222,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 35,
+                "PARTIAL": 1
+              },
+              "reasons": {
+                "time-not-normalized": 1
+              },
+              "retainedFieldExact": {
+                "title": 1.0,
+                "dueAt": 0.9722222222222222,
+                "note": 1.0
+              }
+            },
+            "multiple-events": {
+              "total": 16,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 16
+              },
+              "reasons": {
+                "request-needs-confirmation": 16,
+                "unexplained-content": 15,
+                "ambiguous-title": 3
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "conditional": {
+              "total": 11,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 11
+              },
+              "reasons": {
+                "request-needs-confirmation": 11,
+                "unexplained-content": 2
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "uncertain-time": {
+              "total": 15,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 15
+              },
+              "reasons": {
+                "request-needs-confirmation": 15,
+                "unexplained-content": 2,
+                "ambiguous-title": 1,
+                "time-not-normalized": 15,
+                "event-not-established": 1
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "negation": {
+              "total": 17,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 17
+              },
+              "reasons": {
+                "request-needs-confirmation": 17,
+                "unexplained-content": 7,
+                "ambiguous-location": 1
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "missing-event": {
+              "total": 13,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 13
+              },
+              "reasons": {
+                "request-needs-confirmation": 13,
+                "event-not-established": 12,
+                "unexplained-content": 2,
+                "ambiguous-location": 1
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            }
+          },
+          "spanMetrics": {
+            "TITLE": {
+              "tp": 324,
+              "predicted": 327,
+              "gold": 363,
+              "precision": 0.9908256880733946,
+              "recall": 0.8925619834710744,
+              "f1": 0.9391304347826087
+            },
+            "TIME": {
+              "tp": 370,
+              "predicted": 370,
+              "gold": 370,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "LOCATION": {
+              "tp": 234,
+              "predicted": 270,
+              "gold": 288,
+              "precision": 0.8666666666666667,
+              "recall": 0.8125,
+              "f1": 0.8387096774193549
+            },
+            "NOTE": {
+              "tp": 18,
+              "predicted": 18,
+              "gold": 18,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          }
+        },
+        "same-data-BIO": {
+          "total": 360,
+          "eligible": 288,
+          "accepted": 219,
+          "correct": 218,
+          "wrongAccepted": 1,
+          "negativeWrongAccepted": 1,
+          "correctCoverage": 0.7569444444444444,
+          "wrongAcceptanceRate": 0.0045662100456621,
+          "states": {
+            "COMPLETE": 219,
+            "PARTIAL": 140,
+            "CONFIRM": 1
+          },
+          "reasons": {
+            "malformed-BIO": 53,
+            "event-not-established": 16,
+            "unexplained-content": 98,
+            "request-needs-confirmation": 68,
+            "time-not-normalized": 19,
+            "ambiguous-title": 6
+          },
+          "retainedFieldExact": {
+            "title": 0.9409722222222222,
+            "dueAt": 0.9861111111111112,
+            "note": 0.7986111111111112
+          },
+          "categories": {
+            "scheduled-location": {
+              "total": 216,
+              "eligible": 216,
+              "accepted": 148,
+              "correct": 148,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.6851851851851852,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 148,
+                "PARTIAL": 68
+              },
+              "reasons": {
+                "malformed-BIO": 36,
+                "event-not-established": 4,
+                "unexplained-content": 66,
+                "ambiguous-title": 2,
+                "time-not-normalized": 3
+              },
+              "retainedFieldExact": {
+                "title": 0.9212962962962963,
+                "dueAt": 0.9861111111111112,
+                "note": 0.7314814814814815
+              }
+            },
+            "plain-title": {
+              "total": 36,
+              "eligible": 36,
+              "accepted": 35,
+              "correct": 35,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.9722222222222222,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 35,
+                "CONFIRM": 1
+              },
+              "reasons": {
+                "malformed-BIO": 1,
+                "event-not-established": 1,
+                "unexplained-content": 1
+              },
+              "retainedFieldExact": {
+                "title": 1.0,
+                "dueAt": 1.0,
+                "note": 1.0
+              }
+            },
+            "scheduled-no-location": {
+              "total": 36,
+              "eligible": 36,
+              "accepted": 35,
+              "correct": 35,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.9722222222222222,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 35,
+                "PARTIAL": 1
+              },
+              "reasons": {
+                "time-not-normalized": 1
+              },
+              "retainedFieldExact": {
+                "title": 1.0,
+                "dueAt": 0.9722222222222222,
+                "note": 1.0
+              }
+            },
+            "multiple-events": {
+              "total": 16,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 16
+              },
+              "reasons": {
+                "request-needs-confirmation": 16,
+                "unexplained-content": 16,
+                "ambiguous-title": 3,
+                "malformed-BIO": 3
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "conditional": {
+              "total": 11,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 11
+              },
+              "reasons": {
+                "request-needs-confirmation": 11,
+                "malformed-BIO": 1,
+                "unexplained-content": 2
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "uncertain-time": {
+              "total": 15,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 15
+              },
+              "reasons": {
+                "request-needs-confirmation": 15,
+                "time-not-normalized": 15,
+                "malformed-BIO": 4,
+                "unexplained-content": 4,
+                "event-not-established": 1
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "negation": {
+              "total": 17,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 17
+              },
+              "reasons": {
+                "request-needs-confirmation": 17,
+                "malformed-BIO": 5,
+                "unexplained-content": 6,
+                "ambiguous-title": 1
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "missing-event": {
+              "total": 13,
+              "eligible": 0,
+              "accepted": 1,
+              "correct": 0,
+              "wrongAccepted": 1,
+              "negativeWrongAccepted": 1,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": 1.0,
+              "states": {
+                "PARTIAL": 12,
+                "COMPLETE": 1
+              },
+              "reasons": {
+                "request-needs-confirmation": 9,
+                "event-not-established": 10,
+                "malformed-BIO": 3,
+                "unexplained-content": 3
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            }
+          },
+          "spanMetrics": {
+            "TITLE": {
+              "tp": 324,
+              "predicted": 344,
+              "gold": 363,
+              "precision": 0.9418604651162791,
+              "recall": 0.8925619834710744,
+              "f1": 0.9165487977369166
+            },
+            "TIME": {
+              "tp": 370,
+              "predicted": 370,
+              "gold": 370,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "LOCATION": {
+              "tp": 213,
+              "predicted": 282,
+              "gold": 288,
+              "precision": 0.7553191489361702,
+              "recall": 0.7395833333333334,
+              "f1": 0.7473684210526316
+            },
+            "NOTE": {
+              "tp": 18,
+              "predicted": 21,
+              "gold": 18,
+              "precision": 0.8571428571428571,
+              "recall": 1.0,
+              "f1": 0.9230769230769231
+            }
+          }
+        },
+        "v3": {
+          "total": 360,
+          "eligible": 288,
+          "accepted": 58,
+          "correct": 15,
+          "wrongAccepted": 43,
+          "negativeWrongAccepted": 7,
+          "correctCoverage": 0.052083333333333336,
+          "wrongAcceptanceRate": 0.7413793103448276,
+          "states": {
+            "CONFIRM": 302,
+            "COMPLETE": 58
+          },
+          "reasons": {},
+          "retainedFieldExact": {
+            "title": 0.059027777777777776,
+            "dueAt": 0.2569444444444444,
+            "note": 0.25
+          },
+          "categories": {
+            "scheduled-location": {
+              "total": 216,
+              "eligible": 216,
+              "accepted": 30,
+              "correct": 0,
+              "wrongAccepted": 30,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.0,
+              "wrongAcceptanceRate": 1.0,
+              "states": {
+                "CONFIRM": 186,
+                "COMPLETE": 30
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": 0.0,
+                "dueAt": 0.1388888888888889,
+                "note": 0.0
+              }
+            },
+            "plain-title": {
+              "total": 36,
+              "eligible": 36,
+              "accepted": 13,
+              "correct": 9,
+              "wrongAccepted": 4,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.25,
+              "wrongAcceptanceRate": 0.3076923076923077,
+              "states": {
+                "COMPLETE": 13,
+                "CONFIRM": 23
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": 0.3055555555555556,
+                "dueAt": 1.0,
+                "note": 1.0
+              }
+            },
+            "scheduled-no-location": {
+              "total": 36,
+              "eligible": 36,
+              "accepted": 8,
+              "correct": 6,
+              "wrongAccepted": 2,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.16666666666666666,
+              "wrongAcceptanceRate": 0.25,
+              "states": {
+                "COMPLETE": 8,
+                "CONFIRM": 28
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": 0.16666666666666666,
+                "dueAt": 0.2222222222222222,
+                "note": 1.0
+              }
+            },
+            "multiple-events": {
+              "total": 16,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 16
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "conditional": {
+              "total": 11,
+              "eligible": 0,
+              "accepted": 1,
+              "correct": 0,
+              "wrongAccepted": 1,
+              "negativeWrongAccepted": 1,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": 1.0,
+              "states": {
+                "CONFIRM": 10,
+                "COMPLETE": 1
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "uncertain-time": {
+              "total": 15,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 15
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "negation": {
+              "total": 17,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 17
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "missing-event": {
+              "total": 13,
+              "eligible": 0,
+              "accepted": 6,
+              "correct": 0,
+              "wrongAccepted": 6,
+              "negativeWrongAccepted": 6,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": 1.0,
+              "states": {
+                "COMPLETE": 6,
+                "CONFIRM": 7
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "test": {
+      "datasetSha256": "de861365d3cdead1fd296360bfaaead9fa94a861e9870c7564f0225f3e231ff8",
+      "modes": {
+        "span": {
+          "total": 480,
+          "eligible": 384,
+          "accepted": 244,
+          "correct": 244,
+          "wrongAccepted": 0,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.6354166666666666,
+          "wrongAcceptanceRate": 0.0,
+          "states": {
+            "PARTIAL": 230,
+            "COMPLETE": 244,
+            "CONFIRM": 6
+          },
+          "reasons": {
+            "event-not-established": 103,
+            "unexplained-content": 169,
+            "request-needs-confirmation": 129,
+            "time-not-normalized": 38,
+            "ambiguous-title": 7,
+            "ambiguous-location": 8,
+            "ambiguous-note": 1,
+            "ambiguous-time": 1
+          },
+          "retainedFieldExact": {
+            "title": 0.8151041666666666,
+            "dueAt": 0.9348958333333334,
+            "note": 0.8541666666666666
+          },
+          "categories": {
+            "scheduled-location": {
+              "total": 230,
+              "eligible": 230,
+              "accepted": 148,
+              "correct": 148,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.6434782608695652,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "PARTIAL": 82,
+                "COMPLETE": 148
+              },
+              "reasons": {
+                "event-not-established": 32,
+                "unexplained-content": 69,
+                "request-needs-confirmation": 12,
+                "time-not-normalized": 5,
+                "ambiguous-location": 4
+              },
+              "retainedFieldExact": {
+                "title": 0.8608695652173913,
+                "dueAt": 0.9782608695652174,
+                "note": 0.8478260869565217
+              }
+            },
+            "plain-title": {
+              "total": 48,
+              "eligible": 48,
+              "accepted": 40,
+              "correct": 40,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.8333333333333334,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 40,
+                "CONFIRM": 5,
+                "PARTIAL": 3
+              },
+              "reasons": {
+                "event-not-established": 5,
+                "unexplained-content": 5,
+                "request-needs-confirmation": 3
+              },
+              "retainedFieldExact": {
+                "title": 0.8958333333333334,
+                "dueAt": 1.0,
+                "note": 1.0
+              }
+            },
+            "scheduled-no-location": {
+              "total": 48,
+              "eligible": 48,
+              "accepted": 44,
+              "correct": 44,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.9166666666666666,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 44,
+                "PARTIAL": 4
+              },
+              "reasons": {
+                "event-not-established": 2,
+                "unexplained-content": 2,
+                "time-not-normalized": 2
+              },
+              "retainedFieldExact": {
+                "title": 0.9583333333333334,
+                "dueAt": 0.9583333333333334,
+                "note": 1.0
+              }
+            },
+            "negation": {
+              "total": 21,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 21
+              },
+              "reasons": {
+                "request-needs-confirmation": 21,
+                "event-not-established": 4,
+                "unexplained-content": 9,
+                "ambiguous-location": 2
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "missing-event": {
+              "total": 20,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 20
+              },
+              "reasons": {
+                "request-needs-confirmation": 19,
+                "event-not-established": 20,
+                "unexplained-content": 4
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "held-syntax": {
+              "total": 58,
+              "eligible": 58,
+              "accepted": 12,
+              "correct": 12,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.20689655172413793,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "PARTIAL": 45,
+                "COMPLETE": 12,
+                "CONFIRM": 1
+              },
+              "reasons": {
+                "unexplained-content": 46,
+                "request-needs-confirmation": 19,
+                "event-not-established": 32,
+                "time-not-normalized": 15,
+                "ambiguous-time": 1
+              },
+              "retainedFieldExact": {
+                "title": 0.4482758620689655,
+                "dueAt": 0.6896551724137931,
+                "note": 0.6379310344827587
+              }
+            },
+            "conditional": {
+              "total": 15,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 15
+              },
+              "reasons": {
+                "request-needs-confirmation": 15,
+                "event-not-established": 2,
+                "unexplained-content": 5
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "multiple-events": {
+              "total": 24,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 24
+              },
+              "reasons": {
+                "request-needs-confirmation": 24,
+                "unexplained-content": 24,
+                "ambiguous-title": 7,
+                "event-not-established": 1,
+                "ambiguous-location": 1,
+                "ambiguous-note": 1
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "uncertain-time": {
+              "total": 16,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 16
+              },
+              "reasons": {
+                "request-needs-confirmation": 16,
+                "time-not-normalized": 16,
+                "event-not-established": 5,
+                "unexplained-content": 5,
+                "ambiguous-location": 1
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            }
+          },
+          "spanMetrics": {
+            "TITLE": {
+              "tp": 375,
+              "predicted": 377,
+              "gold": 484,
+              "precision": 0.9946949602122016,
+              "recall": 0.7747933884297521,
+              "f1": 0.8710801393728222
+            },
+            "TIME": {
+              "tp": 484,
+              "predicted": 496,
+              "gold": 524,
+              "precision": 0.9758064516129032,
+              "recall": 0.9236641221374046,
+              "f1": 0.9490196078431372
+            },
+            "LOCATION": {
+              "tp": 307,
+              "predicted": 336,
+              "gold": 384,
+              "precision": 0.9136904761904762,
+              "recall": 0.7994791666666666,
+              "f1": 0.8527777777777777
+            },
+            "NOTE": {
+              "tp": 30,
+              "predicted": 30,
+              "gold": 30,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          }
+        },
+        "same-data-BIO": {
+          "total": 480,
+          "eligible": 384,
+          "accepted": 227,
+          "correct": 222,
+          "wrongAccepted": 5,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.578125,
+          "wrongAcceptanceRate": 0.022026431718061675,
+          "states": {
+            "COMPLETE": 227,
+            "PARTIAL": 253
+          },
+          "reasons": {
+            "malformed-BIO": 136,
+            "unexplained-content": 189,
+            "time-not-normalized": 34,
+            "request-needs-confirmation": 119,
+            "event-not-established": 21,
+            "ambiguous-title": 8,
+            "ambiguous-location": 3
+          },
+          "retainedFieldExact": {
+            "title": 0.859375,
+            "dueAt": 0.9557291666666666,
+            "note": 0.7395833333333334
+          },
+          "categories": {
+            "scheduled-location": {
+              "total": 230,
+              "eligible": 230,
+              "accepted": 134,
+              "correct": 129,
+              "wrongAccepted": 5,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.5608695652173913,
+              "wrongAcceptanceRate": 0.03731343283582089,
+              "states": {
+                "COMPLETE": 134,
+                "PARTIAL": 96
+              },
+              "reasons": {
+                "malformed-BIO": 67,
+                "unexplained-content": 88,
+                "time-not-normalized": 5,
+                "ambiguous-title": 3,
+                "request-needs-confirmation": 6,
+                "ambiguous-location": 1,
+                "event-not-established": 2
+              },
+              "retainedFieldExact": {
+                "title": 0.9,
+                "dueAt": 0.9782608695652174,
+                "note": 0.6782608695652174
+              }
+            },
+            "plain-title": {
+              "total": 48,
+              "eligible": 48,
+              "accepted": 40,
+              "correct": 40,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.8333333333333334,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 40,
+                "PARTIAL": 8
+              },
+              "reasons": {
+                "unexplained-content": 7,
+                "malformed-BIO": 2,
+                "ambiguous-title": 1,
+                "request-needs-confirmation": 1
+              },
+              "retainedFieldExact": {
+                "title": 0.8541666666666666,
+                "dueAt": 1.0,
+                "note": 1.0
+              }
+            },
+            "scheduled-no-location": {
+              "total": 48,
+              "eligible": 48,
+              "accepted": 41,
+              "correct": 41,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.8541666666666666,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "PARTIAL": 7,
+                "COMPLETE": 41
+              },
+              "reasons": {
+                "malformed-BIO": 2,
+                "unexplained-content": 5,
+                "time-not-normalized": 2
+              },
+              "retainedFieldExact": {
+                "title": 0.8958333333333334,
+                "dueAt": 0.9583333333333334,
+                "note": 1.0
+              }
+            },
+            "negation": {
+              "total": 21,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 21
+              },
+              "reasons": {
+                "request-needs-confirmation": 21,
+                "malformed-BIO": 7,
+                "unexplained-content": 8
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "missing-event": {
+              "total": 20,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 20
+              },
+              "reasons": {
+                "request-needs-confirmation": 18,
+                "event-not-established": 19,
+                "malformed-BIO": 3,
+                "unexplained-content": 4
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "held-syntax": {
+              "total": 58,
+              "eligible": 58,
+              "accepted": 12,
+              "correct": 12,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.20689655172413793,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "PARTIAL": 46,
+                "COMPLETE": 12
+              },
+              "reasons": {
+                "unexplained-content": 38,
+                "malformed-BIO": 31,
+                "request-needs-confirmation": 18,
+                "time-not-normalized": 9,
+                "ambiguous-location": 2
+              },
+              "retainedFieldExact": {
+                "title": 0.6724137931034483,
+                "dueAt": 0.8275862068965517,
+                "note": 0.5517241379310345
+              }
+            },
+            "conditional": {
+              "total": 15,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 15
+              },
+              "reasons": {
+                "request-needs-confirmation": 15,
+                "malformed-BIO": 6,
+                "unexplained-content": 8
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "multiple-events": {
+              "total": 24,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 24
+              },
+              "reasons": {
+                "request-needs-confirmation": 24,
+                "unexplained-content": 24,
+                "malformed-BIO": 12,
+                "ambiguous-title": 4,
+                "time-not-normalized": 2
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "uncertain-time": {
+              "total": 16,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "PARTIAL": 16
+              },
+              "reasons": {
+                "request-needs-confirmation": 16,
+                "unexplained-content": 7,
+                "time-not-normalized": 16,
+                "malformed-BIO": 6
+              },
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            }
+          },
+          "spanMetrics": {
+            "TITLE": {
+              "tp": 399,
+              "predicted": 459,
+              "gold": 484,
+              "precision": 0.869281045751634,
+              "recall": 0.8243801652892562,
+              "f1": 0.8462354188759279
+            },
+            "TIME": {
+              "tp": 510,
+              "predicted": 518,
+              "gold": 524,
+              "precision": 0.9845559845559846,
+              "recall": 0.9732824427480916,
+              "f1": 0.9788867562380038
+            },
+            "LOCATION": {
+              "tp": 252,
+              "predicted": 374,
+              "gold": 384,
+              "precision": 0.6737967914438503,
+              "recall": 0.65625,
+              "f1": 0.6649076517150396
+            },
+            "NOTE": {
+              "tp": 30,
+              "predicted": 32,
+              "gold": 30,
+              "precision": 0.9375,
+              "recall": 1.0,
+              "f1": 0.967741935483871
+            }
+          }
+        },
+        "v3": {
+          "total": 480,
+          "eligible": 384,
+          "accepted": 65,
+          "correct": 31,
+          "wrongAccepted": 34,
+          "negativeWrongAccepted": 7,
+          "correctCoverage": 0.08072916666666667,
+          "wrongAcceptanceRate": 0.5230769230769231,
+          "states": {
+            "COMPLETE": 65,
+            "CONFIRM": 415
+          },
+          "reasons": {},
+          "retainedFieldExact": {
+            "title": 0.08854166666666667,
+            "dueAt": 0.22395833333333334,
+            "note": 0.25
+          },
+          "categories": {
+            "scheduled-location": {
+              "total": 230,
+              "eligible": 230,
+              "accepted": 22,
+              "correct": 0,
+              "wrongAccepted": 22,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.0,
+              "wrongAcceptanceRate": 1.0,
+              "states": {
+                "COMPLETE": 22,
+                "CONFIRM": 208
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": 0.0,
+                "dueAt": 0.09565217391304348,
+                "note": 0.0
+              }
+            },
+            "plain-title": {
+              "total": 48,
+              "eligible": 48,
+              "accepted": 20,
+              "correct": 15,
+              "wrongAccepted": 5,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.3125,
+              "wrongAcceptanceRate": 0.25,
+              "states": {
+                "COMPLETE": 20,
+                "CONFIRM": 28
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": 0.375,
+                "dueAt": 1.0,
+                "note": 1.0
+              }
+            },
+            "scheduled-no-location": {
+              "total": 48,
+              "eligible": 48,
+              "accepted": 16,
+              "correct": 16,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.3333333333333333,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "CONFIRM": 32,
+                "COMPLETE": 16
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": 0.3333333333333333,
+                "dueAt": 0.3333333333333333,
+                "note": 1.0
+              }
+            },
+            "negation": {
+              "total": 21,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 21
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "missing-event": {
+              "total": 20,
+              "eligible": 0,
+              "accepted": 7,
+              "correct": 0,
+              "wrongAccepted": 7,
+              "negativeWrongAccepted": 7,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": 1.0,
+              "states": {
+                "CONFIRM": 13,
+                "COMPLETE": 7
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "held-syntax": {
+              "total": 58,
+              "eligible": 58,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.0,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 58
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": 0.0,
+                "dueAt": 0.0,
+                "note": 0.0
+              }
+            },
+            "conditional": {
+              "total": 15,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 15
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "multiple-events": {
+              "total": 24,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 24
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            },
+            "uncertain-time": {
+              "total": 16,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": null,
+              "wrongAcceptanceRate": null,
+              "states": {
+                "CONFIRM": 16
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": null,
+                "dueAt": null,
+                "note": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "regression": {
+      "datasetSha256": "8bb143e934dfe99eae7978eee0f6f6d08234b5ccc592548faa9f38bcc2ecb2c5",
+      "modes": {
+        "span": {
+          "total": 16,
+          "eligible": 12,
+          "accepted": 9,
+          "correct": 9,
+          "wrongAccepted": 0,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.75,
+          "wrongAcceptanceRate": 0.0,
+          "states": {
+            "COMPLETE": 9,
+            "PARTIAL": 7
+          },
+          "reasons": {
+            "request-needs-confirmation": 5,
+            "unexplained-content": 3,
+            "time-not-normalized": 1
+          },
+          "retainedFieldExact": {
+            "title": 1.0,
+            "dueAt": 1.0,
+            "note": 0.8333333333333334
+          },
+          "categories": {
+            "known-regression": {
+              "total": 16,
+              "eligible": 12,
+              "accepted": 9,
+              "correct": 9,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.75,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 9,
+                "PARTIAL": 7
+              },
+              "reasons": {
+                "request-needs-confirmation": 5,
+                "unexplained-content": 3,
+                "time-not-normalized": 1
+              },
+              "retainedFieldExact": {
+                "title": 1.0,
+                "dueAt": 1.0,
+                "note": 0.8333333333333334
+              }
+            }
+          },
+          "spanMetrics": {
+            "TITLE": {
+              "tp": 16,
+              "predicted": 16,
+              "gold": 17,
+              "precision": 1.0,
+              "recall": 0.9411764705882353,
+              "f1": 0.9696969696969697
+            },
+            "TIME": {
+              "tp": 17,
+              "predicted": 17,
+              "gold": 17,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "LOCATION": {
+              "tp": 9,
+              "predicted": 9,
+              "gold": 11,
+              "precision": 1.0,
+              "recall": 0.8181818181818182,
+              "f1": 0.9
+            },
+            "NOTE": {
+              "tp": 0,
+              "predicted": 0,
+              "gold": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          }
+        },
+        "same-data-BIO": {
+          "total": 16,
+          "eligible": 12,
+          "accepted": 9,
+          "correct": 9,
+          "wrongAccepted": 0,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.75,
+          "wrongAcceptanceRate": 0.0,
+          "states": {
+            "COMPLETE": 9,
+            "PARTIAL": 7
+          },
+          "reasons": {
+            "malformed-BIO": 3,
+            "unexplained-content": 4,
+            "request-needs-confirmation": 3,
+            "time-not-normalized": 1
+          },
+          "retainedFieldExact": {
+            "title": 0.9166666666666666,
+            "dueAt": 1.0,
+            "note": 0.9166666666666666
+          },
+          "categories": {
+            "known-regression": {
+              "total": 16,
+              "eligible": 12,
+              "accepted": 9,
+              "correct": 9,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.75,
+              "wrongAcceptanceRate": 0.0,
+              "states": {
+                "COMPLETE": 9,
+                "PARTIAL": 7
+              },
+              "reasons": {
+                "malformed-BIO": 3,
+                "unexplained-content": 4,
+                "request-needs-confirmation": 3,
+                "time-not-normalized": 1
+              },
+              "retainedFieldExact": {
+                "title": 0.9166666666666666,
+                "dueAt": 1.0,
+                "note": 0.9166666666666666
+              }
+            }
+          },
+          "spanMetrics": {
+            "TITLE": {
+              "tp": 15,
+              "predicted": 16,
+              "gold": 17,
+              "precision": 0.9375,
+              "recall": 0.8823529411764706,
+              "f1": 0.9090909090909091
+            },
+            "TIME": {
+              "tp": 17,
+              "predicted": 17,
+              "gold": 17,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "LOCATION": {
+              "tp": 10,
+              "predicted": 10,
+              "gold": 11,
+              "precision": 1.0,
+              "recall": 0.9090909090909091,
+              "f1": 0.9523809523809523
+            },
+            "NOTE": {
+              "tp": 0,
+              "predicted": 0,
+              "gold": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          }
+        },
+        "v3": {
+          "total": 16,
+          "eligible": 12,
+          "accepted": 3,
+          "correct": 2,
+          "wrongAccepted": 1,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.16666666666666666,
+          "wrongAcceptanceRate": 0.3333333333333333,
+          "states": {
+            "CONFIRM": 13,
+            "COMPLETE": 3
+          },
+          "reasons": {},
+          "retainedFieldExact": {
+            "title": 0.16666666666666666,
+            "dueAt": 0.25,
+            "note": 0.4166666666666667
+          },
+          "categories": {
+            "known-regression": {
+              "total": 16,
+              "eligible": 12,
+              "accepted": 3,
+              "correct": 2,
+              "wrongAccepted": 1,
+              "negativeWrongAccepted": 0,
+              "correctCoverage": 0.16666666666666666,
+              "wrongAcceptanceRate": 0.3333333333333333,
+              "states": {
+                "CONFIRM": 13,
+                "COMPLETE": 3
+              },
+              "reasons": {},
+              "retainedFieldExact": {
+                "title": 0.16666666666666666,
+                "dueAt": 0.25,
+                "note": 0.4166666666666667
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "onnxCompleteProposalParity": {
+    "dev": {
+      "examples": 360,
+      "completeProposalDifferences": [],
+      "metrics": {
+        "total": 360,
+        "eligible": 288,
+        "accepted": 227,
+        "correct": 227,
+        "wrongAccepted": 0,
+        "negativeWrongAccepted": 0,
+        "correctCoverage": 0.7881944444444444,
+        "wrongAcceptanceRate": 0.0,
+        "states": {
+          "COMPLETE": 227,
+          "PARTIAL": 131,
+          "CONFIRM": 2
+        },
+        "reasons": {
+          "unexplained-content": 85,
+          "request-needs-confirmation": 73,
+          "ambiguous-title": 4,
+          "time-not-normalized": 19,
+          "event-not-established": 33,
+          "ambiguous-location": 5
+        },
+        "retainedFieldExact": {
+          "title": 0.9340277777777778,
+          "dueAt": 0.9861111111111112,
+          "note": 0.8541666666666666
+        }
+      }
+    },
+    "test": {
+      "examples": 480,
+      "completeProposalDifferences": [],
+      "metrics": {
+        "total": 480,
+        "eligible": 384,
+        "accepted": 244,
+        "correct": 244,
+        "wrongAccepted": 0,
+        "negativeWrongAccepted": 0,
+        "correctCoverage": 0.6354166666666666,
+        "wrongAcceptanceRate": 0.0,
+        "states": {
+          "PARTIAL": 230,
+          "COMPLETE": 244,
+          "CONFIRM": 6
+        },
+        "reasons": {
+          "event-not-established": 103,
+          "unexplained-content": 169,
+          "request-needs-confirmation": 129,
+          "time-not-normalized": 38,
+          "ambiguous-title": 7,
+          "ambiguous-location": 8,
+          "ambiguous-note": 1,
+          "ambiguous-time": 1
+        },
+        "retainedFieldExact": {
+          "title": 0.8151041666666666,
+          "dueAt": 0.9348958333333334,
+          "note": 0.8541666666666666
+        }
+      }
+    },
+    "regression": {
+      "examples": 16,
+      "completeProposalDifferences": [],
+      "metrics": {
+        "total": 16,
+        "eligible": 12,
+        "accepted": 9,
+        "correct": 9,
+        "wrongAccepted": 0,
+        "negativeWrongAccepted": 0,
+        "correctCoverage": 0.75,
+        "wrongAcceptanceRate": 0.0,
+        "states": {
+          "COMPLETE": 9,
+          "PARTIAL": 7
+        },
+        "reasons": {
+          "request-needs-confirmation": 5,
+          "unexplained-content": 3,
+          "time-not-normalized": 1
+        },
+        "retainedFieldExact": {
+          "title": 1.0,
+          "dueAt": 1.0,
+          "note": 0.8333333333333334
+        }
+      }
+    },
+    "sourceSha256": {
+      "span_decode.py": "bd6c03d9fed300e37e0593540623b79dceccaa544b457f88206b9aeea7cdfdfe",
+      "span_predict.py": "b0847e23bb08e15bea7b97cb5924bba172ca3750d93a3fdf4b245af892467f4b",
+      "span_data.py": "81aa9e3ca7cdf57ebf8c51a9ec44d18dc80678f1388e4cc9773b44ff947eb6c2",
+      "span_train.py": "531d73a93ed44d49ea186e4f16761c85e85a5ed767a27d9a31139aaacf85f8f8",
+      "span_model.py": "e47387a4f8cf350751839e2931ff90db166f622c586d9bf9dbf9af6ffa33a4ea",
+      "span_evaluate.py": "2e5afca3b601f1b0f39a1fee53cfd48bb65771328bf2511d0c17f3de666a026d"
+    }
+  },
+  "goldContractDiagnostic": {
+    "scope": "Gold annotation contract diagnostic only; not model inference performance",
+    "examples": 684,
+    "failures": [
+      {
+        "id": "span-dev-00037",
+        "text": "今天上午十点半确认有没有剩余名额",
+        "expected": {
+          "decision": "accept",
+          "proposal": {
+            "kind": "TASK",
+            "title": "确认有没有剩余名额",
+            "dueAt": "2026-12-31T10:30",
+            "note": "",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null
+          }
+        },
+        "actual": {
+          "proposal": {
+            "kind": "TASK",
+            "title": "确认有没有剩余名额",
+            "dueAt": null,
+            "note": "",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null,
+            "ready": false,
+            "needsAI": true,
+            "source": "SPAN_PROTOTYPE"
+          },
+          "spans": [
+            {
+              "role": "TIME",
+              "start": 0,
+              "end": 7,
+              "score": 10.0,
+              "text": "今天上午十点半"
+            },
+            {
+              "role": "TITLE",
+              "start": 7,
+              "end": 16,
+              "score": 10.0,
+              "text": "确认有没有剩余名额"
+            }
+          ],
+          "fields": {
+            "TITLE": [
+              "确认有没有剩余名额"
+            ],
+            "TIME": [
+              "今天上午十点半"
+            ],
+            "LOCATION": [],
+            "NOTE": [],
+            "CONNECTOR": []
+          },
+          "reasons": [
+            "time-not-normalized"
+          ],
+          "rawText": "今天上午十点半确认有没有剩余名额",
+          "residual": "",
+          "needsConfirmation": true,
+          "state": "PARTIAL"
+        }
+      },
+      {
+        "id": "span-dev-00151",
+        "text": "明天上午十点四十五分整理后天的交流提纲，地点：明德楼",
+        "expected": {
+          "decision": "accept",
+          "proposal": {
+            "kind": "TASK",
+            "title": "整理后天的交流提纲",
+            "dueAt": "2026-10-20T10:45",
+            "note": "地点：明德楼",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null
+          }
+        },
+        "actual": {
+          "proposal": {
+            "kind": "TASK",
+            "title": "整理后天的交流提纲",
+            "dueAt": null,
+            "note": "地点：明德楼",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null,
+            "ready": false,
+            "needsAI": true,
+            "source": "SPAN_PROTOTYPE"
+          },
+          "spans": [
+            {
+              "role": "TIME",
+              "start": 0,
+              "end": 10,
+              "score": 10.0,
+              "text": "明天上午十点四十五分"
+            },
+            {
+              "role": "TITLE",
+              "start": 10,
+              "end": 19,
+              "score": 10.0,
+              "text": "整理后天的交流提纲"
+            },
+            {
+              "role": "CONNECTOR",
+              "start": 19,
+              "end": 23,
+              "score": 10.0,
+              "text": "，地点："
+            },
+            {
+              "role": "LOCATION",
+              "start": 23,
+              "end": 26,
+              "score": 10.0,
+              "text": "明德楼"
+            }
+          ],
+          "fields": {
+            "TITLE": [
+              "整理后天的交流提纲"
+            ],
+            "TIME": [
+              "明天上午十点四十五分"
+            ],
+            "LOCATION": [
+              "明德楼"
+            ],
+            "NOTE": [],
+            "CONNECTOR": [
+              "，地点："
+            ]
+          },
+          "reasons": [
+            "time-not-normalized"
+          ],
+          "rawText": "明天上午十点四十五分整理后天的交流提纲，地点：明德楼",
+          "residual": "",
+          "needsConfirmation": true,
+          "state": "PARTIAL"
+        }
+      },
+      {
+        "id": "span-dev-00254",
+        "text": "记得2027-01-02 上午\t十\t点一刻在博雅楼归还借用的镜头",
+        "expected": {
+          "decision": "accept",
+          "proposal": {
+            "kind": "TASK",
+            "title": "归还借用的镜头",
+            "dueAt": "2027-01-02T10:15",
+            "note": "地点：博雅楼",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null
+          }
+        },
+        "actual": {
+          "proposal": {
+            "kind": "TASK",
+            "title": "归还借用的镜头",
+            "dueAt": null,
+            "note": "地点：博雅楼",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null,
+            "ready": false,
+            "needsAI": true,
+            "source": "SPAN_PROTOTYPE"
+          },
+          "spans": [
+            {
+              "role": "CONNECTOR",
+              "start": 0,
+              "end": 2,
+              "score": 10.0,
+              "text": "记得"
+            },
+            {
+              "role": "TIME",
+              "start": 2,
+              "end": 21,
+              "score": 10.0,
+              "text": "2027-01-02 上午\t十\t点一刻"
+            },
+            {
+              "role": "CONNECTOR",
+              "start": 21,
+              "end": 22,
+              "score": 10.0,
+              "text": "在"
+            },
+            {
+              "role": "LOCATION",
+              "start": 22,
+              "end": 25,
+              "score": 10.0,
+              "text": "博雅楼"
+            },
+            {
+              "role": "TITLE",
+              "start": 25,
+              "end": 32,
+              "score": 10.0,
+              "text": "归还借用的镜头"
+            }
+          ],
+          "fields": {
+            "TITLE": [
+              "归还借用的镜头"
+            ],
+            "TIME": [
+              "2027-01-02 上午\t十\t点一刻"
+            ],
+            "LOCATION": [
+              "博雅楼"
+            ],
+            "NOTE": [],
+            "CONNECTOR": [
+              "记得",
+              "在"
+            ]
+          },
+          "reasons": [
+            "time-not-normalized"
+          ],
+          "rawText": "记得2027-01-02 上午\t十\t点一刻在博雅楼归还借用的镜头",
+          "residual": "",
+          "needsConfirmation": true,
+          "state": "PARTIAL"
+        }
+      },
+      {
+        "id": "span-dev-00260",
+        "text": "和导师核对实验安排，明天上午 十 点在城南办事处",
+        "expected": {
+          "decision": "accept",
+          "proposal": {
+            "kind": "TASK",
+            "title": "和导师核对实验安排",
+            "dueAt": "2028-02-29T10:00",
+            "note": "地点：城南办事处",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null
+          }
+        },
+        "actual": {
+          "proposal": {
+            "kind": "TASK",
+            "title": "和导师核对实验安排",
+            "dueAt": null,
+            "note": "地点：城南办事处",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null,
+            "ready": false,
+            "needsAI": true,
+            "source": "SPAN_PROTOTYPE"
+          },
+          "spans": [
+            {
+              "role": "TITLE",
+              "start": 0,
+              "end": 9,
+              "score": 10.0,
+              "text": "和导师核对实验安排"
+            },
+            {
+              "role": "TIME",
+              "start": 10,
+              "end": 18,
+              "score": 10.0,
+              "text": "明天上午 十 点"
+            },
+            {
+              "role": "CONNECTOR",
+              "start": 18,
+              "end": 19,
+              "score": 10.0,
+              "text": "在"
+            },
+            {
+              "role": "LOCATION",
+              "start": 19,
+              "end": 24,
+              "score": 10.0,
+              "text": "城南办事处"
+            }
+          ],
+          "fields": {
+            "TITLE": [
+              "和导师核对实验安排"
+            ],
+            "TIME": [
+              "明天上午 十 点"
+            ],
+            "LOCATION": [
+              "城南办事处"
+            ],
+            "NOTE": [],
+            "CONNECTOR": [
+              "在"
+            ]
+          },
+          "reasons": [
+            "time-not-normalized"
+          ],
+          "rawText": "和导师核对实验安排，明天上午 十 点在城南办事处",
+          "residual": "",
+          "needsConfirmation": true,
+          "state": "PARTIAL"
+        }
+      },
+      {
+        "id": "span-test-00004",
+        "text": "讨论取消活动的影响，安排在湖畔自习室，时间是今天上午十点",
+        "expected": {
+          "decision": "accept",
+          "proposal": {
+            "kind": "TASK",
+            "title": "讨论取消活动的影响",
+            "dueAt": "2026-10-19T10:00",
+            "note": "地点：湖畔自习室",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null
+          }
+        },
+        "actual": {
+          "proposal": {
+            "kind": "TASK",
+            "title": "讨论取消活动的影响",
+            "dueAt": null,
+            "note": "地点：湖畔自习室",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null,
+            "ready": false,
+            "needsAI": true,
+            "source": "SPAN_PROTOTYPE"
+          },
+          "spans": [
+            {
+              "role": "TITLE",
+              "start": 0,
+              "end": 9,
+              "score": 10.0,
+              "text": "讨论取消活动的影响"
+            },
+            {
+              "role": "CONNECTOR",
+              "start": 9,
+              "end": 13,
+              "score": 10.0,
+              "text": "，安排在"
+            },
+            {
+              "role": "LOCATION",
+              "start": 13,
+              "end": 18,
+              "score": 10.0,
+              "text": "湖畔自习室"
+            },
+            {
+              "role": "CONNECTOR",
+              "start": 18,
+              "end": 22,
+              "score": 10.0,
+              "text": "，时间是"
+            },
+            {
+              "role": "TIME",
+              "start": 22,
+              "end": 28,
+              "score": 10.0,
+              "text": "今天上午十点"
+            }
+          ],
+          "fields": {
+            "TITLE": [
+              "讨论取消活动的影响"
+            ],
+            "TIME": [
+              "今天上午十点"
+            ],
+            "LOCATION": [
+              "湖畔自习室"
+            ],
+            "NOTE": [],
+            "CONNECTOR": [
+              "，安排在",
+              "，时间是"
+            ]
+          },
+          "reasons": [
+            "time-not-normalized"
+          ],
+          "rawText": "讨论取消活动的影响，安排在湖畔自习室，时间是今天上午十点",
+          "residual": "",
+          "needsConfirmation": true,
+          "state": "PARTIAL"
+        }
+      },
+      {
+        "id": "span-test-00062",
+        "text": "参加志愿者说明会，安排在综合服务楼F102，时间是后天上午　十　点一刻",
+        "expected": {
+          "decision": "accept",
+          "proposal": {
+            "kind": "TASK",
+            "title": "参加志愿者说明会",
+            "dueAt": "2027-01-02T10:15",
+            "note": "地点：综合服务楼F102",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null
+          }
+        },
+        "actual": {
+          "proposal": {
+            "kind": "TASK",
+            "title": "参加志愿者说明会",
+            "dueAt": null,
+            "note": "地点：综合服务楼F102",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null,
+            "ready": false,
+            "needsAI": true,
+            "source": "SPAN_PROTOTYPE"
+          },
+          "spans": [
+            {
+              "role": "TITLE",
+              "start": 0,
+              "end": 8,
+              "score": 10.0,
+              "text": "参加志愿者说明会"
+            },
+            {
+              "role": "CONNECTOR",
+              "start": 8,
+              "end": 12,
+              "score": 10.0,
+              "text": "，安排在"
+            },
+            {
+              "role": "LOCATION",
+              "start": 12,
+              "end": 21,
+              "score": 10.0,
+              "text": "综合服务楼F102"
+            },
+            {
+              "role": "CONNECTOR",
+              "start": 21,
+              "end": 25,
+              "score": 10.0,
+              "text": "，时间是"
+            },
+            {
+              "role": "TIME",
+              "start": 25,
+              "end": 35,
+              "score": 10.0,
+              "text": "后天上午　十　点一刻"
+            }
+          ],
+          "fields": {
+            "TITLE": [
+              "参加志愿者说明会"
+            ],
+            "TIME": [
+              "后天上午　十　点一刻"
+            ],
+            "LOCATION": [
+              "综合服务楼F102"
+            ],
+            "NOTE": [],
+            "CONNECTOR": [
+              "，安排在",
+              "，时间是"
+            ]
+          },
+          "reasons": [
+            "time-not-normalized"
+          ],
+          "rawText": "参加志愿者说明会，安排在综合服务楼F102，时间是后天上午　十　点一刻",
+          "residual": "",
+          "needsConfirmation": true,
+          "state": "PARTIAL"
+        }
+      },
+      {
+        "id": "span-test-00114",
+        "text": "在红枫报告厅整理明天的竞赛材料，大后天上午　十　点半",
+        "expected": {
+          "decision": "accept",
+          "proposal": {
+            "kind": "TASK",
+            "title": "整理明天的竞赛材料",
+            "dueAt": "2028-03-02T10:30",
+            "note": "地点：红枫报告厅",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null
+          }
+        },
+        "actual": {
+          "proposal": {
+            "kind": "TASK",
+            "title": "整理明天的竞赛材料",
+            "dueAt": null,
+            "note": "地点：红枫报告厅",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null,
+            "ready": false,
+            "needsAI": true,
+            "source": "SPAN_PROTOTYPE"
+          },
+          "spans": [
+            {
+              "role": "CONNECTOR",
+              "start": 0,
+              "end": 1,
+              "score": 10.0,
+              "text": "在"
+            },
+            {
+              "role": "LOCATION",
+              "start": 1,
+              "end": 6,
+              "score": 10.0,
+              "text": "红枫报告厅"
+            },
+            {
+              "role": "TITLE",
+              "start": 6,
+              "end": 15,
+              "score": 10.0,
+              "text": "整理明天的竞赛材料"
+            },
+            {
+              "role": "TIME",
+              "start": 16,
+              "end": 26,
+              "score": 10.0,
+              "text": "大后天上午　十　点半"
+            }
+          ],
+          "fields": {
+            "TITLE": [
+              "整理明天的竞赛材料"
+            ],
+            "TIME": [
+              "大后天上午　十　点半"
+            ],
+            "LOCATION": [
+              "红枫报告厅"
+            ],
+            "NOTE": [],
+            "CONNECTOR": [
+              "在"
+            ]
+          },
+          "reasons": [
+            "time-not-normalized"
+          ],
+          "rawText": "在红枫报告厅整理明天的竞赛材料，大后天上午　十　点半",
+          "residual": "",
+          "needsConfirmation": true,
+          "state": "PARTIAL"
+        }
+      },
+      {
+        "id": "span-test-00255",
+        "text": "地点定在求是楼，2028-02-29 上午十点半确认有没有预约成功",
+        "expected": {
+          "decision": "accept",
+          "proposal": {
+            "kind": "TASK",
+            "title": "确认有没有预约成功",
+            "dueAt": "2028-02-29T10:30",
+            "note": "地点：求是楼",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null
+          }
+        },
+        "actual": {
+          "proposal": {
+            "kind": "TASK",
+            "title": "确认有没有预约成功",
+            "dueAt": null,
+            "note": "地点：求是楼",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null,
+            "ready": false,
+            "needsAI": true,
+            "source": "SPAN_PROTOTYPE"
+          },
+          "spans": [
+            {
+              "role": "CONNECTOR",
+              "start": 0,
+              "end": 4,
+              "score": 10.0,
+              "text": "地点定在"
+            },
+            {
+              "role": "LOCATION",
+              "start": 4,
+              "end": 7,
+              "score": 10.0,
+              "text": "求是楼"
+            },
+            {
+              "role": "TIME",
+              "start": 8,
+              "end": 24,
+              "score": 10.0,
+              "text": "2028-02-29 上午十点半"
+            },
+            {
+              "role": "TITLE",
+              "start": 24,
+              "end": 33,
+              "score": 10.0,
+              "text": "确认有没有预约成功"
+            }
+          ],
+          "fields": {
+            "TITLE": [
+              "确认有没有预约成功"
+            ],
+            "TIME": [
+              "2028-02-29 上午十点半"
+            ],
+            "LOCATION": [
+              "求是楼"
+            ],
+            "NOTE": [],
+            "CONNECTOR": [
+              "地点定在"
+            ]
+          },
+          "reasons": [
+            "time-not-normalized"
+          ],
+          "rawText": "地点定在求是楼，2028-02-29 上午十点半确认有没有预约成功",
+          "residual": "",
+          "needsConfirmation": true,
+          "state": "PARTIAL"
+        }
+      },
+      {
+        "id": "span-test-00267",
+        "text": "明天上午  十  点记录不予受理的原因",
+        "expected": {
+          "decision": "accept",
+          "proposal": {
+            "kind": "TASK",
+            "title": "记录不予受理的原因",
+            "dueAt": "2026-10-20T10:00",
+            "note": "",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null
+          }
+        },
+        "actual": {
+          "proposal": {
+            "kind": "TASK",
+            "title": "记录不予受理的原因",
+            "dueAt": null,
+            "note": "",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null,
+            "ready": false,
+            "needsAI": true,
+            "source": "SPAN_PROTOTYPE"
+          },
+          "spans": [
+            {
+              "role": "TIME",
+              "start": 0,
+              "end": 10,
+              "score": 10.0,
+              "text": "明天上午  十  点"
+            },
+            {
+              "role": "TITLE",
+              "start": 10,
+              "end": 19,
+              "score": 10.0,
+              "text": "记录不予受理的原因"
+            }
+          ],
+          "fields": {
+            "TITLE": [
+              "记录不予受理的原因"
+            ],
+            "TIME": [
+              "明天上午  十  点"
+            ],
+            "LOCATION": [],
+            "NOTE": [],
+            "CONNECTOR": []
+          },
+          "reasons": [
+            "time-not-normalized"
+          ],
+          "rawText": "明天上午  十  点记录不予受理的原因",
+          "residual": "",
+          "needsConfirmation": true,
+          "state": "PARTIAL"
+        }
+      },
+      {
+        "id": "span-test-00281",
+        "text": "今天，在文澜阁，上午　十　点半讨论逸夫楼改造方案",
+        "expected": {
+          "decision": "accept",
+          "proposal": {
+            "kind": "TASK",
+            "title": "讨论逸夫楼改造方案",
+            "dueAt": "2026-10-19T10:30",
+            "note": "地点：文澜阁",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null
+          }
+        },
+        "actual": {
+          "proposal": {
+            "kind": "TASK",
+            "title": "讨论逸夫楼改造方案",
+            "dueAt": null,
+            "note": "地点：文澜阁",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null,
+            "ready": false,
+            "needsAI": true,
+            "source": "SPAN_PROTOTYPE"
+          },
+          "spans": [
+            {
+              "role": "TIME",
+              "start": 0,
+              "end": 2,
+              "score": 10.0,
+              "text": "今天"
+            },
+            {
+              "role": "CONNECTOR",
+              "start": 2,
+              "end": 4,
+              "score": 10.0,
+              "text": "，在"
+            },
+            {
+              "role": "LOCATION",
+              "start": 4,
+              "end": 7,
+              "score": 10.0,
+              "text": "文澜阁"
+            },
+            {
+              "role": "TIME",
+              "start": 8,
+              "end": 15,
+              "score": 10.0,
+              "text": "上午　十　点半"
+            },
+            {
+              "role": "TITLE",
+              "start": 15,
+              "end": 24,
+              "score": 10.0,
+              "text": "讨论逸夫楼改造方案"
+            }
+          ],
+          "fields": {
+            "TITLE": [
+              "讨论逸夫楼改造方案"
+            ],
+            "TIME": [
+              "今天",
+              "上午　十　点半"
+            ],
+            "LOCATION": [
+              "文澜阁"
+            ],
+            "NOTE": [],
+            "CONNECTOR": [
+              "，在"
+            ]
+          },
+          "reasons": [
+            "time-not-normalized"
+          ],
+          "rawText": "今天，在文澜阁，上午　十　点半讨论逸夫楼改造方案",
+          "residual": "",
+          "needsConfirmation": true,
+          "state": "PARTIAL"
+        }
+      },
+      {
+        "id": "span-test-00305",
+        "text": "后天上午  十  点在银杏广场参加志愿者说明会",
+        "expected": {
+          "decision": "accept",
+          "proposal": {
+            "kind": "TASK",
+            "title": "参加志愿者说明会",
+            "dueAt": "2026-10-21T10:00",
+            "note": "地点：银杏广场",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null
+          }
+        },
+        "actual": {
+          "proposal": {
+            "kind": "TASK",
+            "title": "参加志愿者说明会",
+            "dueAt": null,
+            "note": "地点：银杏广场",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null,
+            "ready": false,
+            "needsAI": true,
+            "source": "SPAN_PROTOTYPE"
+          },
+          "spans": [
+            {
+              "role": "TIME",
+              "start": 0,
+              "end": 10,
+              "score": 10.0,
+              "text": "后天上午  十  点"
+            },
+            {
+              "role": "CONNECTOR",
+              "start": 10,
+              "end": 11,
+              "score": 10.0,
+              "text": "在"
+            },
+            {
+              "role": "LOCATION",
+              "start": 11,
+              "end": 15,
+              "score": 10.0,
+              "text": "银杏广场"
+            },
+            {
+              "role": "TITLE",
+              "start": 15,
+              "end": 23,
+              "score": 10.0,
+              "text": "参加志愿者说明会"
+            }
+          ],
+          "fields": {
+            "TITLE": [
+              "参加志愿者说明会"
+            ],
+            "TIME": [
+              "后天上午  十  点"
+            ],
+            "LOCATION": [
+              "银杏广场"
+            ],
+            "NOTE": [],
+            "CONNECTOR": [
+              "在"
+            ]
+          },
+          "reasons": [
+            "time-not-normalized"
+          ],
+          "rawText": "后天上午  十  点在银杏广场参加志愿者说明会",
+          "residual": "",
+          "needsConfirmation": true,
+          "state": "PARTIAL"
+        }
+      },
+      {
+        "id": "span-test-00340",
+        "text": "明天，在学术交流中心，上午 十 点半检查没有归档的凭证",
+        "expected": {
+          "decision": "accept",
+          "proposal": {
+            "kind": "TASK",
+            "title": "检查没有归档的凭证",
+            "dueAt": "2028-02-29T10:30",
+            "note": "地点：学术交流中心",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null
+          }
+        },
+        "actual": {
+          "proposal": {
+            "kind": "TASK",
+            "title": "检查没有归档的凭证",
+            "dueAt": null,
+            "note": "地点：学术交流中心",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null,
+            "ready": false,
+            "needsAI": true,
+            "source": "SPAN_PROTOTYPE"
+          },
+          "spans": [
+            {
+              "role": "TIME",
+              "start": 0,
+              "end": 2,
+              "score": 10.0,
+              "text": "明天"
+            },
+            {
+              "role": "CONNECTOR",
+              "start": 2,
+              "end": 4,
+              "score": 10.0,
+              "text": "，在"
+            },
+            {
+              "role": "LOCATION",
+              "start": 4,
+              "end": 10,
+              "score": 10.0,
+              "text": "学术交流中心"
+            },
+            {
+              "role": "TIME",
+              "start": 11,
+              "end": 18,
+              "score": 10.0,
+              "text": "上午 十 点半"
+            },
+            {
+              "role": "TITLE",
+              "start": 18,
+              "end": 27,
+              "score": 10.0,
+              "text": "检查没有归档的凭证"
+            }
+          ],
+          "fields": {
+            "TITLE": [
+              "检查没有归档的凭证"
+            ],
+            "TIME": [
+              "明天",
+              "上午 十 点半"
+            ],
+            "LOCATION": [
+              "学术交流中心"
+            ],
+            "NOTE": [],
+            "CONNECTOR": [
+              "，在"
+            ]
+          },
+          "reasons": [
+            "time-not-normalized"
+          ],
+          "rawText": "明天，在学术交流中心，上午 十 点半检查没有归档的凭证",
+          "residual": "",
+          "needsConfirmation": true,
+          "state": "PARTIAL"
+        }
+      },
+      {
+        "id": "span-test-00362",
+        "text": "讨论逸夫楼改造方案，后天上午\t十\t点在红枫报告厅",
+        "expected": {
+          "decision": "accept",
+          "proposal": {
+            "kind": "TASK",
+            "title": "讨论逸夫楼改造方案",
+            "dueAt": "2027-01-02T10:00",
+            "note": "地点：红枫报告厅",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null
+          }
+        },
+        "actual": {
+          "proposal": {
+            "kind": "TASK",
+            "title": "讨论逸夫楼改造方案",
+            "dueAt": null,
+            "note": "地点：红枫报告厅",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null,
+            "ready": false,
+            "needsAI": true,
+            "source": "SPAN_PROTOTYPE"
+          },
+          "spans": [
+            {
+              "role": "TITLE",
+              "start": 0,
+              "end": 9,
+              "score": 10.0,
+              "text": "讨论逸夫楼改造方案"
+            },
+            {
+              "role": "TIME",
+              "start": 10,
+              "end": 18,
+              "score": 10.0,
+              "text": "后天上午\t十\t点"
+            },
+            {
+              "role": "CONNECTOR",
+              "start": 18,
+              "end": 19,
+              "score": 10.0,
+              "text": "在"
+            },
+            {
+              "role": "LOCATION",
+              "start": 19,
+              "end": 24,
+              "score": 10.0,
+              "text": "红枫报告厅"
+            }
+          ],
+          "fields": {
+            "TITLE": [
+              "讨论逸夫楼改造方案"
+            ],
+            "TIME": [
+              "后天上午\t十\t点"
+            ],
+            "LOCATION": [
+              "红枫报告厅"
+            ],
+            "NOTE": [],
+            "CONNECTOR": [
+              "在"
+            ]
+          },
+          "reasons": [
+            "time-not-normalized"
+          ],
+          "rawText": "讨论逸夫楼改造方案，后天上午\t十\t点在红枫报告厅",
+          "residual": "",
+          "needsConfirmation": true,
+          "state": "PARTIAL"
+        }
+      },
+      {
+        "id": "span-test-00477",
+        "text": "明天上午\t十\t点归还租借的设备",
+        "expected": {
+          "decision": "accept",
+          "proposal": {
+            "kind": "TASK",
+            "title": "归还租借的设备",
+            "dueAt": "2027-01-01T10:00",
+            "note": "",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null
+          }
+        },
+        "actual": {
+          "proposal": {
+            "kind": "TASK",
+            "title": "归还租借的设备",
+            "dueAt": null,
+            "note": "",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null,
+            "ready": false,
+            "needsAI": true,
+            "source": "SPAN_PROTOTYPE"
+          },
+          "spans": [
+            {
+              "role": "TIME",
+              "start": 0,
+              "end": 8,
+              "score": 10.0,
+              "text": "明天上午\t十\t点"
+            },
+            {
+              "role": "TITLE",
+              "start": 8,
+              "end": 15,
+              "score": 10.0,
+              "text": "归还租借的设备"
+            }
+          ],
+          "fields": {
+            "TITLE": [
+              "归还租借的设备"
+            ],
+            "TIME": [
+              "明天上午\t十\t点"
+            ],
+            "LOCATION": [],
+            "NOTE": [],
+            "CONNECTOR": []
+          },
+          "reasons": [
+            "time-not-normalized"
+          ],
+          "rawText": "明天上午\t十\t点归还租借的设备",
+          "residual": "",
+          "needsConfirmation": true,
+          "state": "PARTIAL"
+        }
+      }
+    ]
+  },
+  "userExample": {
+    "proposal": {
+      "kind": "TASK",
+      "title": "开会",
+      "dueAt": "2026-10-20T16:00",
+      "note": "地点：逸夫楼",
+      "period": "DAILY",
+      "targetCount": 1,
+      "weekdaysMask": 127,
+      "reminderTime": null,
+      "ready": true,
+      "needsAI": false,
+      "source": "SPAN_PROTOTYPE"
+    },
+    "spans": [
+      {
+        "role": "TIME",
+        "start": 0,
+        "end": 8,
+        "score": 14.294886589050293,
+        "text": "明天下午 4 点"
+      },
+      {
+        "role": "CONNECTOR",
+        "start": 8,
+        "end": 10,
+        "score": 9.493354797363281,
+        "text": "要在"
+      },
+      {
+        "role": "LOCATION",
+        "start": 10,
+        "end": 13,
+        "score": 7.719109535217285,
+        "text": "逸夫楼"
+      },
+      {
+        "role": "TITLE",
+        "start": 13,
+        "end": 15,
+        "score": 7.475192070007324,
+        "text": "开会"
+      }
+    ],
+    "fields": {
+      "TITLE": [
+        "开会"
+      ],
+      "TIME": [
+        "明天下午 4 点"
+      ],
+      "LOCATION": [
+        "逸夫楼"
+      ],
+      "NOTE": [],
+      "CONNECTOR": [
+        "要在"
+      ]
+    },
+    "reasons": [],
+    "rawText": "明天下午 4 点要在逸夫楼开会",
+    "residual": "",
+    "needsConfirmation": false,
+    "state": "COMPLETE"
+  },
+  "training": {
+    "seed": 42,
+    "epochs": 8,
+    "bestEpoch": 5,
+    "trainSha256": "097fb69d70917c01b02e35a267d430acde70dc7d1fab7a0802264b36d9f154e9",
+    "devSha256": "d3ff2a37ba4762428e5176b4b66ae48ea956258917bb292f91f3ee3c54e36ebc",
+    "encoderSource": "uer/roberta-tiny-wwm-chinese-cluecorpussmall",
+    "encoderRevision": "6a4e70f3f8bcc2a64ce655e92ceeebb10ad1cafa",
+    "warmStartSha256": "5e2b631d85c4732b332a7562268047902e73ffa191e3a00781752df4a0823f31",
+    "weightsSha256": "b1a3e63c0d632dcf80afaef099b44cc5757d7bdfc3315d3313068084b5aa0b78",
+    "onnxSha256": "df5141bece67e906adabf984bbc19ab27fb7fb79a331d69e9065bf953bf4f340",
+    "onnxCheckpointMaxErrors": [
+      1.3709068298339844e-06,
+      4.398822784423828e-05
+    ],
+    "parameters": 3226316,
+    "length": 96,
+    "roles": [
+      "TITLE",
+      "TIME",
+      "LOCATION",
+      "NOTE",
+      "CONNECTOR"
+    ],
+    "thresholds": {
+      "span": 0.0,
+      "request": 0.8
+    },
+    "learningRate": {
+      "encoder": 3e-05,
+      "heads": 0.0005
+    },
+    "batchSize": 24,
+    "humanReviewed": false,
+    "syntheticOptIn": true,
+    "deployment": "offline span prototype; no native client integration",
+    "selection": "best dev macro span F1 (90%) + request accuracy (10%); no test read",
+    "sourceSha256": {
+      "span_decode.py": "0cb1483a0dd647b41438b90fe56b647796de85613ae8351188569b8f238a7ffa",
+      "span_data.py": "81aa9e3ca7cdf57ebf8c51a9ec44d18dc80678f1388e4cc9773b44ff947eb6c2",
+      "span_train.py": "531d73a93ed44d49ea186e4f16761c85e85a5ed767a27d9a31139aaacf85f8f8",
+      "span_model.py": "9461458e2675092be52ac14145a533cbe7562f0b9f46f971bd33503152c5c944"
+    }
+  },
+  "tests": {
+    "coreStagePassed": 37,
+    "finalPassed": 42
+  },
+  "onnxBytes": 12877422
+}

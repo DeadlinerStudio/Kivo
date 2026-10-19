@@ -1,0 +1,89 @@
+{
+  "humanReviewed": false,
+  "realUserData": false,
+  "scope": "synthetic engineering screening only",
+  "sourceGroupsAndExactEntitiesDisjoint": true,
+  "syntax": "shared synthetic layouts, not syntax-family blind test",
+  "formalGateEligible": false,
+  "sourceSha256": "82f3228cdbcfb52324723d5a565d47b71975eea94996ab14c4e06886db88bedb",
+  "partitions": {
+    "train": {
+      "rows": 20000,
+      "uniqueTexts": 20000,
+      "classes": {
+        "TASK": 8000,
+        "HABIT": 8000,
+        "CONFIRM": 4000
+      },
+      "sha256": "0ab31e0e32534915b909faccf5395e31af6ca9437aabe886276052ddf7124bab"
+    },
+    "rank": {
+      "rows": 4000,
+      "uniqueTexts": 4000,
+      "classes": {
+        "TASK": 1600,
+        "HABIT": 1600,
+        "CONFIRM": 800
+      },
+      "sha256": "cf5df467d422689e9cc919a1781b6fbd3e0689d43ae9ed8ce85144ebeb9efef2"
+    },
+    "quality": {
+      "rows": 6000,
+      "uniqueTexts": 6000,
+      "classes": {
+        "TASK": 2400,
+        "HABIT": 2400,
+        "CONFIRM": 1200
+      },
+      "sha256": "5fdfccd4cfbdf59c225f3c3cefc961f897f31ae1f0cd5d3ed5f3b8983af43b08"
+    },
+    "dev": {
+      "rows": 2000,
+      "uniqueTexts": 2000,
+      "classes": {
+        "TASK": 800,
+        "HABIT": 800,
+        "CONFIRM": 400
+      },
+      "sha256": "2fd37e11ede4ee96c7e3bd505efc90bcdd333525cfb6d5e079f0e8f371d954ff"
+    },
+    "cal_fit": {
+      "rows": 2000,
+      "uniqueTexts": 2000,
+      "classes": {
+        "TASK": 800,
+        "HABIT": 800,
+        "CONFIRM": 400
+      },
+      "sha256": "c5d6096625d96e81c1bd34626e5c2736562f03f3f4922178dddeb73191edb061"
+    },
+    "cal_gate": {
+      "rows": 4000,
+      "uniqueTexts": 4000,
+      "classes": {
+        "TASK": 1600,
+        "HABIT": 1600,
+        "CONFIRM": 800
+      },
+      "sha256": "bffae80eecb3e9fe13db188d6b7bb160ac1bfe0a48ae9a120b55894827ca7d53"
+    },
+    "test": {
+      "rows": 4000,
+      "uniqueTexts": 4000,
+      "classes": {
+        "TASK": 1600,
+        "HABIT": 1600,
+        "CONFIRM": 800
+      },
+      "sha256": "3d65375a1104f03cc40a38ccfc2c7e7dde618a632bf4211f4bcba71728c82bab"
+    },
+    "protection": {
+      "rows": 2000,
+      "uniqueTexts": 2000,
+      "classes": {
+        "CONFIRM": 2000
+      },
+      "sha256": "7ec68822d67b9944c4105d177360fa3fbfb84cc84f3bcb0036cc4ae8342bb254"
+    }
+  }
+}

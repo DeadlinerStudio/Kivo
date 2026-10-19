@@ -1,0 +1,18 @@
+{
+  "generationVersion": 3,
+  "locale": "zh",
+  "counts": {
+    "train": 10136,
+    "dev": 900,
+    "test": 0
+  },
+  "uniqueTexts": {
+    "train": 8091,
+    "dev": 846,
+    "test": 0
+  },
+  "seed": 20261010,
+  "provenance": "assistant-authored-synthetic-localization-bootstrap-not-human-reviewed",
+  "independentlyReviewed": false,
+  "devPreservedFromFirstRun": true
+}

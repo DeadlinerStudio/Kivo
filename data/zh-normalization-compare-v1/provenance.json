@@ -1,0 +1,18 @@
+{
+  "counts": {
+    "train": 5000,
+    "dev": 360,
+    "test": 480
+  },
+  "sha256": {
+    "train": "097fb69d70917c01b02e35a267d430acde70dc7d1fab7a0802264b36d9f154e9",
+    "dev": "d3ff2a37ba4762428e5176b4b66ae48ea956258917bb292f91f3ee3c54e36ebc",
+    "test": "6e3bbfef8ccef888475688b8915374bc39e91423742a093207e104fa8c4c52a7"
+  },
+  "trainDevIdenticalTo": "zh-core-spans-v1",
+  "frozenBeforeNormalizerTraining": true,
+  "humanReviewed": false,
+  "realUserData": false,
+  "newTitlesAndLocations": true,
+  "syntax": "previously exposed templates; not new syntax or real-user blind test"
+}

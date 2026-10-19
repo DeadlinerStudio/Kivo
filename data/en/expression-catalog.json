@@ -1,0 +1,269 @@
+{
+  "tasks": [
+    [
+      "today at 3pm",
+      0,
+      "15:00"
+    ],
+    [
+      "tomorrow at 8am",
+      1,
+      "08:00"
+    ],
+    [
+      "tonight at midnight",
+      1,
+      "00:00"
+    ],
+    [
+      "tomorrow at 00:00",
+      1,
+      "00:00"
+    ],
+    [
+      "tomorrow at 12am",
+      1,
+      "00:00"
+    ],
+    [
+      "today at 12pm",
+      0,
+      "12:00"
+    ],
+    [
+      "tomorrow at noon",
+      1,
+      "12:00"
+    ],
+    [
+      "today at quarter past three pm",
+      0,
+      "15:15"
+    ],
+    [
+      "tomorrow at quarter to four pm",
+      1,
+      "15:45"
+    ],
+    [
+      "tomorrow morning at half past seven",
+      1,
+      "07:30"
+    ],
+    [
+      "the day after tomorrow at 9am",
+      2,
+      "09:00"
+    ],
+    [
+      "day after tomorrow at 18:30",
+      2,
+      "18:30"
+    ],
+    [
+      "tomorrow morning at 8",
+      1,
+      "08:00"
+    ],
+    [
+      "tomorrow afternoon at 3",
+      1,
+      "15:00"
+    ],
+    [
+      "tomorrow evening at 8",
+      1,
+      "20:00"
+    ],
+    [
+      "tonight at 8pm",
+      0,
+      "20:00"
+    ],
+    [
+      "tomorrow at 24:00",
+      2,
+      "00:00"
+    ],
+    [
+      "today",
+      0,
+      "23:59"
+    ],
+    [
+      "tomorrow",
+      1,
+      "23:59"
+    ],
+    [
+      "the day after tomorrow",
+      2,
+      "23:59"
+    ],
+    [
+      "tomorrow at 3 p.m.",
+      1,
+      "15:00"
+    ],
+    [
+      "tomorrow at 9 a.m.",
+      1,
+      "09:00"
+    ],
+    [
+      "today at midday",
+      0,
+      "12:00"
+    ],
+    [
+      "tomorrow at 10:15pm",
+      1,
+      "22:15"
+    ],
+    [
+      "today at half past six pm",
+      0,
+      "18:30"
+    ]
+  ],
+  "clocks": [
+    [
+      "",
+      null
+    ],
+    [
+      "at 7am",
+      "07:00"
+    ],
+    [
+      "at 9am",
+      "09:00"
+    ],
+    [
+      "at 3pm",
+      "15:00"
+    ],
+    [
+      "at 3:30pm",
+      "15:30"
+    ],
+    [
+      "at 8pm",
+      "20:00"
+    ],
+    [
+      "at noon",
+      "12:00"
+    ],
+    [
+      "at midnight",
+      "00:00"
+    ],
+    [
+      "at 24:00",
+      "00:00"
+    ],
+    [
+      "at quarter to four pm",
+      "15:45"
+    ],
+    [
+      "at half past seven am",
+      "07:30"
+    ],
+    [
+      "at 12pm",
+      "12:00"
+    ],
+    [
+      "at 12am",
+      "00:00"
+    ]
+  ],
+  "repeats": [
+    [
+      "every day",
+      "DAILY",
+      1,
+      127
+    ],
+    [
+      "daily",
+      "DAILY",
+      1,
+      127
+    ],
+    [
+      "each day",
+      "DAILY",
+      1,
+      127
+    ],
+    [
+      "every weekday",
+      "DAILY",
+      1,
+      31
+    ],
+    [
+      "on weekdays",
+      "DAILY",
+      1,
+      31
+    ],
+    [
+      "every weekend",
+      "DAILY",
+      1,
+      96
+    ],
+    [
+      "on weekends",
+      "DAILY",
+      1,
+      96
+    ],
+    [
+      "every Monday",
+      "DAILY",
+      1,
+      1
+    ],
+    [
+      "every Monday and Wednesday",
+      "DAILY",
+      1,
+      5
+    ],
+    [
+      "every Tuesday and Thursday",
+      "DAILY",
+      1,
+      10
+    ],
+    [
+      "on Mondays",
+      "DAILY",
+      1,
+      1
+    ],
+    [
+      "three times a week",
+      "WEEKLY",
+      3,
+      127
+    ],
+    [
+      "twice a day",
+      "DAILY",
+      2,
+      127
+    ],
+    [
+      "once a month",
+      "MONTHLY",
+      1,
+      127
+    ]
+  ]
+}

@@ -1,0 +1,2379 @@
+{
+  "scope": "Review-authored diagnostics; no independent real-user accuracy claim",
+  "adapterBinarySha256": "f8efb32846618b8355dbe89d6e5f27da25c5d73b2647a70500dda5bb946b15cd",
+  "coreQuickAddSourceSha256": "cbd235b0365fee7276d49500ec1dbcd1fa1cd21c2141ced22dba4fb8a3854d58",
+  "adapterNote": "Existing executable, not rebuilt by this audit; token IDs checked by adapter; frozen proposals replayed against archived results",
+  "scriptSha256": "48b8810f1e2031645202a183934b016eee053ee0244f4b9733dfaa423b78696f",
+  "humanReviewed": false,
+  "realUserData": false,
+  "productionModified": false,
+  "timingMeasured": false,
+  "contracts": {
+    "scriptSha256": "649fffe1879913fb3df8b6fddda275e3ec086d0d8b51fff89f64a1c0d0bd3d1c",
+    "modelSha256": "ffe18c365ae3436694a08b71775c24196f24478834bbd884c330652d3c43d84e",
+    "adapterBinarySha256": "f8efb32846618b8355dbe89d6e5f27da25c5d73b2647a70500dda5bb946b15cd",
+    "intentMinimalPairs": [
+      {
+        "text": "明天下午3点检查商品库存",
+        "intentProbabilities": {
+          "TASK": 0.999998927116394,
+          "HABIT": 9.6868313903542e-07,
+          "OTHER": 1.674063838663642e-07
+        }
+      },
+      {
+        "text": "明天下午3点检查商品有没有库存",
+        "intentProbabilities": {
+          "TASK": 9.838527148531284e-07,
+          "HABIT": 1.521395915915491e-06,
+          "OTHER": 0.9999974966049194
+        }
+      },
+      {
+        "text": "明天下午3点退掉衣服",
+        "intentProbabilities": {
+          "TASK": 0.9999990463256836,
+          "HABIT": 8.258268167082861e-07,
+          "OTHER": 1.4787292457185686e-07
+        }
+      },
+      {
+        "text": "明天下午3点退掉不合适的衣服",
+        "intentProbabilities": {
+          "TASK": 5.976349939373904e-07,
+          "HABIT": 1.8944771227324964e-06,
+          "OTHER": 0.9999974966049194
+        }
+      },
+      {
+        "text": "明天下午3点确认租车油量",
+        "intentProbabilities": {
+          "TASK": 0.999998927116394,
+          "HABIT": 9.41850032631919e-07,
+          "OTHER": 1.6354792364836612e-07
+        }
+      },
+      {
+        "text": "明天下午3点确认租的车还有多少油",
+        "intentProbabilities": {
+          "TASK": 0.2422979325056076,
+          "HABIT": 6.669591584795853e-06,
+          "OTHER": 0.7576954364776611
+        }
+      },
+      {
+        "text": "明天下午3点记录原因",
+        "intentProbabilities": {
+          "TASK": 0.9999988079071045,
+          "HABIT": 1.0270043730997713e-06,
+          "OTHER": 1.6590254858783737e-07
+        }
+      },
+      {
+        "text": "明天下午3点记录取消原因",
+        "intentProbabilities": {
+          "TASK": 2.5994972020271234e-05,
+          "HABIT": 4.683728889176564e-07,
+          "OTHER": 0.9999735355377197
+        }
+      }
+    ],
+    "perfectTokenWhitespace": {
+      "sameInputIds": true,
+      "sameTokenLogits": true,
+      "proposals": [
+        {
+          "text": "明天下午 3 点打电话",
+          "model": {
+            "kind": "TASK",
+            "title": "打电话",
+            "dueAt": "2026-10-20T15:00",
+            "note": "",
+            "period": "DAILY",
+            "targetCount": 1,
+            "weekdaysMask": 127,
+            "reminderTime": null,
+            "needsAI": false,
+            "ready": true,
+            "source": "MODEL",
+            "message": "",
+            "recognitionState": ""
+          }
+        },
+        {
+          "text": "明天下午  3  点打电话",
+          "model": null
+        }
+      ]
+    },
+    "wordPieceVersusCharacterGate": {
+      "text": "明天下午3点给Zoë打电话",
+      "unknownCharacters": [
+        "Z",
+        "ë"
+      ],
+      "characterUnknownRatio": 0.15384615384615385,
+      "wordPieceUnknownTokens": 0
+    },
+    "syntheticGateFixture": {
+      "coverage": 0.06,
+      "failureReasons": []
+    }
+  },
+  "onnxRecheck": {
+    "zh": {
+      "samples": 20,
+      "maxAbsoluteError": 0.0
+    },
+    "en": {
+      "samples": 20,
+      "maxAbsoluteError": 0.0
+    }
+  },
+  "pythonTests": {
+    "passed": 28,
+    "skipped": 0
+  },
+  "locales": {
+    "zh": {
+      "modelSha256": "ffe18c365ae3436694a08b71775c24196f24478834bbd884c330652d3c43d84e",
+      "manifestSha256": "74884744cb0848da51e4c2265a55e6f47707b6a959463bbed8ef8eb2ab6de84f",
+      "probesSha256": "4fb5e5b99d8bfab675224aa85e2f0d7268105301096227f5d49379b2aa3ac4b7",
+      "corpus": {
+        "rows": 29703,
+        "annotationStatus": {
+          "synthetic": 29703
+        },
+        "preferredKind": {
+          "TASK": 29703
+        },
+        "fields": {
+          "TITLE": {
+            "count": 27307,
+            "unique": 465
+          },
+          "TIME": {
+            "count": 26970,
+            "unique": 88
+          },
+          "REPEAT": {
+            "count": 5461,
+            "unique": 14
+          },
+          "NOTE": {
+            "count": 0,
+            "unique": 0
+          }
+        }
+      },
+      "sets": {
+        "probes": {
+          "metrics": {
+            "total": 60,
+            "eligible": 50,
+            "accepted": 32,
+            "correct": 32,
+            "wrongAccepted": 0,
+            "negativeWrongAccepted": 0,
+            "wrongAcceptanceRate": 0.0,
+            "correctCoverage": 0.64,
+            "deferredRate": 0.4666666666666667
+          },
+          "categories": {
+            "familiar-time-new-title": {
+              "total": 6,
+              "eligible": 6,
+              "accepted": 4,
+              "correct": 4,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.6666666666666666,
+              "deferredRate": 0.3333333333333333
+            },
+            "plain-title": {
+              "total": 6,
+              "eligible": 6,
+              "accepted": 4,
+              "correct": 4,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.6666666666666666,
+              "deferredRate": 0.3333333333333333
+            },
+            "clock-generalization": {
+              "total": 8,
+              "eligible": 8,
+              "accepted": 8,
+              "correct": 8,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 1.0,
+              "deferredRate": 0.0
+            },
+            "date-generalization": {
+              "total": 6,
+              "eligible": 6,
+              "accepted": 1,
+              "correct": 1,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.16666666666666666,
+              "deferredRate": 0.8333333333333334
+            },
+            "rejection-controls": {
+              "total": 10,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": null,
+              "correctCoverage": null,
+              "deferredRate": 1.0
+            },
+            "habit": {
+              "total": 5,
+              "eligible": 5,
+              "accepted": 5,
+              "correct": 5,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 1.0,
+              "deferredRate": 0.0
+            },
+            "habit-selected-plain-title": {
+              "total": 2,
+              "eligible": 2,
+              "accepted": 1,
+              "correct": 1,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.5,
+              "deferredRate": 0.5
+            },
+            "note": {
+              "total": 3,
+              "eligible": 3,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": null,
+              "correctCoverage": 0.0,
+              "deferredRate": 1.0
+            },
+            "vocabulary-and-symbols": {
+              "total": 5,
+              "eligible": 5,
+              "accepted": 4,
+              "correct": 4,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.8,
+              "deferredRate": 0.2
+            },
+            "whitespace": {
+              "total": 3,
+              "eligible": 3,
+              "accepted": 2,
+              "correct": 2,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.6666666666666666,
+              "deferredRate": 0.3333333333333333
+            },
+            "request-phrasing": {
+              "total": 5,
+              "eligible": 5,
+              "accepted": 2,
+              "correct": 2,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.4,
+              "deferredRate": 0.6
+            },
+            "title-time-words": {
+              "total": 1,
+              "eligible": 1,
+              "accepted": 1,
+              "correct": 1,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 1.0,
+              "deferredRate": 0.0
+            }
+          },
+          "failureStages": {
+            "slot-confidence": 11,
+            "malformed-BIO": 3,
+            "downstream-contract-or-normalization": 2,
+            "character-vocabulary-or-length": 1,
+            "intent-OTHER": 1
+          },
+          "slotThresholdReplay": {
+            "0.8": {
+              "total": 60,
+              "eligible": 50,
+              "accepted": 33,
+              "correct": 33,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.66,
+              "deferredRate": 0.45
+            },
+            "0.7": {
+              "total": 60,
+              "eligible": 50,
+              "accepted": 33,
+              "correct": 33,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.66,
+              "deferredRate": 0.45
+            },
+            "0.5": {
+              "total": 60,
+              "eligible": 50,
+              "accepted": 33,
+              "correct": 33,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.66,
+              "deferredRate": 0.45
+            }
+          },
+          "oracleMetrics": {
+            "total": 50,
+            "eligible": 50,
+            "accepted": 43,
+            "correct": 43,
+            "wrongAccepted": 0,
+            "negativeWrongAccepted": 0,
+            "wrongAcceptanceRate": 0.0,
+            "correctCoverage": 0.86,
+            "deferredRate": 0.14
+          },
+          "failures": [
+            {
+              "id": "zh-review-006",
+              "text": "明天下午3点了解社区义工岗位",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "了解社区义工岗位",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.9999984849184766,
+                "minSlotConfidence": 0.7923159003257751,
+                "weakCharacter": "了",
+                "weakLabel": "I-TIME",
+                "rawSpans": {
+                  "TITLE": [
+                    "解社区义工岗位"
+                  ],
+                  "TIME": [
+                    "明天下午3点了"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": false,
+                "stage": "slot-confidence"
+              }
+            },
+            {
+              "id": "zh-review-007",
+              "text": "了解社区义工岗位",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "了解社区义工岗位",
+                  "dueAt": null,
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.9974945439897012,
+                "minSlotConfidence": 0.9230390787124634,
+                "weakCharacter": "解",
+                "weakLabel": "I-TITLE",
+                "rawSpans": {
+                  "TITLE": [],
+                  "TIME": [],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": true,
+                "stage": "malformed-BIO"
+              }
+            },
+            {
+              "id": "zh-review-008",
+              "text": "明天下午3点报名参加摄影课程",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "报名参加摄影课程",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.999998940611386,
+                "minSlotConfidence": 0.8425306677818298,
+                "weakCharacter": "参",
+                "weakLabel": "B-TITLE",
+                "rawSpans": {
+                  "TITLE": [
+                    "参加摄影课程"
+                  ],
+                  "TIME": [
+                    "明天下午3点"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": true,
+                "stage": "slot-confidence"
+              }
+            },
+            {
+              "id": "zh-review-009",
+              "text": "报名参加摄影课程",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "报名参加摄影课程",
+                  "dueAt": null,
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.9973518642625799,
+                "minSlotConfidence": 0.8049684762954712,
+                "weakCharacter": "报",
+                "weakLabel": "B-TITLE",
+                "rawSpans": {
+                  "TITLE": [
+                    "报名参加摄影课程"
+                  ],
+                  "TIME": [],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": false,
+                "stage": "slot-confidence"
+              }
+            },
+            {
+              "id": "zh-review-021",
+              "text": "10月25日下午3点打电话",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "打电话",
+                  "dueAt": "2026-10-25T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "HABIT",
+                "intentConfidence": 0.9972958687402612,
+                "minSlotConfidence": 0.7947892546653748,
+                "weakCharacter": "日",
+                "weakLabel": "I-TIME",
+                "rawSpans": {
+                  "TITLE": [
+                    "打电话"
+                  ],
+                  "TIME": [
+                    "10月25日",
+                    "下午3点"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": false,
+                "stage": "slot-confidence"
+              }
+            },
+            {
+              "id": "zh-review-022",
+              "text": "2026年11月1日下午3点打电话",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "打电话",
+                  "dueAt": "2026-11-01T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "HABIT",
+                "intentConfidence": 0.9993953042785624,
+                "minSlotConfidence": 0.8685038685798645,
+                "weakCharacter": "日",
+                "weakLabel": "I-TIME",
+                "rawSpans": {
+                  "TITLE": [
+                    "202",
+                    "打电话"
+                  ],
+                  "TIME": [
+                    "6",
+                    "年",
+                    "11月1日",
+                    "下午3点"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": false,
+                "stage": "slot-confidence"
+              }
+            },
+            {
+              "id": "zh-review-023",
+              "text": "2026-11-01 15:00打电话",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "打电话",
+                  "dueAt": "2026-11-01T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.9793590094747805,
+                "minSlotConfidence": 0.6153098940849304,
+                "weakCharacter": "1",
+                "weakLabel": "B-TIME",
+                "rawSpans": {
+                  "TITLE": [
+                    "202",
+                    "打电话"
+                  ],
+                  "TIME": [
+                    "6",
+                    "-",
+                    "11-01 15:00"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": false,
+                "stage": "slot-confidence"
+              }
+            },
+            {
+              "id": "zh-review-024",
+              "text": "三天后下午3点打电话",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "打电话",
+                  "dueAt": "2026-10-22T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.9990945215194065,
+                "minSlotConfidence": 0.5546181797981262,
+                "weakCharacter": "后",
+                "weakLabel": "I-TIME",
+                "rawSpans": {
+                  "TITLE": [
+                    "打电话"
+                  ],
+                  "TIME": [
+                    "三天后下午3点"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": false,
+                "stage": "slot-confidence"
+              }
+            },
+            {
+              "id": "zh-review-025",
+              "text": "半小时后打电话",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "打电话",
+                  "dueAt": "2026-10-19T12:30",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.9999993186362679,
+                "minSlotConfidence": 0.5996243357658386,
+                "weakCharacter": "后",
+                "weakLabel": "I-TIME",
+                "rawSpans": {
+                  "TITLE": [
+                    "半小时",
+                    "打电话"
+                  ],
+                  "TIME": [],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": true,
+                "stage": "slot-confidence"
+              }
+            },
+            {
+              "id": "zh-review-032",
+              "text": "喝水",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "HABIT",
+                  "title": "喝水",
+                  "dueAt": null,
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.9999807205092414,
+                "minSlotConfidence": 0.9999587535858154,
+                "weakCharacter": "喝",
+                "weakLabel": "B-TITLE",
+                "rawSpans": {
+                  "TITLE": [
+                    "喝水"
+                  ],
+                  "TIME": [],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": false,
+                "stage": "downstream-contract-or-normalization"
+              }
+            },
+            {
+              "id": "zh-review-034",
+              "text": "明天下午3点参加会议，备注：带身份证",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "参加会议",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "带身份证",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.9999991009075896,
+                "minSlotConfidence": 0.9467675685882568,
+                "weakCharacter": "：",
+                "weakLabel": "O",
+                "rawSpans": {
+                  "TITLE": [
+                    "参加会议注身份证"
+                  ],
+                  "TIME": [
+                    "明天下午3点"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": true,
+                "stage": "malformed-BIO"
+              }
+            },
+            {
+              "id": "zh-review-035",
+              "text": "明天下午3点参加会议，备注：提前十分钟出门",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "参加会议",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "提前十分钟出门",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.999998951272316,
+                "minSlotConfidence": 0.7224675416946411,
+                "weakCharacter": "提",
+                "weakLabel": "I-TITLE",
+                "rawSpans": {
+                  "TITLE": [
+                    "参加会议注",
+                    "出门"
+                  ],
+                  "TIME": [
+                    "明天下午3点",
+                    "前十分钟"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": true,
+                "stage": "slot-confidence"
+              }
+            },
+            {
+              "id": "zh-review-036",
+              "text": "明天下午3点参加会议，备注：会议室在三楼",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "参加会议",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "会议室在三楼",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.9999989247386443,
+                "minSlotConfidence": 0.6242778301239014,
+                "weakCharacter": "在",
+                "weakLabel": "I-TIME",
+                "rawSpans": {
+                  "TITLE": [
+                    "参加会议注议室楼"
+                  ],
+                  "TIME": [
+                    "明天下午3点"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": true,
+                "stage": "slot-confidence"
+              }
+            },
+            {
+              "id": "zh-review-049",
+              "text": "明天下午3点给Zoë打电话",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "给Zoë打电话",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "stage": "character-vocabulary-or-length"
+              }
+            },
+            {
+              "id": "zh-review-052",
+              "text": "明天下午  3  点打电话",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "打电话",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.9999984591944846,
+                "minSlotConfidence": 0.9999666213989258,
+                "weakCharacter": "打",
+                "weakLabel": "B-TITLE",
+                "rawSpans": {
+                  "TITLE": [
+                    "打电话"
+                  ],
+                  "TIME": [
+                    "明天下午"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": true,
+                "stage": "malformed-BIO"
+              }
+            },
+            {
+              "id": "zh-review-056",
+              "text": "麻烦提醒我明天下午3点打电话",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "打电话",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.9999987206759793,
+                "minSlotConfidence": 0.8722641468048096,
+                "weakCharacter": "麻",
+                "weakLabel": "O",
+                "rawSpans": {
+                  "TITLE": [
+                    "打电话"
+                  ],
+                  "TIME": [
+                    "明天下午3点"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": false,
+                "stage": "slot-confidence"
+              }
+            },
+            {
+              "id": "zh-review-057",
+              "text": "能不能帮我明天下午3点打电话",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "打电话",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": {
+                "kind": "TASK",
+                "title": "能不能帮我明天下午3点打电话",
+                "dueAt": null,
+                "note": "",
+                "period": "DAILY",
+                "targetCount": 1,
+                "weekdaysMask": 127,
+                "reminderTime": null,
+                "needsAI": true,
+                "ready": false,
+                "source": "MODEL",
+                "message": "未识别为明确的添加请求，请确认或展开",
+                "recognitionState": ""
+              },
+              "diagnosis": {
+                "intent": "OTHER",
+                "intentConfidence": 0.9999972776146382,
+                "stage": "intent-OTHER"
+              }
+            },
+            {
+              "id": "zh-review-058",
+              "text": "记得要明天下午3点打电话",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "打电话",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.9999988031455163,
+                "minSlotConfidence": 0.9680066108703613,
+                "weakCharacter": "要",
+                "weakLabel": "O",
+                "rawSpans": {
+                  "TITLE": [
+                    "打电话"
+                  ],
+                  "TIME": [
+                    "明天下午3点"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": false,
+                "stage": "downstream-contract-or-normalization"
+              }
+            }
+          ],
+          "oracleFailures": [
+            {
+              "id": "zh-review-024",
+              "text": "三天后下午3点打电话",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "打电话",
+                  "dueAt": "2026-10-22T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null
+            },
+            {
+              "id": "zh-review-025",
+              "text": "半小时后打电话",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "打电话",
+                  "dueAt": "2026-10-19T12:30",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null
+            },
+            {
+              "id": "zh-review-032",
+              "text": "喝水",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "HABIT",
+                  "title": "喝水",
+                  "dueAt": null,
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null
+            },
+            {
+              "id": "zh-review-049",
+              "text": "明天下午3点给Zoë打电话",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "给Zoë打电话",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null
+            },
+            {
+              "id": "zh-review-056",
+              "text": "麻烦提醒我明天下午3点打电话",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "打电话",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null
+            },
+            {
+              "id": "zh-review-057",
+              "text": "能不能帮我明天下午3点打电话",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "打电话",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null
+            },
+            {
+              "id": "zh-review-058",
+              "text": "记得要明天下午3点打电话",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "打电话",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null
+            }
+          ]
+        },
+        "frozen": {
+          "metrics": {
+            "total": 1600,
+            "eligible": 1440,
+            "accepted": 1228,
+            "correct": 1228,
+            "wrongAccepted": 0,
+            "negativeWrongAccepted": 0,
+            "wrongAcceptanceRate": 0.0,
+            "correctCoverage": 0.8527777777777777,
+            "deferredRate": 0.2325
+          },
+          "categories": {
+            "frozen": {
+              "total": 1600,
+              "eligible": 1440,
+              "accepted": 1228,
+              "correct": 1228,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.8527777777777777,
+              "deferredRate": 0.2325
+            }
+          },
+          "archivedProposalDifferences": 0,
+          "failureStages": {
+            "slot-confidence": 99,
+            "downstream-contract-or-normalization": 2,
+            "intent-OTHER": 92,
+            "malformed-BIO": 6,
+            "intent-confidence": 13
+          },
+          "slotThresholdReplay": {
+            "0.8": {
+              "total": 1600,
+              "eligible": 1440,
+              "accepted": 1243,
+              "correct": 1243,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.8631944444444445,
+              "deferredRate": 0.223125
+            },
+            "0.7": {
+              "total": 1600,
+              "eligible": 1440,
+              "accepted": 1246,
+              "correct": 1246,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.8652777777777778,
+              "deferredRate": 0.22125
+            },
+            "0.5": {
+              "total": 1600,
+              "eligible": 1440,
+              "accepted": 1255,
+              "correct": 1255,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.8715277777777778,
+              "deferredRate": 0.215625
+            }
+          },
+          "oracleMetrics": {
+            "total": 1440,
+            "eligible": 1440,
+            "accepted": 1440,
+            "correct": 1440,
+            "wrongAccepted": 0,
+            "negativeWrongAccepted": 0,
+            "wrongAcceptanceRate": 0.0,
+            "correctCoverage": 1.0,
+            "deferredRate": 0.0
+          }
+        }
+      },
+      "clientManifestsMatch": {
+        "android": true,
+        "ios": true,
+        "ohos": true
+      }
+    },
+    "en": {
+      "modelSha256": "7697566c2f2aac3a760b0174b2fc8cf1bc786af62b8d66b6043ca6cfd0dee310",
+      "manifestSha256": "59e7665c5e4569cab612fbfeab85f294668532c5ec830145ba0d9512dcc8edd8",
+      "probesSha256": "f2e881e973ed0c2f1d493ebf3f00e625a5c7be6ab66565885d3e44b4040723dd",
+      "corpus": {
+        "rows": 27935,
+        "annotationStatus": {
+          "synthetic": 27935
+        },
+        "preferredKind": {
+          "TASK": 27935
+        },
+        "fields": {
+          "TITLE": {
+            "count": 25444,
+            "unique": 376
+          },
+          "TIME": {
+            "count": 25102,
+            "unique": 231
+          },
+          "REPEAT": {
+            "count": 9342,
+            "unique": 28
+          },
+          "NOTE": {
+            "count": 0,
+            "unique": 0
+          }
+        }
+      },
+      "sets": {
+        "probes": {
+          "metrics": {
+            "total": 60,
+            "eligible": 50,
+            "accepted": 31,
+            "correct": 31,
+            "wrongAccepted": 0,
+            "negativeWrongAccepted": 0,
+            "wrongAcceptanceRate": 0.0,
+            "correctCoverage": 0.62,
+            "deferredRate": 0.48333333333333334
+          },
+          "categories": {
+            "familiar-time-new-title": {
+              "total": 6,
+              "eligible": 6,
+              "accepted": 5,
+              "correct": 5,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.8333333333333334,
+              "deferredRate": 0.16666666666666666
+            },
+            "plain-title": {
+              "total": 6,
+              "eligible": 6,
+              "accepted": 4,
+              "correct": 4,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.6666666666666666,
+              "deferredRate": 0.3333333333333333
+            },
+            "clock-generalization": {
+              "total": 8,
+              "eligible": 8,
+              "accepted": 8,
+              "correct": 8,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 1.0,
+              "deferredRate": 0.0
+            },
+            "date-generalization": {
+              "total": 6,
+              "eligible": 6,
+              "accepted": 1,
+              "correct": 1,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.16666666666666666,
+              "deferredRate": 0.8333333333333334
+            },
+            "habit": {
+              "total": 5,
+              "eligible": 5,
+              "accepted": 5,
+              "correct": 5,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 1.0,
+              "deferredRate": 0.0
+            },
+            "habit-selected-plain-title": {
+              "total": 2,
+              "eligible": 2,
+              "accepted": 1,
+              "correct": 1,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.5,
+              "deferredRate": 0.5
+            },
+            "note": {
+              "total": 3,
+              "eligible": 3,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": null,
+              "correctCoverage": 0.0,
+              "deferredRate": 1.0
+            },
+            "rejection-controls": {
+              "total": 10,
+              "eligible": 0,
+              "accepted": 0,
+              "correct": 0,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": null,
+              "correctCoverage": null,
+              "deferredRate": 1.0
+            },
+            "vocabulary-and-symbols": {
+              "total": 5,
+              "eligible": 5,
+              "accepted": 2,
+              "correct": 2,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.4,
+              "deferredRate": 0.6
+            },
+            "whitespace": {
+              "total": 3,
+              "eligible": 3,
+              "accepted": 2,
+              "correct": 2,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.6666666666666666,
+              "deferredRate": 0.3333333333333333
+            },
+            "request-phrasing": {
+              "total": 5,
+              "eligible": 5,
+              "accepted": 2,
+              "correct": 2,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.4,
+              "deferredRate": 0.6
+            },
+            "title-time-words": {
+              "total": 1,
+              "eligible": 1,
+              "accepted": 1,
+              "correct": 1,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 1.0,
+              "deferredRate": 0.0
+            }
+          },
+          "failureStages": {
+            "slot-confidence": 8,
+            "intent-confidence": 2,
+            "downstream-contract-or-normalization": 4,
+            "malformed-BIO": 3,
+            "character-vocabulary-or-length": 1,
+            "intent-OTHER": 1
+          },
+          "slotThresholdReplay": {
+            "0.8": {
+              "total": 60,
+              "eligible": 50,
+              "accepted": 32,
+              "correct": 32,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.64,
+              "deferredRate": 0.4666666666666667
+            },
+            "0.7": {
+              "total": 60,
+              "eligible": 50,
+              "accepted": 33,
+              "correct": 33,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.66,
+              "deferredRate": 0.45
+            },
+            "0.5": {
+              "total": 60,
+              "eligible": 50,
+              "accepted": 33,
+              "correct": 33,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.66,
+              "deferredRate": 0.45
+            }
+          },
+          "oracleMetrics": {
+            "total": 50,
+            "eligible": 50,
+            "accepted": 42,
+            "correct": 42,
+            "wrongAccepted": 0,
+            "negativeWrongAccepted": 0,
+            "wrongAcceptanceRate": 0.0,
+            "correctCoverage": 0.84,
+            "deferredRate": 0.16
+          },
+          "failures": [
+            {
+              "id": "en-review-006",
+              "text": "tomorrow at 3pm learn about local volunteer roles",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "learn about local volunteer roles",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.9999942336665245,
+                "minSlotConfidence": 0.7624141573905945,
+                "weakCharacter": "l",
+                "weakLabel": "I-TITLE",
+                "rawSpans": {
+                  "TITLE": [
+                    "learn about local volunteer roles"
+                  ],
+                  "TIME": [
+                    "tomorrow at 3pm"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": false,
+                "stage": "slot-confidence"
+              }
+            },
+            {
+              "id": "en-review-007",
+              "text": "learn about local volunteer roles",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "learn about local volunteer roles",
+                  "dueAt": null,
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "HABIT",
+                "intentConfidence": 0.9923386657356272,
+                "minSlotConfidence": 0.5022981762886047,
+                "weakCharacter": "l",
+                "weakLabel": "I-TITLE",
+                "rawSpans": {
+                  "TITLE": [
+                    "learn about local ",
+                    "volunteer roles"
+                  ],
+                  "TIME": [],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": false,
+                "stage": "slot-confidence"
+              }
+            },
+            {
+              "id": "en-review-009",
+              "text": "mail a birthday gift to my cousin",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "mail a birthday gift to my cousin",
+                  "dueAt": null,
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.5426453067934154,
+                "stage": "intent-confidence"
+              }
+            },
+            {
+              "id": "en-review-021",
+              "text": "October 25 at 3pm call Mom",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "call Mom",
+                  "dueAt": "2026-10-25T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "HABIT",
+                "intentConfidence": 0.9817094886336634,
+                "minSlotConfidence": 0.9753454923629761,
+                "weakCharacter": "O",
+                "weakLabel": "B-TIME",
+                "rawSpans": {
+                  "TITLE": [
+                    "call Mom"
+                  ],
+                  "TIME": [
+                    "October 25 at 3pm"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": false,
+                "stage": "downstream-contract-or-normalization"
+              }
+            },
+            {
+              "id": "en-review-022",
+              "text": "November 1, 2026 at 3pm call Mom",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "call Mom",
+                  "dueAt": "2026-11-01T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.6679569452635926,
+                "stage": "intent-confidence"
+              }
+            },
+            {
+              "id": "en-review-023",
+              "text": "2026-11-01 at 15:00 call Mom",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "call Mom",
+                  "dueAt": "2026-11-01T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.9969073117193937,
+                "minSlotConfidence": 0.718113362789154,
+                "weakCharacter": "2",
+                "weakLabel": "I-TIME",
+                "rawSpans": {
+                  "TITLE": [
+                    "call Mom"
+                  ],
+                  "TIME": [],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": true,
+                "stage": "slot-confidence"
+              }
+            },
+            {
+              "id": "en-review-024",
+              "text": "in three days at 3pm call Mom",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "call Mom",
+                  "dueAt": "2026-10-22T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "HABIT",
+                "intentConfidence": 0.9999938523272506,
+                "minSlotConfidence": 0.8756546974182129,
+                "weakCharacter": "i",
+                "weakLabel": "B-TIME",
+                "rawSpans": {
+                  "TITLE": [
+                    "call Mom"
+                  ],
+                  "TIME": [
+                    "in",
+                    "at 3pm"
+                  ],
+                  "REPEAT": [
+                    "three days"
+                  ],
+                  "NOTE": []
+                },
+                "malformedBIO": false,
+                "stage": "slot-confidence"
+              }
+            },
+            {
+              "id": "en-review-025",
+              "text": "in 30 minutes call Mom",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "call Mom",
+                  "dueAt": "2026-10-19T12:30",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "HABIT",
+                "intentConfidence": 0.9945084217430695,
+                "minSlotConfidence": 0.7613435983657837,
+                "weakCharacter": "m",
+                "weakLabel": "I-TIME",
+                "rawSpans": {
+                  "TITLE": [
+                    "call Mom"
+                  ],
+                  "TIME": [
+                    "in 30 minutes"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": false,
+                "stage": "slot-confidence"
+              }
+            },
+            {
+              "id": "en-review-031",
+              "text": "drink water",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "HABIT",
+                  "title": "drink water",
+                  "dueAt": null,
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.9998815730446319,
+                "minSlotConfidence": 0.9998962879180908,
+                "weakCharacter": "w",
+                "weakLabel": "I-TITLE",
+                "rawSpans": {
+                  "TITLE": [
+                    "drink water"
+                  ],
+                  "TIME": [],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": false,
+                "stage": "downstream-contract-or-normalization"
+              }
+            },
+            {
+              "id": "en-review-033",
+              "text": "tomorrow at 3pm attend the meeting, bring my ID",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "attend the meeting",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "bring my ID",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.9999980894983314,
+                "minSlotConfidence": 0.9999264478683472,
+                "weakCharacter": "b",
+                "weakLabel": "B-TITLE",
+                "rawSpans": {
+                  "TITLE": [
+                    "attend the meeting",
+                    "bring my ID"
+                  ],
+                  "TIME": [
+                    "tomorrow at 3pm"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": false,
+                "stage": "downstream-contract-or-normalization"
+              }
+            },
+            {
+              "id": "en-review-034",
+              "text": "tomorrow at 3pm attend the meeting, leave ten minutes early",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "attend the meeting",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "leave ten minutes early",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.9999950656055981,
+                "minSlotConfidence": 0.48421674966812134,
+                "weakCharacter": "l",
+                "weakLabel": "O",
+                "rawSpans": {
+                  "TITLE": [
+                    "attend the meeting"
+                  ],
+                  "TIME": [
+                    "tomorrow at 3pmen minutes early"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": true,
+                "stage": "slot-confidence"
+              }
+            },
+            {
+              "id": "en-review-035",
+              "text": "tomorrow at 3pm attend the meeting, the meeting room is on floor three",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "attend the meeting",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "the meeting room is on floor three",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.999990414321363,
+                "minSlotConfidence": 0.9626688957214355,
+                "weakCharacter": "f",
+                "weakLabel": "I-TITLE",
+                "rawSpans": {
+                  "TITLE": [
+                    "attend the meetinghe meeting room is on floor three"
+                  ],
+                  "TIME": [
+                    "tomorrow at 3pm"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": true,
+                "stage": "malformed-BIO"
+              }
+            },
+            {
+              "id": "en-review-048",
+              "text": "tomorrow at 3pm email support@example.com",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "email support@example.com",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.9999908294655538,
+                "minSlotConfidence": 0.9175496697425842,
+                "weakCharacter": "c",
+                "weakLabel": "B-TITLE",
+                "rawSpans": {
+                  "TITLE": [
+                    "email support@example",
+                    "com"
+                  ],
+                  "TIME": [
+                    "tomorrow at 3pm"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": true,
+                "stage": "malformed-BIO"
+              }
+            },
+            {
+              "id": "en-review-049",
+              "text": "tomorrow at 3pm buy a USB-C adapter",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "buy a USB-C adapter",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.9999979802410144,
+                "minSlotConfidence": 0.6132417917251587,
+                "weakCharacter": "a",
+                "weakLabel": "B-TITLE",
+                "rawSpans": {
+                  "TITLE": [
+                    "buy a USB-C ",
+                    "adapter"
+                  ],
+                  "TIME": [
+                    "tomorrow at 3pm"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": false,
+                "stage": "slot-confidence"
+              }
+            },
+            {
+              "id": "en-review-050",
+              "text": "tomorrow at 3pm 给妈妈打电话",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "给妈妈打电话",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "stage": "character-vocabulary-or-length"
+              }
+            },
+            {
+              "id": "en-review-052",
+              "text": "tomorrow at  3  pm call Mom",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "call Mom",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.9999979593595709,
+                "minSlotConfidence": 0.9999638795852661,
+                "weakCharacter": "t",
+                "weakLabel": "B-TIME",
+                "rawSpans": {
+                  "TITLE": [
+                    "call Mom"
+                  ],
+                  "TIME": [
+                    "tomorrow atm"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": true,
+                "stage": "malformed-BIO"
+              }
+            },
+            {
+              "id": "en-review-056",
+              "text": "can you remind me to call Mom tomorrow at 3pm",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "call Mom",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.9999521425892925,
+                "minSlotConfidence": 0.8821741342544556,
+                "weakCharacter": "t",
+                "weakLabel": "O",
+                "rawSpans": {
+                  "TITLE": [
+                    "call Mom"
+                  ],
+                  "TIME": [
+                    "tomorrow at 3pm"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": false,
+                "stage": "slot-confidence"
+              }
+            },
+            {
+              "id": "en-review-057",
+              "text": "I need to call Mom tomorrow at 3pm",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "call Mom",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null,
+              "diagnosis": {
+                "intent": "TASK",
+                "intentConfidence": 0.9996380590444932,
+                "minSlotConfidence": 0.9299537539482117,
+                "weakCharacter": "c",
+                "weakLabel": "B-TITLE",
+                "rawSpans": {
+                  "TITLE": [
+                    "call Mom"
+                  ],
+                  "TIME": [
+                    "tomorrow at 3pm"
+                  ],
+                  "REPEAT": [],
+                  "NOTE": []
+                },
+                "malformedBIO": false,
+                "stage": "downstream-contract-or-normalization"
+              }
+            },
+            {
+              "id": "en-review-058",
+              "text": "don't forget to call Mom tomorrow at 3pm",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "call Mom",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": {
+                "kind": "TASK",
+                "title": "don't forget to call Mom tomorrow at 3pm",
+                "dueAt": null,
+                "note": "",
+                "period": "DAILY",
+                "targetCount": 1,
+                "weekdaysMask": 127,
+                "reminderTime": null,
+                "needsAI": true,
+                "ready": false,
+                "source": "MODEL",
+                "message": "未识别为明确的添加请求，请确认或展开",
+                "recognitionState": ""
+              },
+              "diagnosis": {
+                "intent": "OTHER",
+                "intentConfidence": 0.9999606118421225,
+                "stage": "intent-OTHER"
+              }
+            }
+          ],
+          "oracleFailures": [
+            {
+              "id": "en-review-021",
+              "text": "October 25 at 3pm call Mom",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "call Mom",
+                  "dueAt": "2026-10-25T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null
+            },
+            {
+              "id": "en-review-022",
+              "text": "November 1, 2026 at 3pm call Mom",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "call Mom",
+                  "dueAt": "2026-11-01T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null
+            },
+            {
+              "id": "en-review-024",
+              "text": "in three days at 3pm call Mom",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "call Mom",
+                  "dueAt": "2026-10-22T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null
+            },
+            {
+              "id": "en-review-025",
+              "text": "in 30 minutes call Mom",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "call Mom",
+                  "dueAt": "2026-10-19T12:30",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null
+            },
+            {
+              "id": "en-review-031",
+              "text": "drink water",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "HABIT",
+                  "title": "drink water",
+                  "dueAt": null,
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null
+            },
+            {
+              "id": "en-review-050",
+              "text": "tomorrow at 3pm 给妈妈打电话",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "给妈妈打电话",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null
+            },
+            {
+              "id": "en-review-057",
+              "text": "I need to call Mom tomorrow at 3pm",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "call Mom",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null
+            },
+            {
+              "id": "en-review-058",
+              "text": "don't forget to call Mom tomorrow at 3pm",
+              "expected": {
+                "decision": "accept",
+                "proposal": {
+                  "kind": "TASK",
+                  "title": "call Mom",
+                  "dueAt": "2026-10-20T15:00",
+                  "note": "",
+                  "period": "DAILY",
+                  "targetCount": 1,
+                  "weekdaysMask": 127,
+                  "reminderTime": null
+                }
+              },
+              "actual": null
+            }
+          ]
+        },
+        "frozen": {
+          "metrics": {
+            "total": 960,
+            "eligible": 800,
+            "accepted": 736,
+            "correct": 736,
+            "wrongAccepted": 0,
+            "negativeWrongAccepted": 0,
+            "wrongAcceptanceRate": 0.0,
+            "correctCoverage": 0.92,
+            "deferredRate": 0.23333333333333334
+          },
+          "categories": {
+            "frozen": {
+              "total": 960,
+              "eligible": 800,
+              "accepted": 736,
+              "correct": 736,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.92,
+              "deferredRate": 0.23333333333333334
+            }
+          },
+          "archivedProposalDifferences": 0,
+          "failureStages": {
+            "slot-confidence": 58,
+            "downstream-contract-or-normalization": 4,
+            "malformed-BIO": 2
+          },
+          "slotThresholdReplay": {
+            "0.8": {
+              "total": 960,
+              "eligible": 800,
+              "accepted": 745,
+              "correct": 745,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.93125,
+              "deferredRate": 0.22395833333333334
+            },
+            "0.7": {
+              "total": 960,
+              "eligible": 800,
+              "accepted": 747,
+              "correct": 747,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.93375,
+              "deferredRate": 0.221875
+            },
+            "0.5": {
+              "total": 960,
+              "eligible": 800,
+              "accepted": 759,
+              "correct": 759,
+              "wrongAccepted": 0,
+              "negativeWrongAccepted": 0,
+              "wrongAcceptanceRate": 0.0,
+              "correctCoverage": 0.94875,
+              "deferredRate": 0.209375
+            }
+          },
+          "oracleMetrics": {
+            "total": 800,
+            "eligible": 800,
+            "accepted": 800,
+            "correct": 800,
+            "wrongAccepted": 0,
+            "negativeWrongAccepted": 0,
+            "wrongAcceptanceRate": 0.0,
+            "correctCoverage": 1.0,
+            "deferredRate": 0.0
+          }
+        }
+      },
+      "clientManifestsMatch": {
+        "android": true,
+        "ios": true,
+        "ohos": true
+      }
+    }
+  },
+  "zhNegationTrainingCounts": {
+    "不": {
+      "positiveTitles": 0,
+      "negativeTexts": 894
+    },
+    "没": {
+      "positiveTitles": 0,
+      "negativeTexts": 320
+    },
+    "取消": {
+      "positiveTitles": 0,
+      "negativeTexts": 555
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "humanReviewed": false,
+  "realUserData": false,
+  "scope": "synthetic engineering screening only",
+  "revision": 3,
+  "knownRegressionReplayed": true,
+  "sourceGroupsAndExactEntitiesDisjoint": true,
+  "syntax": "shared synthetic layouts, not syntax-family blind test",
+  "formalGateEligible": false,
+  "sourceSha256": "6faf4898d9e08550e5375b1612f070b02c1fa0df425065909c50dcb7e9460f2e",
+  "partitions": {
+    "train": {
+      "rows": 20000,
+      "uniqueTexts": 20000,
+      "classes": {
+        "TASK": 8000,
+        "HABIT": 8000,
+        "CONFIRM": 4000
+      },
+      "sha256": "d5adf507dc5b45f102bada2cfa62f25185e4c880164c971c50dd31e5c7e5dd9b"
+    },
+    "rank": {
+      "rows": 4000,
+      "uniqueTexts": 4000,
+      "classes": {
+        "TASK": 1600,
+        "HABIT": 1600,
+        "CONFIRM": 800
+      },
+      "sha256": "a883913a7672f78c7db4e17654a26a5c8c495ddff64b0ca3bb13232770ff22b5"
+    },
+    "quality": {
+      "rows": 6000,
+      "uniqueTexts": 6000,
+      "classes": {
+        "TASK": 2400,
+        "HABIT": 2400,
+        "CONFIRM": 1200
+      },
+      "sha256": "fa9239ba79579cd24d7b7f07cf3f080806c39077e6f17572fa7b10b444f8365f"
+    },
+    "dev": {
+      "rows": 2000,
+      "uniqueTexts": 2000,
+      "classes": {
+        "TASK": 800,
+        "HABIT": 800,
+        "CONFIRM": 400
+      },
+      "sha256": "6bbbcf5f15b8a9193e911e7729a66f13f987522b066bb19181d61d2256550c9a"
+    },
+    "cal_fit": {
+      "rows": 2000,
+      "uniqueTexts": 2000,
+      "classes": {
+        "TASK": 800,
+        "HABIT": 800,
+        "CONFIRM": 400
+      },
+      "sha256": "af31dd3127456c79acc343b6a3a5a992e30a5779de2e2d481a6bed36920b16e6"
+    },
+    "cal_gate": {
+      "rows": 4000,
+      "uniqueTexts": 4000,
+      "classes": {
+        "TASK": 1600,
+        "HABIT": 1600,
+        "CONFIRM": 800
+      },
+      "sha256": "ef618ceea9066790cd15d4e50366bb5c8dc5e76cc5479eeea6206d8a6f9ffa4c"
+    },
+    "test": {
+      "rows": 4000,
+      "uniqueTexts": 4000,
+      "classes": {
+        "TASK": 1600,
+        "HABIT": 1600,
+        "CONFIRM": 800
+      },
+      "sha256": "8f43a825f908909e986766484ab87ee15b81e8c539fd885dae7bfe974e1e4b6b"
+    },
+    "protection": {
+      "rows": 2000,
+      "uniqueTexts": 2000,
+      "classes": {
+        "CONFIRM": 2000
+      },
+      "sha256": "6fde282191fd75fd5c1b7b500c31bc4570ff3ce2b1cabc8b72dfa504643d1c7d"
+    }
+  }
+}

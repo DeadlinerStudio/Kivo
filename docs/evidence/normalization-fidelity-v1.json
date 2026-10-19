@@ -1,0 +1,1143 @@
+{
+  "scope": "fixed weights; source-copy fidelity post-validation; third entity holdout",
+  "humanReviewed": false,
+  "dataProvenance": {
+    "counts": {
+      "train": 5000,
+      "dev": 360,
+      "test": 480
+    },
+    "sha256": {
+      "train": "097fb69d70917c01b02e35a267d430acde70dc7d1fab7a0802264b36d9f154e9",
+      "dev": "d3ff2a37ba4762428e5176b4b66ae48ea956258917bb292f91f3ee3c54e36ebc",
+      "test": "8056dca8061419dbd7ae9a14504637e2ff2f5276d271a441e7d452f4e365799e"
+    },
+    "humanReviewed": false,
+    "realUserData": false,
+    "syntax": "previously exposed templates",
+    "titleAndLocationDisjointFromTrainDevAndBothPreviousTests": true,
+    "frozenBeforeFidelityPolicyCalibration": true,
+    "generatorSha256": "cf5165d38b303b485bfd6e074c4d603e429087d360c18c8fe23fcdf02c3837bc",
+    "training": "no new training; all model weights fixed",
+    "trainDevIdenticalTo": "zh-core-spans-v1"
+  },
+  "modelSha256": {
+    "normalizer": "5d8832c4487712d352fcdef977e86a6b0c9eaf69d80d36cd5f706548828ca67f",
+    "span": "b1a3e63c0d632dcf80afaef099b44cc5757d7bdfc3315d3313068084b5aa0b78",
+    "bio": "7359dea3bbf841e75e0d012157ca1db86317141cd268a3d416ca28fbb50ba276"
+  },
+  "kmpDateAdapterSha256": "f8efb32846618b8355dbe89d6e5f27da25c5d73b2647a70500dda5bb946b15cd",
+  "policySha256": "3f180dbfca82e48f73ebb4903288552689d83de8aeef5597985c07d267d7bf9f",
+  "sourceSha256": {
+    "bio_control.py": "31018cfecd340b1f994d1273cbeda34a78d41e9d4e860a9c79dd90238d9d8391",
+    "normalizer_rules.py": "38a8b9a9b263188305ffd9f3cbea3c1ab2df598472ab4fe220913de2a5190eea",
+    "span_decode.py": "bd6c03d9fed300e37e0593540623b79dceccaa544b457f88206b9aeea7cdfdfe",
+    "span_predict.py": "b0847e23bb08e15bea7b97cb5924bba172ca3750d93a3fdf4b245af892467f4b",
+    "span_data.py": "81aa9e3ca7cdf57ebf8c51a9ec44d18dc80678f1388e4cc9773b44ff947eb6c2",
+    "span_train.py": "531d73a93ed44d49ea186e4f16761c85e85a5ed767a27d9a31139aaacf85f8f8",
+    "fidelity_evaluate.py": "efcfaec2e44404aab72c3631f4eb84f91ea590921f1b81ae0ce7c511fb89d306",
+    "fidelity_data.py": "cf5165d38b303b485bfd6e074c4d603e429087d360c18c8fe23fcdf02c3837bc",
+    "normalizer_predict.py": "847afeecb3862d66ad80397f1516e9f3e427e3dac8ec179d2805729824944204",
+    "span_model.py": "e47387a4f8cf350751839e2931ff90db166f622c586d9bf9dbf9af6ffa33a4ea",
+    "normalizer_fidelity.py": "4280b4a61fe2d8cbcdef4391aca333f06d96c2f8d778a76169b53805cb002f42",
+    "normalizer_evaluate.py": "6bee13e213c2ad90a267d4cd0be3400174c1b74953632df44997701346ac9a5a",
+    "span_evaluate.py": "2e5afca3b601f1b0f39a1fee53cfd48bb65771328bf2511d0c17f3de666a026d",
+    "normalizer_train.py": "fe47f6894d943dc15fa6351403d75c16451bb4ae87aa4912d22298a18f1cf3a8",
+    "normalizer_model.py": "7173a428a260949b26d89d377e3bc90ad7da8bebd84d73d746219defb1eb16c3",
+    "normalizer_data.py": "0d93b9822f1d6a355fa7c8bae957dee1972308300d7b7d802cf090e77df58dd2"
+  },
+  "baselineMinimumProbability": 0.9,
+  "extractionThresholds": {
+    "span": {
+      "span": 1.0,
+      "request": 0.9,
+      "grid": [
+        {
+          "span": 0.0,
+          "request": 0.8,
+          "correct": 230,
+          "accepted": 235,
+          "wrongAccepted": 5,
+          "wrongAcceptanceRate": 0.02127659574468085,
+          "correctCoverage": 0.7986111111111112
+        },
+        {
+          "span": 0.0,
+          "request": 0.9,
+          "correct": 230,
+          "accepted": 235,
+          "wrongAccepted": 5,
+          "wrongAcceptanceRate": 0.02127659574468085,
+          "correctCoverage": 0.7986111111111112
+        },
+        {
+          "span": 0.0,
+          "request": 0.95,
+          "correct": 229,
+          "accepted": 234,
+          "wrongAccepted": 5,
+          "wrongAcceptanceRate": 0.021367521367521368,
+          "correctCoverage": 0.7951388888888888
+        },
+        {
+          "span": 0.0,
+          "request": 0.98,
+          "correct": 226,
+          "accepted": 231,
+          "wrongAccepted": 5,
+          "wrongAcceptanceRate": 0.021645021645021644,
+          "correctCoverage": 0.7847222222222222
+        },
+        {
+          "span": 1.0,
+          "request": 0.8,
+          "correct": 223,
+          "accepted": 227,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.01762114537444934,
+          "correctCoverage": 0.7743055555555556
+        },
+        {
+          "span": 1.0,
+          "request": 0.9,
+          "correct": 223,
+          "accepted": 227,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.01762114537444934,
+          "correctCoverage": 0.7743055555555556
+        },
+        {
+          "span": 1.0,
+          "request": 0.95,
+          "correct": 222,
+          "accepted": 226,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.017699115044247787,
+          "correctCoverage": 0.7708333333333334
+        },
+        {
+          "span": 1.0,
+          "request": 0.98,
+          "correct": 219,
+          "accepted": 223,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.017937219730941704,
+          "correctCoverage": 0.7604166666666666
+        },
+        {
+          "span": 2.0,
+          "request": 0.8,
+          "correct": 213,
+          "accepted": 217,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.018433179723502304,
+          "correctCoverage": 0.7395833333333334
+        },
+        {
+          "span": 2.0,
+          "request": 0.9,
+          "correct": 213,
+          "accepted": 217,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.018433179723502304,
+          "correctCoverage": 0.7395833333333334
+        },
+        {
+          "span": 2.0,
+          "request": 0.95,
+          "correct": 212,
+          "accepted": 216,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.018518518518518517,
+          "correctCoverage": 0.7361111111111112
+        },
+        {
+          "span": 2.0,
+          "request": 0.98,
+          "correct": 209,
+          "accepted": 213,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.018779342723004695,
+          "correctCoverage": 0.7256944444444444
+        },
+        {
+          "span": 3.0,
+          "request": 0.8,
+          "correct": 195,
+          "accepted": 199,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.020100502512562814,
+          "correctCoverage": 0.6770833333333334
+        },
+        {
+          "span": 3.0,
+          "request": 0.9,
+          "correct": 195,
+          "accepted": 199,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.020100502512562814,
+          "correctCoverage": 0.6770833333333334
+        },
+        {
+          "span": 3.0,
+          "request": 0.95,
+          "correct": 194,
+          "accepted": 198,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.020202020202020204,
+          "correctCoverage": 0.6736111111111112
+        },
+        {
+          "span": 3.0,
+          "request": 0.98,
+          "correct": 192,
+          "accepted": 196,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.02040816326530612,
+          "correctCoverage": 0.6666666666666666
+        }
+      ],
+      "selection": "dev only: maximize correct with <=1% observed wrong acceptance; otherwise correct-10*wrong"
+    },
+    "same-data-BIO": {
+      "span": 0.0,
+      "request": 0.98,
+      "grid": [
+        {
+          "span": 0.0,
+          "request": 0.8,
+          "correct": 215,
+          "accepted": 219,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.0182648401826484,
+          "correctCoverage": 0.7465277777777778
+        },
+        {
+          "span": 0.0,
+          "request": 0.9,
+          "correct": 215,
+          "accepted": 219,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.0182648401826484,
+          "correctCoverage": 0.7465277777777778
+        },
+        {
+          "span": 0.0,
+          "request": 0.95,
+          "correct": 215,
+          "accepted": 219,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.0182648401826484,
+          "correctCoverage": 0.7465277777777778
+        },
+        {
+          "span": 0.0,
+          "request": 0.98,
+          "correct": 215,
+          "accepted": 219,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.0182648401826484,
+          "correctCoverage": 0.7465277777777778
+        },
+        {
+          "span": 1.0,
+          "request": 0.8,
+          "correct": 200,
+          "accepted": 204,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.0196078431372549,
+          "correctCoverage": 0.6944444444444444
+        },
+        {
+          "span": 1.0,
+          "request": 0.9,
+          "correct": 200,
+          "accepted": 204,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.0196078431372549,
+          "correctCoverage": 0.6944444444444444
+        },
+        {
+          "span": 1.0,
+          "request": 0.95,
+          "correct": 200,
+          "accepted": 204,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.0196078431372549,
+          "correctCoverage": 0.6944444444444444
+        },
+        {
+          "span": 1.0,
+          "request": 0.98,
+          "correct": 200,
+          "accepted": 204,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.0196078431372549,
+          "correctCoverage": 0.6944444444444444
+        },
+        {
+          "span": 2.0,
+          "request": 0.8,
+          "correct": 174,
+          "accepted": 178,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.02247191011235955,
+          "correctCoverage": 0.6041666666666666
+        },
+        {
+          "span": 2.0,
+          "request": 0.9,
+          "correct": 174,
+          "accepted": 178,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.02247191011235955,
+          "correctCoverage": 0.6041666666666666
+        },
+        {
+          "span": 2.0,
+          "request": 0.95,
+          "correct": 174,
+          "accepted": 178,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.02247191011235955,
+          "correctCoverage": 0.6041666666666666
+        },
+        {
+          "span": 2.0,
+          "request": 0.98,
+          "correct": 174,
+          "accepted": 178,
+          "wrongAccepted": 4,
+          "wrongAcceptanceRate": 0.02247191011235955,
+          "correctCoverage": 0.6041666666666666
+        },
+        {
+          "span": 3.0,
+          "request": 0.8,
+          "correct": 152,
+          "accepted": 155,
+          "wrongAccepted": 3,
+          "wrongAcceptanceRate": 0.01935483870967742,
+          "correctCoverage": 0.5277777777777778
+        },
+        {
+          "span": 3.0,
+          "request": 0.9,
+          "correct": 152,
+          "accepted": 155,
+          "wrongAccepted": 3,
+          "wrongAcceptanceRate": 0.01935483870967742,
+          "correctCoverage": 0.5277777777777778
+        },
+        {
+          "span": 3.0,
+          "request": 0.95,
+          "correct": 152,
+          "accepted": 155,
+          "wrongAccepted": 3,
+          "wrongAcceptanceRate": 0.01935483870967742,
+          "correctCoverage": 0.5277777777777778
+        },
+        {
+          "span": 3.0,
+          "request": 0.98,
+          "correct": 152,
+          "accepted": 155,
+          "wrongAccepted": 3,
+          "wrongAcceptanceRate": 0.01935483870967742,
+          "correctCoverage": 0.5277777777777778
+        }
+      ],
+      "selection": "dev only: maximize correct with <=1% observed wrong acceptance; otherwise correct-10*wrong"
+    }
+  },
+  "calibration": {
+    "minimumProbability": 0.4,
+    "grid": [
+      {
+        "minimumProbability": 0.0,
+        "correct": 234,
+        "accepted": 235,
+        "wrongAccepted": 1,
+        "wrongAcceptanceRate": 0.00425531914893617,
+        "correctCoverage": 0.8125
+      },
+      {
+        "minimumProbability": 0.2,
+        "correct": 234,
+        "accepted": 235,
+        "wrongAccepted": 1,
+        "wrongAcceptanceRate": 0.00425531914893617,
+        "correctCoverage": 0.8125
+      },
+      {
+        "minimumProbability": 0.4,
+        "correct": 234,
+        "accepted": 235,
+        "wrongAccepted": 1,
+        "wrongAcceptanceRate": 0.00425531914893617,
+        "correctCoverage": 0.8125
+      },
+      {
+        "minimumProbability": 0.6,
+        "correct": 232,
+        "accepted": 233,
+        "wrongAccepted": 1,
+        "wrongAcceptanceRate": 0.004291845493562232,
+        "correctCoverage": 0.8055555555555556
+      },
+      {
+        "minimumProbability": 0.8,
+        "correct": 221,
+        "accepted": 222,
+        "wrongAccepted": 1,
+        "wrongAcceptanceRate": 0.0045045045045045045,
+        "correctCoverage": 0.7673611111111112
+      },
+      {
+        "minimumProbability": 0.9,
+        "correct": 211,
+        "accepted": 212,
+        "wrongAccepted": 1,
+        "wrongAcceptanceRate": 0.0047169811320754715,
+        "correctCoverage": 0.7326388888888888
+      }
+    ],
+    "qualityTargetMet": true,
+    "selection": "dev only: most correct with <=1% observed wrong acceptance; fallback correct-10*wrong, target unmet"
+  },
+  "hostGuardLatency": {
+    "samples": 60,
+    "medianMs": 0.06456251139752567,
+    "p95Ms": 0.13345800107344985,
+    "scope": "host CPU; guard plus tokenization only, no model/KMP/UI; not phone latency"
+  },
+  "sets": {
+    "dev": {
+      "datasetSha256": "d3ff2a37ba4762428e5176b4b66ae48ea956258917bb292f91f3ee3c54e36ebc",
+      "modes": {
+        "normalize-raw": {
+          "total": 360,
+          "eligible": 288,
+          "accepted": 235,
+          "correct": 211,
+          "wrongAccepted": 24,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.7326388888888888,
+          "wrongAcceptanceRate": 0.10212765957446808,
+          "states": {
+            "COMPLETE": 235,
+            "CONFIRM": 72,
+            "PARTIAL": 53
+          },
+          "reasons": {
+            "normalizer-needs-confirmation": 72,
+            "event-not-established": 72,
+            "normalization-low-confidence": 50,
+            "time-not-normalized": 4,
+            "normalization-malformed": 2
+          },
+          "retainedFieldExact": {
+            "title": 0.9791666666666666,
+            "dueAt": 0.9861111111111112,
+            "note": 0.84375
+          }
+        },
+        "normalize-guard-fixed": {
+          "total": 360,
+          "eligible": 288,
+          "accepted": 212,
+          "correct": 211,
+          "wrongAccepted": 1,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.7326388888888888,
+          "wrongAcceptanceRate": 0.0047169811320754715,
+          "states": {
+            "COMPLETE": 212,
+            "CONFIRM": 72,
+            "PARTIAL": 76
+          },
+          "reasons": {
+            "normalizer-needs-confirmation": 72,
+            "event-not-established": 72,
+            "source-content-deleted": 47,
+            "normalization-low-confidence": 50,
+            "time-not-normalized": 4,
+            "normalization-malformed": 2,
+            "invalid-copy-offset": 2
+          },
+          "retainedFieldExact": {
+            "title": 0.9791666666666666,
+            "dueAt": 0.9861111111111112,
+            "note": 0.84375
+          }
+        },
+        "normalize-guard-calibrated": {
+          "total": 360,
+          "eligible": 288,
+          "accepted": 235,
+          "correct": 234,
+          "wrongAccepted": 1,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.8125,
+          "wrongAcceptanceRate": 0.00425531914893617,
+          "states": {
+            "COMPLETE": 235,
+            "CONFIRM": 72,
+            "PARTIAL": 53
+          },
+          "reasons": {
+            "normalizer-needs-confirmation": 72,
+            "event-not-established": 72,
+            "source-content-deleted": 47,
+            "time-not-normalized": 4,
+            "normalization-malformed": 2,
+            "invalid-copy-offset": 2,
+            "normalization-low-confidence": 2
+          },
+          "retainedFieldExact": {
+            "title": 0.9791666666666666,
+            "dueAt": 0.9861111111111112,
+            "note": 0.84375
+          }
+        },
+        "span": {
+          "total": 360,
+          "eligible": 288,
+          "accepted": 227,
+          "correct": 227,
+          "wrongAccepted": 0,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.7881944444444444,
+          "wrongAcceptanceRate": 0.0,
+          "states": {
+            "COMPLETE": 227,
+            "PARTIAL": 131,
+            "CONFIRM": 2
+          },
+          "reasons": {
+            "unexplained-content": 85,
+            "request-needs-confirmation": 73,
+            "ambiguous-title": 4,
+            "time-not-normalized": 19,
+            "event-not-established": 33,
+            "ambiguous-location": 5
+          },
+          "retainedFieldExact": {
+            "title": 0.9340277777777778,
+            "dueAt": 0.9861111111111112,
+            "note": 0.8541666666666666
+          }
+        },
+        "same-data-BIO": {
+          "total": 360,
+          "eligible": 288,
+          "accepted": 219,
+          "correct": 218,
+          "wrongAccepted": 1,
+          "negativeWrongAccepted": 1,
+          "correctCoverage": 0.7569444444444444,
+          "wrongAcceptanceRate": 0.0045662100456621,
+          "states": {
+            "COMPLETE": 219,
+            "PARTIAL": 140,
+            "CONFIRM": 1
+          },
+          "reasons": {
+            "malformed-BIO": 53,
+            "event-not-established": 16,
+            "unexplained-content": 98,
+            "request-needs-confirmation": 68,
+            "time-not-normalized": 19,
+            "ambiguous-title": 6
+          },
+          "retainedFieldExact": {
+            "title": 0.9409722222222222,
+            "dueAt": 0.9861111111111112,
+            "note": 0.7986111111111112
+          }
+        },
+        "v3": {
+          "total": 360,
+          "eligible": 288,
+          "accepted": 58,
+          "correct": 15,
+          "wrongAccepted": 43,
+          "negativeWrongAccepted": 7,
+          "correctCoverage": 0.052083333333333336,
+          "wrongAcceptanceRate": 0.7413793103448276,
+          "states": {
+            "CONFIRM": 302,
+            "COMPLETE": 58
+          },
+          "reasons": {},
+          "retainedFieldExact": {
+            "title": 0.059027777777777776,
+            "dueAt": 0.2569444444444444,
+            "note": 0.25
+          }
+        }
+      },
+      "fixedThresholdPaired": {
+        "blockedWrongIds": [
+          "span-dev-00013",
+          "span-dev-00035",
+          "span-dev-00082",
+          "span-dev-00101",
+          "span-dev-00102",
+          "span-dev-00111",
+          "span-dev-00112",
+          "span-dev-00132",
+          "span-dev-00182",
+          "span-dev-00183",
+          "span-dev-00190",
+          "span-dev-00193",
+          "span-dev-00214",
+          "span-dev-00233",
+          "span-dev-00243",
+          "span-dev-00281",
+          "span-dev-00284",
+          "span-dev-00285",
+          "span-dev-00304",
+          "span-dev-00312",
+          "span-dev-00314",
+          "span-dev-00321",
+          "span-dev-00331"
+        ],
+        "lostCorrectIds": [],
+        "remainingWrongIds": [
+          "span-dev-00341"
+        ]
+      },
+      "auditErrors": {
+        "source-content-deleted": 47,
+        "invalid-copy-offset": 2
+      }
+    },
+    "test": {
+      "datasetSha256": "8056dca8061419dbd7ae9a14504637e2ff2f5276d271a441e7d452f4e365799e",
+      "modes": {
+        "normalize-raw": {
+          "total": 480,
+          "eligible": 384,
+          "accepted": 202,
+          "correct": 147,
+          "wrongAccepted": 55,
+          "negativeWrongAccepted": 1,
+          "correctCoverage": 0.3828125,
+          "wrongAcceptanceRate": 0.2722772277227723,
+          "states": {
+            "PARTIAL": 163,
+            "COMPLETE": 202,
+            "CONFIRM": 115
+          },
+          "reasons": {
+            "normalization-low-confidence": 165,
+            "time-not-normalized": 7,
+            "normalizer-needs-confirmation": 115,
+            "event-not-established": 115
+          },
+          "retainedFieldExact": {
+            "title": 0.6432291666666666,
+            "dueAt": 0.9270833333333334,
+            "note": 0.71875
+          }
+        },
+        "normalize-guard-fixed": {
+          "total": 480,
+          "eligible": 384,
+          "accepted": 149,
+          "correct": 147,
+          "wrongAccepted": 2,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.3828125,
+          "wrongAcceptanceRate": 0.013422818791946308,
+          "states": {
+            "PARTIAL": 216,
+            "COMPLETE": 149,
+            "CONFIRM": 115
+          },
+          "reasons": {
+            "source-content-deleted": 156,
+            "normalization-low-confidence": 165,
+            "time-not-normalized": 7,
+            "normalizer-needs-confirmation": 115,
+            "event-not-established": 115
+          },
+          "retainedFieldExact": {
+            "title": 0.6432291666666666,
+            "dueAt": 0.9270833333333334,
+            "note": 0.71875
+          }
+        },
+        "normalize-guard-calibrated": {
+          "total": 480,
+          "eligible": 384,
+          "accepted": 206,
+          "correct": 199,
+          "wrongAccepted": 7,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.5182291666666666,
+          "wrongAcceptanceRate": 0.03398058252427184,
+          "states": {
+            "PARTIAL": 159,
+            "COMPLETE": 206,
+            "CONFIRM": 115
+          },
+          "reasons": {
+            "source-content-deleted": 156,
+            "time-not-normalized": 7,
+            "normalizer-needs-confirmation": 115,
+            "event-not-established": 115
+          },
+          "retainedFieldExact": {
+            "title": 0.6432291666666666,
+            "dueAt": 0.9270833333333334,
+            "note": 0.71875
+          }
+        },
+        "span": {
+          "total": 480,
+          "eligible": 384,
+          "accepted": 196,
+          "correct": 192,
+          "wrongAccepted": 4,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.5,
+          "wrongAcceptanceRate": 0.02040816326530612,
+          "states": {
+            "PARTIAL": 280,
+            "COMPLETE": 196,
+            "CONFIRM": 4
+          },
+          "reasons": {
+            "unexplained-content": 224,
+            "time-not-normalized": 40,
+            "ambiguous-location": 7,
+            "request-needs-confirmation": 132,
+            "event-not-established": 80,
+            "ambiguous-title": 30,
+            "ambiguous-time": 3
+          },
+          "retainedFieldExact": {
+            "title": 0.7265625,
+            "dueAt": 0.9244791666666666,
+            "note": 0.7578125
+          }
+        },
+        "same-data-BIO": {
+          "total": 480,
+          "eligible": 384,
+          "accepted": 188,
+          "correct": 182,
+          "wrongAccepted": 6,
+          "negativeWrongAccepted": 2,
+          "correctCoverage": 0.4739583333333333,
+          "wrongAcceptanceRate": 0.031914893617021274,
+          "states": {
+            "PARTIAL": 290,
+            "COMPLETE": 188,
+            "CONFIRM": 2
+          },
+          "reasons": {
+            "malformed-BIO": 156,
+            "unexplained-content": 245,
+            "ambiguous-title": 18,
+            "time-not-normalized": 35,
+            "request-needs-confirmation": 121,
+            "event-not-established": 25
+          },
+          "retainedFieldExact": {
+            "title": 0.7291666666666666,
+            "dueAt": 0.9557291666666666,
+            "note": 0.6380208333333334
+          }
+        },
+        "v3": {
+          "total": 480,
+          "eligible": 384,
+          "accepted": 40,
+          "correct": 17,
+          "wrongAccepted": 23,
+          "negativeWrongAccepted": 5,
+          "correctCoverage": 0.044270833333333336,
+          "wrongAcceptanceRate": 0.575,
+          "states": {
+            "CONFIRM": 440,
+            "COMPLETE": 40
+          },
+          "reasons": {},
+          "retainedFieldExact": {
+            "title": 0.059895833333333336,
+            "dueAt": 0.17708333333333334,
+            "note": 0.25
+          }
+        }
+      },
+      "fixedThresholdPaired": {
+        "blockedWrongIds": [
+          "span-test-00017",
+          "span-test-00027",
+          "span-test-00034",
+          "span-test-00040",
+          "span-test-00051",
+          "span-test-00052",
+          "span-test-00063",
+          "span-test-00074",
+          "span-test-00093",
+          "span-test-00100",
+          "span-test-00111",
+          "span-test-00122",
+          "span-test-00160",
+          "span-test-00171",
+          "span-test-00172",
+          "span-test-00202",
+          "span-test-00216",
+          "span-test-00222",
+          "span-test-00232",
+          "span-test-00234",
+          "span-test-00269",
+          "span-test-00271",
+          "span-test-00272",
+          "span-test-00274",
+          "span-test-00283",
+          "span-test-00293",
+          "span-test-00294",
+          "span-test-00295",
+          "span-test-00303",
+          "span-test-00310",
+          "span-test-00311",
+          "span-test-00312",
+          "span-test-00320",
+          "span-test-00324",
+          "span-test-00331",
+          "span-test-00356",
+          "span-test-00357",
+          "span-test-00363",
+          "span-test-00376",
+          "span-test-00380",
+          "span-test-00393",
+          "span-test-00394",
+          "span-test-00400",
+          "span-test-00404",
+          "span-test-00405",
+          "span-test-00415",
+          "span-test-00423",
+          "span-test-00435",
+          "span-test-00436",
+          "span-test-00444",
+          "span-test-00447",
+          "span-test-00454",
+          "span-test-00470"
+        ],
+        "lostCorrectIds": [],
+        "remainingWrongIds": [
+          "span-test-00252",
+          "span-test-00392"
+        ]
+      },
+      "auditErrors": {
+        "source-content-deleted": 156
+      }
+    },
+    "regression": {
+      "datasetSha256": "8bb143e934dfe99eae7978eee0f6f6d08234b5ccc592548faa9f38bcc2ecb2c5",
+      "modes": {
+        "normalize-raw": {
+          "total": 16,
+          "eligible": 12,
+          "accepted": 11,
+          "correct": 11,
+          "wrongAccepted": 0,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.9166666666666666,
+          "wrongAcceptanceRate": 0.0,
+          "states": {
+            "COMPLETE": 11,
+            "PARTIAL": 2,
+            "CONFIRM": 3
+          },
+          "reasons": {
+            "normalization-low-confidence": 2,
+            "normalizer-needs-confirmation": 3,
+            "event-not-established": 3,
+            "normalization-malformed": 1,
+            "time-not-normalized": 1
+          },
+          "retainedFieldExact": {
+            "title": 1.0,
+            "dueAt": 1.0,
+            "note": 0.9166666666666666
+          }
+        },
+        "normalize-guard-fixed": {
+          "total": 16,
+          "eligible": 12,
+          "accepted": 11,
+          "correct": 11,
+          "wrongAccepted": 0,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.9166666666666666,
+          "wrongAcceptanceRate": 0.0,
+          "states": {
+            "COMPLETE": 11,
+            "PARTIAL": 2,
+            "CONFIRM": 3
+          },
+          "reasons": {
+            "source-content-deleted": 1,
+            "normalization-low-confidence": 2,
+            "normalizer-needs-confirmation": 3,
+            "event-not-established": 3,
+            "normalization-malformed": 1,
+            "invalid-copy-offset": 1,
+            "time-not-normalized": 1
+          },
+          "retainedFieldExact": {
+            "title": 1.0,
+            "dueAt": 1.0,
+            "note": 0.9166666666666666
+          }
+        },
+        "normalize-guard-calibrated": {
+          "total": 16,
+          "eligible": 12,
+          "accepted": 11,
+          "correct": 11,
+          "wrongAccepted": 0,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.9166666666666666,
+          "wrongAcceptanceRate": 0.0,
+          "states": {
+            "COMPLETE": 11,
+            "PARTIAL": 2,
+            "CONFIRM": 3
+          },
+          "reasons": {
+            "source-content-deleted": 1,
+            "normalizer-needs-confirmation": 3,
+            "event-not-established": 3,
+            "normalization-malformed": 1,
+            "invalid-copy-offset": 1,
+            "time-not-normalized": 1,
+            "normalization-low-confidence": 1
+          },
+          "retainedFieldExact": {
+            "title": 1.0,
+            "dueAt": 1.0,
+            "note": 0.9166666666666666
+          }
+        },
+        "span": {
+          "total": 16,
+          "eligible": 12,
+          "accepted": 9,
+          "correct": 9,
+          "wrongAccepted": 0,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.75,
+          "wrongAcceptanceRate": 0.0,
+          "states": {
+            "COMPLETE": 9,
+            "PARTIAL": 7
+          },
+          "reasons": {
+            "request-needs-confirmation": 5,
+            "unexplained-content": 3,
+            "time-not-normalized": 1
+          },
+          "retainedFieldExact": {
+            "title": 1.0,
+            "dueAt": 1.0,
+            "note": 0.8333333333333334
+          }
+        },
+        "same-data-BIO": {
+          "total": 16,
+          "eligible": 12,
+          "accepted": 9,
+          "correct": 9,
+          "wrongAccepted": 0,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.75,
+          "wrongAcceptanceRate": 0.0,
+          "states": {
+            "COMPLETE": 9,
+            "PARTIAL": 7
+          },
+          "reasons": {
+            "malformed-BIO": 3,
+            "unexplained-content": 4,
+            "request-needs-confirmation": 3,
+            "time-not-normalized": 1
+          },
+          "retainedFieldExact": {
+            "title": 0.9166666666666666,
+            "dueAt": 1.0,
+            "note": 0.9166666666666666
+          }
+        },
+        "v3": {
+          "total": 16,
+          "eligible": 12,
+          "accepted": 3,
+          "correct": 2,
+          "wrongAccepted": 1,
+          "negativeWrongAccepted": 0,
+          "correctCoverage": 0.16666666666666666,
+          "wrongAcceptanceRate": 0.3333333333333333,
+          "states": {
+            "CONFIRM": 13,
+            "COMPLETE": 3
+          },
+          "reasons": {},
+          "retainedFieldExact": {
+            "title": 0.16666666666666666,
+            "dueAt": 0.25,
+            "note": 0.4166666666666667
+          }
+        }
+      },
+      "fixedThresholdPaired": {
+        "blockedWrongIds": [],
+        "lostCorrectIds": [],
+        "remainingWrongIds": []
+      },
+      "auditErrors": {
+        "source-content-deleted": 1,
+        "invalid-copy-offset": 1
+      }
+    }
+  },
+  "fullEvidenceSha256": {
+    "report.json": "238e12e2a370caa190ee216d8e8b3139b5c7ec73c00e6efc1785075f0db5b31e",
+    "gold-copy-diagnostic.json": "e242ec7ef4f92192616de1bc95cd7d1a605931fa1d2b90cba238943b1b292364",
+    "frozen-protocol.json": "cb5bdee31688c61c362bcc00792fd2b0c578194c077ab1d0789db93bf90e518f",
+    "regression-predictions.json": "834272eec3fd4cdb0b560ba4a818376f40b3660dc56f5cd261380c7655b79bb9",
+    "exposed-old-test-replay.json": "58d398fca8c4204bf3cc2ca38c16c0b7d50036096efcac1239c0c891907e0b9d",
+    "test-predictions.json": "dc79d57517c0da215cdec3e9f185272733b55118c0a491e6eec1baeb3b9a09f9",
+    "prototype.json": "c37929bb2c5df5d3ecf3286e27e4acbe64bbce110516f5ecb0b2631e2c299888",
+    "dev-predictions.json": "edc075a830928a062b3296db1aacd34b0646d63535fd8dcd868f15a800e526b1"
+  },
+  "tests": {
+    "passed": 50,
+    "newFidelityBehaviorTests": 8,
+    "protectedRegressionSourceSha256": "cc31a3e4becf4917bff610e86f8614dd7c5b4316d4402cfa38452767a8c86c33"
+  },
+  "prototypeEntrypointSha256": "ea5247d9289b9b2c33dcfd200b3eb4bc95fff36cf9c52e7130341240cc13943b",
+  "gold-copy-diagnostic.json": {
+    "scope": "GOLD COPY diagnostic only; not model accuracy, no gold enters model inference or threshold selection",
+    "sets": {
+      "dev": {
+        "positiveRows": 288,
+        "blockedGoldCopies": 0,
+        "failures": []
+      },
+      "test": {
+        "positiveRows": 384,
+        "blockedGoldCopies": 0,
+        "failures": []
+      },
+      "regression": {
+        "positiveRows": 12,
+        "blockedGoldCopies": 0,
+        "failures": []
+      }
+    }
+  },
+  "exposed-old-test-replay.json": {
+    "scope": "Previously exposed second test; development diagnostic only, not fresh validation",
+    "sourceSha256": "6be3008a64ccc9cc494a2005ae310ff81053bf4246374bcc692fad14698e1555",
+    "metrics": {
+      "total": 480,
+      "eligible": 384,
+      "accepted": 175,
+      "correct": 175,
+      "wrongAccepted": 0,
+      "negativeWrongAccepted": 0,
+      "correctCoverage": 0.4557291666666667,
+      "wrongAcceptanceRate": 0.0,
+      "states": {
+        "COMPLETE": 175,
+        "PARTIAL": 185,
+        "CONFIRM": 120
+      },
+      "reasons": {
+        "source-content-deleted": 109,
+        "time-not-normalized": 9,
+        "normalization-low-confidence": 137,
+        "normalizer-needs-confirmation": 120,
+        "event-not-established": 120,
+        "normalization-malformed": 4,
+        "invalid-copy-offset": 4
+      },
+      "retainedFieldExact": {
+        "title": 0.8151041666666666,
+        "dueAt": 0.9140625,
+        "note": 0.7369791666666666
+      }
+    },
+    "paired": {
+      "blockedWrongIds": [
+        "span-test-00002",
+        "span-test-00012",
+        "span-test-00015",
+        "span-test-00023",
+        "span-test-00025",
+        "span-test-00054",
+        "span-test-00061",
+        "span-test-00064",
+        "span-test-00081",
+        "span-test-00085",
+        "span-test-00087",
+        "span-test-00105",
+        "span-test-00117",
+        "span-test-00125",
+        "span-test-00130",
+        "span-test-00140",
+        "span-test-00141",
+        "span-test-00164",
+        "span-test-00185",
+        "span-test-00187",
+        "span-test-00231",
+        "span-test-00240",
+        "span-test-00242",
+        "span-test-00251",
+        "span-test-00254",
+        "span-test-00262",
+        "span-test-00263",
+        "span-test-00275",
+        "span-test-00312",
+        "span-test-00315",
+        "span-test-00350",
+        "span-test-00354",
+        "span-test-00365",
+        "span-test-00372",
+        "span-test-00374",
+        "span-test-00393",
+        "span-test-00402",
+        "span-test-00403",
+        "span-test-00433",
+        "span-test-00435",
+        "span-test-00444",
+        "span-test-00450",
+        "span-test-00453",
+        "span-test-00455",
+        "span-test-00463",
+        "span-test-00472",
+        "span-test-00475"
+      ],
+      "lostCorrectIds": [],
+      "remainingWrongIds": []
+    }
+  },
+  "validation": {
+    "pythonTestsPassed": 50,
+    "newBehaviorTests": 8,
+    "sourceCompilePassed": true,
+    "frozenFingerprintsPassed": true,
+    "featureIndexPassed": true,
+    "sourceScaleAndWhitespacePassed": true,
+    "note": "Logical/offline verification only; no client or phone validation this round"
+  }
+}

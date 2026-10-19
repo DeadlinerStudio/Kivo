@@ -1,0 +1,9 @@
+{
+  "frozenBeforeCandidateEvaluation": true,
+  "sha256": "312755a07f05d055aa00fdbe7cfb08e0decbbade913be473a1bd61c5105529d6",
+  "titleFamilies": 40,
+  "examples": 1600,
+  "realUserData": false,
+  "humanReviewed": false,
+  "scope": "assistant-authored title-family holdout, not unseen syntax"
+}

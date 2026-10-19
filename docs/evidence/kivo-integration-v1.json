@@ -1,0 +1,77 @@
+{
+  "brand": "Kivo",
+  "repository": "https://github.com/DeadlinerStudio/Kivo",
+  "date": "2026-10-19",
+  "scope": "Local experimental integration preparation; no client implementation or weight publishing",
+  "formalGatePassed": false,
+  "generalizationTargetMet": false,
+  "coreCommit": "bb2c8cf356b9a35179556db13756f6cf89f4501c",
+  "coreParent": "89e63b5562e647eccd2c028cc335ac1d4228202c",
+  "corePushed": false,
+  "corePushDependency": "Six pre-existing unpublished ancestors contain required Quick Add foundation",
+  "corePatchSha256": "28d7f91d3d07c854d7fb0891f7c7f68681e0f45bffa67f11f1b8bb3df0f5b91c",
+  "preview": {
+    "directory": "artifacts/kivo-tiny-v1-preview",
+    "manifestSha256": "fde1e9d14a8f36ae4aa58f96534929708776cccde61f03c752572726b077827a",
+    "zipSha256": "ece74251a5bc288f040ce39462ec7d673f333de39e4b52c5da46cf48614cd19c",
+    "zipBytes": 13207435,
+    "assets": {
+      "encoder-config/config.json": {
+        "sha256": "91a1225b04313586263da419e7d629c5766054dc22b545993ff8d3c9d053162b",
+        "bytes": 646
+      },
+      "encoder-spans.onnx": {
+        "sha256": "385d82cc1417cedc3beffb055936f5d1c1c6787c6717d908b4ba801bbccf4899",
+        "bytes": 13256235
+      },
+      "quality-HABIT.onnx": {
+        "sha256": "f3b8f4b42efad9370ada8e38488058eeec8bc70b25b946f9b4b5a88585376970",
+        "bytes": 406246
+      },
+      "quality-TASK.onnx": {
+        "sha256": "2e5d5225b923919c3bf8ee6935719b50aa00e19742ff1d940eaeeb9f299410b7",
+        "bytes": 406246
+      },
+      "tokenizer/special_tokens_map.json": {
+        "sha256": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a",
+        "bytes": 695
+      },
+      "tokenizer/tokenizer.json": {
+        "sha256": "602a351dd743718e16df61f4e9b9bb89327a9dc2e80268e8c5b561de6333c851",
+        "bytes": 439290
+      },
+      "tokenizer/tokenizer_config.json": {
+        "sha256": "fe1143bfafb347b2376c2b5d67300b74ab09cb0fa0864c1155c5867b644172eb",
+        "bytes": 1491
+      },
+      "tokenizer/vocab.txt": {
+        "sha256": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c",
+        "bytes": 109540
+      }
+    },
+    "trackedInGit": false
+  },
+  "reference": {
+    "path": "integration/joint-v1/reference.json",
+    "sha256": "cbd25c86440ee3c4a4d902c6acd6e846375307917a10aad3c022935a27ee29a1",
+    "proposalCases": 14,
+    "tokenizerCases": 18,
+    "matchesFrozenRegression": true,
+    "clientParityVerified": false
+  },
+  "checks": {
+    "pythonTests": 67,
+    "coreQuickAddTests": 64,
+    "frozenCorpusVersions": [
+      2,
+      3
+    ],
+    "featureIndex": "passed"
+  },
+  "remaining": [
+    "Core client codec and stable bridge",
+    "Client ready/needsAI behavior and prototype",
+    "Expression-family coverage and negative transfer",
+    "Human and phone release gates"
+  ]
+}
