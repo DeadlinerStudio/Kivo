@@ -1,0 +1,872 @@
+From 3a6940b5ca035b5b021e1ed3950ae0aa95a885ac Mon Sep 17 00:00:00 2001
+From: AritxOnly <aritx_zhou@qq.com>
+Date: Mon, 19 Oct 2026 23:42:32 +0800
+Subject: [PATCH] feat(quickadd): add experimental Kivo multi-graph recognition
+
+---
+ .../domain/quickadd/model/KivoCoverage.kt     |  55 ++++++++
+ .../domain/quickadd/model/KivoDecoder.kt      | 123 ++++++++++++++++++
+ .../domain/quickadd/model/KivoFeatures.kt     |  59 +++++++++
+ .../quickadd/model/KivoModelManifest.kt       |  61 +++++++++
+ .../domain/quickadd/model/KivoModelSession.kt | 104 +++++++++++++++
+ .../domain/quickadd/model/KivoTokenizer.kt    |  88 +++++++++++++
+ .../quickadd/model/QuickAddModelSession.kt    |  16 ++-
+ .../domain/quickadd/model/KivoBehaviorTest.kt |  54 ++++++++
+ .../domain/quickadd/model/KivoSessionTest.kt  |  97 ++++++++++++++
+ .../quickadd/model/KivoReferenceTest.kt       |  87 +++++++++++++
+ 10 files changed, 743 insertions(+), 1 deletion(-)
+ create mode 100644 shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoCoverage.kt
+ create mode 100644 shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoDecoder.kt
+ create mode 100644 shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoFeatures.kt
+ create mode 100644 shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoModelManifest.kt
+ create mode 100644 shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoModelSession.kt
+ create mode 100644 shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoTokenizer.kt
+ create mode 100644 shared/src/commonTest/kotlin/com/deadliner/domain/quickadd/model/KivoBehaviorTest.kt
+ create mode 100644 shared/src/commonTest/kotlin/com/deadliner/domain/quickadd/model/KivoSessionTest.kt
+ create mode 100644 shared/src/macosArm64Test/kotlin/com/deadliner/domain/quickadd/model/KivoReferenceTest.kt
+
+diff --git a/shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoCoverage.kt b/shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoCoverage.kt
+new file mode 100644
+index 0000000..827ce10
+--- /dev/null
++++ b/shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoCoverage.kt
+@@ -0,0 +1,55 @@
++package com.deadliner.domain.quickadd.model
++
++/** Exact finite, position-scoped deletion policy from the frozen joint prototype. */
++internal object KivoCoverage {
++    private val cosmetic = " \t\u3000\u00a0，,；;：:"
++    private val prefixes = setOf("提醒我", "请提醒我", "麻烦提醒我", "记得", "帮我安排", "请", "麻烦", "请帮我", "帮我", "我要", "打算", "准备")
++    private val locations = setOf("在", "要在", "准备在", "打算在", "需要在", "安排在", "定在", "地点", "地点在", "地点定在", "备注地点")
++    private val events = setOf("要", "准备", "打算", "需要", "记得", "提醒我")
++    private val times = setOf("时间", "时间是", "安排到", "安排在", "定在")
++    private val notes = setOf("备注", "备注是", "备注为")
++
++    fun reasons(text: String, spans: List<KivoSpan>, kind: String): List<String> {
++        val chars = unicodeCharacters(text)
++        val owners = arrayOfNulls<String>(chars.size)
++        for (span in spans) {
++            if (span.start < 0 || span.end > chars.size || span.start >= span.end ||
++                (span.start until span.end).any { owners[it] != null }) return listOf("invalid-overlapping-source")
++            for (i in span.start until span.end) owners[i] = span.role
++        }
++        var i = 0
++        while (i < chars.size) {
++            if (owners[i] != null) { i++; continue }
++            val start = i
++            while (i < chars.size && owners[i] == null) i++
++            val left = owners.getOrNull(start - 1)
++            val right = owners.getOrNull(i)
++            val raw = chars.subList(start, i).joinToString("")
++            val clean = raw.filter { it !in cosmetic && it !in "。.!！、" }
++            var allowed = clean.isEmpty() || gap(raw, left, right)
++            if (kind == "HABIT") {
++                if (left == null && right in setOf("TITLE", "TIME", "DAYS", "GOAL_WINDOW"))
++                    allowed = allowed || clean in setOf("创建习惯", "添加习惯", "请创建习惯", "请提醒我", "记得", "提醒我")
++                if (right == "LOCATION") allowed = allowed || clean in setOf("在", "地点", "地点在", "要在")
++                if (right == "TIME") allowed = allowed || clean in setOf("提醒", "提醒时间", "时间", "在", "每天提醒")
++                if (right == "NOTE") allowed = allowed || clean in setOf("备注", "备注是")
++                if (left == "TIME" && right == null) allowed = allowed || clean == "提醒"
++            }
++            if (!allowed) return listOf("source-content-deleted")
++        }
++        return emptyList()
++    }
++
++    private fun gap(raw: String, left: String?, right: String?): Boolean {
++        val text = raw.filter { it !in cosmetic }
++        if (text.isEmpty()) return true
++        if (right == null) return false
++        if (left == null) return (right in setOf("TITLE", "TIME") && text in prefixes) ||
++            right == "TITLE" && text == "请把" || right == "LOCATION" && text in setOf("在", "地点", "地点在", "地点定在")
++        return right == "LOCATION" && left in setOf("TITLE", "TIME") && text in locations ||
++            right == "TITLE" && left in setOf("TIME", "LOCATION") && text in events ||
++            right == "TIME" && left in setOf("TITLE", "LOCATION") && text in times ||
++            left == "TIME" && right == "TIME" && text == "的" ||
++            right == "NOTE" && left in setOf("TITLE", "TIME", "LOCATION") && text in notes
++    }
++}
+diff --git a/shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoDecoder.kt b/shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoDecoder.kt
+new file mode 100644
+index 0000000..2219eb8
+--- /dev/null
++++ b/shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoDecoder.kt
+@@ -0,0 +1,123 @@
++package com.deadliner.domain.quickadd.model
++
++import com.deadliner.domain.quickadd.QuickAddProposal
++import com.deadliner.domain.quickadd.inference.*
++import kotlinx.datetime.Instant
++import kotlinx.datetime.TimeZone
++import kotlin.math.exp
++
++internal data class KivoSpan(val role: String, val start: Int, val end: Int,
++    val tokenStart: Int, val tokenEnd: Int, val score: Float)
++
++internal data class KivoDraft(val proposal: QuickAddProposal, val spans: List<KivoSpan>,
++    val hardReasons: List<String>, val feature: FloatArray, val score: Double,
++    val valid: Boolean, val margin: Float = 0f) {
++    fun qualityFeature(): FloatArray = KivoFeatures.quality(this)
++}
++
++/** Finite beam search and actual Core business normalization; no title dictionaries. */
++internal class KivoDecoder(private val tokenizer: KivoTokenizer) {
++    companion object {
++        val roles = listOf("TITLE", "TIME", "LOCATION", "NOTE", "CONNECTOR", "DAYS", "GOAL_WINDOW", "COUNT")
++        val fields = listOf("TITLE", "TIME", "LOCATION", "NOTE", "DAYS", "GOAL_WINDOW", "COUNT")
++        private val kinds = listOf("TASK", "HABIT", "CONFIRM")
++    }
++    private data class Beam(val score: Double, val spans: List<KivoSpan>)
++
++    fun select(output: QuickAddModelOutput, text: String, preferredKind: String,
++        now: Instant, zone: TimeZone): KivoDraft {
++        require(output.tensors.map { it.name } == listOf("intent_logits", "span_logits", "token_features"))
++        val shapes = listOf(longArrayOf(1, 3), longArrayOf(1, 8, 96, 96), longArrayOf(1, 96, 128))
++        output.tensors.zip(shapes).forEach { (tensor, shape) ->
++            require(tensor.shape.contentEquals(shape) && tensor.values.size == shape.fold(1L) { a, b -> a * b }.toInt()
++                && tensor.values.all { it.isFinite() })
++        }
++        val intent = output.tensors[0].values
++        val maximum = intent.maxOrNull()!!.toDouble()
++        val weights = intent.map { exp(it.toDouble() - maximum) }
++        val probabilities = weights.map { (it / weights.sum()).toFloat() }
++        val kind = kinds[intent.indices.maxBy { intent[it] }]
++        val hidden = output.tensors[2].values
++        if (kind == "CONFIRM") return draft(text, preferredKind, preferredKind, emptyList(), probabilities,
++            hidden, now, zone, listOf("request-needs-confirmation"))
++        val pieces = tokenizer.pieces(text)
++        val all = mutableListOf<KivoSpan>()
++        for ((roleIndex, role) in roles.withIndex()) {
++            val pool = mutableListOf<KivoSpan>()
++            for (a in pieces.indices) for (b in a until minOf(pieces.size, a + 64)) {
++                if (pieces[a].end <= pieces[a].start || pieces[b].end <= pieces[b].start) continue
++                val score = output.tensors[1].values[(roleIndex * 96 + a) * 96 + b]
++                if (score >= -2f) pool += KivoSpan(role, pieces[a].start, pieces[b].end, a, b, score)
++            }
++            all += pool.sortedByDescending { it.score }.take(12)
++        }
++        var beam = listOf(Beam(0.0, emptyList()))
++        for (role in if (kind == "HABIT") fields else fields.take(4)) {
++            val pool = all.filter { it.role == role }.sortedByDescending { it.score }.take(4)
++            val options = mutableListOf<List<KivoSpan>>()
++            if (role != "TITLE") options += emptyList<KivoSpan>()
++            options += pool.map { listOf(it) }
++            if (role == "TIME") for (a in pool.indices) for (b in a + 1 until pool.size)
++                if (!overlaps(pool[a], pool[b])) options += listOf(pool[a], pool[b]).sortedBy { it.start }
++            val next = mutableListOf<Beam>()
++            for (value in beam) for (option in options) {
++                if (option.any { a -> value.spans.any { b -> overlaps(a, b) } }) continue
++                next += Beam(value.score + option.sumOf { it.score.toDouble() }, value.spans + option)
++            }
++            beam = next.sortedByDescending { it.score }.take(32)
++            if (beam.isEmpty()) break
++        }
++        val drafts = (beam.map { draft(text, kind, preferredKind, it.spans, probabilities, hidden, now, zone) }
++            .ifEmpty { listOf(draft(text, kind, preferredKind, emptyList(), probabilities, hidden, now, zone)) })
++            .sortedByDescending { it.score.toFloat() }
++        val margin = if (drafts.size > 1) drafts[0].score.toFloat() - drafts[1].score.toFloat() else 0f
++        return drafts[0].copy(margin = margin)
++    }
++
++    private fun draft(text: String, kind: String, preferredKind: String, inputSpans: List<KivoSpan>,
++        probabilities: List<Float>, hidden: FloatArray, now: Instant, zone: TimeZone,
++        extra: List<String> = emptyList()): KivoDraft {
++        val spans = inputSpans.sortedBy { it.start }
++        val chars = unicodeCharacters(text)
++        fun values(role: String) = spans.filter { it.role == role }.map { chars.subList(it.start, it.end).joinToString("") }
++        val title = values("TITLE")
++        val time = values("TIME")
++        val days = values("DAYS")
++        val window = values("GOAL_WINDOW")
++        val count = values("COUNT")
++        val errors = (KivoCoverage.reasons(text, spans, kind) + extra).toMutableList()
++        if (title.size != 1) errors += "event-not-established"
++        if (kind == "TASK" && time.isEmpty()) errors += "task-time-missing"
++        if (kind == "TASK" && preferredKind == "HABIT") errors += "explicit-habit-entry-conflict"
++        if (kind == "HABIT" && days.isEmpty() && window.isEmpty() && preferredKind != "HABIT")
++            errors += "habit-schedule-not-established"
++        var note = values("LOCATION").firstOrNull()?.let { "地点：$it" }.orEmpty()
++        val noteField = values("NOTE").firstOrNull().orEmpty()
++        if (noteField.isNotEmpty()) note += (if (note.isNotEmpty()) "；" else "") + noteField
++        var proposal = QuickAddProposal(kind = kind, title = title.firstOrNull() ?: text.trim(), note = note,
++            needsAI = true, source = "MODEL")
++        val normalized = if (kind == "HABIT") QuickAddTemporalNormalizer.normalizeHabitFields(
++            time.joinToString(" "), days.joinToString(""), window.joinToString(""), count.joinToString(""), "zh", now, zone)
++            else if (days.isEmpty() && window.isEmpty() && count.isEmpty())
++                QuickAddTemporalNormalizer.normalize(time.joinToString(" "), "", "TASK", "zh", now, zone) else null
++        if (normalized == null || normalized.title != "模型标题占位" || !normalized.ready || normalized.needsAI)
++            errors += "fields-not-normalized"
++        else proposal = proposal.copy(dueAt = normalized.dueAt, period = normalized.period,
++            targetCount = normalized.targetCount, weekdaysMask = normalized.weekdaysMask, reminderTime = normalized.reminderTime)
++        val reasons = errors.distinct()
++        return KivoDraft(proposal, spans, reasons,
++            KivoFeatures.base(text, kind, preferredKind, spans, probabilities, hidden),
++            spans.sumOf { it.score.toDouble() }, reasons.isEmpty())
++    }
++
++    fun gate(draft: KivoDraft, logit: Float?, calibration: KivoCalibration, threshold: Double?): QuickAddProposal {
++        val probability = if (logit != null && logit.isFinite())
++            1.0 / (1.0 + exp(-(calibration.slope * logit + calibration.bias).coerceIn(-700.0, 700.0))) else null
++        val trusted = draft.valid && probability != null && probability.isFinite() && threshold != null && probability >= threshold
++        return draft.proposal.copy(ready = draft.valid, needsAI = !trusted,
++            recognitionState = if (trusted) "ACCEPTED" else if (draft.valid) "READY_WITH_AI" else "KIVO_PARTIAL",
++            message = if (trusted) "" else if (draft.valid) "可确认添加，也可使用 AI 完善" else "请确认原文，或使用 AI / 展开添加")
++    }
++
++    private fun overlaps(a: KivoSpan, b: KivoSpan) = a.start < b.end && b.start < a.end
++}
+diff --git a/shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoFeatures.kt b/shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoFeatures.kt
+new file mode 100644
+index 0000000..52b366f
+--- /dev/null
++++ b/shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoFeatures.kt
+@@ -0,0 +1,59 @@
++package com.deadliner.domain.quickadd.model
++
++import kotlin.math.ln
++
++internal object KivoFeatures {
++    fun base(text: String, kind: String, preferredKind: String, selected: List<KivoSpan>,
++        probabilities: List<Float>, hidden: FloatArray): FloatArray {
++        val output = FloatArray(1515)
++        hidden.copyInto(output, 0, 0, 128)
++        var position = 128
++        val metadata = mutableListOf<Float>()
++        metadata += probabilities
++        metadata += if (kind == "TASK") 1f else 0f
++        metadata += if (kind == "HABIT") 1f else 0f
++        metadata += if (preferredKind == "HABIT") 1f else 0f
++        for (role in KivoDecoder.fields) {
++            val spans = selected.filter { it.role == role }
++            for (span in spans) {
++                val tokens = span.tokenEnd - span.tokenStart + 1
++                for (h in 0 until 128) {
++                    var sum = 0f
++                    for (token in span.tokenStart..span.tokenEnd) sum += hidden[token * 128 + h]
++                    output[position + h] += sum / tokens
++                }
++                val edge = listOf(maxOf(0, span.tokenStart - 1), span.tokenStart, span.tokenEnd, minOf(95, span.tokenEnd + 1))
++                edge.forEachIndexed { i, token ->
++                    for (h in 0 until 16) output[position + 128 + i * 16 + h] += hidden[token * 128 + h]
++                }
++            }
++            if (spans.isNotEmpty()) for (i in position until position + 192) output[i] /= spans.size
++            position += 192
++            metadata += if (spans.isEmpty()) 0f else 1f
++            metadata += ((spans.maxOfOrNull { it.score } ?: 0f).toDouble() / 10).toFloat()
++            metadata += (spans.sumOf { it.end - it.start }.toDouble() / 96).toFloat()
++            metadata += ((spans.minOfOrNull { it.start } ?: 0).toDouble() / 96).toFloat()
++            metadata += ((spans.maxOfOrNull { it.end } ?: 0).toDouble() / 96).toFloat()
++        }
++        metadata += (selected.sumOf { it.end - it.start }.toDouble() / maxOf(1, unicodeCharacters(text).size)).toFloat()
++        metadata += (selected.sumOf { it.score.toDouble() } / 50).toFloat()
++        require(metadata.size == 43 && position == 1472)
++        metadata.toFloatArray().copyInto(output, position)
++        return output
++    }
++
++    fun quality(draft: KivoDraft): FloatArray {
++        val result = draft.feature.copyOf(1530)
++        val proposal = draft.proposal
++        val metadata = mutableListOf(if (draft.valid) 1f else 0f,
++            if (proposal.period == "DAILY") 1f else 0f, if (proposal.period == "WEEKLY") 1f else 0f)
++        for (i in 0..6) metadata += if (proposal.weekdaysMask and (1 shl i) != 0) 1f else 0f
++        metadata += (ln(1.0 + maxOf(0, proposal.targetCount)) / 10).toFloat()
++        metadata += if (proposal.dueAt != null) 1f else 0f
++        metadata += if (proposal.reminderTime != null) 1f else 0f
++        metadata += (draft.hardReasons.size.toDouble() / 10).toFloat()
++        metadata += (draft.margin.toDouble() / 10).toFloat()
++        metadata.toFloatArray().copyInto(result, 1515)
++        return result
++    }
++}
+diff --git a/shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoModelManifest.kt b/shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoModelManifest.kt
+new file mode 100644
+index 0000000..df6179a
+--- /dev/null
++++ b/shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoModelManifest.kt
+@@ -0,0 +1,61 @@
++package com.deadliner.domain.quickadd.model
++
++import kotlinx.serialization.Serializable
++import kotlinx.serialization.json.Json
++
++/** Explicit experimental protocol. Legacy schema 1 remains independently usable. */
++@Serializable
++internal data class KivoModelManifest(
++    val schemaVersion: Int,
++    val modelId: String,
++    val protocol: String,
++    val experimental: Boolean,
++    val productionEligible: Boolean,
++    val platforms: Map<String, Map<String, QuickAddModelArtifact>>,
++    val tokenizer: KivoTokenizerConfig,
++    val calibration: Map<String, KivoCalibration>,
++    val thresholds: Map<String, Double?>,
++) {
++    fun sources(platform: String): Map<String, QuickAddModelSource> {
++        require(schemaVersion == 2 && protocol == "kivo-joint-v1" && experimental && !productionEligible)
++        tokenizer.validate()
++        require(calibration.keys == setOf("TASK", "HABIT") && thresholds.keys == calibration.keys)
++        calibration.values.forEach { require(it.slope.isFinite() && it.slope > 0 && it.bias.isFinite()) }
++        thresholds.values.forEach { require(it == null || it.isFinite() && it in 0.0..1.0) }
++        val format = when (platform) {
++            "android" -> QuickAddModelFormat.ONNX
++            "ios" -> QuickAddModelFormat.CORE_ML
++            "ohos" -> QuickAddModelFormat.MINDSPORE
++            else -> error("Unsupported Kivo platform")
++        }
++        val assets = platforms[platform] ?: error("Kivo format unavailable for $platform")
++        require(assets.keys == setOf("encoder", "TASK", "HABIT"))
++        return assets.mapValues { (role, artifact) ->
++            QuickAddModelSource("$modelId-$role", artifact.url, artifact.sha256, artifact.sizeBytes, format).also { it.validate() }
++        }
++    }
++
++    companion object {
++        fun parse(value: String): KivoModelManifest {
++            require(value.length <= 8 * 1024 * 1024)
++            return Json.decodeFromString<KivoModelManifest>(value)
++        }
++    }
++}
++
++@Serializable internal data class KivoCalibration(val slope: Double, val bias: Double)
++
++@Serializable
++internal data class KivoTokenizerConfig(
++    val vocabulary: List<String>,
++    val normalization: Map<String, String>,
++) {
++    fun validate() {
++        require(vocabulary.size in 4..100000 && vocabulary.distinct().size == vocabulary.size)
++        require(vocabulary.all { it.isNotEmpty() && it.length <= 128 })
++        require(listOf("[PAD]", "[UNK]", "[CLS]", "[SEP]").all { it in vocabulary })
++        require(normalization.size <= 30000 && normalization.all { (key, value) ->
++            unicodeCharacters(key).size == 1 && unicodeCharacters(value).size <= 8
++        })
++    }
++}
+diff --git a/shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoModelSession.kt b/shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoModelSession.kt
+new file mode 100644
+index 0000000..60874ca
+--- /dev/null
++++ b/shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoModelSession.kt
+@@ -0,0 +1,104 @@
++package com.deadliner.domain.quickadd.model
++
++import com.deadliner.domain.quickadd.QuickAddProposal
++import com.deadliner.domain.quickadd.inference.*
++import kotlin.concurrent.Volatile
++import kotlinx.coroutines.*
++import kotlinx.coroutines.sync.Mutex
++import kotlinx.coroutines.sync.withLock
++import kotlinx.datetime.Instant
++import kotlinx.datetime.TimeZone
++
++/** All three frozen graphs must be ready before publishing a usable runtime. */
++internal class KivoModelSession(private val cacheDirectory: String, platform: String,
++    private val manifest: KivoModelManifest,
++    private val modelFactory: (String) -> QuickAddDownloadedModel = { QuickAddDownloadedModel(cacheDirectory) }) {
++    private val sources = manifest.sources(platform)
++    private val tokenizer = KivoTokenizer(manifest.tokenizer)
++    private val decoder = KivoDecoder(tokenizer)
++    private val mutex = Mutex()
++    @Volatile private var models: Map<String, QuickAddDownloadedModel> = emptyMap()
++    @Volatile private var ready = false
++    @Volatile private var savedStatus = QuickAddModelStatus(QuickAddModelState.RULES_ONLY, manifest.modelId)
++    private val policy = QuickAddRecognitionPolicy()
++
++    suspend fun prepare(): Boolean = withContext(Dispatchers.Default) {
++        mutex.withLock {
++            if (ready) return@withLock true
++            models.values.forEach { it.close() }
++            models = sources.mapValues { (role, _) -> modelFactory(role) }
++            savedStatus = QuickAddModelStatus(QuickAddModelState.PREPARING, manifest.modelId, phase = "CHECKING")
++            try {
++                for ((role, model) in models) {
++                    val status = model.prepare(sources.getValue(role))
++                    if (status.state != QuickAddModelState.READY) {
++                        savedStatus = status.copy(modelId = manifest.modelId)
++                        models.values.forEach { it.close() }
++                        models = emptyMap()
++                        return@withLock false
++                    }
++                }
++                ready = true
++                savedStatus = QuickAddModelStatus(QuickAddModelState.READY, manifest.modelId, phase = "READY")
++                true
++            } catch (cancelled: CancellationException) {
++                savedStatus = QuickAddModelStatus(QuickAddModelState.RULES_ONLY, manifest.modelId, phase = "CANCELLED")
++                withContext(NonCancellable) { models.values.forEach { it.close() }; models = emptyMap() }
++                throw cancelled
++            }
++        }
++    }
++
++    fun statusJson(): String {
++        if (ready || models.isEmpty()) return savedStatus.toJson()
++        val current = models.values.map { it.status.value }.firstOrNull { it.state == QuickAddModelState.PREPARING }
++            ?: return savedStatus.toJson()
++        val downloaded = models.entries.sumOf { (role, model) ->
++            if (model.status.value.state == QuickAddModelState.READY) sources.getValue(role).sizeBytes
++            else model.status.value.downloadedBytes
++        }
++        return current.copy(modelId = manifest.modelId, downloadedBytes = downloaded,
++            totalBytes = sources.values.sumOf { it.sizeBytes }).toJson()
++    }
++
++    suspend fun recognize(text: String, kind: String, now: Instant, zone: TimeZone): QuickAddProposal {
++        if (text.isBlank()) return QuickAddProposal(kind = kind, source = "MODEL")
++        if (!mutex.tryLock()) return policy.pending(text, kind)
++        try {
++            if (!ready) return rejected(text, kind)
++            val encoded = try { tokenizer.encode(text, kind) } catch (_: IllegalArgumentException) {
++                return rejected(text, kind)
++            }
++            val output = models.getValue("encoder").inferIfReady(encoded, sources.getValue("encoder").modelId)
++                ?: return fail(text, kind)
++            val draft = decoder.select(output, text, kind, now, zone)
++            val headKind = draft.proposal.kind
++            val input = QuickAddModelInput(listOf(QuickAddTensor("features", longArrayOf(1, 1530),
++                QuickAddTensorType.FLOAT32, floats = draft.qualityFeature())), listOf("score"))
++            val quality = models.getValue(headKind).inferIfReady(input, sources.getValue(headKind).modelId)
++                ?: return fail(text, kind)
++            require(quality.tensors.size == 1 && quality.tensors[0].shape.contentEquals(longArrayOf(1)) &&
++                quality.tensors[0].values.size == 1)
++            return decoder.gate(draft, quality.tensors[0].values[0], manifest.calibration.getValue(headKind),
++                manifest.thresholds.getValue(headKind))
++        } catch (cancelled: CancellationException) { throw cancelled }
++        catch (_: Exception) { return fail(text, kind) }
++        finally { mutex.unlock() }
++    }
++
++    private fun rejected(text: String, kind: String) = policy.rejected(text, kind).copy(recognitionState = "KIVO_PARTIAL")
++
++    private fun fail(text: String, kind: String): QuickAddProposal {
++        ready = false
++        savedStatus = QuickAddModelStatus(QuickAddModelState.RULES_ONLY, manifest.modelId,
++            phase = "FAILED", reason = "Kivo execution failed; keep input for confirmation")
++        return rejected(text, kind)
++    }
++
++    suspend fun close() = mutex.withLock {
++        ready = false
++        models.values.forEach { it.close() }
++        models = emptyMap()
++        savedStatus = QuickAddModelStatus(QuickAddModelState.RULES_ONLY, manifest.modelId)
++    }
++}
+diff --git a/shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoTokenizer.kt b/shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoTokenizer.kt
+new file mode 100644
+index 0000000..cd5c1ee
+--- /dev/null
++++ b/shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/KivoTokenizer.kt
+@@ -0,0 +1,88 @@
++package com.deadliner.domain.quickadd.model
++
++import com.deadliner.domain.quickadd.inference.*
++
++/** BertNormalizer + WordPiece with original code-point offsets, never UTF-16 slicing. */
++internal class KivoTokenizer(private val config: KivoTokenizerConfig) {
++    private val ids = config.vocabulary.withIndex().associate { it.value to it.index.toLong() }
++    internal data class Piece(val id: Long, val start: Int, val end: Int)
++    private data class UnitChar(val value: String, val position: Int)
++
++    fun pieces(text: String): List<Piece> {
++        val characters = unicodeCharacters(text)
++        require(characters.size <= 126) { "Kivo text context exceeded" }
++        require(listOf("[CLS]", "[SEP]", "[MASK]", "[PAD]", "[UNK]").none { it in text }) {
++            "Literal special tokens require confirmation"
++        }
++        val result = mutableListOf(Piece(ids.getValue("[CLS]"), 0, 0))
++        val word = mutableListOf<UnitChar>()
++        fun flush() {
++            if (word.isEmpty()) return
++            val found = mutableListOf<Piece>()
++            var start = 0
++            while (start < word.size && word.size <= 100) {
++                var end = word.size
++                var token: Long? = null
++                while (end > start) {
++                    val value = (if (start > 0) "##" else "") + word.subList(start, end).joinToString("") { it.value }
++                    token = ids[value]
++                    if (token != null) break
++                    end--
++                }
++                if (token == null) break
++                found += Piece(token, word[start].position, word[end - 1].position + 1)
++                start = end
++            }
++            if (start != word.size) result += Piece(ids.getValue("[UNK]"), word.first().position, word.last().position + 1)
++            else result += found
++            word.clear()
++        }
++        characters.forEachIndexed { position, char ->
++            val control = char.length == 1 && (char[0].code == 0 || char[0].code == 0xfffd ||
++                char[0].category in setOf(CharCategory.CONTROL, CharCategory.FORMAT) && char !in listOf("\t", "\n", "\r"))
++            when {
++                control -> Unit
++                char in listOf(" ", "\t", "\n", "\r") || char.length == 1 && char[0].category == CharCategory.SPACE_SEPARATOR -> flush()
++                else -> {
++                    val normalized = config.normalization[char] ?: char
++                    val parts = unicodeCharacters(normalized)
++                    if (parts.isNotEmpty() && (cjk(char) || punctuation(char))) {
++                        flush()
++                        parts.forEach { word += UnitChar(it, position) }
++                        flush()
++                    } else parts.forEach { word += UnitChar(it, position) }
++                }
++            }
++        }
++        flush()
++        result += Piece(ids.getValue("[SEP]"), 0, 0)
++        require(result.size <= 96) { "Kivo token context exceeded; never truncate" }
++        return result
++    }
++
++    fun encode(text: String, preferredKind: String): QuickAddModelInput {
++        require(preferredKind in listOf("TASK", "HABIT"))
++        val pieces = pieces(text)
++        return QuickAddModelInput(listOf(
++            QuickAddTensor("input_ids", longArrayOf(1, 96), QuickAddTensorType.INT32,
++                integers = LongArray(96) { pieces.getOrNull(it)?.id ?: ids.getValue("[PAD]") }),
++            QuickAddTensor("attention_mask", longArrayOf(1, 96), QuickAddTensorType.INT32,
++                integers = LongArray(96) { if (it < pieces.size) 1 else 0 }),
++            QuickAddTensor("preferred_kind", longArrayOf(1), QuickAddTensorType.INT32,
++                integers = longArrayOf(if (preferredKind == "HABIT") 1 else 0)),
++        ), listOf("intent_logits", "span_logits", "token_features"))
++    }
++
++    private fun punctuation(char: String): Boolean = char.length == 1 &&
++        (char[0].code in 33..47 || char[0].code in 58..64 || char[0].code in 91..96 || char[0].code in 123..126 ||
++            char[0].category in setOf(CharCategory.CONNECTOR_PUNCTUATION, CharCategory.DASH_PUNCTUATION,
++                CharCategory.START_PUNCTUATION, CharCategory.END_PUNCTUATION, CharCategory.INITIAL_QUOTE_PUNCTUATION,
++                CharCategory.FINAL_QUOTE_PUNCTUATION, CharCategory.OTHER_PUNCTUATION))
++
++    private fun cjk(char: String): Boolean {
++        val code = if (char.length == 2) 0x10000 + ((char[0].code - 0xd800) shl 10) + char[1].code - 0xdc00 else char[0].code
++        return code in 0x4e00..0x9fff || code in 0x3400..0x4dbf || code in 0x20000..0x2a6df ||
++            code in 0x2a700..0x2b73f || code in 0x2b740..0x2b81f || code in 0x2b820..0x2ceaf ||
++            code in 0xf900..0xfaff || code in 0x2f800..0x2fa1f
++    }
++}
+diff --git a/shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/QuickAddModelSession.kt b/shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/QuickAddModelSession.kt
+index 72d5bc7..d2e4d16 100644
+--- a/shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/QuickAddModelSession.kt
++++ b/shared/src/commonMain/kotlin/com/deadliner/domain/quickadd/model/QuickAddModelSession.kt
+@@ -1,6 +1,10 @@
+ package com.deadliner.domain.quickadd.model
+ 
+ import kotlin.concurrent.Volatile
++import kotlinx.serialization.json.Json
++import kotlinx.serialization.json.jsonObject
++import kotlinx.serialization.json.jsonPrimitive
++import kotlinx.serialization.json.intOrNull
+ import com.deadliner.domain.quickadd.QuickAddParser
+ import com.deadliner.domain.quickadd.QuickAddProposal
+ import kotlinx.coroutines.*
+@@ -17,14 +21,21 @@ class QuickAddModelSession(private val cacheDirectory: String, private val platf
+     @Volatile private var configurationStatus = QuickAddModelStatus(QuickAddModelState.RULES_ONLY)
+     private var recognizer: QuickAddLocalRecognizer? = null
+     private var attempted = false
++    @Volatile private var kivo: KivoModelSession? = null
+ 
+     @Throws(Exception::class)
+     suspend fun prepare(): Boolean = withContext(Dispatchers.Default) {
+         mutex.withLock {
++            kivo?.let { return@withLock it.prepare() }
+             if (attempted && (model == null || model?.status?.value?.state == QuickAddModelState.READY))
+                 return@withLock model?.status?.value?.state == QuickAddModelState.READY
+             try {
+                 if (manifestJson.isBlank()) { attempted = true; return@withLock false }
++                if (Json.parseToJsonElement(manifestJson).jsonObject["schemaVersion"]?.jsonPrimitive?.intOrNull == 2) {
++                    val session = KivoModelSession(cacheDirectory, platform, KivoModelManifest.parse(manifestJson))
++                    kivo = session
++                    return@withLock session.prepare()
++                }
+                 val manifest = QuickAddModelManifest.parse(manifestJson)
+                 val source = manifest.source(platform) ?: run { attempted = true; return@withLock false }
+                 val downloaded = model ?: QuickAddDownloadedModel(cacheDirectory).also { model = it }
+@@ -42,6 +53,7 @@ class QuickAddModelSession(private val cacheDirectory: String, private val platf
+ 
+     @Throws(Exception::class)
+     suspend fun recognize(text: String, kind: String, timezone: String, now: Instant = Clock.System.now()): QuickAddProposal {
++        kivo?.let { return it.recognize(text, kind, now, TimeZone.of(timezone)) }
+         // Do not wait for the preparation mutex: downloading must not delay typing.
+         val active = if (mutex.tryLock()) try { recognizer } finally { mutex.unlock() } else null
+         val zone = TimeZone.of(timezone)
+@@ -52,11 +64,13 @@ class QuickAddModelSession(private val cacheDirectory: String, private val platf
+     @Throws(Exception::class)
+     suspend fun recognizeJson(text: String, kind: String, timezone: String): String = recognize(text, kind, timezone).toJson()
+ 
+-    fun statusJson(): String = (model?.status?.value ?: configurationStatus).toJson()
++    fun statusJson(): String = kivo?.statusJson() ?: (model?.status?.value ?: configurationStatus).toJson()
+ 
+     @Throws(Exception::class)
+     suspend fun close() = mutex.withLock {
+         recognizer = null
++        kivo?.close()
++        kivo = null
+         model?.close()
+         model = null
+         attempted = false
+diff --git a/shared/src/commonTest/kotlin/com/deadliner/domain/quickadd/model/KivoBehaviorTest.kt b/shared/src/commonTest/kotlin/com/deadliner/domain/quickadd/model/KivoBehaviorTest.kt
+new file mode 100644
+index 0000000..e75e91e
+--- /dev/null
++++ b/shared/src/commonTest/kotlin/com/deadliner/domain/quickadd/model/KivoBehaviorTest.kt
+@@ -0,0 +1,54 @@
++package com.deadliner.domain.quickadd.model
++
++import com.deadliner.domain.quickadd.QuickAddProposal
++import kotlin.test.*
++
++class KivoBehaviorTest {
++    private fun tokenizer() = KivoTokenizer(KivoTokenizerConfig(
++        listOf("[PAD]", "[UNK]", "[CLS]", "[SEP]", "明", "天", "开", "会"), emptyMap()))
++
++    @Test fun completeLowConfidenceDraftOffersBothAddAndAI() {
++        val draft = KivoDraft(QuickAddProposal(title = "开会", dueAt = "2026-10-20T16:00"),
++            emptyList(), emptyList(), FloatArray(1515), 0.0, true)
++        val result = KivoDecoder(tokenizer()).gate(draft, 0f, KivoCalibration(1.0, 0.0), .9)
++        assertTrue(result.ready)
++        assertTrue(result.needsAI)
++        assertEquals("READY_WITH_AI", result.recognitionState)
++    }
++
++    @Test fun confidenceNeverOverridesDeletedSourceContent() {
++        val draft = KivoDraft(QuickAddProposal(title = "开会"), emptyList(), listOf("source-content-deleted"),
++            FloatArray(1515), 0.0, false)
++        val result = KivoDecoder(tokenizer()).gate(draft, 100f, KivoCalibration(1.0, 0.0), .9)
++        assertFalse(result.ready)
++        assertTrue(result.needsAI)
++    }
++
++    @Test fun unavailableScoreOrThresholdKeepsAIOnACompleteDraft() {
++        val draft = KivoDraft(QuickAddProposal(title = "开会"), emptyList(), emptyList(), FloatArray(1515), 0.0, true)
++        val decoder = KivoDecoder(tokenizer())
++        for ((score, threshold) in listOf(null to .9, Float.NaN to .9, 100f to null)) {
++            val result = decoder.gate(draft, score, KivoCalibration(1.0, 0.0), threshold)
++            assertTrue(result.ready)
++            assertTrue(result.needsAI)
++        }
++    }
++
++    @Test fun coverageRejectsMissingCountNegationAndLocationTail() {
++        for (text in listOf("每周跑步三次", "每周跑步不要", "每周跑步在逸夫楼203")) {
++            val spans = listOf(KivoSpan("GOAL_WINDOW", 0, 2, 1, 2, 1f), KivoSpan("TITLE", 2, 4, 3, 4, 1f))
++            assertEquals(listOf("source-content-deleted"), KivoCoverage.reasons(text, spans, "HABIT"), text)
++        }
++    }
++
++    @Test fun removedJoinerStillKeepsOriginalCodePointOffsets() {
++        val pieces = tokenizer().pieces("明天👩‍💻开会")
++        assertEquals(listOf(0 to 0, 0 to 1, 1 to 2, 2 to 5, 5 to 6, 6 to 7, 0 to 0),
++            pieces.map { it.start to it.end })
++    }
++
++    @Test fun oversizedInputAndLiteralSpecialTokensAreNotTruncatedIntoAcceptance() {
++        assertFailsWith<IllegalArgumentException> { tokenizer().encode("明".repeat(127), "TASK") }
++        assertFailsWith<IllegalArgumentException> { tokenizer().encode("明天[CLS]开会", "TASK") }
++    }
++}
+diff --git a/shared/src/commonTest/kotlin/com/deadliner/domain/quickadd/model/KivoSessionTest.kt b/shared/src/commonTest/kotlin/com/deadliner/domain/quickadd/model/KivoSessionTest.kt
+new file mode 100644
+index 0000000..357a7e1
+--- /dev/null
++++ b/shared/src/commonTest/kotlin/com/deadliner/domain/quickadd/model/KivoSessionTest.kt
+@@ -0,0 +1,97 @@
++package com.deadliner.domain.quickadd.model
++
++import com.deadliner.domain.quickadd.inference.*
++import io.ktor.client.HttpClient
++import io.ktor.client.engine.mock.MockEngine
++import io.ktor.client.engine.mock.respond
++import kotlinx.coroutines.*
++import kotlinx.datetime.Instant
++import kotlinx.datetime.TimeZone
++import kotlinx.serialization.json.*
++import kotlin.test.*
++
++class KivoSessionTest {
++    private val hash = "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"
++    private fun manifest() = KivoModelManifest(2, "kivo-test", "kivo-joint-v1", true, false,
++        mapOf("android" to listOf("encoder", "TASK", "HABIT").associateWith {
++            QuickAddModelArtifact("https://models.example/$it", hash, 3)
++        }), KivoTokenizerConfig(listOf("[PAD]", "[UNK]", "[CLS]", "[SEP]"), emptyMap()),
++        listOf("TASK", "HABIT").associateWith { KivoCalibration(1.0, 0.0) }, mapOf("TASK" to .9, "HABIT" to .9))
++
++    @Test fun failedSecondGraphClosesPartialRuntimeAndRetryLoadsAllThree() = runBlocking {
++        val files = MemoryFiles()
++        val client = HttpClient(MockEngine { respond("abc") })
++        val backends = mutableListOf<Backend>()
++        var failTask = true
++        val session = KivoModelSession("unused", "android", manifest()) { role ->
++            val backend = Backend(role, fail = role == "TASK" && failTask).also { backends += it }
++            QuickAddDownloadedModel(QuickAddModelRepository(files, client), QuickAddInferenceEngine(backend)) { path, _ -> path }
++        }
++        try {
++            assertFalse(session.prepare())
++            assertTrue(backends.all { it.closed })
++            val rejected = session.recognize("明天下午4点开会", "TASK", Instant.parse("2026-10-19T04:00:00Z"), TimeZone.UTC)
++            assertFalse(rejected.ready)
++            assertTrue(rejected.needsAI)
++            failTask = false
++            assertTrue(session.prepare())
++            assertEquals(3, backends.count { it.loaded && !it.closed })
++            assertEquals("READY", Json.parseToJsonElement(session.statusJson()).jsonObject.getValue("phase").jsonPrimitive.content)
++        } finally { session.close(); client.close() }
++        assertTrue(backends.all { it.closed })
++    }
++
++    @Test fun typingDoesNotWaitForThreeGraphDownloadAndCancellationCleansUp() = runBlocking {
++        val started = CompletableDeferred<Unit>()
++        val release = CompletableDeferred<Unit>()
++        val client = HttpClient(MockEngine { started.complete(Unit); release.await(); respond("abc") })
++        val backends = mutableListOf<Backend>()
++        val session = KivoModelSession("unused", "android", manifest()) { role ->
++            val backend = Backend(role).also { backends += it }
++            QuickAddDownloadedModel(QuickAddModelRepository(MemoryFiles(), client), QuickAddInferenceEngine(backend)) { path, _ -> path }
++        }
++        val job = async { session.prepare() }
++        try {
++            started.await()
++            val pending = withTimeout(1000) { session.recognize("明天下午4点开会", "TASK",
++                Instant.parse("2026-10-19T04:00:00Z"), TimeZone.UTC) }
++            assertFalse(pending.ready)
++            assertTrue(pending.needsAI)
++            job.cancelAndJoin()
++            assertTrue(backends.all { it.closed })
++            assertEquals("CANCELLED", Json.parseToJsonElement(session.statusJson()).jsonObject.getValue("phase").jsonPrimitive.content)
++        } finally { release.complete(Unit); job.cancelAndJoin(); session.close(); client.close() }
++    }
++
++    private class Backend(val role: String, val fail: Boolean = false) : QuickAddInferenceBackend {
++        override val name = "TEST_KIVO"
++        var loaded = false
++        var closed = false
++        override fun load(modelPath: String) { check(!fail) { "$role load failed" }; loaded = true }
++        override fun infer(input: QuickAddModelInput): QuickAddModelOutput = error("No inference before all graphs are ready")
++        override fun close() { closed = true }
++    }
++
++    private class MemoryFiles : QuickAddModelFileStore {
++        val data = mutableMapOf<String, ByteArray>()
++        override fun path(name: String) = name
++        override fun exists(name: String) = name in data
++        override fun reader(name: String) = object : QuickAddModelReader {
++            private val bytes = data.getValue(name)
++            private var offset = 0
++            override fun read(buffer: ByteArray): Int {
++                if (offset == bytes.size) return -1
++                val count = minOf(buffer.size, bytes.size - offset)
++                bytes.copyInto(buffer, 0, offset, offset + count); offset += count
++                return count
++            }
++            override fun close() = Unit
++        }
++        override fun writer(name: String) = object : QuickAddModelWriter {
++            override fun write(buffer: ByteArray, count: Int) { data[name] = (data[name] ?: byteArrayOf()) + buffer.copyOf(count) }
++            override fun close() = Unit
++        }
++        override fun promote(temporary: String, destination: String) { data[destination] = data.remove(temporary)!! }
++        override fun delete(name: String) { data.remove(name) }
++    }
++}
+diff --git a/shared/src/macosArm64Test/kotlin/com/deadliner/domain/quickadd/model/KivoReferenceTest.kt b/shared/src/macosArm64Test/kotlin/com/deadliner/domain/quickadd/model/KivoReferenceTest.kt
+new file mode 100644
+index 0000000..e3ef2d8
+--- /dev/null
++++ b/shared/src/macosArm64Test/kotlin/com/deadliner/domain/quickadd/model/KivoReferenceTest.kt
+@@ -0,0 +1,87 @@
++@file:OptIn(kotlinx.cinterop.ExperimentalForeignApi::class)
++package com.deadliner.domain.quickadd.model
++
++import com.deadliner.domain.quickadd.inference.*
++import kotlinx.cinterop.toKString
++import kotlinx.datetime.Instant
++import kotlinx.datetime.TimeZone
++import kotlinx.serialization.json.*
++import platform.posix.getenv
++import kotlin.math.abs
++import kotlin.test.*
++
++/** Frozen, already exposed fixture parity. No device or independent accuracy claim. */
++class KivoReferenceTest {
++    @Test fun actualFrozenEncoderOutputsMatchCoreProposalsAndQualityFeatures() {
++        val path = getenv("KIVO_REFERENCE_INPUT")?.toKString() ?: return
++        val files = createQuickAddModelFileStore(path.substringBeforeLast('/'))
++        val reader = files.reader(path.substringAfterLast('/'))
++        val bytes = mutableListOf<Byte>()
++        try {
++            val buffer = ByteArray(65536)
++            while (true) {
++                val count = reader.read(buffer)
++                if (count < 0) break
++                repeat(count) { bytes += buffer[it] }
++            }
++        } finally { reader.close() }
++        val root = Json.parseToJsonElement(bytes.toByteArray().decodeToString()).jsonObject
++        val config = Json.decodeFromJsonElement<KivoTokenizerConfig>(root.getValue("tokenizer"))
++        config.validate()
++        val tokenizer = KivoTokenizer(config)
++        for (item in root.getValue("tokenizerCases").jsonArray) {
++            val row = item.jsonObject
++            val text = row.getValue("text").jsonPrimitive.content
++            val kind = row.getValue("preferredKind").jsonPrimitive.content
++            val encoded = tokenizer.encode(text, kind)
++            for (index in 0..1) assertEquals(row.getValue(encoded.tensors[index].name).jsonArray.map { it.jsonPrimitive.long },
++                encoded.tensors[index].integers.toList(), row.getValue("id").toString())
++            val offsets = tokenizer.pieces(text).map { listOf(it.start, it.end) }.toMutableList()
++            while (offsets.size < 96) offsets += listOf(0, 0)
++            assertEquals(row.getValue("offsets").jsonArray.map { a -> a.jsonArray.map { it.jsonPrimitive.int } }, offsets,
++                "Offsets: " + row.getValue("id"))
++        }
++        val decoder = KivoDecoder(tokenizer)
++        val outputs = mutableListOf<JsonElement>()
++        for (item in root.getValue("cases").jsonArray) {
++            val row = item.jsonObject
++            val input = row.getValue("input").jsonObject
++            val text = input.getValue("text").jsonPrimitive.content
++            val output = QuickAddModelOutput(row.getValue("encoderOutputs").jsonArray.map {
++                val tensor = it.jsonObject
++                QuickAddOutputTensor(tensor.getValue("name").jsonPrimitive.content,
++                    tensor.getValue("shape").jsonArray.map { n -> n.jsonPrimitive.long }.toLongArray(),
++                    tensor.getValue("values").jsonArray.map { v -> v.jsonPrimitive.float }.toFloatArray())
++            })
++            val draft = decoder.select(output, text, input.getValue("preferredKind").jsonPrimitive.content,
++                Instant.parse(input.getValue("now").jsonPrimitive.content), TimeZone.of(input.getValue("timezone").jsonPrimitive.content))
++            val expected = row.getValue("result").jsonObject
++            val features = draft.qualityFeature()
++            val reference = row.getValue("qualityFeature").jsonArray.map { it.jsonPrimitive.float }
++            val maximum = features.indices.maxOf { abs(features[it] - reference[it]) }
++            assertTrue(maximum < 0.0005f, "$text: feature max error $maximum")
++            assertEquals(expected.getValue("hardReasons").jsonArray.map { it.jsonPrimitive.content }, draft.hardReasons, text)
++            val headKind = draft.proposal.kind
++            val calibration = root.getValue("calibration").jsonObject.getValue(headKind).jsonObject
++            val threshold = root.getValue("thresholds").jsonObject.getValue(headKind).jsonObject.getValue("threshold").jsonPrimitive.doubleOrNull
++            val proposal = decoder.gate(draft, row.getValue("rawQualityLogit").jsonPrimitive.float,
++                KivoCalibration(calibration.getValue("slope").jsonPrimitive.double, calibration.getValue("bias").jsonPrimitive.double), threshold)
++            val actual = Json.parseToJsonElement(proposal.toJson()).jsonObject
++            val target = expected.getValue("proposal").jsonObject
++            for (key in listOf("kind", "title", "dueAt", "note", "period", "targetCount", "weekdaysMask", "reminderTime", "ready", "needsAI"))
++                assertEquals(target[key], actual[key], "$text: $key")
++            outputs += buildJsonObject {
++                put("id", input.getValue("id")); put("proposal", actual)
++                put("qualityFeature", JsonArray(features.map { JsonPrimitive(it) }))
++            }
++        }
++        val outputPath = getenv("KIVO_REFERENCE_OUTPUT")?.toKString()
++        if (outputPath != null) {
++            val store = createQuickAddModelFileStore(outputPath.substringBeforeLast('/'))
++            val writer = store.writer(outputPath.substringAfterLast('/'))
++            val data = JsonArray(outputs).toString().encodeToByteArray()
++            try { writer.write(data, data.size) } finally { writer.close() }
++        }
++        println("KIVO_PARITY: " + outputs.size + " complete proposals and " + root.getValue("tokenizerCases").jsonArray.size + " tokenizer cases")
++    }
++}
+-- 
+2.54.0 (Apple Git-157)
+

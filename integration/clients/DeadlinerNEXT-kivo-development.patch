@@ -1,0 +1,31 @@
+diff --git a/entry/src/main/ets/pages/routes/main/modify/quickadd/QuickAddModelService.ets b/entry/src/main/ets/pages/routes/main/modify/quickadd/QuickAddModelService.ets
+--- a/entry/src/main/ets/pages/routes/main/modify/quickadd/QuickAddModelService.ets
++++ b/entry/src/main/ets/pages/routes/main/modify/quickadd/QuickAddModelService.ets
+@@ -24,7 +24,10 @@
+     try {
+       let manifest: string = '';
+       try {
+-        const content = await context.resourceManager.getRawFileContent(i18n.System.getSystemLanguage().startsWith('en') ? 'quick-add-model-en.json' : 'quick-add-model.json');
++        const english: boolean = i18n.System.getSystemLanguage().startsWith('en');
++        const resourceName: string = english ? 'quick-add-model-en.json' : context.applicationInfo.debug ?
++          'quick-add-model-kivo-preview.json' : 'quick-add-model.json';
++        const content = await context.resourceManager.getRawFileContent(resourceName);
+         const decoder = new util.TextDecoder('utf-8', { ignoreBOM: true });
+         manifest = decoder.decodeWithStream(content);
+       } catch (_) { /* No release model configuration: keep rules. */ }
+diff --git a/entry/src/main/ets/pages/routes/main/modify/quickadd/QuickAddSheet.ets b/entry/src/main/ets/pages/routes/main/modify/quickadd/QuickAddSheet.ets
+--- a/entry/src/main/ets/pages/routes/main/modify/quickadd/QuickAddSheet.ets
++++ b/entry/src/main/ets/pages/routes/main/modify/quickadd/QuickAddSheet.ets
+@@ -170,8 +170,10 @@
+         }
+         if (this.loading) { Text('正在识别…') }
+         if (this.message.length > 0) { Text(this.message).fontSize(14) }
+-        Button('使用 AI 识别').enabled(this.input.length > 0 && !this.loading && !this.saving)
+-          .onClick(() => { this.recognizeWithAI(); })
++        if (this.draft.needsAI || (this.input.length > 0 && this.draft.source === 'LOCAL')) {
++          Button('使用 AI 识别').enabled(this.input.length > 0 && !this.loading && !this.saving)
++            .onClick(() => { this.recognizeWithAI(); })
++        }
+         Button(this.saving ? '保存中…' : '添加')
+           .enabled(this.draft.ready && !this.loading && !this.saving)
+           .onClick(() => { void this.save(); })

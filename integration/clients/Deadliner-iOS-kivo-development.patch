@@ -1,0 +1,74 @@
+diff --git a/Deadliner/Features/Main/Sheets/QuickAddModelService.swift b/Deadliner/Features/Main/Sheets/QuickAddModelService.swift
+--- a/Deadliner/Features/Main/Sheets/QuickAddModelService.swift
++++ b/Deadliner/Features/Main/Sheets/QuickAddModelService.swift
+@@ -15,7 +15,13 @@
+         let task = _Concurrency.Task { @MainActor in
+             do {
+                 let config = await _Concurrency.Task.detached {
+-                    Bundle.main.url(forResource: Locale.preferredLanguages.first?.hasPrefix("en") == true ? "quick-add-model-en" : "quick-add-model", withExtension: "json")
++                    let english = Locale.preferredLanguages.first?.hasPrefix("en") == true
++                    #if DEBUG
++                    let resource = english ? "quick-add-model-en" : "quick-add-model-kivo-preview"
++                    #else
++                    let resource = english ? "quick-add-model-en" : "quick-add-model"
++                    #endif
++                    return Bundle.main.url(forResource: resource, withExtension: "json")
+                         .flatMap { try? String(contentsOf: $0, encoding: .utf8) } ?? ""
+                 }.value
+                 let directory = try FileManager.default.url(for: .applicationSupportDirectory,
+diff --git a/Deadliner/Features/Main/Sheets/QuickAddDraft.swift b/Deadliner/Features/Main/Sheets/QuickAddDraft.swift
+--- a/Deadliner/Features/Main/Sheets/QuickAddDraft.swift
++++ b/Deadliner/Features/Main/Sheets/QuickAddDraft.swift
+@@ -14,6 +14,7 @@
+     var ready = false
+     var source = "LOCAL"
+     var message = ""
++    var recognitionState: String?
+ 
+     static func decode(_ json: String) throws -> Self {
+         try JSONDecoder().decode(Self.self, from: Data(json.utf8))
+@@ -54,9 +55,11 @@
+             result.dueAt = Self.timestamp(dueAt)
+             // Like Android, choosing an explicit deadline confirms a task even when
+             // natural-language recognition cannot produce an accepted proposal.
+-            if draft.kind == "TASK", !draft.title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
++            if draft.kind == "TASK", draft.recognitionState != "KIVO_PARTIAL",
++               !draft.title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                 result.ready = true
+-                result.needsAI = false
++                // A deadline edit does not confirm uncertain title/location fields.
++                result.needsAI = draft.recognitionState == "READY_WITH_AI"
+                 result.source = "MANUAL"
+                 result.message = ""
+             }
+diff --git a/Deadliner/Features/Main/Sheets/QuickAddEntrySheetView.swift b/Deadliner/Features/Main/Sheets/QuickAddEntrySheetView.swift
+--- a/Deadliner/Features/Main/Sheets/QuickAddEntrySheetView.swift
++++ b/Deadliner/Features/Main/Sheets/QuickAddEntrySheetView.swift
+@@ -20,8 +20,17 @@
+     @State private var showCategory = false
+     @State private var attribute: QuickAddAttribute?
+     private var effectiveDraft: QuickAddDraft { overrides.applying(to: draft) }
++    private var displayedDraft: QuickAddDraft {
++        var result = effectiveDraft
++        #if DEBUG
++        if result.source == "LOCAL", !input.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
++            result.needsAI = true
++        }
++        #endif
++        return result
++    }
+     private var busy: Bool { saving || recognizingAI }
+-    private var canSave: Bool { effectiveDraft.ready && !effectiveDraft.needsAI && (!loading || effectiveDraft.source == "MANUAL") && !busy && !input.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
++    private var canSave: Bool { effectiveDraft.ready && (!effectiveDraft.needsAI || effectiveDraft.recognitionState == "READY_WITH_AI") && (!loading || effectiveDraft.source == "MANUAL") && !busy && !input.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
+     @State private var loading = false
+     @State private var saving = false
+     @State private var message = ""
+@@ -38,7 +47,7 @@
+                 horizontalInset: FloatingComposerStyle.horizontalInset,
+                 dockClearance: FloatingComposerStyle.dockClearance)
+             QuickAddGlassPanel(
+-                input: inputBinding, draft: effectiveDraft, modelStatus: modelStatus,
++                input: inputBinding, draft: displayedDraft, modelStatus: modelStatus,
+                 loading: loading && effectiveDraft.source != "MANUAL", saving: saving, recognizingAI: recognizingAI,
+                 message: effectiveDraft.source == "MANUAL" && message == draft.message ? "" : message, canSave: canSave,
+                 categoryName: categories.first { $0.uid == categoryUID }?.name,

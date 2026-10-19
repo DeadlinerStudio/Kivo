@@ -1,0 +1,37 @@
+{
+  "tag": "v0.1.0-preview.1",
+  "sourceCommit": "bfda3926cb14045ac2e7a68c089f3fbfc7eb6b9e",
+  "originalPrototypeSha256": "459865a706a1e1473c142d3c2bafe549d3b6b975d0848b80758dffdd523aaf0e",
+  "originalModelSha256": "6d11b75f065b20d72c6ec38887d9e8a265e076e18966592895b5187e25571ab4",
+  "assets": {
+    "LICENSE-Kivo-MIT.txt": {
+      "sha256": "5fcae4afc6803efe33d6ac079fcb6d842be7b6ea6022d54b94a26e8ea772c749",
+      "bytes": 1066
+    },
+    "LICENSE-UER-Apache-2.0.txt": {
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    "MODEL_README.md": {
+      "sha256": "cd732b7b343d431989f6f09372cb9823c3e13a2e38e84bcfee18f5ad480ca900",
+      "bytes": 1631
+    },
+    "THIRD_PARTY_NOTICES.txt": {
+      "sha256": "c9af0b20ab30be744b79e55993c9dd5d88ea644dc6c91e020ae331e49ab08f13",
+      "bytes": 1286
+    },
+    "kivo-preview.json": {
+      "sha256": "29bafd4c697fa2ac33cd004a4bc9e0b2d534653386989b225b85d1fd8ebfd8a3",
+      "bytes": 5769
+    },
+    "kivo-tiny-zh-v0.1.0-preview.1-checkpoints.zip": {
+      "sha256": "ff03b06bc2e45a429955d2a745a0a73e396186e3ea32a3fedb4f8e8ac0596337",
+      "bytes": 13275081
+    },
+    "kivo-tiny-zh-v0.1.0-preview.1-onnx.zip": {
+      "sha256": "99a10fb51c194c75f4f34ec9a550dfac180de1e3bdb01f3048ed0ede9f073b26",
+      "bytes": 13214283
+    }
+  },
+  "formalGatePassed": false
+}

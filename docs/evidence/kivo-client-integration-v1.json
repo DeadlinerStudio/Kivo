@@ -1,0 +1,201 @@
+{
+  "brand": "Kivo",
+  "tag": "v0.1.0-preview.1",
+  "date": "2026-10-19",
+  "releaseUrl": "https://github.com/DeadlinerStudio/Kivo/releases/tag/v0.1.0-preview.1",
+  "sourceModelCommit": "bfda3926cb14045ac2e7a68c089f3fbfc7eb6b9e",
+  "coreCommit": "3a6940b5ca035b5b021e1ed3950ae0aa95a885ac",
+  "corePushed": false,
+  "scope": "Actual Kivo integration for Chinese development builds; production and English retain legacy configuration",
+  "prototypeSha256": "459865a706a1e1473c142d3c2bafe549d3b6b975d0848b80758dffdd523aaf0e",
+  "originalCheckpointSha256": "6d11b75f065b20d72c6ec38887d9e8a265e076e18966592895b5187e25571ab4",
+  "clientManifestSha256": "1f314458648b680722f11b82dc079b8a1c3169b1e26341a55e7337dd3ed5e395",
+  "platforms": {
+    "android": {
+      "encoder": {
+        "url": "https://github.com/DeadlinerStudio/Kivo/releases/download/v0.1.0-preview.1/kivo-encoder.onnx",
+        "sha256": "385d82cc1417cedc3beffb055936f5d1c1c6787c6717d908b4ba801bbccf4899",
+        "sizeBytes": 13256235
+      },
+      "TASK": {
+        "url": "https://github.com/DeadlinerStudio/Kivo/releases/download/v0.1.0-preview.1/kivo-TASK.onnx",
+        "sha256": "721edbe819d03a84c071468cb07e182543444cec91149004c1e8cd1ddccc3ef7",
+        "sizeBytes": 406226
+      },
+      "HABIT": {
+        "url": "https://github.com/DeadlinerStudio/Kivo/releases/download/v0.1.0-preview.1/kivo-HABIT.onnx",
+        "sha256": "7674227a686d3c829707c0a1f126676a512c0ba2881e0102a704a56d2d491c4e",
+        "sizeBytes": 406226
+      }
+    },
+    "ios": {
+      "encoder": {
+        "url": "https://github.com/DeadlinerStudio/Kivo/releases/download/v0.1.0-preview.1/kivo-encoder.mlmodel",
+        "sha256": "2b4d9a6720fe4beecc27dd5d78a86be7bd0d74df20f72924ea92dc99a1f1b9e2",
+        "sizeBytes": 13056178
+      },
+      "TASK": {
+        "url": "https://github.com/DeadlinerStudio/Kivo/releases/download/v0.1.0-preview.1/kivo-TASK.mlmodel",
+        "sha256": "8f30b972287536133d90474a5f3f2a9110c46eb04df169f3d72caa65edfc6ad5",
+        "sizeBytes": 405115
+      },
+      "HABIT": {
+        "url": "https://github.com/DeadlinerStudio/Kivo/releases/download/v0.1.0-preview.1/kivo-HABIT.mlmodel",
+        "sha256": "ad6a4f9d1903ea22571fd6555ddbbcc217a68a973a90d0bccb02776a6a4418da",
+        "sizeBytes": 405116
+      }
+    },
+    "ohos": {
+      "encoder": {
+        "url": "https://github.com/DeadlinerStudio/Kivo/releases/download/v0.1.0-preview.1/kivo-encoder.ms",
+        "sha256": "dea44a15b5d16f5db174624cdd57db96f47e7989467415b28654827c31c33c74",
+        "sizeBytes": 13076984
+      },
+      "TASK": {
+        "url": "https://github.com/DeadlinerStudio/Kivo/releases/download/v0.1.0-preview.1/kivo-TASK.ms",
+        "sha256": "1b74b0696ee744b8c0fb395b04d35b5c74f3b12b34ccee2602d6f4886005cfa1",
+        "sizeBytes": 406180
+      },
+      "HABIT": {
+        "url": "https://github.com/DeadlinerStudio/Kivo/releases/download/v0.1.0-preview.1/kivo-HABIT.ms",
+        "sha256": "bfca6ae4bc1b27e83b4c9a9fa30fe128b16957e784ab6b933830ce9c86cce76c",
+        "sizeBytes": 406180
+      }
+    }
+  },
+  "publicHttpsManifestHead": {
+    "status": 200,
+    "bytes": 687162,
+    "authenticated": false
+  },
+  "allOriginalAssetsDownloadVerified": true,
+  "all12MobileAssetsDownloadVerified": true,
+  "coreBehaviorChecks": 73,
+  "pythonChecks": 67,
+  "swiftOverrideChecks": "passed",
+  "coreReference": {
+    "proposals": 14,
+    "tokenizerCases": 18,
+    "scope": "already exposed regressions; not independent accuracy"
+  },
+  "graphParity": {
+    "experimental": true,
+    "formalGatePassed": false,
+    "scope": "Host CPU ONNX, Core ML and official Linux MindSpore Lite; not phone performance",
+    "graphs": {
+      "encoder": {
+        "examples": 64,
+        "outputs": [
+          "intent_logits",
+          "span_logits",
+          "token_features"
+        ],
+        "coremlMaxErrors": {
+          "intent_logits": 9.5367431640625e-06,
+          "span_logits": 0.00015020370483398438,
+          "token_features": 2.09808349609375e-05
+        },
+        "assets": {
+          "onnx": {
+            "sha256": "385d82cc1417cedc3beffb055936f5d1c1c6787c6717d908b4ba801bbccf4899",
+            "bytes": 13256235
+          },
+          "mlmodel": {
+            "sha256": "2b4d9a6720fe4beecc27dd5d78a86be7bd0d74df20f72924ea92dc99a1f1b9e2",
+            "bytes": 13056178
+          },
+          "ms": {
+            "sha256": "dea44a15b5d16f5db174624cdd57db96f47e7989467415b28654827c31c33c74",
+            "bytes": 13076984
+          }
+        }
+      },
+      "TASK": {
+        "examples": 14,
+        "outputs": [
+          "score"
+        ],
+        "coremlMaxErrors": {
+          "score": 1.9073486328125e-06
+        },
+        "assets": {
+          "onnx": {
+            "sha256": "721edbe819d03a84c071468cb07e182543444cec91149004c1e8cd1ddccc3ef7",
+            "bytes": 406226
+          },
+          "mlmodel": {
+            "sha256": "8f30b972287536133d90474a5f3f2a9110c46eb04df169f3d72caa65edfc6ad5",
+            "bytes": 405115
+          },
+          "ms": {
+            "sha256": "1b74b0696ee744b8c0fb395b04d35b5c74f3b12b34ccee2602d6f4886005cfa1",
+            "bytes": 406180
+          }
+        }
+      },
+      "HABIT": {
+        "examples": 14,
+        "outputs": [
+          "score"
+        ],
+        "coremlMaxErrors": {
+          "score": 9.5367431640625e-07
+        },
+        "assets": {
+          "onnx": {
+            "sha256": "7674227a686d3c829707c0a1f126676a512c0ba2881e0102a704a56d2d491c4e",
+            "bytes": 406226
+          },
+          "mlmodel": {
+            "sha256": "ad6a4f9d1903ea22571fd6555ddbbcc217a68a973a90d0bccb02776a6a4418da",
+            "bytes": 405116
+          },
+          "ms": {
+            "sha256": "bfca6ae4bc1b27e83b4c9a9fa30fe128b16957e784ab6b933830ce9c86cce76c",
+            "bytes": 406180
+          }
+        }
+      }
+    },
+    "mindsporeMaxErrors": {
+      "encoder": {
+        "intent_logits": 4.1604042053222656e-05,
+        "span_logits": 0.0004687309265136719,
+        "token_features": 4.273653030395508e-05
+      },
+      "TASK": {
+        "score": 2.86102294921875e-06
+      },
+      "HABIT": {
+        "score": 4.172325134277344e-06
+      }
+    }
+  },
+  "completeProposalParity": {
+    "coreml": {
+      "completeProposalCases": 14,
+      "differences": 0,
+      "maxConfidenceError": 6.59054043561369e-08,
+      "pipeline": "actual backend encoder -> actual shared Core decoder/features -> actual backend quality head"
+    },
+    "mindspore": {
+      "completeProposalCases": 14,
+      "differences": 0,
+      "maxConfidenceError": 3.377648166713598e-07,
+      "pipeline": "actual backend encoder -> actual shared Core decoder/features -> actual backend quality head"
+    },
+    "formalGatePassed": false,
+    "phoneVerified": false,
+    "prototypeSha256": "459865a706a1e1473c142d3c2bafe549d3b6b975d0848b80758dffdd523aaf0e"
+  },
+  "builds": {
+    "core": "running",
+    "android": "pending",
+    "ios": "pending",
+    "harmonyos": "pending"
+  },
+  "phoneVerified": false,
+  "formalGatePassed": false,
+  "generalizationTargetMet": false,
+  "protection": "ready and needsAI remain independent; deadline edits preserve returned Kivo uncertainty"
+}

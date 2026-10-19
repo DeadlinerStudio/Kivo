@@ -1,0 +1,124 @@
+diff --git a/app/src/main/java/com/aritxonly/deadliner/ui/quickadd/QuickAddModelService.kt b/app/src/main/java/com/aritxonly/deadliner/ui/quickadd/QuickAddModelService.kt
+--- a/app/src/main/java/com/aritxonly/deadliner/ui/quickadd/QuickAddModelService.kt
++++ b/app/src/main/java/com/aritxonly/deadliner/ui/quickadd/QuickAddModelService.kt
+@@ -1,6 +1,7 @@
+ package com.aritxonly.deadliner.ui.quickadd
+ 
+ import android.content.Context
++import com.aritxonly.deadliner.BuildConfig
+ import com.deadliner.domain.quickadd.QuickAddProposal
+ import com.deadliner.domain.quickadd.model.*
+ import kotlinx.coroutines.coroutineScope
+@@ -30,7 +31,10 @@
+         mutex.withLock {
+             try {
+                 val active = session ?: run {
+-                    val config = try { context.assets.open(if (context.resources.configuration.locales[0].language == "en") "quick-add-model-en.json" else "quick-add-model.json").bufferedReader().use { it.readText() } }
++                    val english = context.resources.configuration.locales[0].language == "en"
++                    val resource = if (english) "quick-add-model-en.json" else if (BuildConfig.DEBUG)
++                        "quick-add-model-kivo-preview.json" else "quick-add-model.json"
++                    val config = try { context.assets.open(resource).bufferedReader().use { it.readText() } }
+                     catch (_: java.io.FileNotFoundException) { "" }
+                     QuickAddModelSession(context.filesDir.absolutePath, "android", config).also { session = it }
+                 }
+diff --git a/app/src/main/java/com/aritxonly/deadliner/ui/quickadd/QuickAddState.kt b/app/src/main/java/com/aritxonly/deadliner/ui/quickadd/QuickAddState.kt
+--- a/app/src/main/java/com/aritxonly/deadliner/ui/quickadd/QuickAddState.kt
++++ b/app/src/main/java/com/aritxonly/deadliner/ui/quickadd/QuickAddState.kt
+@@ -1,5 +1,6 @@
+ package com.aritxonly.deadliner.ui.quickadd
+ 
++import com.aritxonly.deadliner.BuildConfig
+ import androidx.compose.runtime.*
+ import androidx.compose.runtime.saveable.Saver
+ import androidx.compose.runtime.saveable.rememberSaveable
+@@ -101,18 +102,23 @@
+         if (proposal.kind != "TASK") return proposal
+         val timed = proposal.copy(dueAt = resolvedDueAt)
+         if (!hasManualTaskInput) return timed
+-        val title = proposal.title.takeIf { proposal.ready && !proposal.needsAI && it.isNotBlank() } ?: text.trim()
++        if (proposal.recognitionState == "KIVO_PARTIAL") return timed.copy(ready = false, needsAI = true)
++        val needsReview = proposal.recognitionState == "READY_WITH_AI"
++        val title = proposal.title.takeIf { proposal.ready && (!proposal.needsAI || needsReview) && it.isNotBlank() } ?: text.trim()
+         return timed.copy(title = title, ready = !requireNotNull(dueAt).isBefore(effectiveStartAt),
+-            needsAI = false, source = "MANUAL", recognitionState = "MANUAL", message = "")
+-    }
+-    val needsAI: Boolean get() = !hasManualTaskInput && text.isNotBlank() &&
+-        (proposal.needsAI || (proposal.source == "LOCAL" &&
+-            (!proposal.ready || !proposal.title.any(Char::isLetter))))
++            needsAI = needsReview, source = "MANUAL", recognitionState = if (needsReview) "READY_WITH_AI" else "MANUAL", message = "")
++    }
++    val needsAI: Boolean get() = text.isNotBlank() &&
++        (proposal.recognitionState in setOf("READY_WITH_AI", "KIVO_PARTIAL") ||
++            (!hasManualTaskInput && (proposal.needsAI || (proposal.source == "LOCAL" &&
++                (BuildConfig.DEBUG || !proposal.ready || !proposal.title.any(Char::isLetter))))))
+     val canEditTaskTimes: Boolean get() = !busy && proposal.kind == "TASK"
+-    val canReinterpret: Boolean get() = visible && !busy && effectiveProposal.ready && !needsAI && text.isNotBlank()
++    val canReinterpret: Boolean get() = canSubmit && !effectiveProposal.needsAI
+     val canClose: Boolean get() = !busy || recognizingAI
+     val canRecognize: Boolean get() = visible && !busy && text.isNotBlank()
+-    val canSubmit: Boolean get() = visible && !busy && text.isNotBlank() && !needsAI && effectiveProposal.ready
++    val canSubmit: Boolean get() = visible && !busy && text.isNotBlank() && effectiveProposal.ready &&
++        (!needsAI || effectiveProposal.recognitionState == "READY_WITH_AI" ||
++            (BuildConfig.DEBUG && proposal.source == "LOCAL" && !proposal.needsAI && proposal.title.any(Char::isLetter)))
+ 
+     fun open(kind: String) {
+         expandingToEditor = false
+diff --git a/app/src/test/java/com/aritxonly/deadliner/ui/quickadd/QuickAddStateTest.kt b/app/src/test/java/com/aritxonly/deadliner/ui/quickadd/QuickAddStateTest.kt
+--- a/app/src/test/java/com/aritxonly/deadliner/ui/quickadd/QuickAddStateTest.kt
++++ b/app/src/test/java/com/aritxonly/deadliner/ui/quickadd/QuickAddStateTest.kt
+@@ -1,5 +1,6 @@
+ package com.aritxonly.deadliner.ui.quickadd
+ 
++import com.aritxonly.deadliner.BuildConfig
+ import com.aritxonly.deadliner.model.CalendarEvent
+ import androidx.compose.runtime.saveable.SaverScope
+ import com.deadliner.domain.quickadd.QuickAddProposal
+@@ -13,6 +14,48 @@
+ import java.time.LocalDateTime
+ 
+ class QuickAddStateTest {
++    @Test fun ruleDraftKeepsAIVisibleInDevelopmentWithoutChangingReleaseTrust() {
++        val scope = CoroutineScope(SupervisorJob() + Dispatchers.Unconfined)
++        try {
++            val state = QuickAddState(scope)
++            state.restoreDraft(QuickAddProposal(title = "开会", dueAt = LocalDateTime.now().plusDays(1).toString(),
++                ready = true, needsAI = false, source = "LOCAL"), "明天开会", null, null, null)
++            assertEquals(BuildConfig.DEBUG, state.needsAI)
++            assertTrue(state.canSubmit)
++        } finally { scope.cancel() }
++    }
++
++    @Test fun lowConfidenceKivoDraftCanSaveWithoutHidingAIOnDeadlineEdit() {
++        val scope = CoroutineScope(SupervisorJob() + Dispatchers.Unconfined)
++        try {
++            val state = QuickAddState(scope)
++            state.restoreDraft(QuickAddProposal(title = "开会", dueAt = LocalDateTime.now().plusDays(1).toString(),
++                ready = true, needsAI = true, source = "MODEL", recognitionState = "READY_WITH_AI"),
++                "明天下午开会", null, null, null)
++            assertTrue(state.canSubmit)
++            assertTrue(state.needsAI)
++            state.selectDueAt(LocalDateTime.now().plusDays(2))
++            assertTrue(state.canSubmit)
++            assertTrue(state.needsAI)
++            assertEquals("开会", state.effectiveProposal.title)
++            assertTrue(state.effectiveProposal.needsAI)
++        } finally { scope.cancel() }
++    }
++
++    @Test fun editingDeadlineDoesNotConfirmUnrecognizedKivoTitleOrLocation() {
++        val scope = CoroutineScope(SupervisorJob() + Dispatchers.Unconfined)
++        try {
++            val state = QuickAddState(scope)
++            state.restoreDraft(QuickAddProposal(title = "每隔两天去逸夫楼开会", ready = false,
++                needsAI = true, source = "MODEL", recognitionState = "KIVO_PARTIAL"),
++                "每隔两天去逸夫楼开会", null, null, null)
++            state.selectDueAt(LocalDateTime.now().plusDays(2))
++            assertFalse(state.canSubmit)
++            assertTrue(state.needsAI)
++            assertFalse(state.effectiveProposal.ready)
++        } finally { scope.cancel() }
++    }
++
+     @Test fun manualTaskDoesNotRequireSuccessfulRecognitionAndSurvivesRestoration() {
+         val scope = CoroutineScope(SupervisorJob() + Dispatchers.Unconfined)
+         try {

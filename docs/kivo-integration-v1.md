@@ -1,5 +1,7 @@
 # Kivo Tiny 接入准备 v1
 
+> 本文保留接入前的准备记录。实际 Core/客户端开发接入、source 状态与三格式验证以[开发接入记录](kivo-client-integration-v1.md)为准。
+
 2026-10-19。品牌为 Kivo，训练仓库为 `DeadlinerStudio/Kivo`；本地目录和 Python 导入名暂保留。本文件是实验客户端的实现依据，不表示客户端已接入或模型已通过发布验收。
 
 当前冻结候选为 `zh-joint-v3-type-seed42`：单次共享 BERT 编码、分类型片段头、片段分数组合、两种正确性头。没有学习式重排。主合成留出 TASK/HABIT 正确接受覆盖为 97.56%/92.44%，但旧表达回放只有 63.54%；真实跨表达 70% 目标未证明。详见[完整实验报告](task-habit-joint-prototype-v3.md)。

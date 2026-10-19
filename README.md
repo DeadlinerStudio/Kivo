@@ -4,7 +4,7 @@ Deadliner 快速添加端侧模型的训练、评测与导出工程。Kivo 负�
 
 仓库：<https://github.com/DeadlinerStudio/Kivo>。本地目录与 Python 包名 `quickadd_training` 保留，已有脚本仍可使用。
 
-**当前版本是实验原型，尚未接入客户端。** 主合成留出正确接受覆盖 TASK 97.56%、HABIT 92.44%，但旧表达回放仅 63.54%，尚未证明跨表达 70% 目标。详见[联合原型报告](docs/task-habit-joint-prototype-v3.md)与[客户端接入说明](docs/kivo-integration-v1.md)。权重与完整运行报告不进入 Git；本地可生成带 SHA 校验的接入预览包。
+**当前版本用于开发测试，客户端接入验证进行中。** 主合成留出正确接受覆盖 TASK 97.56%、HABIT 92.44%，但旧表达回放仅 63.54%，尚未证明跨表达 70% 目标。冻结权重、三端格式和校验值已发布至 [GitHub Releases](https://github.com/DeadlinerStudio/Kivo/releases/tag/v0.1.0-preview.1)，权重不进入 Git。详见[联合原型报告](docs/task-habit-joint-prototype-v3.md)、[原始协议](docs/kivo-integration-v1.md)及[客户端开发接入记录](docs/kivo-client-integration-v1.md)。
 
 ## 现状与边界
 
@@ -134,7 +134,7 @@ PYTHONPATH=src HF_HUB_OFFLINE=1 ../DeadlinerCore/build/quickadd-env/bin/python \
 
 最新实现：[TASK/HABIT联合原型报告v3](docs/task-habit-joint-prototype-v3.md)，承接[联合设计v2](docs/task-habit-joint-design-v2.md)。一次BERT编码，分类型片段头与正确性头，复用真实Core的星期/窗口/计次归一化。开发消融去掉了降低覆盖的学习式重排。
 
-主合成留出TASK/HABIT正确接受覆盖97.56%/92.44%，均零观察错误；2,000条保护集零误接受。但旧表达回放只有244/384（63.54%），当前候选池上限也仅263/384（68.49%），**真实70%泛化目标尚未证明**。64项Core、62项Python行为检查通过，8,014条ONNX完整提案一致；没有客户端接入或发布。
+主合成留出TASK/HABIT正确接受覆盖97.56%/92.44%，均零观察错误；2,000条保护集零误接受。但旧表达回放只有244/384（63.54%），当前候选池上限也仅263/384（68.49%），**真实70%泛化目标尚未证明**。离线冻结阶段64项Core、62项Python行为检查通过，8,014条ONNX完整提案一致；后续发布与开发接入见[当前记录](docs/kivo-client-integration-v1.md)，不能将离线结果直接当作三端手机验收。
 
 ```sh
 PYTHONPATH=artifacts/zh-joint-v3-runtime/src HF_HUB_OFFLINE=1 ../DeadlinerCore/build/quickadd-env/bin/python \
